@@ -167,31 +167,33 @@ function RulesPage({ content }: { content: SiteContent }) {
         ))}
       </section>
 
-      <section className="rules-categories">
-        <p className="section-kicker">RULEBOOK</p>
-        <h2>{rules.categoriesTitle}</h2>
-        <p>{rules.categoriesIntro}</p>
-        <div className="rules-section-list">
-          {rules.sections.map((section) => (
-            <article className="rule-section" key={section.number}>
-              <header className="rule-section-header">
-                <span>{section.number.padStart(2, "0")}</span>
-                <h3>{section.title}</h3>
-              </header>
-              {section.intro && <p className="rule-section-intro">{section.intro}</p>}
-              <div className="rule-entry-list">
-                {section.entries.map((entry, index) => (
-                  <section className="rule-entry" key={index}>
-                    <h4>{entry.title}</h4>
-                    {entry.body.map((paragraph, bodyIndex) => <p key={bodyIndex}>{paragraph}</p>)}
-                    {entry.emphasis && <strong>{entry.emphasis}</strong>}
-                  </section>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      {rules.groups.map((group, groupIndex) => (
+        <section className="rules-categories" key={groupIndex}>
+          <p className="section-kicker">RULEBOOK</p>
+          <h2>{group.heading}</h2>
+          {group.intro && <p>{group.intro}</p>}
+          <div className="rules-section-list">
+            {group.sections.map((section, sectionIndex) => (
+              <article className="rule-section" key={`${groupIndex}-${sectionIndex}`}>
+                <header className="rule-section-header">
+                  <span>{section.number.padStart(2, "0")}</span>
+                  <h3>{section.title}</h3>
+                </header>
+                {section.intro && <p className="rule-section-intro">{section.intro}</p>}
+                <div className="rule-entry-list">
+                  {section.entries.map((entry, index) => (
+                    <section className="rule-entry" key={index}>
+                      <h4>{entry.title}</h4>
+                      {entry.body.map((paragraph, bodyIndex) => <p key={bodyIndex}>{paragraph}</p>)}
+                      {entry.emphasis && <strong>{entry.emphasis}</strong>}
+                    </section>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
     </section>
   );
 }
