@@ -4,6 +4,37 @@ import { defaultContent, type SiteContent, type TrackerItem } from "./siteConten
 
 type PageKey = keyof SiteContent["pages"];
 
+type CmsPage = SiteContent["pages"][keyof SiteContent["pages"]] & { key: keyof SiteContent["pages"] };
+type CmsContent = Omit<SiteContent, "brand" | "hero" | "state" | "rulesLanding" | "pages" | "footer"> & {
+  brand: SiteContent["brand"][];
+  hero: SiteContent["hero"][];
+  state: SiteContent["state"][];
+  rulesLanding: SiteContent["rulesLanding"][];
+  pages: CmsPage[];
+  footer: SiteContent["footer"][];
+};
+
+function normalizeCmsContent(raw: CmsContent): SiteContent {
+  const pages = { ...defaultContent.pages };
+  for (const page of raw.pages ?? []) {
+    if (page?.key && page.key in pages) {
+      const { key, ...pageContent } = page;
+      pages[key] = pageContent;
+    }
+  }
+
+  return {
+    ...defaultContent,
+    ...raw,
+    brand: raw.brand?.[0] ?? defaultContent.brand,
+    hero: raw.hero?.[0] ?? defaultContent.hero,
+    state: raw.state?.[0] ?? defaultContent.state,
+    rulesLanding: raw.rulesLanding?.[0] ?? defaultContent.rulesLanding,
+    pages,
+    footer: raw.footer?.[0] ?? defaultContent.footer,
+  };
+}
+
 function navigate(path: string) {
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
@@ -268,9 +299,9 @@ function App() {
     fetch("/content/site.json")
       .then((response) => {
         if (!response.ok) throw new Error("Unable to load content");
-        return response.json() as Promise<SiteContent>;
+        return response.json() as Promise<CmsContent>;
       })
-      .then(setContent)
+      .then((raw) => setContent(normalizeCmsContent(raw)))
       .catch(() => setContent(defaultContent));
   }, []);
 
