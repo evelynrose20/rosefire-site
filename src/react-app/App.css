@@ -731,3 +731,131 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+
+.login-shell {
+  width: min(560px, calc(100% - 40px));
+  min-height: 72vh;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.login-shell h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 8vw, 5.4rem);
+  line-height: .95;
+  font-weight: 500;
+  letter-spacing: -.04em;
+}
+
+.login-shell > p:not(.section-kicker) {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.login-card {
+  margin-top: 34px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.012);
+}
+
+.login-card .button {
+  margin-top: 20px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.login-message {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.tracker-editor {
+  display: grid;
+  gap: 10px;
+  margin: 26px 0 18px;
+}
+
+.tracker-edit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 160px auto;
+  gap: 10px;
+}
+
+.tracker-edit-row input,
+.tracker-edit-row select {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 11px 12px;
+  color: var(--ink);
+  background: #0b0908;
+  font: inherit;
+  font-size: .82rem;
+}
+
+.tracker-edit-row select {
+  color-scheme: dark;
+}
+
+.remove-button {
+  border: 1px solid rgba(220,74,47,.3);
+  background: rgba(90,18,13,.14);
+  color: #cfaaa0;
+  padding: 0 13px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  border-color: var(--fire);
+  color: var(--ink);
+}
+
+.card-editor {
+  padding: 0 0 24px;
+  margin: 0 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-editor:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.admin-grid.compact {
+  margin-bottom: 12px;
+}
+
+.tone-declared {
+  background: #dc4a2f;
+  box-shadow: 0 0 12px rgba(220,74,47,.75);
+}
+
+.tone-stagnant {
+  background: #a55d3d;
+  box-shadow: 0 0 8px rgba(165,93,61,.45);
+}
+
+.tone-limited {
+  background: #c58b50;
+  box-shadow: 0 0 8px rgba(197,139,80,.42);
+}
+
+.tone-unformed {
+  background: #5f5650;
+  box-shadow: none;
+}
+
+@media (max-width: 820px) {
+  .tracker-edit-row {
+    grid-template-columns: 1fr;
+  }
+
+  .remove-button {
+    min-height: 42px;
+  }
+}
