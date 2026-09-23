@@ -35,8 +35,26 @@ function normalizeCmsContent(raw: CmsContent): SiteContent {
   };
 }
 
+const BASE_PATH = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+
+function toSiteUrl(path: string) {
+  if (!path.startsWith("/")) return path;
+  return `${BASE_PATH}${path || "/"}` || "/";
+}
+
+function currentSitePath() {
+  const pathname = window.location.pathname;
+  if (BASE_PATH && pathname.startsWith(BASE_PATH)) {
+    const stripped = pathname.slice(BASE_PATH.length);
+    return stripped || "/";
+  }
+  return pathname || "/";
+}
+
 function navigate(path: string) {
-  window.history.pushState({}, "", path);
+  window.history.pushState({}, "", toSiteUrl(path));
   window.dispatchEvent(new PopStateEvent("popstate"));
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -52,7 +70,7 @@ function Link({
 }) {
   return (
     <a
-      href={href}
+      href={href.startsWith("/") ? toSiteUrl(href) : href}
       className={className}
       onClick={(event) => {
         if (href.startsWith("/") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
@@ -286,17 +304,17 @@ function Admin() {
 }
 
 function App() {
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(currentSitePath());
   const [content, setContent] = useState<SiteContent>(defaultContent);
 
   useEffect(() => {
-    const handle = () => setPath(window.location.pathname);
+    const handle = () => setPath(currentSitePath());
     window.addEventListener("popstate", handle);
     return () => window.removeEventListener("popstate", handle);
   }, []);
 
   useEffect(() => {
-    fetch("/content/site.json")
+    fetch(`${import.meta.env.BASE_URL}content/site.json`)
       .then((response) => {
         if (!response.ok) throw new Error("Unable to load content");
         return response.json() as Promise<CmsContent>;
