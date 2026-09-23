@@ -141,6 +141,63 @@ function Home({ content }: { content: SiteContent }) {
   );
 }
 
+
+function RulesPage({ content }: { content: SiteContent }) {
+  const rules = content.rulesLanding;
+  const categories = [
+    "Community Conduct",
+    "Roleplay Standards",
+    "Characters",
+    "Combat & Hostile RP",
+    "Crime & Robbery",
+    "Medical, Injuries & Death",
+    "Government & Organizations",
+    "Economy & Exploits",
+    "Staff & Reports",
+    "Streaming & Content",
+  ];
+
+  return (
+    <section className="rules-shell">
+      <section className="rules-opening">
+        <p className="rules-kicker">OFFICIAL ROSEFIRE RULEBOOK</p>
+        <h1>{rules.title}</h1>
+        <div className="rules-opening-copy">
+          {rules.intro.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+          <p className="rules-principle">{rules.principle}</p>
+          <p className="rules-closing">{rules.closing}</p>
+        </div>
+      </section>
+
+      <section className="rules-intro-grid">
+        {rules.cards.map((card, index) => (
+          <article className="rules-intro-card" key={index}>
+            <span className="rules-card-number">0{index + 1}</span>
+            <h2>{card.title}</h2>
+            {card.body.map((paragraph, bodyIndex) => <p key={bodyIndex}>{paragraph}</p>)}
+            <strong>{card.emphasis}</strong>
+          </article>
+        ))}
+      </section>
+
+      <section className="rules-categories">
+        <p className="section-kicker">RULEBOOK</p>
+        <h2>{rules.categoriesTitle}</h2>
+        <p>{rules.categoriesIntro}</p>
+        <div className="rules-category-grid">
+          {categories.map((category, index) => (
+            <div className="rules-category-card" key={category}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{category}</strong>
+              <small>Content coming with the rules migration.</small>
+            </div>
+          ))}
+        </div>
+      </section>
+    </section>
+  );
+}
+
 function ContentPage({ content, pageKey }: { content: SiteContent; pageKey: PageKey }) {
   const page = content.pages[pageKey];
   return (
@@ -276,6 +333,35 @@ function Admin({
 
   const setFooter = (key: keyof SiteContent["footer"], value: string) =>
     setDraft((current) => ({ ...current, footer: { ...current.footer, [key]: value } }));
+
+  const setRulesLanding = (
+    field: "title" | "principle" | "closing" | "categoriesTitle" | "categoriesIntro" | "intro",
+    value: string,
+  ) =>
+    setDraft((current) => ({
+      ...current,
+      rulesLanding: {
+        ...current.rulesLanding,
+        [field]: field === "intro" ? value.split("\n\n").filter(Boolean) : value,
+      },
+    }));
+
+  const setRulesCard = (
+    index: number,
+    field: "title" | "body" | "emphasis",
+    value: string,
+  ) =>
+    setDraft((current) => ({
+      ...current,
+      rulesLanding: {
+        ...current.rulesLanding,
+        cards: current.rulesLanding.cards.map((card, cardIndex) =>
+          cardIndex === index
+            ? { ...card, [field]: field === "body" ? value.split("\n\n").filter(Boolean) : value }
+            : card
+        ),
+      },
+    }));
 
   const setTracker = (index: number, patch: Partial<TrackerItem>) =>
     setDraft((current) => ({
@@ -480,6 +566,39 @@ function Admin({
         ))}
       </section>
 
+      <section className="admin-panel">
+        <div className="admin-panel-heading"><p>Rules</p><h2>Rulebook Landing Page</h2></div>
+        <Field label="Main title" value={draft.rulesLanding.title} onChange={(v) => setRulesLanding("title", v)} />
+        <label className="admin-field full">
+          <span>Opening copy — blank line starts a new paragraph</span>
+          <textarea
+            className="large"
+            value={draft.rulesLanding.intro.join("\n\n")}
+            onChange={(e) => setRulesLanding("intro", e.target.value)}
+          />
+        </label>
+        <div className="admin-grid">
+          <Field label="Principle" value={draft.rulesLanding.principle} onChange={(v) => setRulesLanding("principle", v)} />
+          <Field label="Closing line" value={draft.rulesLanding.closing} onChange={(v) => setRulesLanding("closing", v)} />
+          <Field label="Sections heading" value={draft.rulesLanding.categoriesTitle} onChange={(v) => setRulesLanding("categoriesTitle", v)} />
+          <Field label="Sections intro" value={draft.rulesLanding.categoriesIntro} onChange={(v) => setRulesLanding("categoriesIntro", v)} />
+        </div>
+        {draft.rulesLanding.cards.map((card, index) => (
+          <div className="card-editor" key={index}>
+            <Field label={`Intro card ${index + 1} title`} value={card.title} onChange={(v) => setRulesCard(index, "title", v)} />
+            <label className="admin-field full">
+              <span>Card body — blank line starts a new paragraph</span>
+              <textarea
+                className="large"
+                value={card.body.join("\n\n")}
+                onChange={(e) => setRulesCard(index, "body", e.target.value)}
+              />
+            </label>
+            <Field label="Card emphasis" value={card.emphasis} onChange={(v) => setRulesCard(index, "emphasis", v)} />
+          </div>
+        ))}
+      </section>
+
       {(Object.keys(draft.pages) as PageKey[]).map((key) => {
         const page = draft.pages[key];
         return (
@@ -541,7 +660,7 @@ function App() {
   const page = useMemo(() => {
     if (path === "/") return <Home content={content} />;
     if (path === "/getting-started") return <ContentPage content={content} pageKey="gettingStarted" />;
-    if (path === "/rules") return <ContentPage content={content} pageKey="rules" />;
+    if (path === "/rules") return <RulesPage content={content} />;
     if (path === "/government") return <ContentPage content={content} pageKey="government" />;
     if (path === "/world") return <ContentPage content={content} pageKey="world" />;
     if (path === "/faq") return <ContentPage content={content} pageKey="faq" />;
