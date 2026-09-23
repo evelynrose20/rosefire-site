@@ -162,189 +162,188 @@
         "emphasis": "Players roleplay. Staff handle rule enforcement."
       }
     ],
-    "categoriesTitle": "RULEBOOK SECTIONS",
-    "categoriesIntro": "These are the first migrated Rosefire rule sections. More will be added as the remaining Nightrose rules are brought over and updated for the new setting.",
-    "sections": [
+    "groups": [
       {
-        "_block": "rule_section",
-        "number": "2",
-        "title": "Community Conduct",
-        "entries": [
+        "heading": "RULEBOOK SECTIONS",
+        "intro": "These are the first migrated Rosefire rule sections. More will be added as the remaining Nightrose rules are brought over and updated for the new setting.",
+        "sections": [
           {
-            "title": "Respect Other Players",
-            "body": [
-              "Treat other members of Rosefire with basic respect.",
-              "Harassment, targeted bullying, discriminatory attacks, threats, stalking, deliberately making another player uncomfortable, or repeatedly antagonizing someone OOC are not acceptable."
-            ],
-            "emphasis": "IC conflict does not justify OOC hostility. Characters can hate one another while their players remain perfectly civil."
-          },
-          {
-            "title": "Slurs & Discriminatory Content",
-            "body": [
-              "Do not use discriminatory slurs or degrading language targeting real-world protected characteristics as an excuse for roleplay.",
-              "Rosefire's setting does not require players to recreate racism, sexism, homophobia, transphobia, or similar real-world discrimination."
+            "number": "2",
+            "title": "Community Conduct",
+            "entries": [
+              {
+                "title": "Respect Other Players",
+                "body": [
+                  "Treat other members of Rosefire with basic respect.",
+                  "Harassment, targeted bullying, discriminatory attacks, threats, stalking, deliberately making another player uncomfortable, or repeatedly antagonizing someone OOC are not acceptable."
+                ],
+                "emphasis": "IC conflict does not justify OOC hostility. Characters can hate one another while their players remain perfectly civil."
+              },
+              {
+                "title": "Slurs & Discriminatory Content",
+                "body": [
+                  "Do not use discriminatory slurs or degrading language targeting real-world protected characteristics as an excuse for roleplay.",
+                  "Rosefire's setting does not require players to recreate racism, sexism, homophobia, transphobia, or similar real-world discrimination."
+                ]
+              },
+              {
+                "title": "Keep IC and OOC Separate",
+                "body": [
+                  "Do not carry IC arguments into Discord or OOC relationships into character interactions.",
+                  "Likewise, do not target someone's character because you dislike the player.",
+                  "If an RP situation becomes an OOC problem, use the appropriate support or report system rather than continuing the fight through RP."
+                ]
+              },
+              {
+                "title": "Don't Police Other People's RP",
+                "body": [
+                  "If you believe someone has broken a rule, report it.",
+                  "Do not interrupt scenes to argue rules, threaten reports, announce that someone is fail-RPing, or attempt to punish them yourself.",
+                  "Finish or safely disengage from the scene when reasonably possible and let staff handle the issue afterward."
+                ]
+              }
             ]
           },
           {
-            "title": "Keep IC and OOC Separate",
-            "body": [
-              "Do not carry IC arguments into Discord or OOC relationships into character interactions.",
-              "Likewise, do not target someone's character because you dislike the player.",
-              "If an RP situation becomes an OOC problem, use the appropriate support or report system rather than continuing the fight through RP."
+            "number": "3",
+            "title": "Roleplay Standards",
+            "entries": [
+              {
+                "title": "Stay In Character",
+                "body": [
+                  "While actively participating in RP, remain in character unless there is a legitimate reason to communicate OOC.",
+                  "Minor mistakes happen. Nobody is expected to perform perfectly.",
+                  "Repeatedly breaking character to complain, joke about mechanics, argue rules, or disrupt scenes is different."
+                ]
+              },
+              {
+                "title": "Value Your Character's Life",
+                "body": [
+                  "Your character should generally behave as though injury and death matter.",
+                  "Having a weapon pointed at you, being surrounded, or being seriously wounded should affect how your character behaves.",
+                  "This does not mean you must automatically obey every demand whenever someone produces a gun. Context matters.",
+                  "A hardened survivor may respond differently from a civilian. A desperate character may take risks. Someone may reasonably believe they have an opportunity to escape.",
+                  "What isn't acceptable is treating serious danger like it has no consequences simply because you know mechanically that respawning exists."
+                ]
+              },
+              {
+                "title": "Powergaming",
+                "body": [
+                  "Do not force actions or outcomes onto another character without giving them a reasonable opportunity to respond.",
+                  "You can attempt actions. You cannot unilaterally decide another player's response.",
+                  "Game mechanics also should not be exploited to force outcomes that would not make sense within RP."
+                ]
+              },
+              {
+                "title": "Metagaming",
+                "body": [
+                  "Do not use information your character did not reasonably obtain in character.",
+                  "That includes information from Discord, streams, another character, private organization channels, staff tools, or OOC conversations.",
+                  "Your characters do not share a brain. Information learned on Character A does not automatically become known by Character B."
+                ]
+              },
+              {
+                "title": "Stream Sniping",
+                "body": [
+                  "Do not use someone's livestream, recording, Discord activity, or other OOC information to locate them, discover what they're doing, learn hidden information, or gain an RP advantage."
+                ]
+              }
             ]
           },
           {
-            "title": "Don't Police Other People's RP",
-            "body": [
-              "If you believe someone has broken a rule, report it.",
-              "Do not interrupt scenes to argue rules, threaten reports, announce that someone is fail-RPing, or attempt to punish them yourself.",
-              "Finish or safely disengage from the scene when reasonably possible and let staff handle the issue afterward."
-            ]
-          }
-        ]
-      },
-      {
-        "_block": "rule_section",
-        "number": "3",
-        "title": "Roleplay Standards",
-        "entries": [
-          {
-            "title": "Stay In Character",
-            "body": [
-              "While actively participating in RP, remain in character unless there is a legitimate reason to communicate OOC.",
-              "Minor mistakes happen. Nobody is expected to perform perfectly.",
-              "Repeatedly breaking character to complain, joke about mechanics, argue rules, or disrupt scenes is different."
-            ]
-          },
-          {
-            "title": "Value Your Character's Life",
-            "body": [
-              "Your character should generally behave as though injury and death matter.",
-              "Having a weapon pointed at you, being surrounded, or being seriously wounded should affect how your character behaves.",
-              "This does not mean you must automatically obey every demand whenever someone produces a gun. Context matters.",
-              "A hardened survivor may respond differently from a civilian. A desperate character may take risks. Someone may reasonably believe they have an opportunity to escape.",
-              "What isn't acceptable is treating serious danger like it has no consequences simply because you know mechanically that respawning exists."
-            ]
-          },
-          {
-            "title": "Powergaming",
-            "body": [
-              "Do not force actions or outcomes onto another character without giving them a reasonable opportunity to respond.",
-              "You can attempt actions. You cannot unilaterally decide another player's response.",
-              "Game mechanics also should not be exploited to force outcomes that would not make sense within RP."
+            "number": "4",
+            "title": "Conflict & Violence",
+            "entries": [
+              {
+                "title": "Random Deathmatch (RDM)",
+                "body": [
+                  "Do not attack, shoot, or kill other characters without reasonable RP justification.",
+                  "Conflict should have context.",
+                  "Not every violent encounter requires twenty minutes of dialogue beforehand, especially when an existing conflict is already established, but violence should come from the story rather than boredom."
+                ]
+              },
+              {
+                "title": "Vehicle Deathmatch (VDM)",
+                "body": [
+                  "Do not intentionally use cars, trucks, motorcycles, aircraft, boats, or other vehicles to randomly injure or kill players without legitimate RP justification.",
+                  "Accidents happen. Deliberately running people down for entertainment is different."
+                ]
+              },
+              {
+                "title": "Escalation",
+                "body": [
+                  "Give conflict reasonable room to escalate.",
+                  "An insult does not ordinarily justify immediately shooting someone dead.",
+                  "Repeated threats, established feuds, robberies, violent confrontations, active pursuit, and similar circumstances may justify considerably faster escalation."
+                ],
+                "emphasis": "Context matters more than an artificial escalation checklist."
+              },
+              {
+                "title": "Revenge",
+                "body": [
+                  "Being injured, downed, arrested, robbed, or losing a confrontation does not give you permission to immediately hunt the other person down for revenge.",
+                  "Any continuing retaliation should make sense based on what your character remembers and what actually happened through RP."
+                ]
+              }
             ]
           },
           {
-            "title": "Metagaming",
-            "body": [
-              "Do not use information your character did not reasonably obtain in character.",
-              "That includes information from Discord, streams, another character, private organization channels, staff tools, or OOC conversations.",
-              "Your characters do not share a brain. Information learned on Character A does not automatically become known by Character B."
+            "number": "6",
+            "title": "Text & Voice Roleplay",
+            "entries": [
+              {
+                "title": "Text and Voice Are Both Valid",
+                "body": [
+                  "Rosefire supports text-based and voice-based roleplay.",
+                  "Neither method is considered lesser RP.",
+                  "Players may primarily communicate through text, primarily communicate through voice, or use a combination of both.",
+                  "Do not refuse to RP with, mock, disadvantage, or deliberately exclude someone simply because they use text instead of voice."
+                ]
+              },
+              {
+                "title": "Give Text Players Time to Respond",
+                "body": [
+                  "If someone is actively typing a response, give them a reasonable opportunity to finish.",
+                  "Do not exploit the additional time required to type by rapidly escalating a scene before the player can respond.",
+                  "Likewise, text players should make reasonable efforts not to leave scenes waiting unnecessarily when a short response would suffice."
+                ]
+              }
             ]
           },
           {
-            "title": "Stream Sniping",
-            "body": [
-              "Do not use someone's livestream, recording, Discord activity, or other OOC information to locate them, discover what they're doing, learn hidden information, or gain an RP advantage."
-            ]
-          }
-        ]
-      },
-      {
-        "_block": "rule_section",
-        "number": "4",
-        "title": "Conflict & Violence",
-        "entries": [
-          {
-            "title": "Random Deathmatch (RDM)",
-            "body": [
-              "Do not attack, shoot, or kill other characters without reasonable RP justification.",
-              "Conflict should have context.",
-              "Not every violent encounter requires twenty minutes of dialogue beforehand, especially when an existing conflict is already established, but violence should come from the story rather than boredom."
-            ]
-          },
-          {
-            "title": "Vehicle Deathmatch (VDM)",
-            "body": [
-              "Do not intentionally use cars, trucks, motorcycles, aircraft, boats, or other vehicles to randomly injure or kill players without legitimate RP justification.",
-              "Accidents happen. Deliberately running people down for entertainment is different."
-            ]
-          },
-          {
-            "title": "Escalation",
-            "body": [
-              "Give conflict reasonable room to escalate.",
-              "An insult does not ordinarily justify immediately shooting someone dead.",
-              "Repeated threats, established feuds, robberies, violent confrontations, active pursuit, and similar circumstances may justify considerably faster escalation."
-            ],
-            "emphasis": "Context matters more than an artificial escalation checklist."
-          },
-          {
-            "title": "Revenge",
-            "body": [
-              "Being injured, downed, arrested, robbed, or losing a confrontation does not give you permission to immediately hunt the other person down for revenge.",
-              "Any continuing retaliation should make sense based on what your character remembers and what actually happened through RP."
-            ]
-          }
-        ]
-      },
-      {
-        "_block": "rule_section",
-        "number": "6",
-        "title": "Text & Voice Roleplay",
-        "entries": [
-          {
-            "title": "Text and Voice Are Both Valid",
-            "body": [
-              "Rosefire supports text-based and voice-based roleplay.",
-              "Neither method is considered lesser RP.",
-              "Players may primarily communicate through text, primarily communicate through voice, or use a combination of both.",
-              "Do not refuse to RP with, mock, disadvantage, or deliberately exclude someone simply because they use text instead of voice."
-            ]
-          },
-          {
-            "title": "Give Text Players Time to Respond",
-            "body": [
-              "If someone is actively typing a response, give them a reasonable opportunity to finish.",
-              "Do not exploit the additional time required to type by rapidly escalating a scene before the player can respond.",
-              "Likewise, text players should make reasonable efforts not to leave scenes waiting unnecessarily when a short response would suffice."
-            ]
-          }
-        ]
-      },
-      {
-        "_block": "rule_section",
-        "number": "11",
-        "title": "Staff & Enforcement",
-        "entries": [
-          {
-            "title": "Staff Are Players Too",
-            "body": [
-              "Staff members do not receive special IC authority simply because they're staff.",
-              "Staff powers and information may not be used to benefit a character."
-            ]
-          },
-          {
-            "title": "Reports",
-            "body": [
-              "When reporting another player, provide as much useful context and evidence as reasonably possible.",
-              "A report is a request for staff to investigate—not proof that the accused player violated a rule."
-            ]
-          },
-          {
-            "title": "Staff Decisions",
-            "body": [
-              "Staff should consider context, severity, intent, previous behavior, available evidence, and the effect on other players when determining an appropriate response.",
-              "Not every mistake requires a ban.",
-              "Likewise, repeatedly exploiting technicalities or accumulating minor violations may justify stronger action when a pattern becomes clear."
-            ]
-          },
-          {
-            "title": "Appeals",
-            "body": [
-              "Players may appeal disciplinary action through the designated support system.",
-              "Appeals should be handled by someone capable of reviewing the original decision fairly.",
-              "Harassing staff, repeatedly opening tickets after an appeal has been resolved, or attempting to pressure individual staff members does not constitute an appeal."
+            "number": "11",
+            "title": "Staff & Enforcement",
+            "entries": [
+              {
+                "title": "Staff Are Players Too",
+                "body": [
+                  "Staff members do not receive special IC authority simply because they're staff.",
+                  "Staff powers and information may not be used to benefit a character."
+                ]
+              },
+              {
+                "title": "Reports",
+                "body": [
+                  "When reporting another player, provide as much useful context and evidence as reasonably possible.",
+                  "A report is a request for staff to investigate—not proof that the accused player violated a rule."
+                ]
+              },
+              {
+                "title": "Staff Decisions",
+                "body": [
+                  "Staff should consider context, severity, intent, previous behavior, available evidence, and the effect on other players when determining an appropriate response.",
+                  "Not every mistake requires a ban.",
+                  "Likewise, repeatedly exploiting technicalities or accumulating minor violations may justify stronger action when a pattern becomes clear."
+                ]
+              },
+              {
+                "title": "Appeals",
+                "body": [
+                  "Players may appeal disciplinary action through the designated support system.",
+                  "Appeals should be handled by someone capable of reviewing the original decision fairly.",
+                  "Harassing staff, repeatedly opening tickets after an appeal has been resolved, or attempting to pressure individual staff members does not constitute an appeal."
+                ]
+              }
             ]
           }
         ]
