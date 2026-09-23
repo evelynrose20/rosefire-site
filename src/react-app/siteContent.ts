@@ -32,6 +32,19 @@ export type RulesIntroCard = {
   emphasis: string;
 };
 
+export type RuleEntry = {
+  title: string;
+  body: string[];
+  emphasis?: string;
+};
+
+export type RuleSection = {
+  number: string;
+  title: string;
+  intro?: string;
+  entries: RuleEntry[];
+};
+
 export type RulesLanding = {
   title: string;
   intro: string[];
@@ -40,6 +53,7 @@ export type RulesLanding = {
   cards: RulesIntroCard[];
   categoriesTitle: string;
   categoriesIntro: string;
+  sections: RuleSection[];
 };
 
 export type SiteContent = {
@@ -162,44 +176,226 @@ export const defaultContent: SiteContent = {
   rulesLanding: {
     title: "ROSEFIRE COMMUNITY & ROLEPLAY RULES",
     intro: [
-      "Rosefire is built around collaborative storytelling, mutual respect, and creating a world where everyone's actions can contribute to the stories around them.",
-      "These rules are not intended to turn roleplay into a maze of technicalities. They exist to establish clear expectations, protect players, and give staff a consistent foundation when problems occur.",
-      "Staff should investigate situations rather than automatically assuming an accusation is true or false. When enforcement is necessary, players should understand what rule was involved and why their conduct crossed that line.",
-      "Not every possible situation can be anticipated by a written rule. When something is not specifically addressed, use reasonable judgment, respect the people around you, protect the roleplay, and do not exploit technicalities to harm the community.",
+      "Rosefire is built around collaborative storytelling, mutual respect, and the understanding that roleplay works best when everyone involved is trying to create a good story—not simply trying to win.",
+      "These rules are written from years of roleplay experience across different communities: good situations becoming great stories, and other situations falling apart because of unclear rules, poor communication, unnecessary hostility, or decisions made without understanding the full context.",
+      "The goal is not to create a massive rulebook where players are afraid that every action might violate some obscure subsection. The goal is to clearly establish what this community expects, protect the people who play here, and give staff consistent standards to work from when something goes wrong.",
+      "Context matters. Intent matters. Evidence matters. Staff should investigate situations rather than beginning with the assumption that an accusation is automatically true or false. When enforcement action is taken, staff should be able to identify what rule was violated and why.",
+      "At the same time, \"there isn't a rule specifically saying I can't\" is not permission to deliberately exploit loopholes, harass another player, or undermine the spirit of the community."
     ],
     principle: "\"There isn't a rule saying I can't\" is not permission to abuse a loophole.",
-    closing: "We are here to create stories together.",
+    closing: "Rosefire is a roleplay server. We are here to create stories together.",
     cards: [
       {
         title: "THE WORLD OF ROSEFIRE",
         body: [
-          "Rosefire is a post-collapse survival roleplay setting where the state has been declared but most institutions remain incomplete or absent.",
-          "You do not need to know hidden lore to join. Public setting information should be enough to create a character and begin playing.",
-          "A character's identity, background, or personal traits do not limit the stories they may pursue unless a specific in-world rule or roleplay consequence applies.",
+          "Rosefire is a fictional post-collapse setting. The state has been declared, but much of the world and its institutions remain incomplete, unstable, or absent.",
+          "A character's gender, race, sexuality, identity, or similar traits do not restrict what roles, professions, positions of authority, or stories they may pursue in Rosefire.",
+          "The setting is not an excuse for harassment, discrimination, forced degrading roleplay, or declaring another player's character to be fail-RP because of real-world prejudice."
         ],
-        emphasis: "Rosefire lore supports roleplay; it should not become a barrier to entering it.",
+        emphasis: "Rosefire's established lore takes precedence over real-world assumptions about who a character is allowed to be."
       },
       {
         title: "HOW TO USE THIS RULEBOOK",
         body: [
           "You are expected to understand the rules relevant to the roleplay you participate in, but you are not expected to memorize a giant legal document.",
-          "When you're uncertain, return to the basic principles: use reasonable judgment, respect other players, protect the roleplay, and do not exploit technicalities.",
-          "Specific sections below explain how those principles apply to common situations.",
+          "When these rules do not specifically address a situation, use reasonable judgment, respect the other people involved, protect the roleplay, and do not deliberately use technicalities to do something you already know is harmful to the community.",
+          "Staff may intervene in behavior that is clearly abusive, disruptive, exploitative, or harmful even when the exact situation was not anticipated when these rules were written. Staff are still expected to explain what conduct was inappropriate and why intervention was necessary."
         ],
-        emphasis: "Use reasonable judgment. Respect other players. Protect the roleplay.",
+        emphasis: "Use reasonable judgment. Respect other players. Protect the roleplay. Do not exploit technicalities."
       },
       {
         title: "WHEN SOMETHING GOES WRONG",
         body: [
           "Do not interrupt an active scene to argue rules, accuse someone of fail-RP, or threaten another player with staff action.",
-          "Finish the scene when reasonably possible, disengage safely if necessary, and use Rosefire's reporting process afterward.",
-          "Immediate safety concerns may always be brought to staff.",
+          "Finish the scene when reasonably possible, disengage safely if necessary, and use Rosefire's support or report system afterward.",
+          "Immediate safety concerns may always be brought to staff."
         ],
-        emphasis: "Players roleplay. Staff handle rule enforcement.",
-      },
+        emphasis: "Players roleplay. Staff handle rule enforcement."
+      }
     ],
     categoriesTitle: "RULEBOOK SECTIONS",
-    categoriesIntro: "The full rules will be organized below by topic as the existing rule set is migrated into Rosefire.",
+    categoriesIntro: "These are the first migrated Rosefire rule sections. More will be added as the remaining Nightrose rules are brought over and updated for the new setting.",
+    sections: [
+      {
+        number: "2",
+        title: "Community Conduct",
+        entries: [
+          {
+            title: "Respect Other Players",
+            body: [
+              "Treat other members of Rosefire with basic respect.",
+              "Harassment, targeted bullying, discriminatory attacks, threats, stalking, deliberately making another player uncomfortable, or repeatedly antagonizing someone OOC are not acceptable."
+            ],
+            emphasis: "IC conflict does not justify OOC hostility. Characters can hate one another while their players remain perfectly civil."
+          },
+          {
+            title: "Slurs & Discriminatory Content",
+            body: [
+              "Do not use discriminatory slurs or degrading language targeting real-world protected characteristics as an excuse for roleplay.",
+              "Rosefire's setting does not require players to recreate racism, sexism, homophobia, transphobia, or similar real-world discrimination."
+            ]
+          },
+          {
+            title: "Keep IC and OOC Separate",
+            body: [
+              "Do not carry IC arguments into Discord or OOC relationships into character interactions.",
+              "Likewise, do not target someone's character because you dislike the player.",
+              "If an RP situation becomes an OOC problem, use the appropriate support or report system rather than continuing the fight through RP."
+            ]
+          },
+          {
+            title: "Don't Police Other People's RP",
+            body: [
+              "If you believe someone has broken a rule, report it.",
+              "Do not interrupt scenes to argue rules, threaten reports, announce that someone is fail-RPing, or attempt to punish them yourself.",
+              "Finish or safely disengage from the scene when reasonably possible and let staff handle the issue afterward."
+            ]
+          }
+        ]
+      },
+      {
+        number: "3",
+        title: "Roleplay Standards",
+        entries: [
+          {
+            title: "Stay In Character",
+            body: [
+              "While actively participating in RP, remain in character unless there is a legitimate reason to communicate OOC.",
+              "Minor mistakes happen. Nobody is expected to perform perfectly.",
+              "Repeatedly breaking character to complain, joke about mechanics, argue rules, or disrupt scenes is different."
+            ]
+          },
+          {
+            title: "Value Your Character's Life",
+            body: [
+              "Your character should generally behave as though injury and death matter.",
+              "Having a weapon pointed at you, being surrounded, or being seriously wounded should affect how your character behaves.",
+              "This does not mean you must automatically obey every demand whenever someone produces a gun. Context matters.",
+              "A hardened survivor may respond differently from a civilian. A desperate character may take risks. Someone may reasonably believe they have an opportunity to escape.",
+              "What isn't acceptable is treating serious danger like it has no consequences simply because you know mechanically that respawning exists."
+            ]
+          },
+          {
+            title: "Powergaming",
+            body: [
+              "Do not force actions or outcomes onto another character without giving them a reasonable opportunity to respond.",
+              "You can attempt actions. You cannot unilaterally decide another player's response.",
+              "Game mechanics also should not be exploited to force outcomes that would not make sense within RP."
+            ]
+          },
+          {
+            title: "Metagaming",
+            body: [
+              "Do not use information your character did not reasonably obtain in character.",
+              "That includes information from Discord, streams, another character, private organization channels, staff tools, or OOC conversations.",
+              "Your characters do not share a brain. Information learned on Character A does not automatically become known by Character B."
+            ]
+          },
+          {
+            title: "Stream Sniping",
+            body: [
+              "Do not use someone's livestream, recording, Discord activity, or other OOC information to locate them, discover what they're doing, learn hidden information, or gain an RP advantage."
+            ]
+          }
+        ]
+      },
+      {
+        number: "4",
+        title: "Conflict & Violence",
+        entries: [
+          {
+            title: "Random Deathmatch (RDM)",
+            body: [
+              "Do not attack, shoot, or kill other characters without reasonable RP justification.",
+              "Conflict should have context.",
+              "Not every violent encounter requires twenty minutes of dialogue beforehand, especially when an existing conflict is already established, but violence should come from the story rather than boredom."
+            ]
+          },
+          {
+            title: "Vehicle Deathmatch (VDM)",
+            body: [
+              "Do not intentionally use cars, trucks, motorcycles, aircraft, boats, or other vehicles to randomly injure or kill players without legitimate RP justification.",
+              "Accidents happen. Deliberately running people down for entertainment is different."
+            ]
+          },
+          {
+            title: "Escalation",
+            body: [
+              "Give conflict reasonable room to escalate.",
+              "An insult does not ordinarily justify immediately shooting someone dead.",
+              "Repeated threats, established feuds, robberies, violent confrontations, active pursuit, and similar circumstances may justify considerably faster escalation."
+            ],
+            emphasis: "Context matters more than an artificial escalation checklist."
+          },
+          {
+            title: "Revenge",
+            body: [
+              "Being injured, downed, arrested, robbed, or losing a confrontation does not give you permission to immediately hunt the other person down for revenge.",
+              "Any continuing retaliation should make sense based on what your character remembers and what actually happened through RP."
+            ]
+          }
+        ]
+      },
+      {
+        number: "6",
+        title: "Text & Voice Roleplay",
+        entries: [
+          {
+            title: "Text and Voice Are Both Valid",
+            body: [
+              "Rosefire supports text-based and voice-based roleplay.",
+              "Neither method is considered lesser RP.",
+              "Players may primarily communicate through text, primarily communicate through voice, or use a combination of both.",
+              "Do not refuse to RP with, mock, disadvantage, or deliberately exclude someone simply because they use text instead of voice."
+            ]
+          },
+          {
+            title: "Give Text Players Time to Respond",
+            body: [
+              "If someone is actively typing a response, give them a reasonable opportunity to finish.",
+              "Do not exploit the additional time required to type by rapidly escalating a scene before the player can respond.",
+              "Likewise, text players should make reasonable efforts not to leave scenes waiting unnecessarily when a short response would suffice."
+            ]
+          }
+        ]
+      },
+      {
+        number: "11",
+        title: "Staff & Enforcement",
+        entries: [
+          {
+            title: "Staff Are Players Too",
+            body: [
+              "Staff members do not receive special IC authority simply because they're staff.",
+              "Staff powers and information may not be used to benefit a character."
+            ]
+          },
+          {
+            title: "Reports",
+            body: [
+              "When reporting another player, provide as much useful context and evidence as reasonably possible.",
+              "A report is a request for staff to investigate—not proof that the accused player violated a rule."
+            ]
+          },
+          {
+            title: "Staff Decisions",
+            body: [
+              "Staff should consider context, severity, intent, previous behavior, available evidence, and the effect on other players when determining an appropriate response.",
+              "Not every mistake requires a ban.",
+              "Likewise, repeatedly exploiting technicalities or accumulating minor violations may justify stronger action when a pattern becomes clear."
+            ]
+          },
+          {
+            title: "Appeals",
+            body: [
+              "Players may appeal disciplinary action through the designated support system.",
+              "Appeals should be handled by someone capable of reviewing the original decision fairly.",
+              "Harassing staff, repeatedly opening tickets after an appeal has been resolved, or attempting to pressure individual staff members does not constitute an appeal."
+            ]
+          }
+        ]
+      }
+    ]
   },
   pages: {
     gettingStarted: {
