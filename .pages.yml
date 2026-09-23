@@ -188,33 +188,43 @@ content:
             type: text
           - name: sections
             label: Rule Sections
-            type: object
+            type: block
             list:
               collapsible:
                 collapsed: true
                 summary: "{number}. {title}"
-            fields:
-              - name: number
-                type: string
-              - name: title
-                type: string
-              - name: intro
-                type: text
-              - name: entries
-                label: Rules
-                type: object
-                list:
-                  collapsible:
-                    collapsed: true
-                    summary: "{title}"
+            blockKey: _block
+            blocks:
+              - name: rule_section
+                label: Rule Section
                 fields:
-                  - name: title
+                  - name: number
+                    label: Section Number
                     type: string
-                  - name: body
+                  - name: title
+                    label: Section Title
+                    type: string
+                  - name: intro
+                    label: Section Introduction
                     type: text
-                    list: true
-                  - name: emphasis
-                    type: text
+                  - name: entries
+                    label: Rules
+                    type: object
+                    list:
+                      collapsible:
+                        collapsed: true
+                        summary: "{title}"
+                    fields:
+                      - name: title
+                        label: Rule Title
+                        type: string
+                      - name: body
+                        label: Rule Paragraphs
+                        type: text
+                        list: true
+                      - name: emphasis
+                        label: Highlighted Note
+                        type: text
 
       - name: pages
         label: Pages
