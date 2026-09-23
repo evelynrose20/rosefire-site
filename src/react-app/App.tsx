@@ -265,23 +265,6 @@ function ContentPage({ content, pageKey }: { content: SiteContent; pageKey: Page
   );
 }
 
-function Field({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <label className="admin-field">
-      <span>{label}</span>
-      <input value={value} onChange={(event) => onChange(event.target.value)} />
-    </label>
-  );
-}
-
 function Admin() {
   return (
     <section className="admin-shell">
