@@ -47,7 +47,7 @@ export type RuleSection = {
 
 export type RuleGroup = {
   heading: string;
-  intro: string;
+  intro?: string;
   sections: RuleSection[];
 };
 
