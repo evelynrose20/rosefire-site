@@ -27,6 +27,12 @@ content:
       - name: brand
         label: Branding
         type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            collapsed: true
+            summary: "Branding"
         fields:
           - name: name
             label: Site Name
@@ -39,7 +45,7 @@ content:
             type: string
 
       - name: navigation
-        label: Navigation
+        label: Navigation Links
         type: object
         list:
           collapsible:
@@ -55,6 +61,12 @@ content:
       - name: hero
         label: Homepage Hero
         type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            collapsed: true
+            summary: "Homepage Hero"
         fields:
           - name: kicker
             type: string
@@ -86,6 +98,12 @@ content:
       - name: state
         label: State Tracker
         type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            collapsed: true
+            summary: "State Tracker"
         fields:
           - name: statusLabel
             label: Status Label
@@ -154,6 +172,12 @@ content:
       - name: rulesLanding
         label: Rules
         type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            collapsed: true
+            summary: "Rules"
         fields:
           - name: title
             type: string
@@ -233,46 +257,40 @@ content:
       - name: pages
         label: Pages
         type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - name: gettingStarted
-            label: Getting Started
-            type: object
-            fields: &page_fields
-              - name: eyebrow
-                type: string
-              - name: title
-                type: string
-              - name: intro
-                type: text
-              - name: body
-                type: text
-                list: true
-              - name: calloutTitle
-                label: Callout Title
-                type: string
-              - name: calloutText
-                label: Callout Text
-                type: text
-          - name: rules
-            label: Rules Metadata
-            type: object
-            fields: *page_fields
-          - name: government
-            label: Government
-            type: object
-            fields: *page_fields
-          - name: world
-            label: World & Lore
-            type: object
-            fields: *page_fields
-          - name: faq
-            label: FAQ
-            type: object
-            fields: *page_fields
+          - name: key
+            label: Page Key
+            type: string
+            readonly: true
+          - name: eyebrow
+            type: string
+          - name: title
+            type: string
+          - name: intro
+            type: text
+          - name: body
+            type: text
+            list: true
+          - name: calloutTitle
+            label: Callout Title
+            type: string
+          - name: calloutText
+            label: Callout Text
+            type: text
 
       - name: footer
         label: Footer
         type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            collapsed: true
+            summary: "Footer"
         fields:
           - name: lineOne
             label: Footer Title
