@@ -373,6 +373,31 @@
               "number": "3",
               "title": "Property Destruction",
               "intro": "Do not destroy, dismantle, burn, sabotage, or deliberately wipe another player’s established property without significant RP justification.\n\nMajor destruction should generally represent the culmination of an existing story rather than the beginning of one.\n\nA long-running feud, faction conflict, criminal retaliation, or similar storyline may reasonably escalate to serious property damage.\n\nRandomly discovering someone’s home, business, camp, or vehicle and destroying it because your character is a criminal is not sufficient justification.\n\nThe larger the permanent consequence you impose on someone else’s story, the more RP should exist before it happens."
+            },
+            {
+              "number": "4",
+              "title": "Offline Targeting",
+              "intro": "Do not deliberately target another player’s property, storage, business, or other persistent assets because you know the player is offline.\n\nA player being absent from the server is not an invitation to bypass the roleplay that would normally accompany attacking their property.\n\nThis does not mean unattended property is magically protected from all interaction.\n\nCharacters may still discover, observe, investigate, or interact with things they encounter naturally through normal RP.\n\nThe problem is intentionally waiting for someone to disconnect or using OOC knowledge of their absence to make the attack easier."
+            },
+            {
+              "number": "5",
+              "title": "Repeat Targeting & Progression Griefing",
+              "intro": "Do not repeatedly target the same player, group, business, or property purely because they are an easy source of supplies or money.\n\nIndividual robberies may each appear reasonable on their own while the overall pattern becomes abusive.\n\nRepeated theft, destruction, or harassment that prevents another player from reasonably recovering or participating in the server may be treated as progression griefing.\n\nOngoing conflict is allowed.\n\nUsing an ongoing conflict as an excuse to repeatedly farm another player is not."
+            },
+            {
+              "number": "6",
+              "title": "Territory & Turf Claims",
+              "intro": "Characters, gangs, factions, settlements, or other organizations may claim territory as part of their RP.\n\nFor example:\n\n“This neighborhood belongs to us. Outsiders aren’t welcome.”\n\nThat is valid IC roleplay.\n\nIt does not mean:\n\n“You cannot come here because our Discord says this area belongs to us.”\n\nAn IC territorial claim does not create OOC ownership of part of the map.\n\nOther characters may enter claimed territory and accept the potential IC consequences of doing so.\n\nTerritorial claims may not be used to monopolize public resources, block access to major gameplay systems, or declare large portions of the map unavailable to everyone else.\n\nTerritory creates RP consequences—not private ownership of the game world."
+            },
+            {
+              "number": "7",
+              "title": "Remote-Area Conflict",
+              "intro": "Being far away from populated areas does not suspend Rosefire’s normal RP rules.\n\nBandits, survivors, law enforcement, factions, travelers, and others may encounter violence in remote areas, but conflict still requires appropriate RP context.\n\nThe wilderness, countryside, abandoned industrial areas, Cayo, and other isolated locations are not automatic RDM zones.\n\nLikewise, living or traveling somewhere remote does not make a character immune from being discovered, questioned, tracked, robbed, arrested, or pulled into other people’s stories."
+            },
+            {
+              "number": "8",
+              "title": "Crime Information & Metagaming",
+              "intro": "Do not use OOC information to locate players, hidden stashes, criminal hideouts, faction locations, rare resources, property, or other discoveries your character has not reasonably learned about.\n\nThat includes information from Discord, streams, another character, private channels, staff tools, or similar OOC sources.\n\nIf Rosefire intentionally publishes information as general gameplay guidance—such as where a basic public system begins—using that information is not metagaming.\n\nSecret or discovery-based information should remain part of exploration and RP."
             }
           ]
         }
