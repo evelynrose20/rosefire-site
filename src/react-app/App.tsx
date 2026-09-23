@@ -1,27 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-import {
-  CONTENT_STORAGE_KEY,
-  defaultContent,
-  type SiteContent,
-} from "./siteContent";
+import { defaultContent, type SiteContent, type TrackerItem } from "./siteContent";
 
-const pageLinks = [
-  ["/getting-started", "Start Here"],
-  ["/rules", "Rules"],
-  ["/government", "Government"],
-  ["/world", "World"],
-  ["/faq", "FAQ"],
-] as const;
-
-function loadContent(): SiteContent {
-  try {
-    const saved = localStorage.getItem(CONTENT_STORAGE_KEY);
-    return saved ? { ...defaultContent, ...JSON.parse(saved) } : defaultContent;
-  } catch {
-    return defaultContent;
-  }
-}
+type PageKey = keyof SiteContent["pages"];
 
 function navigate(path: string) {
   window.history.pushState({}, "", path);
@@ -43,12 +24,7 @@ function Link({
       href={href}
       className={className}
       onClick={(event) => {
-        if (
-          href.startsWith("/") &&
-          !event.ctrlKey &&
-          !event.metaKey &&
-          !event.shiftKey
-        ) {
+        if (href.startsWith("/") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
           event.preventDefault();
           navigate(href);
         }
@@ -59,33 +35,31 @@ function Link({
   );
 }
 
-function Header() {
+function Header({ content }: { content: SiteContent }) {
   return (
     <header className="site-header">
       <Link className="brand" href="/">
-        <span className="brand-mark">RF</span>
+        <span className="brand-mark">{content.brand.shortMark}</span>
         <span>
-          <strong>STATE OF ROSEFIRE</strong>
-          <small>OFFICIAL COMMUNITY PORTAL</small>
+          <strong>{content.brand.name}</strong>
+          <small>{content.brand.portalLabel}</small>
         </span>
       </Link>
       <nav className="nav">
-        {pageLinks.map(([href, label]) => (
-          <Link href={href} key={href}>
-            {label}
-          </Link>
+        {content.navigation.map((item) => (
+          <Link href={item.href} key={item.href}>{item.label}</Link>
         ))}
       </nav>
     </header>
   );
 }
 
-function Footer() {
+function Footer({ content }: { content: SiteContent }) {
   return (
     <footer>
       <div>
-        <strong>STATE OF ROSEFIRE</strong>
-        <p>A FiveM survival roleplay community.</p>
+        <strong>{content.footer.lineOne}</strong>
+        <p>{content.footer.lineTwo}</p>
       </div>
       <div className="footer-links">
         <Link href="/faq">FAQ</Link>
@@ -95,86 +69,69 @@ function Footer() {
   );
 }
 
-function StatusRow({
-  label,
-  value,
-  reforming,
-}: {
-  label: string;
-  value: string;
-  reforming?: boolean;
-}) {
+function StatusRow({ item }: { item: TrackerItem }) {
   return (
     <div className="status-row">
-      <dt>{label}</dt>
+      <dt>{item.label}</dt>
       <dd>
-        {reforming && <span className="mini-status" />}
-        {value}
+        <span className={`mini-status tone-${item.tone}`} />
+        {item.value}
       </dd>
     </div>
   );
 }
 
 function Home({ content }: { content: SiteContent }) {
-  const cards = [
-    ["/getting-started", "01", "New to Rosefire?", "Getting Started", "Everything a new survivor needs before stepping into Rosefire."],
-    ["/rules", "02", "Community Standard", "Server Rules", "The rules that keep roleplay fair, readable, and fun."],
-    ["/government", "03", "Rebuilding the State", "Government", "Institutions, public projects, notices, and the state as it takes shape."],
-    ["/world", "04", "Know the World", "Lore & Guides", "Learn the setting without needing homework just to join."],
-  ] as const;
-
   return (
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="kicker">{content.state.tagline.toUpperCase()}</p>
+          <p className="kicker">{content.hero.kicker}</p>
           <h1>
-            Rebuild. <span>Survive.</span>
+            {content.hero.lineOne} <span>{content.hero.accent}</span>
             <br />
-            Decide what comes next.
+            {content.hero.lineTwo}
           </h1>
-          <p className="lede">
-            The State of Rosefire is a persistent FiveM survival roleplay world set after the collapse.
-            Scavenge, trade, work, heal, build communities, and take part in a state finding its feet again.
-          </p>
+          <p className="lede">{content.hero.lede}</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/getting-started">Enter Rosefire</Link>
-            <Link className="button secondary" href="/rules">Read the rules</Link>
+            <Link className="button primary" href={content.hero.primaryHref}>
+              {content.hero.primaryLabel}
+            </Link>
+            <Link className="button secondary" href={content.hero.secondaryHref}>
+              {content.hero.secondaryLabel}
+            </Link>
           </div>
         </div>
 
         <aside className="state-card">
           <div className="seal">
-            <span className="seal-ring">ROSEFIRE</span>
-            <strong>R</strong>
-            <small>EST. AFTER THE FALL</small>
+            <span className="seal-ring">{content.state.sealTop}</span>
+            <strong>{content.brand.shortMark.slice(0, 1)}</strong>
+            <small>{content.state.sealBottom}</small>
           </div>
-          <p className="status-label">STATE STATUS</p>
-          <p className="status-value"><span /> {content.state.status.toUpperCase()}</p>
+          <p className="status-label">{content.state.statusLabel}</p>
+          <p className="status-value"><span /> {content.state.status}</p>
           <dl>
-            <StatusRow label="Capital" value={content.state.capital} reforming />
-            <StatusRow label="Counties" value={content.state.counties} reforming />
-            <StatusRow label="Security" value={content.state.security} reforming />
+            {content.state.tracker.map((item, index) => (
+              <StatusRow item={item} key={`${item.label}-${index}`} />
+            ))}
           </dl>
-          <p className="state-card-note">
-            Security remains tied to Merryweather-era remnants. Cerberus State Guard is not yet formed.
-          </p>
         </aside>
       </section>
 
       <section className="notice">
-        <span>PUBLIC NOTICE // ROSEFIRE TRANSITION</span>
+        <span>{content.state.noticeLabel}</span>
         <p>{content.state.notice}</p>
       </section>
 
       <section className="cards">
-        {cards.map(([href, index, eyebrow, title, text]) => (
-          <Link className="portal-card" href={href} key={href}>
-            <span className="card-index">{index}</span>
+        {content.cards.map((card) => (
+          <Link className="portal-card" href={card.href} key={card.index}>
+            <span className="card-index">{card.index}</span>
             <div>
-              <p>{eyebrow}</p>
-              <h2>{title}</h2>
-              <span>{text}</span>
+              <p>{card.eyebrow}</p>
+              <h2>{card.title}</h2>
+              <span>{card.text}</span>
             </div>
             <strong>↗</strong>
           </Link>
@@ -184,27 +141,19 @@ function Home({ content }: { content: SiteContent }) {
   );
 }
 
-function ContentPage({
-  content,
-  pageKey,
-}: {
-  content: SiteContent;
-  pageKey: keyof SiteContent["pages"];
-}) {
+function ContentPage({ content, pageKey }: { content: SiteContent; pageKey: PageKey }) {
   const page = content.pages[pageKey];
   return (
     <section className="page-shell">
-      <p className="section-kicker">STATE OF ROSEFIRE</p>
+      <p className="section-kicker">{page.eyebrow}</p>
       <h1>{page.title}</h1>
       <p className="page-intro">{page.intro}</p>
       <div className="page-body">
-        {page.body.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
+        {page.body.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
       </div>
       <div className="page-callout">
-        <strong>Page status</strong>
-        <span>This page is live and ready for its full Rosefire content pass.</span>
+        <strong>{page.calloutTitle}</strong>
+        <span>{page.calloutText}</span>
       </div>
     </section>
   );
@@ -227,6 +176,62 @@ function Field({
   );
 }
 
+function Login({ onLogin }: { onLogin: () => void }) {
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [configured, setConfigured] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/admin/session")
+      .then((response) => response.json() as Promise<{ configured: boolean }>)
+      .then((data) => setConfigured(data.configured))
+      .catch(() => setConfigured(false));
+  }, []);
+
+  const submit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setMessage("Signing in…");
+    const response = await fetch("/api/admin/login", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+    const data = await response.json() as { error?: string };
+    if (!response.ok) {
+      setMessage(data.error || "Unable to sign in.");
+      return;
+    }
+    setMessage("");
+    onLogin();
+  };
+
+  return (
+    <section className="login-shell">
+      <p className="section-kicker">ROSEFIRE CMS</p>
+      <h1>Admin Login</h1>
+      <p>Use the private dashboard password to edit and publish the entire public portal.</p>
+      {!configured && (
+        <div className="admin-message">
+          Cloudflare secrets still need to be configured before login can work.
+        </div>
+      )}
+      <form className="login-card" onSubmit={submit}>
+        <label className="admin-field">
+          <span>Password</span>
+          <input
+            type="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </label>
+        <button className="button primary" type="submit">Sign in</button>
+        {message && <p className="login-message">{message}</p>}
+      </form>
+    </section>
+  );
+}
+
 function Admin({
   content,
   setContent,
@@ -234,21 +239,76 @@ function Admin({
   content: SiteContent;
   setContent: (content: SiteContent) => void;
 }) {
+  const [authenticated, setAuthenticated] = useState<boolean | null>(null);
   const [draft, setDraft] = useState<SiteContent>(content);
   const [message, setMessage] = useState("");
 
-  const updateState = (key: keyof SiteContent["state"], value: string) => {
-    setDraft((current) => ({
-      ...current,
-      state: { ...current.state, [key]: value },
-    }));
+  const checkSession = async () => {
+    const response = await fetch("/api/admin/session");
+    const data = await response.json() as { authenticated: boolean };
+    setAuthenticated(data.authenticated);
   };
 
-  const updatePage = (
-    key: keyof SiteContent["pages"],
-    field: "title" | "intro" | "body",
+  useEffect(() => {
+    void checkSession();
+  }, []);
+
+  useEffect(() => {
+    setDraft(content);
+  }, [content]);
+
+  if (authenticated === null) {
+    return <section className="admin-shell"><p>Loading dashboard…</p></section>;
+  }
+
+  if (!authenticated) {
+    return <Login onLogin={() => setAuthenticated(true)} />;
+  }
+
+  const setBrand = (key: keyof SiteContent["brand"], value: string) =>
+    setDraft((current) => ({ ...current, brand: { ...current.brand, [key]: value } }));
+
+  const setHero = (key: keyof SiteContent["hero"], value: string) =>
+    setDraft((current) => ({ ...current, hero: { ...current.hero, [key]: value } }));
+
+  const setState = (key: Exclude<keyof SiteContent["state"], "tracker">, value: string) =>
+    setDraft((current) => ({ ...current, state: { ...current.state, [key]: value } }));
+
+  const setFooter = (key: keyof SiteContent["footer"], value: string) =>
+    setDraft((current) => ({ ...current, footer: { ...current.footer, [key]: value } }));
+
+  const setTracker = (index: number, patch: Partial<TrackerItem>) =>
+    setDraft((current) => ({
+      ...current,
+      state: {
+        ...current.state,
+        tracker: current.state.tracker.map((item, itemIndex) =>
+          itemIndex === index ? { ...item, ...patch } : item
+        ),
+      },
+    }));
+
+  const setNav = (index: number, field: "label" | "href", value: string) =>
+    setDraft((current) => ({
+      ...current,
+      navigation: current.navigation.map((item, itemIndex) =>
+        itemIndex === index ? { ...item, [field]: value } : item
+      ),
+    }));
+
+  const setCard = (index: number, field: keyof SiteContent["cards"][number], value: string) =>
+    setDraft((current) => ({
+      ...current,
+      cards: current.cards.map((card, cardIndex) =>
+        cardIndex === index ? { ...card, [field]: value } : card
+      ),
+    }));
+
+  const setPage = (
+    key: PageKey,
+    field: keyof SiteContent["pages"][PageKey],
     value: string,
-  ) => {
+  ) =>
     setDraft((current) => ({
       ...current,
       pages: {
@@ -259,29 +319,27 @@ function Admin({
         },
       },
     }));
-  };
 
-  const save = () => {
-    localStorage.setItem(CONTENT_STORAGE_KEY, JSON.stringify(draft));
+  const publish = async () => {
+    setMessage("Publishing…");
+    const response = await fetch("/api/admin/content", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(draft),
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({ error: "Publish failed." })) as { error?: string };
+      setMessage(data.error || "Publish failed.");
+      if (response.status === 401) setAuthenticated(false);
+      return;
+    }
     setContent(draft);
-    setMessage("Draft saved in this browser.");
+    setMessage("Published. The public site is updated.");
   };
 
-  const reset = () => {
-    localStorage.removeItem(CONTENT_STORAGE_KEY);
-    setDraft(defaultContent);
-    setContent(defaultContent);
-    setMessage("Browser draft reset to the live defaults.");
-  };
-
-  const exportJson = () => {
-    const blob = new Blob([JSON.stringify(draft, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "rosefire-content.json";
-    link.click();
-    URL.revokeObjectURL(url);
+  const logout = async () => {
+    await fetch("/api/admin/logout", { method: "POST" });
+    setAuthenticated(false);
   };
 
   return (
@@ -291,72 +349,193 @@ function Admin({
           <p className="section-kicker">ROSEFIRE CMS</p>
           <h1>Admin Dashboard</h1>
           <p>
-            Edit site copy without hunting through components. For now, saves are a safe browser-only
-            draft; the next step is wiring publishing to Cloudflare storage with login protection.
+            Everything public-facing on the portal can be edited here and published to persistent
+            Cloudflare storage.
           </p>
         </div>
         <div className="admin-actions">
-          <button className="button primary" onClick={save}>Save Draft</button>
-          <button className="button secondary" onClick={exportJson}>Export JSON</button>
-          <button className="text-button" onClick={reset}>Reset Draft</button>
+          <button className="button primary" onClick={publish}>Publish Changes</button>
+          <button className="text-button" onClick={logout}>Sign out</button>
         </div>
       </div>
 
       {message && <div className="admin-message">{message}</div>}
 
       <section className="admin-panel">
-        <div className="admin-panel-heading">
-          <p>Homepage</p>
-          <h2>State Status Card</h2>
-        </div>
+        <div className="admin-panel-heading"><p>Global</p><h2>Brand</h2></div>
         <div className="admin-grid">
-          <Field label="State status" value={draft.state.status} onChange={(v) => updateState("status", v)} />
-          <Field label="Capital" value={draft.state.capital} onChange={(v) => updateState("capital", v)} />
-          <Field label="Counties" value={draft.state.counties} onChange={(v) => updateState("counties", v)} />
-          <Field label="Security" value={draft.state.security} onChange={(v) => updateState("security", v)} />
+          <Field label="Site name" value={draft.brand.name} onChange={(v) => setBrand("name", v)} />
+          <Field label="Short mark" value={draft.brand.shortMark} onChange={(v) => setBrand("shortMark", v)} />
+          <Field label="Portal label" value={draft.brand.portalLabel} onChange={(v) => setBrand("portalLabel", v)} />
+        </div>
+      </section>
+
+      <section className="admin-panel">
+        <div className="admin-panel-heading"><p>Homepage</p><h2>Hero</h2></div>
+        <div className="admin-grid">
+          <Field label="Kicker" value={draft.hero.kicker} onChange={(v) => setHero("kicker", v)} />
+          <Field label="Headline line 1" value={draft.hero.lineOne} onChange={(v) => setHero("lineOne", v)} />
+          <Field label="Accent word" value={draft.hero.accent} onChange={(v) => setHero("accent", v)} />
+          <Field label="Headline line 2" value={draft.hero.lineTwo} onChange={(v) => setHero("lineTwo", v)} />
+          <Field label="Primary button" value={draft.hero.primaryLabel} onChange={(v) => setHero("primaryLabel", v)} />
+          <Field label="Primary link" value={draft.hero.primaryHref} onChange={(v) => setHero("primaryHref", v)} />
+          <Field label="Secondary button" value={draft.hero.secondaryLabel} onChange={(v) => setHero("secondaryLabel", v)} />
+          <Field label="Secondary link" value={draft.hero.secondaryHref} onChange={(v) => setHero("secondaryHref", v)} />
         </div>
         <label className="admin-field full">
-          <span>Public notice</span>
-          <textarea value={draft.state.notice} onChange={(e) => updateState("notice", e.target.value)} />
+          <span>Hero description</span>
+          <textarea value={draft.hero.lede} onChange={(e) => setHero("lede", e.target.value)} />
         </label>
       </section>
 
-      {(Object.keys(draft.pages) as Array<keyof SiteContent["pages"]>).map((key) => {
+      <section className="admin-panel">
+        <div className="admin-panel-heading"><p>Homepage</p><h2>State Tracker</h2></div>
+        <div className="admin-grid">
+          <Field label="Status label" value={draft.state.statusLabel} onChange={(v) => setState("statusLabel", v)} />
+          <Field label="Overall status" value={draft.state.status} onChange={(v) => setState("status", v)} />
+          <Field label="Seal top" value={draft.state.sealTop} onChange={(v) => setState("sealTop", v)} />
+          <Field label="Seal bottom" value={draft.state.sealBottom} onChange={(v) => setState("sealBottom", v)} />
+          <Field label="Notice label" value={draft.state.noticeLabel} onChange={(v) => setState("noticeLabel", v)} />
+        </div>
+        <label className="admin-field full">
+          <span>Public notice</span>
+          <textarea value={draft.state.notice} onChange={(e) => setState("notice", e.target.value)} />
+        </label>
+
+        <div className="tracker-editor">
+          {draft.state.tracker.map((item, index) => (
+            <div className="tracker-edit-row" key={index}>
+              <input value={item.label} onChange={(e) => setTracker(index, { label: e.target.value })} />
+              <input value={item.value} onChange={(e) => setTracker(index, { value: e.target.value })} />
+              <select
+                value={item.tone}
+                onChange={(e) => setTracker(index, { tone: e.target.value as TrackerItem["tone"] })}
+              >
+                <option value="declared">Declared</option>
+                <option value="stagnant">Stagnant</option>
+                <option value="limited">Limited</option>
+                <option value="unformed">Unformed</option>
+              </select>
+              <button
+                className="remove-button"
+                onClick={() =>
+                  setDraft((current) => ({
+                    ...current,
+                    state: {
+                      ...current.state,
+                      tracker: current.state.tracker.filter((_, i) => i !== index),
+                    },
+                  }))
+                }
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+        </div>
+        <button
+          className="button secondary"
+          onClick={() =>
+            setDraft((current) => ({
+              ...current,
+              state: {
+                ...current.state,
+                tracker: [
+                  ...current.state.tracker,
+                  { label: "New area", value: "Not established", tone: "unformed" },
+                ],
+              },
+            }))
+          }
+        >
+          Add Tracker Item
+        </button>
+      </section>
+
+      <section className="admin-panel">
+        <div className="admin-panel-heading"><p>Global</p><h2>Navigation</h2></div>
+        {draft.navigation.map((item, index) => (
+          <div className="admin-grid compact" key={index}>
+            <Field label="Label" value={item.label} onChange={(v) => setNav(index, "label", v)} />
+            <Field label="Link" value={item.href} onChange={(v) => setNav(index, "href", v)} />
+          </div>
+        ))}
+      </section>
+
+      <section className="admin-panel">
+        <div className="admin-panel-heading"><p>Homepage</p><h2>Portal Cards</h2></div>
+        {draft.cards.map((card, index) => (
+          <div className="card-editor" key={index}>
+            <div className="admin-grid">
+              <Field label="Index" value={card.index} onChange={(v) => setCard(index, "index", v)} />
+              <Field label="Eyebrow" value={card.eyebrow} onChange={(v) => setCard(index, "eyebrow", v)} />
+              <Field label="Title" value={card.title} onChange={(v) => setCard(index, "title", v)} />
+              <Field label="Link" value={card.href} onChange={(v) => setCard(index, "href", v)} />
+            </div>
+            <label className="admin-field full">
+              <span>Description</span>
+              <textarea value={card.text} onChange={(e) => setCard(index, "text", e.target.value)} />
+            </label>
+          </div>
+        ))}
+      </section>
+
+      {(Object.keys(draft.pages) as PageKey[]).map((key) => {
         const page = draft.pages[key];
         return (
           <section className="admin-panel" key={key}>
-            <div className="admin-panel-heading">
-              <p>Page</p>
-              <h2>{page.title}</h2>
+            <div className="admin-panel-heading"><p>Page</p><h2>{page.title}</h2></div>
+            <div className="admin-grid">
+              <Field label="Eyebrow" value={page.eyebrow} onChange={(v) => setPage(key, "eyebrow", v)} />
+              <Field label="Title" value={page.title} onChange={(v) => setPage(key, "title", v)} />
+              <Field label="Callout title" value={page.calloutTitle} onChange={(v) => setPage(key, "calloutTitle", v)} />
+              <Field label="Callout text" value={page.calloutText} onChange={(v) => setPage(key, "calloutText", v)} />
             </div>
-            <Field label="Title" value={page.title} onChange={(v) => updatePage(key, "title", v)} />
             <label className="admin-field full">
               <span>Intro</span>
-              <textarea value={page.intro} onChange={(e) => updatePage(key, "intro", e.target.value)} />
+              <textarea value={page.intro} onChange={(e) => setPage(key, "intro", e.target.value)} />
             </label>
             <label className="admin-field full">
-              <span>Body — separate paragraphs with a blank line</span>
+              <span>Body — blank line starts a new paragraph</span>
               <textarea
                 className="large"
                 value={page.body.join("\n\n")}
-                onChange={(e) => updatePage(key, "body", e.target.value)}
+                onChange={(e) => setPage(key, "body", e.target.value)}
               />
             </label>
           </section>
         );
       })}
+
+      <section className="admin-panel">
+        <div className="admin-panel-heading"><p>Global</p><h2>Footer</h2></div>
+        <div className="admin-grid">
+          <Field label="Footer title" value={draft.footer.lineOne} onChange={(v) => setFooter("lineOne", v)} />
+          <Field label="Footer line" value={draft.footer.lineTwo} onChange={(v) => setFooter("lineTwo", v)} />
+        </div>
+      </section>
     </section>
   );
 }
 
 function App() {
   const [path, setPath] = useState(window.location.pathname);
-  const [content, setContent] = useState<SiteContent>(() => loadContent());
+  const [content, setContent] = useState<SiteContent>(defaultContent);
 
   useEffect(() => {
     const handle = () => setPath(window.location.pathname);
     window.addEventListener("popstate", handle);
     return () => window.removeEventListener("popstate", handle);
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/content")
+      .then((response) => {
+        if (!response.ok) throw new Error("Unable to load content");
+        return response.json() as Promise<SiteContent>;
+      })
+      .then(setContent)
+      .catch(() => setContent(defaultContent));
   }, []);
 
   const page = useMemo(() => {
@@ -379,9 +558,9 @@ function App() {
 
   return (
     <main>
-      <Header />
+      <Header content={content} />
       {page}
-      <Footer />
+      <Footer content={content} />
     </main>
   );
 }
