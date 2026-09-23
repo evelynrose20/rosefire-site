@@ -39,6 +39,7 @@ export type RuleEntry = {
 };
 
 export type RuleSection = {
+  _block: "rule_section";
   number: string;
   title: string;
   intro?: string;
@@ -217,6 +218,7 @@ export const defaultContent: SiteContent = {
     categoriesIntro: "These are the first migrated Rosefire rule sections. More will be added as the remaining Nightrose rules are brought over and updated for the new setting.",
     sections: [
       {
+        _block: "rule_section",
         number: "2",
         title: "Community Conduct",
         entries: [
@@ -254,6 +256,7 @@ export const defaultContent: SiteContent = {
         ]
       },
       {
+        _block: "rule_section",
         number: "3",
         title: "Roleplay Standards",
         entries: [
@@ -300,6 +303,7 @@ export const defaultContent: SiteContent = {
         ]
       },
       {
+        _block: "rule_section",
         number: "4",
         title: "Conflict & Violence",
         entries: [
@@ -337,6 +341,7 @@ export const defaultContent: SiteContent = {
         ]
       },
       {
+        _block: "rule_section",
         number: "6",
         title: "Text & Voice Roleplay",
         entries: [
@@ -360,6 +365,7 @@ export const defaultContent: SiteContent = {
         ]
       },
       {
+        _block: "rule_section",
         number: "11",
         title: "Staff & Enforcement",
         entries: [
