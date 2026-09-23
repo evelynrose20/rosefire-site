@@ -1,0 +1,268 @@
+media:
+  input: public/uploads
+  output: /uploads
+  rename: safe
+
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "cms: create {path}"
+      update: "cms: update {path}"
+      delete: "cms: delete {path}"
+      rename: "cms: rename {oldPath} -> {newPath}"
+
+content:
+  - name: rosefire_site
+    label: Rosefire Site
+    type: file
+    path: public/content/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: brand
+        label: Branding
+        type: object
+        fields:
+          - name: name
+            label: Site Name
+            type: string
+          - name: shortMark
+            label: Short Mark
+            type: string
+          - name: portalLabel
+            label: Portal Label
+            type: string
+
+      - name: navigation
+        label: Navigation
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            type: string
+          - name: href
+            label: Link
+            type: string
+
+      - name: hero
+        label: Homepage Hero
+        type: object
+        fields:
+          - name: kicker
+            type: string
+          - name: lineOne
+            label: Headline Line One
+            type: string
+          - name: accent
+            label: Accent Word
+            type: string
+          - name: lineTwo
+            label: Headline Line Two
+            type: string
+          - name: lede
+            label: Description
+            type: text
+          - name: primaryLabel
+            label: Primary Button
+            type: string
+          - name: primaryHref
+            label: Primary Button Link
+            type: string
+          - name: secondaryLabel
+            label: Secondary Button
+            type: string
+          - name: secondaryHref
+            label: Secondary Button Link
+            type: string
+
+      - name: state
+        label: State Tracker
+        type: object
+        fields:
+          - name: statusLabel
+            label: Status Label
+            type: string
+          - name: status
+            label: Overall Status
+            type: string
+          - name: sealTop
+            label: Seal Top
+            type: string
+          - name: sealBottom
+            label: Seal Bottom
+            type: string
+          - name: noticeLabel
+            label: Notice Label
+            type: string
+          - name: notice
+            label: Public Notice
+            type: text
+          - name: tracker
+            label: Tracker Items
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label} — {value}"
+            fields:
+              - name: label
+                type: string
+              - name: value
+                type: string
+              - name: tone
+                type: select
+                options:
+                  values:
+                    - name: declared
+                      label: Declared
+                    - name: stagnant
+                      label: Stagnant
+                    - name: limited
+                      label: Limited
+                    - name: unformed
+                      label: Unformed
+
+      - name: cards
+        label: Homepage Cards
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index} — {title}"
+        fields:
+          - name: index
+            type: string
+          - name: eyebrow
+            type: string
+          - name: title
+            type: string
+          - name: text
+            label: Description
+            type: text
+          - name: href
+            label: Link
+            type: string
+
+      - name: rulesLanding
+        label: Rules
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: intro
+            label: Opening Paragraphs
+            type: text
+            list: true
+          - name: principle
+            type: text
+          - name: closing
+            type: text
+          - name: cards
+            label: Rulebook Intro Cards
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                type: string
+              - name: body
+                type: text
+                list: true
+              - name: emphasis
+                type: text
+          - name: categoriesTitle
+            label: Sections Heading
+            type: string
+          - name: categoriesIntro
+            label: Sections Introduction
+            type: text
+          - name: sections
+            label: Rule Sections
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{number}. {title}"
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: intro
+                type: text
+              - name: entries
+                label: Rules
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+                fields:
+                  - name: title
+                    type: string
+                  - name: body
+                    type: text
+                    list: true
+                  - name: emphasis
+                    type: text
+
+      - name: pages
+        label: Pages
+        type: object
+        fields:
+          - name: gettingStarted
+            label: Getting Started
+            type: object
+            fields: &page_fields
+              - name: eyebrow
+                type: string
+              - name: title
+                type: string
+              - name: intro
+                type: text
+              - name: body
+                type: text
+                list: true
+              - name: calloutTitle
+                label: Callout Title
+                type: string
+              - name: calloutText
+                label: Callout Text
+                type: text
+          - name: rules
+            label: Rules Metadata
+            type: object
+            fields: *page_fields
+          - name: government
+            label: Government
+            type: object
+            fields: *page_fields
+          - name: world
+            label: World & Lore
+            type: object
+            fields: *page_fields
+          - name: faq
+            label: FAQ
+            type: object
+            fields: *page_fields
+
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: lineOne
+            label: Footer Title
+            type: string
+          - name: lineTwo
+            label: Footer Text
+            type: string
