@@ -26,6 +26,22 @@ export type ContentPage = {
   calloutText: string;
 };
 
+export type RulesIntroCard = {
+  title: string;
+  body: string[];
+  emphasis: string;
+};
+
+export type RulesLanding = {
+  title: string;
+  intro: string[];
+  principle: string;
+  closing: string;
+  cards: RulesIntroCard[];
+  categoriesTitle: string;
+  categoriesIntro: string;
+};
+
 export type SiteContent = {
   brand: {
     name: string;
@@ -54,6 +70,7 @@ export type SiteContent = {
     tracker: TrackerItem[];
   };
   cards: PortalCard[];
+  rulesLanding: RulesLanding;
   pages: {
     gettingStarted: ContentPage;
     rules: ContentPage;
@@ -142,6 +159,48 @@ export const defaultContent: SiteContent = {
       href: "/world",
     },
   ],
+  rulesLanding: {
+    title: "ROSEFIRE COMMUNITY & ROLEPLAY RULES",
+    intro: [
+      "Rosefire is built around collaborative storytelling, mutual respect, and creating a world where everyone's actions can contribute to the stories around them.",
+      "These rules are not intended to turn roleplay into a maze of technicalities. They exist to establish clear expectations, protect players, and give staff a consistent foundation when problems occur.",
+      "Staff should investigate situations rather than automatically assuming an accusation is true or false. When enforcement is necessary, players should understand what rule was involved and why their conduct crossed that line.",
+      "Not every possible situation can be anticipated by a written rule. When something is not specifically addressed, use reasonable judgment, respect the people around you, protect the roleplay, and do not exploit technicalities to harm the community.",
+    ],
+    principle: "\"There isn't a rule saying I can't\" is not permission to abuse a loophole.",
+    closing: "We are here to create stories together.",
+    cards: [
+      {
+        title: "THE WORLD OF ROSEFIRE",
+        body: [
+          "Rosefire is a post-collapse survival roleplay setting where the state has been declared but most institutions remain incomplete or absent.",
+          "You do not need to know hidden lore to join. Public setting information should be enough to create a character and begin playing.",
+          "A character's identity, background, or personal traits do not limit the stories they may pursue unless a specific in-world rule or roleplay consequence applies.",
+        ],
+        emphasis: "Rosefire lore supports roleplay; it should not become a barrier to entering it.",
+      },
+      {
+        title: "HOW TO USE THIS RULEBOOK",
+        body: [
+          "You are expected to understand the rules relevant to the roleplay you participate in, but you are not expected to memorize a giant legal document.",
+          "When you're uncertain, return to the basic principles: use reasonable judgment, respect other players, protect the roleplay, and do not exploit technicalities.",
+          "Specific sections below explain how those principles apply to common situations.",
+        ],
+        emphasis: "Use reasonable judgment. Respect other players. Protect the roleplay.",
+      },
+      {
+        title: "WHEN SOMETHING GOES WRONG",
+        body: [
+          "Do not interrupt an active scene to argue rules, accuse someone of fail-RP, or threaten another player with staff action.",
+          "Finish the scene when reasonably possible, disengage safely if necessary, and use Rosefire's reporting process afterward.",
+          "Immediate safety concerns may always be brought to staff.",
+        ],
+        emphasis: "Players roleplay. Staff handle rule enforcement.",
+      },
+    ],
+    categoriesTitle: "RULEBOOK SECTIONS",
+    categoriesIntro: "The full rules will be organized below by topic as the existing rule set is migrated into Rosefire.",
+  },
   pages: {
     gettingStarted: {
       eyebrow: "START HERE",
