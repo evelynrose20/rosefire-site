@@ -362,42 +362,208 @@
             {
               "number": "1",
               "title": "Robbery & Theft",
-              "intro": "Players may rob or steal from other characters when there is reasonable RP context and the relevant game mechanics allow it.\n\nRobberies should make sense for the situation.\n\nTaking money, supplies, weapons, valuables, or other reasonable items during a robbery may be appropriate.\n\nSystematically stripping another player of everything they own, repeatedly targeting the same player purely for supplies, or treating every encounter as an opportunity to empty someone’s inventory is different.\n\nA robbery should leave room for consequences and future RP.\n\nThat may include investigation, retaliation, negotiation, recognition, warrants, reputation, or an ongoing feud."
+              "intro": "Players may rob or steal from other characters when there is reasonable RP context and the relevant game mechanics allow it.",
+              "entries": [
+                {
+                  "title": "Reasonable Robbery",
+                  "body": [
+                    "Robberies should make sense for the situation.",
+                    "Taking money, supplies, weapons, valuables, or other reasonable items during a robbery may be appropriate."
+                  ]
+                },
+                {
+                  "title": "Do Not Strip Players for Loot",
+                  "body": [
+                    "Systematically stripping another player of everything they own, repeatedly targeting the same player purely for supplies, or treating every encounter as an opportunity to empty someone’s inventory is different."
+                  ]
+                },
+                {
+                  "title": "Leave Room for Consequences",
+                  "body": [
+                    "A robbery should leave room for consequences and future RP.",
+                    "That may include investigation, retaliation, negotiation, recognition, warrants, reputation, or an ongoing feud."
+                  ]
+                }
+              ]
             },
             {
               "number": "2",
               "title": "Persistent Property",
-              "intro": "Player-owned or persistent property may become involved in criminal RP.\n\nThis can include homes, camps, businesses, vehicles, storage, hideouts, or similar systems as they are added to Rosefire.\n\nDiscovering unattended property does not automatically give you permission to completely empty or destroy it.\n\nCharacters may investigate suspicious property, steal reasonable items where mechanics allow it, leave messages, report what they found, watch the location, or return later.\n\nPersistent property represents part of another character’s progression and story.\n\nIt should not be treated like an unattended loot chest."
+              "intro": "Player-owned or persistent property may become involved in criminal RP.",
+              "entries": [
+                {
+                  "title": "What Counts as Persistent Property",
+                  "body": [
+                    "This can include homes, camps, businesses, vehicles, storage, hideouts, or similar systems as they are added to Rosefire."
+                  ]
+                },
+                {
+                  "title": "Discovery Is Not Permission to Wipe It",
+                  "body": [
+                    "Discovering unattended property does not automatically give you permission to completely empty or destroy it.",
+                    "Characters may investigate suspicious property, steal reasonable items where mechanics allow it, leave messages, report what they found, watch the location, or return later."
+                  ]
+                },
+                {
+                  "title": "Property Is Part of Someone’s Story",
+                  "body": [
+                    "Persistent property represents part of another character’s progression and story."
+                  ],
+                  "emphasis": "It should not be treated like an unattended loot chest."
+                }
+              ]
             },
             {
               "number": "3",
               "title": "Property Destruction",
-              "intro": "Do not destroy, dismantle, burn, sabotage, or deliberately wipe another player’s established property without significant RP justification.\n\nMajor destruction should generally represent the culmination of an existing story rather than the beginning of one.\n\nA long-running feud, faction conflict, criminal retaliation, or similar storyline may reasonably escalate to serious property damage.\n\nRandomly discovering someone’s home, business, camp, or vehicle and destroying it because your character is a criminal is not sufficient justification.\n\nThe larger the permanent consequence you impose on someone else’s story, the more RP should exist before it happens."
+              "intro": "Do not destroy, dismantle, burn, sabotage, or deliberately wipe another player’s established property without significant RP justification.",
+              "entries": [
+                {
+                  "title": "Major Destruction Needs Major RP",
+                  "body": [
+                    "Major destruction should generally represent the culmination of an existing story rather than the beginning of one.",
+                    "A long-running feud, faction conflict, criminal retaliation, or similar storyline may reasonably escalate to serious property damage."
+                  ]
+                },
+                {
+                  "title": "Random Destruction Is Not Enough",
+                  "body": [
+                    "Randomly discovering someone’s home, business, camp, or vehicle and destroying it because your character is a criminal is not sufficient justification."
+                  ]
+                },
+                {
+                  "title": "Permanent Consequences",
+                  "body": [
+                    "The larger the permanent consequence you impose on someone else’s story, the more RP should exist before it happens."
+                  ]
+                }
+              ]
             },
             {
               "number": "4",
               "title": "Offline Targeting",
-              "intro": "Do not deliberately target another player’s property, storage, business, or other persistent assets because you know the player is offline.\n\nA player being absent from the server is not an invitation to bypass the roleplay that would normally accompany attacking their property.\n\nThis does not mean unattended property is magically protected from all interaction.\n\nCharacters may still discover, observe, investigate, or interact with things they encounter naturally through normal RP.\n\nThe problem is intentionally waiting for someone to disconnect or using OOC knowledge of their absence to make the attack easier."
+              "intro": "Do not deliberately target another player’s property, storage, business, or other persistent assets because you know the player is offline.",
+              "entries": [
+                {
+                  "title": "Do Not Bypass the RP",
+                  "body": [
+                    "A player being absent from the server is not an invitation to bypass the roleplay that would normally accompany attacking their property."
+                  ]
+                },
+                {
+                  "title": "Unattended Does Not Mean Untouchable",
+                  "body": [
+                    "This does not mean unattended property is magically protected from all interaction.",
+                    "Characters may still discover, observe, investigate, or interact with things they encounter naturally through normal RP."
+                  ]
+                },
+                {
+                  "title": "What Makes It Offline Targeting",
+                  "body": [
+                    "The problem is intentionally waiting for someone to disconnect or using OOC knowledge of their absence to make the attack easier."
+                  ]
+                }
+              ]
             },
             {
               "number": "5",
               "title": "Repeat Targeting & Progression Griefing",
-              "intro": "Do not repeatedly target the same player, group, business, or property purely because they are an easy source of supplies or money.\n\nIndividual robberies may each appear reasonable on their own while the overall pattern becomes abusive.\n\nRepeated theft, destruction, or harassment that prevents another player from reasonably recovering or participating in the server may be treated as progression griefing.\n\nOngoing conflict is allowed.\n\nUsing an ongoing conflict as an excuse to repeatedly farm another player is not."
+              "intro": "Do not repeatedly target the same player, group, business, or property purely because they are an easy source of supplies or money.",
+              "entries": [
+                {
+                  "title": "Patterns Matter",
+                  "body": [
+                    "Individual robberies may each appear reasonable on their own while the overall pattern becomes abusive."
+                  ]
+                },
+                {
+                  "title": "Progression Griefing",
+                  "body": [
+                    "Repeated theft, destruction, or harassment that prevents another player from reasonably recovering or participating in the server may be treated as progression griefing."
+                  ]
+                },
+                {
+                  "title": "Ongoing Conflict Is Still Allowed",
+                  "body": [
+                    "Ongoing conflict is allowed."
+                  ],
+                  "emphasis": "Using an ongoing conflict as an excuse to repeatedly farm another player is not."
+                }
+              ]
             },
             {
               "number": "6",
               "title": "Territory & Turf Claims",
-              "intro": "Characters, gangs, factions, settlements, or other organizations may claim territory as part of their RP.\n\nFor example:\n\n“This neighborhood belongs to us. Outsiders aren’t welcome.”\n\nThat is valid IC roleplay.\n\nIt does not mean:\n\n“You cannot come here because our Discord says this area belongs to us.”\n\nAn IC territorial claim does not create OOC ownership of part of the map.\n\nOther characters may enter claimed territory and accept the potential IC consequences of doing so.\n\nTerritorial claims may not be used to monopolize public resources, block access to major gameplay systems, or declare large portions of the map unavailable to everyone else.\n\nTerritory creates RP consequences—not private ownership of the game world."
+              "intro": "Characters, gangs, factions, settlements, or other organizations may claim territory as part of their RP.",
+              "entries": [
+                {
+                  "title": "IC Territory Claims Are Valid",
+                  "body": [
+                    "For example: “This neighborhood belongs to us. Outsiders aren’t welcome.”",
+                    "That is valid IC roleplay."
+                  ]
+                },
+                {
+                  "title": "Territory Is Not OOC Ownership",
+                  "body": [
+                    "It does not mean: “You cannot come here because our Discord says this area belongs to us.”",
+                    "An IC territorial claim does not create OOC ownership of part of the map.",
+                    "Other characters may enter claimed territory and accept the potential IC consequences of doing so."
+                  ]
+                },
+                {
+                  "title": "Public Systems Stay Public",
+                  "body": [
+                    "Territorial claims may not be used to monopolize public resources, block access to major gameplay systems, or declare large portions of the map unavailable to everyone else."
+                  ],
+                  "emphasis": "Territory creates RP consequences—not private ownership of the game world."
+                }
+              ]
             },
             {
               "number": "7",
               "title": "Remote-Area Conflict",
-              "intro": "Being far away from populated areas does not suspend Rosefire’s normal RP rules.\n\nBandits, survivors, law enforcement, factions, travelers, and others may encounter violence in remote areas, but conflict still requires appropriate RP context.\n\nThe wilderness, countryside, abandoned industrial areas, Cayo, and other isolated locations are not automatic RDM zones.\n\nLikewise, living or traveling somewhere remote does not make a character immune from being discovered, questioned, tracked, robbed, arrested, or pulled into other people’s stories."
+              "intro": "Being far away from populated areas does not suspend Rosefire’s normal RP rules.",
+              "entries": [
+                {
+                  "title": "Remote Areas Still Require RP Context",
+                  "body": [
+                    "Bandits, survivors, law enforcement, factions, travelers, and others may encounter violence in remote areas, but conflict still requires appropriate RP context.",
+                    "The wilderness, countryside, abandoned industrial areas, Cayo, and other isolated locations are not automatic RDM zones."
+                  ]
+                },
+                {
+                  "title": "Isolation Does Not Grant Immunity",
+                  "body": [
+                    "Likewise, living or traveling somewhere remote does not make a character immune from being discovered, questioned, tracked, robbed, arrested, or pulled into other people’s stories."
+                  ]
+                }
+              ]
             },
             {
               "number": "8",
               "title": "Crime Information & Metagaming",
-              "intro": "Do not use OOC information to locate players, hidden stashes, criminal hideouts, faction locations, rare resources, property, or other discoveries your character has not reasonably learned about.\n\nThat includes information from Discord, streams, another character, private channels, staff tools, or similar OOC sources.\n\nIf Rosefire intentionally publishes information as general gameplay guidance—such as where a basic public system begins—using that information is not metagaming.\n\nSecret or discovery-based information should remain part of exploration and RP."
+              "intro": "Do not use OOC information to locate players, hidden stashes, criminal hideouts, faction locations, rare resources, property, or other discoveries your character has not reasonably learned about.",
+              "entries": [
+                {
+                  "title": "OOC Sources Stay OOC",
+                  "body": [
+                    "That includes information from Discord, streams, another character, private channels, staff tools, or similar OOC sources."
+                  ]
+                },
+                {
+                  "title": "Public Gameplay Information",
+                  "body": [
+                    "If Rosefire intentionally publishes information as general gameplay guidance—such as where a basic public system begins—using that information is not metagaming."
+                  ]
+                },
+                {
+                  "title": "Discovery-Based Information",
+                  "body": [
+                    "Secret or discovery-based information should remain part of exploration and RP."
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -407,67 +573,336 @@
             {
               "number": "1",
               "title": "Your Characters Are Separate People",
-              "intro": "Each character you create is their own person within Rosefire.\n\nYour characters do not automatically share:\n\nknowledge\nrelationships\nenemies\norganization information\nproperty\nmoney or possessions\ncriminal information\nhidden locations\nor information learned through another character’s RP\n\nYour characters do not share a brain, inventory, or bank account simply because you play all of them.\n\nSome game systems may associate information or unlocks with your player account for technical reasons. That does not automatically mean those things are shared in character."
+              "intro": "Each character you create is their own person within Rosefire.",
+              "entries": [
+                {
+                  "title": "Knowledge and Relationships Are Separate",
+                  "body": [
+                    "Your characters do not automatically share knowledge, relationships, enemies, organization information, criminal information, hidden locations, or information learned through another character’s RP."
+                  ]
+                },
+                {
+                  "title": "Property and Progression Are Separate",
+                  "body": [
+                    "Your characters do not automatically share property, money, possessions, inventory, or bank accounts simply because you play all of them."
+                  ]
+                },
+                {
+                  "title": "Account Systems Are Not Automatically IC",
+                  "body": [
+                    "Some game systems may associate information or unlocks with your player account for technical reasons. That does not automatically mean those things are shared in character."
+                  ]
+                }
+              ]
             },
             {
               "number": "2",
               "title": "Transferring Items Between Characters",
-              "intro": "No Self-Transfers\n\nDo not transfer money, weapons, property, valuable items, business assets, vehicles, supplies, or other resources between your own characters simply to benefit another character.\n\nThis includes using another player as a middleman.\n\nFor example:\n\nCharacter A gives $5,000 to a friend.\nCharacter B logs in.\nThe friend gives the $5,000 to Character B.\n\nThat is still a transfer between your own characters.\n\nLikewise, do not leave items somewhere with one character specifically so another of your characters can retrieve them."
+              "intro": "Your own characters may not be used to funnel progression or resources to one another.",
+              "entries": [
+                {
+                  "title": "No Self-Transfers",
+                  "body": [
+                    "Do not transfer money, weapons, property, valuable items, business assets, vehicles, supplies, or other resources between your own characters simply to benefit another character.",
+                    "This includes using another player as a middleman."
+                  ]
+                },
+                {
+                  "title": "Middleman Example",
+                  "body": [
+                    "Character A gives $5,000 to a friend.",
+                    "Character B logs in.",
+                    "The friend gives the $5,000 to Character B.",
+                    "That is still a transfer between your own characters."
+                  ]
+                },
+                {
+                  "title": "Do Not Stage Pickups",
+                  "body": [
+                    "Likewise, do not leave items somewhere with one character specifically so another of your characters can retrieve them."
+                  ]
+                }
+              ]
             },
             {
               "number": "3",
               "title": "Legitimate Connections",
-              "intro": "Two of your characters may reasonably be connected through the world.\n\nThey may be relatives, former coworkers, members of the same community, or otherwise know one another through established RP.\n\nThat does not mean the connection can be used to funnel progression between them.\n\nLegitimate transfers involving inheritance, shared ownership, estates, businesses, or long-running storylines may be allowed when the RP genuinely supports them.\n\nSignificant inheritance should exist as part of the story before the death occurs.\n\nFor example:\n\nCharacter A dies and leaves their daughter a house through an established will.\n\nThat may be reasonable.\n\nBy contrast:\n\n“My new character inherited all my money, weapons, vehicles, and property.”\n\nis not automatically acceptable simply because the characters are related.\n\nInheritance should be roleplay—not a way to reset your character while keeping all of your progression."
+              "intro": "Two of your characters may reasonably be connected through the world.",
+              "entries": [
+                {
+                  "title": "Connections Can Exist",
+                  "body": [
+                    "They may be relatives, former coworkers, members of the same community, or otherwise know one another through established RP.",
+                    "That does not mean the connection can be used to funnel progression between them."
+                  ]
+                },
+                {
+                  "title": "Inheritance and Shared Ownership",
+                  "body": [
+                    "Legitimate transfers involving inheritance, shared ownership, estates, businesses, or long-running storylines may be allowed when the RP genuinely supports them.",
+                    "Significant inheritance should exist as part of the story before the death occurs."
+                  ]
+                },
+                {
+                  "title": "Reasonable Example",
+                  "body": [
+                    "Character A dies and leaves their daughter a house through an established will.",
+                    "That may be reasonable."
+                  ]
+                },
+                {
+                  "title": "What Is Not Automatic",
+                  "body": [
+                    "“My new character inherited all my money, weapons, vehicles, and property.” is not automatically acceptable simply because the characters are related."
+                  ],
+                  "emphasis": "Inheritance should be roleplay—not a way to reset your character while keeping all of your progression."
+                }
+              ]
             },
             {
               "number": "4",
               "title": "Character Knowledge",
-              "intro": "No Information Hopping\n\nDo not switch characters to act on information learned by another character.\n\nIf one character learns the location of a hidden stash, criminal hideout, government operation, private meeting, or other secret information, your other characters do not automatically know it.\n\nIf your criminal character learns that authorities are planning a raid, you cannot switch to another character and conveniently act on that information.\n\nThe reverse applies equally.\n\nInformation belongs to the character who learned it."
+              "intro": "Do not switch characters to act on information learned by another character.",
+              "entries": [
+                {
+                  "title": "No Information Hopping",
+                  "body": [
+                    "If one character learns the location of a hidden stash, criminal hideout, government operation, private meeting, or other secret information, your other characters do not automatically know it."
+                  ]
+                },
+                {
+                  "title": "Opposing-Side Example",
+                  "body": [
+                    "If your criminal character learns that authorities are planning a raid, you cannot switch to another character and conveniently act on that information.",
+                    "The reverse applies equally."
+                  ]
+                },
+                {
+                  "title": "Information Belongs to the Character",
+                  "body": [
+                    "Information belongs to the character who learned it."
+                  ]
+                }
+              ]
             },
             {
               "number": "5",
               "title": "Conflicting Characters",
-              "intro": "Multiple Roles & Organizations\n\nPlayers may have characters involved in different organizations, professions, factions, government positions, criminal groups, businesses, or opposing sides of a conflict when otherwise permitted.\n\nHaving a criminal character does not prevent you from also having a law-aligned character.\n\nWorking for one organization on one character does not automatically prevent another character from joining a rival organization.\n\nHowever, players must maintain a strong separation of information and interests between those characters.\n\nDo not use alternate characters to spy for yourself, protect your own interests, sabotage opponents, manipulate investigations, or influence a storyline for the benefit of another character you play."
+              "intro": "Players may have characters involved in different organizations, professions, factions, government positions, criminal groups, businesses, or opposing sides of a conflict when otherwise permitted.",
+              "entries": [
+                {
+                  "title": "Opposing Roles Are Allowed",
+                  "body": [
+                    "Having a criminal character does not prevent you from also having a law-aligned character.",
+                    "Working for one organization on one character does not automatically prevent another character from joining a rival organization."
+                  ]
+                },
+                {
+                  "title": "Keep Interests Separate",
+                  "body": [
+                    "Players must maintain a strong separation of information and interests between those characters."
+                  ]
+                },
+                {
+                  "title": "Do Not Use Alts to Benefit Yourself",
+                  "body": [
+                    "Do not use alternate characters to spy for yourself, protect your own interests, sabotage opponents, manipulate investigations, or influence a storyline for the benefit of another character you play."
+                  ]
+                }
+              ]
             },
             {
               "number": "6",
               "title": "Character Switching",
-              "intro": "Do Not Switch to Escape Consequences\n\nDo not switch characters to avoid an active RP situation or its immediate consequences.\n\nIf your character is being pursued, arrested, kidnapped, treated for serious injuries, involved in a robbery, trapped in an ongoing conflict, or otherwise part of an active scene, finish or reasonably exit that situation before switching.\n\nCharacter switching also may not be used to:\n\nbypass cooldowns\ngenerate additional rewards\navoid debts\navoid warrants or consequences\nrepeatedly access character-limited systems\nor gain an economic advantage\n\nThis intentionally overlaps with combat logging.\n\nChanging characters should not erase a situation that is still actively happening."
+              "intro": "Do not switch characters to avoid an active RP situation or its immediate consequences.",
+              "entries": [
+                {
+                  "title": "Finish Active Situations",
+                  "body": [
+                    "If your character is being pursued, arrested, kidnapped, treated for serious injuries, involved in a robbery, trapped in an ongoing conflict, or otherwise part of an active scene, finish or reasonably exit that situation before switching."
+                  ]
+                },
+                {
+                  "title": "Do Not Use Switching to Bypass Systems",
+                  "body": [
+                    "Character switching may not be used to bypass cooldowns, generate additional rewards, avoid debts, avoid warrants or consequences, repeatedly access character-limited systems, or gain an economic advantage."
+                  ]
+                },
+                {
+                  "title": "Combat Logging Overlap",
+                  "body": [
+                    "This intentionally overlaps with combat logging."
+                  ],
+                  "emphasis": "Changing characters should not erase a situation that is still actively happening."
+                }
+              ]
             },
             {
               "number": "7",
               "title": "Businesses",
-              "intro": "Business Assets Belong to the Business\n\nMoney, inventory, supplies, equipment, vehicles, and other assets belonging to a player-run business should be used for legitimate business purposes.\n\nDo not use a business account or storage as a personal bank for your other characters.\n\nLikewise, employees should not empty business resources simply because the game mechanically permits them to access the storage.\n\nMechanical permission is not automatic RP ownership.\n\nBusiness owners and managers may determine reasonable IC rules for access and use."
+              "intro": "Money, inventory, supplies, equipment, vehicles, and other assets belonging to a player-run business should be used for legitimate business purposes.",
+              "entries": [
+                {
+                  "title": "Business Assets Belong to the Business",
+                  "body": [
+                    "Do not use a business account or storage as a personal bank for your other characters.",
+                    "Likewise, employees should not empty business resources simply because the game mechanically permits them to access the storage."
+                  ]
+                },
+                {
+                  "title": "Mechanical Access Is Not Ownership",
+                  "body": [
+                    "Business owners and managers may determine reasonable IC rules for access and use."
+                  ],
+                  "emphasis": "Mechanical permission is not automatic RP ownership."
+                }
+              ]
             },
             {
               "number": "8",
               "title": "Organizations",
-              "intro": "Organization Resources\n\nOrganization property belongs to the organization or appropriate IC owner—not automatically to every member.\n\nAccess to shared storage, vehicles, equipment, funds, or facilities does not mean every member is personally entitled to them.\n\nDo not empty organization resources for yourself or transfer them to another character you play.\n\nMechanical access does not equal IC ownership."
+              "intro": "Organization property belongs to the organization or appropriate IC owner—not automatically to every member.",
+              "entries": [
+                {
+                  "title": "Shared Access Is Not Personal Ownership",
+                  "body": [
+                    "Access to shared storage, vehicles, equipment, funds, or facilities does not mean every member is personally entitled to them."
+                  ]
+                },
+                {
+                  "title": "Do Not Move Organization Assets to Yourself",
+                  "body": [
+                    "Do not empty organization resources for yourself or transfer them to another character you play."
+                  ],
+                  "emphasis": "Mechanical access does not equal IC ownership."
+                }
+              ]
             },
             {
               "number": "9",
               "title": "Economy Exploits",
-              "intro": "Abusing Economy Systems\n\nDo not intentionally exploit jobs, businesses, crafting, trading, NPCs, rewards, character slots, inventories, vehicles, property systems, or other mechanics to generate money or resources in ways clearly outside their intended use.\n\nIf you discover something that produces abnormal rewards or can be repeatedly exploited, report it rather than building your character’s wealth around it.\n\nAn unexpectedly profitable activity is not automatically exploitation.\n\nFor something to be treated as an exploit, staff should consider whether the player reasonably understood that the mechanic was unintended and deliberately continued abusing it.\n\nProfit alone is not proof of exploitation. Knowledge and intent matter."
+              "intro": "Do not intentionally exploit jobs, businesses, crafting, trading, NPCs, rewards, character slots, inventories, vehicles, property systems, or other mechanics to generate money or resources in ways clearly outside their intended use.",
+              "entries": [
+                {
+                  "title": "Report Abnormal Rewards",
+                  "body": [
+                    "If you discover something that produces abnormal rewards or can be repeatedly exploited, report it rather than building your character’s wealth around it."
+                  ]
+                },
+                {
+                  "title": "Profit Is Not Automatically Exploitation",
+                  "body": [
+                    "An unexpectedly profitable activity is not automatically exploitation.",
+                    "For something to be treated as an exploit, staff should consider whether the player reasonably understood that the mechanic was unintended and deliberately continued abusing it."
+                  ],
+                  "emphasis": "Profit alone is not proof of exploitation. Knowledge and intent matter."
+                }
+              ]
             },
             {
               "number": "10",
               "title": "Gifts & Helping New Players",
-              "intro": "Gifts\n\nCharacters may give reasonable gifts, loans, wages, supplies, equipment, or other assistance to other characters through legitimate RP.\n\nDo not use gifts primarily to:\n\nbypass progression\nmove wealth between your own characters\ncreate OOC arrangements for transferring resources\nor instantly fund a new character with established-character wealth\n\nAn established character helping a new arrival with food, basic supplies, transportation, or starter equipment is not automatically economy abuse.\n\nWe do not need to police every dollar or every act of generosity.\n\nContext matters."
+              "intro": "Characters may give reasonable gifts, loans, wages, supplies, equipment, or other assistance to other characters through legitimate RP.",
+              "entries": [
+                {
+                  "title": "Reasonable Help Is Allowed",
+                  "body": [
+                    "An established character helping a new arrival with food, basic supplies, transportation, or starter equipment is not automatically economy abuse."
+                  ]
+                },
+                {
+                  "title": "Do Not Use Gifts to Bypass Progression",
+                  "body": [
+                    "Do not use gifts primarily to bypass progression, move wealth between your own characters, create OOC arrangements for transferring resources, or instantly fund a new character with established-character wealth."
+                  ]
+                },
+                {
+                  "title": "Use Context",
+                  "body": [
+                    "We do not need to police every dollar or every act of generosity."
+                  ],
+                  "emphasis": "Context matters."
+                }
+              ]
             },
             {
               "number": "11",
               "title": "Characters Must Fit Rosefire",
-              "intro": "\n\nCharacters should reasonably exist within Rosefire’s setting and established public lore.\n\nCharacters may have unusual backgrounds, occupations, identities, beliefs, histories, and personalities.\n\nHowever, characters should not deliberately contradict established Rosefire lore, import status or powers from another fictional universe, or begin with extraordinary authority, wealth, influence, or abilities they have not actually earned or been approved to possess.\n\nFor example:\n\n“My character was a doctor before the collapse.”\n\nFine.\n\n“My character secretly controls the entire federal government and owns every hospital in the state.”\n\nNot fine.\n\nLikewise, claiming a background does not automatically grant mechanical skills, authority, property, or special access that the server has not actually given the character.\n\nBackstory can explain who your character is. It does not let you skip progression."
+              "intro": "Characters should reasonably exist within Rosefire’s setting and established public lore.",
+              "entries": [
+                {
+                  "title": "Creative Characters Are Welcome",
+                  "body": [
+                    "Characters may have unusual backgrounds, occupations, identities, beliefs, histories, and personalities."
+                  ]
+                },
+                {
+                  "title": "Do Not Import Unapproved Status or Powers",
+                  "body": [
+                    "Characters should not deliberately contradict established Rosefire lore, import status or powers from another fictional universe, or begin with extraordinary authority, wealth, influence, or abilities they have not actually earned or been approved to possess."
+                  ]
+                },
+                {
+                  "title": "Background Example",
+                  "body": [
+                    "“My character was a doctor before the collapse.” — Fine.",
+                    "“My character secretly controls the entire federal government and owns every hospital in the state.” — Not fine."
+                  ]
+                },
+                {
+                  "title": "Backstory Does Not Skip Progression",
+                  "body": [
+                    "Claiming a background does not automatically grant mechanical skills, authority, property, or special access that the server has not actually given the character."
+                  ],
+                  "emphasis": "Backstory can explain who your character is. It does not let you skip progression."
+                }
+              ]
             },
             {
               "number": "12",
               "title": "Existing & Famous Characters",
-              "intro": "Original Characters\n\nRosefire characters should be original creations.\n\nDo not directly portray real-world celebrities, public figures, or established copyrighted fictional characters as your Rosefire character.\n\nCharacters may take inspiration from games, films, literature, folklore, history, or other media, but they should become their own character within Rosefire.\n\nA character inspired by something is fine.\n\nPlaying an existing character as though they literally entered Rosefire is not."
+              "intro": "Rosefire characters should be original creations.",
+              "entries": [
+                {
+                  "title": "Do Not Directly Portray Existing Characters",
+                  "body": [
+                    "Do not directly portray real-world celebrities, public figures, or established copyrighted fictional characters as your Rosefire character."
+                  ]
+                },
+                {
+                  "title": "Inspiration Is Fine",
+                  "body": [
+                    "Characters may take inspiration from games, films, literature, folklore, history, or other media, but they should become their own character within Rosefire."
+                  ],
+                  "emphasis": "A character inspired by something is fine. Playing an existing character as though they literally entered Rosefire is not."
+                }
+              ]
             },
             {
               "number": "13",
               "title": "Character Names",
-              "intro": "Names\n\nCharacter names should be reasonable for the setting and community.\n\nNames do not need to be perfectly realistic, culturally traditional, or common.\n\nUnusual names are fine.\n\nNames designed primarily as jokes, memes, impersonations, slurs, advertisements, or obvious attempts to disrupt RP may be rejected.\n\nStaff should judge whether a name reasonably fits RP—not whether they personally like it."
+              "intro": "Character names should be reasonable for the setting and community.",
+              "entries": [
+                {
+                  "title": "Unusual Names Are Fine",
+                  "body": [
+                    "Names do not need to be perfectly realistic, culturally traditional, or common.",
+                    "Unusual names are fine."
+                  ]
+                },
+                {
+                  "title": "Disruptive Names May Be Rejected",
+                  "body": [
+                    "Names designed primarily as jokes, memes, impersonations, slurs, advertisements, or obvious attempts to disrupt RP may be rejected."
+                  ]
+                },
+                {
+                  "title": "Judge Fit, Not Personal Taste",
+                  "body": [
+                    "Staff should judge whether a name reasonably fits RP—not whether they personally like it."
+                  ]
+                }
+              ]
             }
           ]
         }
