@@ -144,19 +144,6 @@ function Home({ content }: { content: SiteContent }) {
 
 function RulesPage({ content }: { content: SiteContent }) {
   const rules = content.rulesLanding;
-  const categories = [
-    "Community Conduct",
-    "Roleplay Standards",
-    "Characters",
-    "Combat & Hostile RP",
-    "Crime & Robbery",
-    "Medical, Injuries & Death",
-    "Government & Organizations",
-    "Economy & Exploits",
-    "Staff & Reports",
-    "Streaming & Content",
-  ];
-
   return (
     <section className="rules-shell">
       <section className="rules-opening">
@@ -184,13 +171,24 @@ function RulesPage({ content }: { content: SiteContent }) {
         <p className="section-kicker">RULEBOOK</p>
         <h2>{rules.categoriesTitle}</h2>
         <p>{rules.categoriesIntro}</p>
-        <div className="rules-category-grid">
-          {categories.map((category, index) => (
-            <div className="rules-category-card" key={category}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{category}</strong>
-              <small>Content coming with the rules migration.</small>
-            </div>
+        <div className="rules-section-list">
+          {rules.sections.map((section) => (
+            <article className="rule-section" key={section.number}>
+              <header className="rule-section-header">
+                <span>{section.number.padStart(2, "0")}</span>
+                <h3>{section.title}</h3>
+              </header>
+              {section.intro && <p className="rule-section-intro">{section.intro}</p>}
+              <div className="rule-entry-list">
+                {section.entries.map((entry, index) => (
+                  <section className="rule-entry" key={index}>
+                    <h4>{entry.title}</h4>
+                    {entry.body.map((paragraph, bodyIndex) => <p key={bodyIndex}>{paragraph}</p>)}
+                    {entry.emphasis && <strong>{entry.emphasis}</strong>}
+                  </section>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -597,6 +595,9 @@ function Admin({
             <Field label="Card emphasis" value={card.emphasis} onChange={(v) => setRulesCard(index, "emphasis", v)} />
           </div>
         ))}
+        <div className="admin-message">
+          Full rule-section editing will be added after the remaining rule sets are migrated so their structure can be handled cleanly.
+        </div>
       </section>
 
       {(Object.keys(draft.pages) as PageKey[]).map((key) => {
