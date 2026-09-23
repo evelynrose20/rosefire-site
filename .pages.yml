@@ -180,23 +180,27 @@ content:
                 list: true
               - name: emphasis
                 type: text
-          - name: categoriesTitle
-            label: Sections Heading
-            type: string
-          - name: categoriesIntro
-            label: Sections Introduction
-            type: text
-          - name: sections
-            label: Rule Sections
-            type: block
+          - name: groups
+            label: Rulebook Heading Groups
+            type: object
             list:
               collapsible:
                 collapsed: true
-                summary: "{number}. {title}"
-            blockKey: _block
-            blocks:
-              - name: rule_section
-                label: Rule Section
+                summary: "{heading}"
+            fields:
+              - name: heading
+                label: Main Heading
+                type: string
+              - name: intro
+                label: Heading Introduction
+                type: text
+              - name: sections
+                label: Sections Under This Heading
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{number}. {title}"
                 fields:
                   - name: number
                     label: Section Number
