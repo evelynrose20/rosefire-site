@@ -1,6 +1,6 @@
 {
   "name": "rosefire-site",
-  "description": "State of Rosefire community portal",
+  "description": "Rosefire RP community portal — Markdown-driven React site",
   "dependencies": {
     "hono": "4.11.1",
     "react": "19.2.1",
