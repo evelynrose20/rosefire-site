@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PAGES_BASE: /rosefire-site/
+          PAGES_BASE: /
 
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
