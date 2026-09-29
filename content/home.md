@@ -1,7 +1,7 @@
 ---
 title: ROSEFIRE RP
 kicker: A PERSISTENT FIVEM ROLEPLAY CITY
-motto: PLAYABLE AT 1. ALIVE AT 50.
+motto: MAKE A LIFE. BUILD A LEGACY.
 description: A player-first roleplay city with a persistent game underneath it. Build a life, pursue long-term goals, and always have something meaningful to do whether the city is quiet or packed.
 status: FOUNDING TESTERS
 statusText: Rosefire is in active development and preparing for its first outside testers.
@@ -19,4 +19,4 @@ Own vehicles and property. Build professions. Gather, produce, trade, explore, r
 
 Rosefire takes inspiration from MMO progression without turning roleplay into a grind. Professions, production chains, collections, ownership, projects, and a connected economy give every character reasons to return.
 
-> **Playable at 1. Alive at 50.** Population changes the experience—not whether Rosefire works.
+> **Make a Life. Build a Legacy.** Population changes the experience—not whether Rosefire works.
