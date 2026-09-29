@@ -287,6 +287,10 @@ Do not use cheats, injectors, unauthorized modifications, automation, macros, or
 ### Advertising and impersonation
 Normal conversation about other communities is fine. Unsolicited promotion, mass DMs, recruitment campaigns, or joining primarily to redirect Rosefire members elsewhere is not.
 
+**Rosefire is not a place for server bashing.** Do not use Rosefire spaces to insult, ridicule, talk down about, or stir up drama about other FiveM cities, their staff, their communities, or how they choose to run their servers. Discussing a past experience normally is fine; sustained negativity, comparison drama, or using Rosefire as a platform to attack another city is not.
+
+**We are Rosefire. We are responsible for how Rosefire is run—not how another city chooses to operate.**
+
 Do not impersonate Rosefire staff or falsely claim OOC staff authority.
 
 ## 13. Staff, Reports & Appeals
