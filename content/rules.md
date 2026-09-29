@@ -7,114 +7,188 @@ updated: 2026-09-28
 
 Rosefire is built around collaborative storytelling, mutual respect, and the understanding that roleplay works best when everyone involved is trying to create a good story—not simply trying to win.
 
-The goal is not to create a rulebook where players are afraid every action might violate an obscure subsection. These rules establish clear expectations, protect the people who play here, and give staff consistent standards when something goes wrong.
+These rules establish clear expectations without trying to anticipate every possible situation. Context, intent, evidence, and impact matter.
 
 > **“There isn't a rule saying I can't” is not permission to abuse a loophole.**
 
+**Use reasonable judgment. Respect other players. Protect the roleplay. Do not exploit technicalities.**
+
 ## 1. Community Conduct
 
-### Respect other players
+Harassment, targeted bullying, discriminatory attacks, threats, stalking, doxxing, or repeated OOC antagonism are prohibited. IC conflict never excuses OOC hostility. Keep IC and OOC separate.
 
-Treat other members of Rosefire with basic respect. Harassment, targeted bullying, discriminatory attacks, threats, stalking, deliberately making another player uncomfortable, or repeatedly antagonizing someone OOC are not acceptable.
+If you believe a rule was broken, preserve useful evidence and report it rather than interrupting scenes to argue rules or punish another player yourself.
 
-**IC conflict does not justify OOC hostility. Characters can hate one another while their players remain civil.**
-
-### Keep IC and OOC separate
-
-Do not carry IC arguments into Discord or OOC relationships into character interactions. Do not target someone's character because you dislike the player.
-
-### Don't police other people's RP
-
-If you believe someone broke a rule, report it. Do not interrupt a scene to argue rules, threaten reports, or attempt to punish another player yourself. Finish or safely disengage from the scene when reasonably possible and let staff handle the issue afterward.
+**Players roleplay. Staff handle rule enforcement.**
 
 ## 2. Roleplay Standards
 
-### Stay in character
+Remain IC during active RP unless legitimate OOC communication is necessary. Serious danger and injury should matter, but context and reasonable escape opportunities matter.
 
-While actively participating in RP, remain in character unless there is a legitimate reason to communicate OOC. Minor mistakes happen. Repeatedly breaking character to complain about mechanics, argue rules, or disrupt scenes is different.
+Do not powergame by unilaterally deciding another character's response or forcing outcomes through mechanics.
 
-### Value your character's life
+Do not metagame. Discord, streams, another character, staff tools, private channels, OOC conversations, or information heard while unconscious do not automatically become character knowledge.
 
-Your character should generally behave as though serious injury and death matter. This does not mean automatically obeying every demand whenever someone produces a weapon. Context matters, but mechanical respawning is not a reason to treat danger as meaningless.
+Do not stream snipe or use OOC information to locate players, discover secrets, monitor situations, or gain an IC advantage.
 
-### Powergaming
+## 3. Characters & Alternate Characters
 
-Do not force actions or outcomes onto another character without giving them a reasonable opportunity to respond. You can attempt actions; you cannot unilaterally decide another player's response.
+**Your characters do not share a brain, inventory, or bank account simply because you play all of them.**
 
-### Metagaming
+Do not transfer money, vehicles, property, weapons, valuable items, business assets, or progression between your own characters, including through another player. Legitimate inheritance may be approved when established beforehand through RP and appropriate IC documentation such as a valid will.
 
-Do not use information your character did not reasonably obtain in character. Information from Discord, streams, another character, private channels, staff tools, or OOC conversations does not automatically belong to your current character.
+Characters may exist on opposing sides, but their knowledge and interests must remain separate. Do not use alts to spy, protect your own interests, sabotage opponents, or benefit another character you control.
 
-### Stream sniping
+Do not switch characters to escape active RP, consequences, debts, warrants, cooldowns, or character-limited systems.
 
-Do not use someone's livestream, recording, Discord activity, or other OOC information to locate them, discover hidden information, or gain an RP advantage.
+Characters should be original. Backstory does not automatically grant wealth, property, government authority, ownership, skills, or special access. Joke, meme, impersonation, slur, advertisement, or deliberately disruptive names may be rejected.
 
-## 3. Conflict & Violence
+## 4. Conflict & Violence
 
-### Random Deathmatch (RDM)
-
-Do not attack, shoot, or kill other characters without reasonable RP justification. Violence should come from the story rather than boredom.
-
-### Vehicle Deathmatch (VDM)
-
-Do not intentionally use vehicles to randomly injure or kill players without legitimate RP justification. Accidents and deliberate attacks are not the same thing.
-
-### Escalation
-
-Give conflict reasonable room to escalate. An insult does not ordinarily justify immediately shooting someone. Existing feuds, threats, robberies, violent confrontations, pursuit, and similar circumstances may justify faster escalation.
+RDM and VDM are prohibited. Violence requires reasonable RP justification and conflict should have reasonable room to escalate.
 
 **Context matters more than an artificial escalation checklist.**
 
-### Combat logging
+Losing a confrontation does not automatically justify an immediate revenge hunt.
 
-Do not disconnect, respawn, switch characters, or otherwise use game systems to escape an active roleplay situation or its immediate consequences.
+Do not disconnect, respawn, switch characters, or use systems to escape active RP or its immediate consequences.
 
-## 4. Fair Play & Server Systems
+## 5. Crime, Police & Government
 
-### Exploits
+**Criminal RP should create conflict and stories—not maximize profit at everyone else's expense.**
 
-Do not knowingly abuse bugs, duplicated rewards, broken jobs, inventories, businesses, crafting, vehicles, property systems, or other mechanics for an unintended advantage. If you find something clearly broken, report it.
+Crime carries reasonable IC consequences. Police and government characters may not use IC authority to target players for OOC reasons. A badge grants IC authority where Rosefire law permits it, not OOC authority.
 
-An unexpectedly profitable activity is not automatically exploitation. Staff should consider whether a player reasonably understood that a mechanic was unintended and deliberately continued abusing it.
+Police may act on information reasonably obtained through RP and legitimate systems. OOC knowledge is not evidence and mechanical data is not automatically IC-accessible information.
 
-### Character transfers
+Searches require reasonable IC justification. Arrested players should participate in RP, and law enforcement should provide meaningful RP rather than abandoning restrained players.
 
-Do not transfer money, property, vehicles, weapons, valuable items, or other progression between your own characters, including through another player as a middleman.
+Do not exploit glitches or unintended mechanics to guarantee escape or capture.
 
-### Character knowledge
+**Escaping police is allowed. Catching criminals is allowed. Neither side is entitled to win.**
 
-Your characters do not share a brain. Information learned by one character does not automatically become known by another.
+A clear surrender should ordinarily end the immediate need for violence unless there is a strong RP reason otherwise.
 
-### Character switching
+Major ongoing institutional corruption involving police, courts, government, public funds, evidence, armories, or shared resources requires staff approval.
 
-Do not switch characters to avoid an active scene, immediate consequences, debts, warrants, cooldowns, or other character-specific systems.
+Organization membership does not grant rule exemptions, permanent kill-on-sight permission, or OOC ownership of public areas.
 
-## 5. Characters
+## 6. Robbery, Kidnapping & Hostages
 
-### Original characters
+**A robbery is RP, not an inventory transfer.** Give victims a reasonable opportunity to participate. Winning does not entitle a robber to the victim's entire inventory, and neither side may use OOC mechanics or knowledge to manipulate what can be taken.
 
-Rosefire characters should be original creations. Inspiration from games, films, literature, folklore, history, and other media is fine, but directly portraying an existing celebrity, public figure, or copyrighted fictional character is not.
+Kidnapping requires a reasonable RP purpose. Captives must have opportunities to roleplay and should not be kept restrained or isolated for excessive periods with little or no RP.
 
-### Backstory does not skip progression
+Hostages must be genuine participants. Do not use friends, alts, or willing accomplices as fake hostages to satisfy mechanics or guarantee negotiations.
 
-A backstory may explain who your character is. It does not automatically grant mechanical skills, authority, property, wealth, influence, or special access that the server has not given the character.
+Restraints belong in active RP. Do not abandon someone restrained simply to inconvenience them.
 
-### Character names
+## 7. Downed, Medical & NLR
 
-Names may be unusual. Names designed primarily as jokes, memes, impersonations, slurs, advertisements, or obvious attempts to disrupt RP may be rejected.
+A mechanical down does not automatically mean death. While downed, do not relay tactical information or continue participating in the confrontation.
 
-## 6. Businesses & Organizations
+**Being revived does not give you another life in the same fight.**
 
-Business and organization assets belong to the appropriate IC owner or organization. Mechanical access to money, storage, vehicles, equipment, or facilities does not automatically make those assets personal property.
+Allow reasonable medical RP. Mechanical revival does not instantly erase significant injuries. Ongoing wounds recorded by Rosefire's medical systems should be reasonably acknowledged until treated or healed.
 
-Do not use shared assets to funnel progression to another character you play or empty organizational resources simply because a game permission allows access.
+Respawning means your character was recovered and treated off-screen and removes the character from the active situation. Do not immediately return for equipment, revenge, arrests, or to continue the encounter.
 
-## 7. When Something Goes Wrong
+Being downed does not automatically erase memory. Characters may remember what they reasonably perceived before losing consciousness, but not information learned while unconscious.
 
-Do not derail an active scene with a rules argument when it can reasonably be handled afterward. Preserve screenshots, clips, relevant logs, or other evidence when available and use Rosefire's support/report process.
+**NLR ends the encounter. It does not erase the story.**
 
-Immediate safety concerns may always be brought to staff.
+## 8. Permanent Character Consequences
+
+**Winning a scene does not give you ownership over someone else's character.**
+
+Permanent scars, amputations, branding, tattoos, disfigurement, or comparable lasting changes require the affected player's OOC agreement. Medical characters may diagnose and treat injuries, but major permanent changes should be collaborative.
+
+Mechanical incapacitation does not permanently kill a character. In most circumstances, the player decides when their character permanently dies.
+
+Exceptional forced-CK storylines require prior staff approval and the affected player must know beforehand that permanent death is a possible outcome. Once deliberately declared permanently dead, the character remains dead.
+
+## 9. Businesses, Organizations & Economy
+
+Business and organization assets belong to the appropriate IC owner or organization. Mechanical access does not automatically mean IC ownership.
+
+Do not knowingly exploit jobs, businesses, crafting, trading, NPCs, rewards, character slots, or broken systems for unintended gain.
+
+**Finding a bug is not the problem. Deliberately abusing one is.**
+
+Unexpected profit is not automatically exploitation. Knowledge and intent matter.
+
+Reasonable IC gifts, loans, wages, supplies, and assistance are allowed, but may not be used to transfer wealth between your own characters.
+
+Do not trade Rosefire characters, businesses, property, vehicles, items, currency, progression, or organization assets for real-world value outside systems officially approved by Rosefire.
+
+## 10. Text, Voice & Accessibility
+
+Voice and text are valid ways to roleplay. Do not harass, exclude, mock, or deliberately disadvantage someone because they communicate differently.
+
+**Accessibility needs are not fail-RP.**
+
+Voice communication and voice changers must remain reasonably understandable and non-disruptive. Normal accessibility tools are permitted when they do not provide an unfair gameplay advantage.
+
+## 11. Romance, Adult Content & Sensitive RP
+
+Romance between adult characters is allowed, but IC romance creates no OOC obligation.
+
+**IC relationships are between characters. OOC boundaries belong to the players.**
+
+### ERP — hard prohibition
+
+**ERP and explicit sexual roleplay are prohibited on Rosefire. Rosefire does not support an ERP system, channel, or approved ERP space. ERP is a bannable offense.**
+
+This applies across FiveM and Rosefire-operated community spaces. Private in-game locations are not exceptions. Adult intimacy in a story must **fade to black**.
+
+Sexual-violence RP is prohibited, including when participants claim OOC consent.
+
+Detailed torture or unusually graphic injury RP requires agreement from the affected player. Players may request that disturbing details be skipped.
+
+### Pregnancy RP
+
+Pregnancy RP is supported by Rosefire and may use Rosefire's pregnancy and family systems. Pregnancy may not be forced onto another character. Major pregnancy-related story decisions affecting multiple characters should be communicated between the involved players.
+
+**Abortion RP is not permitted on Rosefire.**
+
+Player-controlled characters must be adults. Child NPCs or dependents may exist through family systems but must remain completely separate from adult content.
+
+Players may establish OOC boundaries around unusually sensitive **content**, but those boundaries cannot be used to escape ordinary IC outcomes such as arrest, robbery, losing a fight, or an investigation.
+
+**A content boundary is not an outcome veto.**
+
+## 12. Recording, Privacy & Technical Rules
+
+Players may record or stream Rosefire. Streaming does not grant immunity from normal RP. Recordings may be submitted to staff as OOC evidence but do not automatically exist as IC evidence.
+
+Do not expose another member's private or personally identifying information or redistribute private moderation material for retaliation, harassment, or public drama.
+
+Do not deliberately go AFK during active RP to avoid interaction or consequences. Genuine crashes and technical failures are not automatically violations; make a reasonable effort to return or communicate.
+
+Do not use cheats, injectors, unauthorized modifications, automation, macros, or external tools for unfair gameplay advantage.
+
+Unsolicited advertising, mass recruitment DMs, and impersonating Rosefire staff are prohibited.
+
+## 13. Staff, Reports & Appeals
+
+Staff status does not provide special IC authority. Staff tools or information may not benefit a staff member's character.
+
+A report is a request to investigate, not proof. Staff should consider context, severity, intent, prior behavior, evidence, and impact.
+
+Use Rosefire's designated support process for appeals. Harassing staff or repeatedly opening duplicate tickets is not an appeal.
+
+## 14. When Something Goes Wrong
+
+Do not turn active RP into an OOC rules argument when the issue can reasonably be handled afterward. Finish or safely disengage where possible, preserve evidence, and use the support/report process.
+
+Immediate safety concerns may always be brought directly to staff.
+
+Staff may intervene in clearly exploitative, abusive, disruptive, or harmful conduct even when an exact case was not anticipated, but should explain what conduct was unacceptable and why.
 
 ---
 
-These rules will continue to be expanded before public testing. Clear expectations matter more than creating hundreds of narrow rules for every imaginable situation.
+## Final Principle
+
+**Use reasonable judgment. Respect other players. Protect the roleplay. Do not exploit technicalities.**
+
+**We are here to create stories together.**
