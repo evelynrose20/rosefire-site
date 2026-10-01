@@ -30,6 +30,11 @@ export function parseDocument(source: string): MarkdownDocument {
 function inline(text: string, renderLink?: (href: string, children: ReactNode) => ReactNode): ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
   return parts.filter(Boolean).map((part, index) => {
+    const strongLink = part.match(/^\*\*\[([^\]]+)\]\(([^)]+)\)\*\*$/);
+    if (strongLink) {
+      const linked = renderLink ? renderLink(strongLink[2], strongLink[1]) : <a href={strongLink[2]}>{strongLink[1]}</a>;
+      return <strong key={index}>{linked}</strong>;
+    }
     const strong = part.match(/^\*\*(.+)\*\*$/);
     if (strong) return <strong key={index}>{strong[1]}</strong>;
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
