@@ -33,14 +33,14 @@ function inline(text: string): ReactNode[] {
     const strong = part.match(/^\*\*(.+)\*\*$/);
     if (strong) return <strong key={index}>{strong[1]}</strong>;
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (link) return <a key={index} href={link[2]}>{link[1]}</a>;
+    if (link) return renderLink ? <span key={index}>{renderLink(link[2], link[1])}</span> : <a key={index} href={link[2]}>{link[1]}</a>;
     const code = part.match(/^`(.+)`$/);
     if (code) return <code key={index}>{code[1]}</code>;
     return part;
   });
 }
 
-export function Markdown({ source }: { source: string }) {
+export function Markdown({ source, renderLink }: { source: string; renderLink?: (href: string, children: ReactNode) => ReactNode }) {
   const lines = source.replace(/\r\n/g, "\n").split("\n");
   const output: ReactNode[] = [];
   let paragraph: string[] = [];
