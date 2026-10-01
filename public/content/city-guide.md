@@ -1,6 +1,6 @@
 ---
 eyebrow: CITY GUIDE
-updated: 2026-09-28
+updated: 2026-10-01
 ---
 
 # Living in Rosefire
@@ -30,5 +30,11 @@ Clothing stores, barber shops, tattoo studios, shops, and other everyday service
 ## Work & Professions
 
 Rosefire is moving beyond simple clock-in jobs toward persistent professions and connected production. Mining, farming, fishing, beekeeping, crafting, food production, manufacturing, and other work should eventually feed one another instead of ending at a single sell marker.
+
+### Los Santos Sanitation
+
+Keep the streets of Los Santos clean with a full sanitation career: bring your registered refuse truck to the depot, clock in, follow assigned collection routes, manage your hopper and compactor, build experience, improve your skills, and receive your shift pay through Fleeca.
+
+**[Read the full Garbage Collection job guide →](/garbage-job)**
 
 > **Players improve the world; they do not unlock it.**
