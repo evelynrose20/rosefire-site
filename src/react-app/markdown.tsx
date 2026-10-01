@@ -65,11 +65,40 @@ export function Markdown({ source, renderLink }: { source: string; renderLink?: 
     list = [];
   };
 
-  for (const raw of lines) {
+  const tableCells = (line: string) => line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(cell => cell.trim());
+  const isTableDivider = (line: string) => {
+    const cells = tableCells(line);
+    return cells.length > 0 && cells.every(cell => /^:?-{3,}:?$/.test(cell));
+  };
+
+  for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+    const raw = lines[lineIndex];
     const line = raw.trimEnd();
     if (!line.trim()) {
       flushParagraph();
       flushList();
+      continue;
+    }
+
+    if (line.trim().startsWith("|") && lineIndex + 1 < lines.length && isTableDivider(lines[lineIndex + 1])) {
+      flushParagraph();
+      flushList();
+      const headers = tableCells(line);
+      const rows: string[][] = [];
+      lineIndex += 2;
+      while (lineIndex < lines.length && lines[lineIndex].trim().startsWith("|")) {
+        rows.push(tableCells(lines[lineIndex]));
+        lineIndex++;
+      }
+      lineIndex--;
+      output.push(
+        <div className="markdown-table-wrap" key={`t-${output.length}`}>
+          <table>
+            <thead><tr>{headers.map((cell, i) => <th key={i}>{inline(cell, renderLink)}</th>)}</tr></thead>
+            <tbody>{rows.map((row, r) => <tr key={r}>{headers.map((_, i) => <td key={i}>{inline(row[i] ?? "", renderLink)}</td>)}</tr>)}</tbody>
+          </table>
+        </div>
+      );
       continue;
     }
 
