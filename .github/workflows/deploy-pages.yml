@@ -53,11 +53,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      # This repository still has GitHub's legacy branch Pages deployment enabled.
-      # Let that job finish first so this compiled Vite artifact is always the final deployment.
-      - name: Wait for legacy Pages deployment
-        run: sleep 90
-
-      - name: Deploy compiled Rosefire site
+      - name: Deploy Rosefire
         id: deployment
         uses: actions/deploy-pages@v4
