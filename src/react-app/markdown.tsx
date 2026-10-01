@@ -27,7 +27,7 @@ export function parseDocument(source: string): MarkdownDocument {
   return { meta, body: normalized.slice(end + 5).trim() };
 }
 
-function inline(text: string): ReactNode[] {
+function inline(text: string, renderLink?: (href: string, children: ReactNode) => ReactNode): ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
   return parts.filter(Boolean).map((part, index) => {
     const strong = part.match(/^\*\*(.+)\*\*$/);
@@ -49,14 +49,14 @@ export function Markdown({ source, renderLink }: { source: string; renderLink?: 
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
-    output.push(<p key={`p-${output.length}`}>{inline(paragraph.join(" "))}</p>);
+    output.push(<p key={`p-${output.length}`}>{inline(paragraph.join(" "), renderLink)}</p>);
     paragraph = [];
   };
 
   const flushList = () => {
     if (!list.length) return;
     const Tag = ordered ? "ol" : "ul";
-    output.push(<Tag key={`l-${output.length}`}>{list.map((item, i) => <li key={i}>{inline(item)}</li>)}</Tag>);
+    output.push(<Tag key={`l-${output.length}`}>{list.map((item, i) => <li key={i}>{inline(item, renderLink)}</li>)}</Tag>);
     list = [];
   };
 
@@ -73,10 +73,10 @@ export function Markdown({ source, renderLink }: { source: string; renderLink?: 
       flushParagraph();
       flushList();
       const level = heading[1].length;
-      if (level === 1) output.push(<h1 key={`h-${output.length}`}>{inline(heading[2])}</h1>);
-      else if (level === 2) output.push(<h2 key={`h-${output.length}`}>{inline(heading[2])}</h2>);
-      else if (level === 3) output.push(<h3 key={`h-${output.length}`}>{inline(heading[2])}</h3>);
-      else output.push(<h4 key={`h-${output.length}`}>{inline(heading[2])}</h4>);
+      if (level === 1) output.push(<h1 key={`h-${output.length}`}>{inline(heading[2], renderLink)}</h1>);
+      else if (level === 2) output.push(<h2 key={`h-${output.length}`}>{inline(heading[2], renderLink)}</h2>);
+      else if (level === 3) output.push(<h3 key={`h-${output.length}`}>{inline(heading[2], renderLink)}</h3>);
+      else output.push(<h4 key={`h-${output.length}`}>{inline(heading[2], renderLink)}</h4>);
       continue;
     }
 
@@ -84,7 +84,7 @@ export function Markdown({ source, renderLink }: { source: string; renderLink?: 
     if (quote) {
       flushParagraph();
       flushList();
-      output.push(<blockquote key={`q-${output.length}`}>{inline(quote[1])}</blockquote>);
+      output.push(<blockquote key={`q-${output.length}`}>{inline(quote[1], renderLink)}</blockquote>);
       continue;
     }
 
