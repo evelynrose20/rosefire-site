@@ -7,7 +7,6 @@ export const siteConfig = {
     { label: "Start Here", href: "/getting-started" },
     { label: "Rules", href: "/rules" },
     { label: "City Guide", href: "/city-guide" },
-    { label: "Garbage Job", href: "/garbage-job" },
     { label: "Lore", href: "/lore" },
     { label: "Changelog", href: "/changelog" },
     { label: "FAQ", href: "/faq" },
