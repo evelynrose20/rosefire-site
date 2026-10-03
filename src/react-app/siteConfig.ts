@@ -17,6 +17,7 @@ export const siteConfig = {
     "/rules": "rules.md",
     "/city-guide": "city-guide.md",
     "/garbage-job": "garbage-job.md",
+    "/propane-job": "propane-job.md",
     "/lore": "lore.md",
     "/changelog": "changelog.md",
     "/faq": "faq.md",
