@@ -1,127 +1,293 @@
 # Diamond Casino & Resort
 ![[Pasted image 20261004124247.png]]
-The Diamond Casino & Resort is one of Rosefire's biggest weekend destinations.
+After months of repairs following the storms that tore through the island, the **Diamond Casino & Resort** is open again.
 
-The casino is not open every day. It operates on a limited weekend schedule, turning it into a proper event destination rather than somewhere players can access at any time.
+The Diamond is one of Rosefire's biggest weekend destinations, combining casino games, racing, high-limit gambling, VIP benefits, social spaces, and future luxury housing.
+
+Whether you're stopping in for a few spins, chasing a Main Event win, or spending the night at the high-limit tables, the Diamond is designed to feel like a full entertainment destination rather than just another place to spend money.
 
 ## Opening Hours
 
-The casino opens every:
+The Diamond Casino operates on a limited weekend schedule.
 
-**Friday at 8:00 PM**
+**Opens:** Friday at 8:00 PM  
+**Closes:** Sunday at Midnight
 
-and closes:
+Casino games and services are unavailable outside of the casino's operating hours.
 
-**Sunday at Midnight**
+> The Diamond is a weekend destination. Plan your visit accordingly.
 
-Outside of those hours, casino activities are unavailable.
+# Casino Floor
 
-> Plan your visit around the weekend opening window.
+The casino floor contains several fully playable gambling activities.
 
 ## Lucky Wheel
 
-While the casino is open, residents can spin the Lucky Wheel once every 24 hours.
+The Lucky Wheel can be spun while the casino is open and uses a **24-hour cooldown** between free spins.
 
-Possible rewards vary, and one of the biggest prizes is the chance to win a vehicle.
+Possible prizes include:
 
-The 24-hour cooldown applies between spins while the casino is available.
+- Casino chips
+    
+- Large chip prizes
+    
+- The weekly podium vehicle
+    
 
-## Inside Track
+The podium vehicle rotates on a weekly schedule.
 
-Inside Track gives residents a selection of different racing series to compete in.
+If you win a prize and move away from the Lucky Wheel before claiming it, your prize is safely reserved. You can close the claim screen, return to the wheel later, and collect it without losing the reward.
 
-Available race types include:
+## Slot Machines
 
-- **ROSEFIRE DERBY** — Horses
+Slot machines can be found throughout the casino floor.
+
+Players can:
+
+- Choose different wager amounts
+    
+- Spin using casino chips
+    
+- Receive server-verified payouts
+    
+- Play without needing other players online
+    
+
+Each machine operates independently, making slots a simple option whether the casino is busy or quiet.
+
+# Inside Track & Rosefire Racing
+
+Inside Track is more than a simple betting screen.
+
+The casino hosts several racing series:
+
+- **ROSEFIRE DERBY** — Horse Racing
     
 - **VINEWOOD GRAND PRIX** — Street Racing
     
-- **DIAMOND TT** — Motorcycles
+- **DIAMOND TT** — Motorcycle Racing
     
 - **BLAINE ENDURO** — Off-Road Racing
     
 
-Players can also work toward entering their own racer into these events.
+Players can participate in:
 
-As your entry wins races, you can improve and upgrade it over time, giving Inside Track its own progression path instead of being a simple betting screen.
-
-## Table Games
-
-The casino also offers several classic table games.
-
-### Roulette
-
-Place your bets and watch the wheel decide the outcome.
-
-### Blackjack
-
-Play against the dealer and try to reach 21 without going over.
-
-### Poker
-
-Sit down at the tables and play poker alongside other casino activities.
-
-## Casino Chips
-
-Casino games use chips rather than normal cash directly at the tables.
-
-Your access to chips depends on your casino status.
-
-## VIP Membership
-
-VIP members receive additional casino benefits.
-
-VIP access allows residents to:
-
-- Purchase or hold more casino chips
+- Single races
     
-- Gain access to VIP-only benefits
+- Weekly Main Events
     
-- Qualify for future penthouse ownership
+- Casino wagering
+    
+- Racer ownership
+    
+- Racer progression
+    
+- Racer upgrades
     
 
-VIP membership is intended for residents who want deeper access to the casino and its higher-end features.
+Players can also obtain their own racers and develop them over time.
 
-## Alcohol
+Owned racers must actually compete and win races to unlock higher upgrade levels. Racer progression cannot simply be bought outright.
 
-Alcohol is available inside the casino while it is open.
+That means a successful racer has a history behind it.
 
-The casino is intended to feel like a full nightlife destination rather than just a collection of gambling tables.
+# American Roulette
 
-## Penthouses
+Four American Roulette tables are available inside the Diamond.
 
-Casino penthouses are planned as a premium housing option.
+## Standard Roulette
 
-Once the penthouse system is complete:
-
-- Penthouses will require VIP status
+- 2 tables
     
-- They will only be available through the casino
-    
-- They will act as one of Rosefire's more exclusive residential options
+- Maximum round wager: **5,000 chips**
     
 
-Penthouses are not yet available until development on that system is finished.
+## High Roller Roulette
 
-## Good to Know
+- 2 tables
+    
+- Maximum round wager: **25,000 chips**
+    
 
-- The casino is only open from Friday at 8:00 PM through Sunday at Midnight.
+Available bets include:
+
+- Straight numbers
     
-- The Lucky Wheel has a 24-hour reset while the casino is open.
+- Red / Black
     
-- The Lucky Wheel can award a vehicle.
+- Odd / Even
     
-- Inside Track includes horse, street, motorcycle, and off-road events.
+- 1–18 / 19–36
     
-- Players can develop their own Inside Track entries and upgrade them through victories.
+- Dozens
     
-- Roulette, Blackjack, and Poker are available.
+- Columns
     
-- VIP membership increases casino access and chip limits.
+- `0`
     
-- Future penthouses will require VIP status.
+- `00`
     
-- Gambling is optional and is not required for normal character progression.
+
+Each table operates independently.
+
+Simulated casino guests can also participate, allowing a player to sit down for a proper roulette game even when no other real players are present.
+
+# Blackjack
+
+The Diamond also operates four Blackjack tables.
+
+## Standard Blackjack
+
+- 2 tables
+    
+- Maximum wager: **5,000 chips**
+    
+
+## High Roller Blackjack
+
+- 2 tables
+    
+- Maximum wager: **25,000 chips**
+    
+
+Current Blackjack rules include:
+
+- Hit
+    
+- Stand
+    
+- Double Down
+    
+- Pushes
+    
+- Busts
+    
+- Dealer Blackjack
+    
+- Dealer stands on 17
+    
+- Natural Blackjack pays **3:2**
+    
+
+Cards, wagers, decks, dealer behavior, and payouts are handled server-side.
+
+Blackjack tables also include simulated casino guests, meaning a player can walk into the casino alone and still sit down for a full game.
+
+# Poker
+
+Poker is also available as part of the casino's table-game offerings.
+
+Poker gives residents another option for a slower, more social casino experience alongside Blackjack and Roulette.
+
+# Casino Chips
+
+Casino chips are the primary currency used throughout the casino.
+
+While inside the Diamond, the casino chip tracker displays:
+
+- Your current chip balance
+    
+- Your current chip purchase limit
+    
+- Your VIP status where applicable
+    
+
+Standard players and VIP members have different chip purchasing and wagering limits.
+
+# VIP Membership
+
+VIP membership is designed for residents who want deeper access to the Diamond.
+
+VIP benefits include:
+
+- Increased casino chip limits
+    
+- Access to higher-end casino features
+    
+- Access to future Diamond penthouses
+    
+- Additional premium casino benefits as the system expands
+    
+
+VIP status is also tied into the Diamond's luxury side rather than being purely a gambling upgrade.
+
+# High Roller Floor
+
+The Diamond's high-limit section is intended for residents willing to take significantly larger risks.
+
+Current High Roller offerings include:
+
+- High Roller Roulette
+    
+- High Roller Blackjack
+    
+- Maximum wagers of **25,000 chips**
+    
+
+Additional high-limit games may be added as the casino expands.
+
+# Dealers & Casino Guests
+
+Roulette and Blackjack tables use dedicated casino dealers placed directly at each table.
+
+Dealer interactions are standardized across the casino so table games behave consistently.
+
+Simulated casino guests also participate in active games, helping the Diamond remain lively even when only a small number of real players are online.
+
+# Alcohol & Nightlife
+
+Alcohol is available inside the casino while the Diamond is open.
+
+The casino is intended to work just as well as a social and nightlife location as it does a gambling destination.
+
+Come for the tables, meet friends, celebrate a racing win, or simply spend the evening somewhere different.
+
+# Diamond Penthouses
+
+Luxury penthouses are planned as a future extension of the Diamond Casino & Resort.
+
+Once completed:
+
+- Penthouses will require VIP membership
+    
+- They will be obtained through the Diamond
+    
+- They will serve as one of Rosefire's premium residential options
+    
+
+Penthouses are not yet available while that system remains under development.
+
+# Good to Know
+
+- The Diamond opens Friday at **8:00 PM**.
+    
+- The Diamond closes Sunday at **Midnight**.
+    
+- The Lucky Wheel uses a **24-hour cooldown**.
+    
+- The podium vehicle rotates weekly.
+    
+- Lucky Wheel prizes are reserved until claimed.
+    
+- Slots are playable without other players online.
+    
+- Inside Track includes horse, street, motorcycle, and off-road racing.
+    
+- Players can own and upgrade their own racers.
+    
+- Racer upgrades must be earned through competition.
+    
+- Standard Roulette and Blackjack tables cap wagers at **5,000 chips**.
+    
+- High Roller tables cap wagers at **25,000 chips**.
+    
+- Roulette and Blackjack remain playable during quieter hours through simulated casino guests.
+    
+- VIP players receive higher casino limits.
+    
+- Future Diamond penthouses will require VIP membership.
+    
+- Gambling is optional and is not required for normal Rosefire progression.
     
 
 [[city-guide/fun/index|← Back to Fun Around the City]]

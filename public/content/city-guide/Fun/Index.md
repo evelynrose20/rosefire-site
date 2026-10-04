@@ -7,6 +7,7 @@ Looking for something to do when you're off the clock?
 - [[Los santos Golf Club]]
 - [[Arcades]]
 - [[Nightclubs]]
+- [[Diamond Casino]]
 
 ## Activities
 

@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "city-guide/Fun/Diamond Casino.md",
+                "file": "city-guide/Fun/Index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Diamond Casino"
+              "title": "Index"
             }
           }
         ],
@@ -219,13 +219,13 @@
   },
   "active": "23fafc2ed417f079",
   "lastOpenFiles": [
-    "Pasted image 20261004124247.png",
+    "city-guide.md",
+    "city-guide/Fun/Los santos Golf Club.md",
     "city-guide/Fun/Index.md",
     "city-guide/Fun/Diamond Casino.md",
-    "city-guide.md",
+    "Pasted image 20261004124247.png",
     "city-guide/Fun",
     "faq.md",
-    "city-guide/Fun/Los santos Golf Club.md",
     "city-guide/Jobs",
     "city-guide",
     "city-guide/Jobs/propane-job.md",
