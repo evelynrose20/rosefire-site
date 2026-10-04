@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join, relative, sep } from "node:path";
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 
 type ContentEntry = {
@@ -82,23 +82,23 @@ function scanContent(): ContentEntry[] {
     return {
       route: routeFor(file),
       file,
-      title: meta.title || fallbackTitle,
+      title: meta.navTitle || meta.title || fallbackTitle,
       nav: meta.nav === "true",
       navOrder: Number.isFinite(navOrder) ? navOrder : 999,
     };
   }).sort((a, b) => a.route.localeCompare(b.route));
 }
 
-function contentIndexPlugin() {
+function contentIndexPlugin(): Plugin {
   return {
     name: "rosefire-content-index",
-    configureServer(server: { middlewares: { use: (path: string, handler: (_req: unknown, res: { setHeader: (name: string, value: string) => void; end: (body: string) => void }) => void) => void } }) {
+    configureServer(server) {
       server.middlewares.use("/content-index.json", (_req, res) => {
         res.setHeader("Content-Type", "application/json; charset=utf-8");
         res.end(JSON.stringify(scanContent(), null, 2));
       });
     },
-    generateBundle(this: { emitFile: (asset: { type: "asset"; fileName: string; source: string }) => void }) {
+    generateBundle() {
       this.emitFile({
         type: "asset",
         fileName: "content-index.json",
