@@ -40,7 +40,9 @@ function normalizeLookup(value: string) {
     .replace(/\.md$/i, "")
     .replace(/^\/+/, "")
     .trim()
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/[_\s]+/g, "-")
+    .replace(/-+/g, "-");
 }
 
 function resolveContentHref(href: string, entries: ContentEntry[], currentFile?: string) {
@@ -55,7 +57,7 @@ function resolveContentHref(href: string, entries: ContentEntry[], currentFile?:
     const fileNoExt = normalizeLookup(entry.file);
     const basename = fileNoExt.split("/").pop() ?? fileNoExt;
     const route = normalizeLookup(entry.route);
-    const title = entry.title.trim().toLowerCase();
+    const title = normalizeLookup(entry.title);
 
     return fileNoExt === relativeCandidate ||
       fileNoExt === raw ||
