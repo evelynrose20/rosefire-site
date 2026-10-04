@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Los santos Golf Club.md",
+                "file": "city-guide/Los santos Golf Club.md",
                 "mode": "source",
                 "source": false
               },
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Los santos Golf Club.md",
+                "file": "city-guide/Los santos Golf Club.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Los santos Golf Club.md",
+                "file": "city-guide/Los santos Golf Club.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Los santos Golf Club.md",
+                "file": "city-guide/Los santos Golf Club.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -205,11 +205,14 @@
   },
   "active": "a98d676fb800563d",
   "lastOpenFiles": [
-    "propane-job.md",
+    "city-guide/Jobs",
+    "Untitled.md",
+    "city-guide",
+    "city-guide/Los santos Golf Club.md",
+    "city-guide/Jobs/propane-job.md",
     "images/Pasted image 20261004061402.png",
     "city-guide.md",
-    "Los santos Golf Club.md",
     "images",
-    "garbage-job.md"
+    "city-guide/Jobs/garbage-job.md"
   ]
 }

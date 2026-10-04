@@ -38,12 +38,12 @@ Rosefire is moving beyond simple clock-in jobs toward persistent professions and
 
 Keep the streets of Los Santos clean with a full sanitation career: bring your registered refuse truck to the depot, clock in, follow assigned collection routes, manage your hopper and compactor, build experience, improve your skills, and receive your shift pay through Fleeca.
 
-**[Read the full Garbage Collection job guide →](/garbage-job)**
+**[Read the full Garbage Collection job guide →](garbage-job.md)**
 
 ### Jonny Shapiro Gas Specialist
 
 Keep homes and businesses supplied with propane using your own registered service truck. Load bulk propane, choose a service area, follow Dispatch to customer tanks, make physical hose deliveries, and build a persistent propane career with levels, skills, achievements, and Fleeca pay.
 
-**[Read the full Propane Delivery job guide →](/propane-job)**
+**[Read the full Propane Delivery job guide →](propane-job.md)**
 
 > **Players improve the world; they do not unlock it.**
