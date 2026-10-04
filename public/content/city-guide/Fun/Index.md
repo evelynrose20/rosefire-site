@@ -4,7 +4,7 @@ Looking for something to do when you're off the clock?
 
 ## Entertainment
 
-- [[Los Santos Golf Club]]
+- [[Los santos Golf Club]]
 - [[Arcades]]
 - [[Nightclubs]]
 
