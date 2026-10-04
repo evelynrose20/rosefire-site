@@ -47,3 +47,26 @@ Keep homes and businesses supplied with propane using your own registered servic
 **[Read the full Propane Delivery job guide →](propane-job.md)**
 
 > **Players improve the world; they do not unlock it.**
+
+# Fun Around the City
+
+Rosefire is more than work, bills, and building a career. There are places to visit, activities to try, collections to chase, and ways to spend time around Los Santos whether you're alone or out with friends.
+
+Use this guide to find things to do around the city.
+
+## Places to Visit
+
+- [[Los Santos Golf Club]]
+- [[Arcades]]
+- [[Nightclubs]]
+
+## Activities
+
+- [[Fishing]]
+- [[Collectibles]]
+
+## Seasonal Fun
+
+- [[Seasonal Events]]
+
+> New activities and locations will be added here as Rosefire grows.
