@@ -35,27 +35,39 @@ function imageSource(source: string): string {
 }
 
 function inline(text: string, renderLink?: (href: string, children: ReactNode) => ReactNode): ReactNode[] {
-  const parts = text.split(/(!\[\[[^\]]+\]\]|!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
+  const parts = text.split(/(!\[\[[^\]]+\]\]|\[\[[^\]]+\]\]|!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
   return parts.filter(Boolean).map((part, index) => {
     const obsidianImage = part.match(/^!\[\[([^|\]]+)(?:\|([^\]]+))?\]\]$/);
     if (obsidianImage && /\.(?:png|jpe?g|gif|webp|svg|avif)$/i.test(obsidianImage[1])) {
       return <img className="markdown-image" key={index} src={imageSource(obsidianImage[1])} alt={obsidianImage[2] || obsidianImage[1]} loading="lazy" />;
     }
+
+    const wikiLink = part.match(/^\[\[([^|\]]+)(?:\|([^\]]+))?\]\]$/);
+    if (wikiLink) {
+      const label = wikiLink[2] || wikiLink[1];
+      return renderLink ? <span key={index}>{renderLink(wikiLink[1], label)}</span> : <a key={index} href={wikiLink[1]}>{label}</a>;
+    }
+
     const markdownImage = part.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
     if (markdownImage) {
       return <img className="markdown-image" key={index} src={imageSource(markdownImage[2])} alt={markdownImage[1]} loading="lazy" />;
     }
+
     const strongLink = part.match(/^\*\*\[([^\]]+)\]\(([^)]+)\)\*\*$/);
     if (strongLink) {
       const linked = renderLink ? renderLink(strongLink[2], strongLink[1]) : <a href={strongLink[2]}>{strongLink[1]}</a>;
       return <strong key={index}>{linked}</strong>;
     }
+
     const strong = part.match(/^\*\*(.+)\*\*$/);
     if (strong) return <strong key={index}>{strong[1]}</strong>;
+
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) return renderLink ? <span key={index}>{renderLink(link[2], link[1])}</span> : <a key={index} href={link[2]}>{link[1]}</a>;
+
     const code = part.match(/^`(.+)`$/);
     if (code) return <code key={index}>{code[1]}</code>;
+
     return part;
   });
 }
@@ -89,6 +101,7 @@ export function Markdown({ source, renderLink }: { source: string; renderLink?: 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
     const raw = lines[lineIndex];
     const line = raw.trimEnd();
+
     if (!line.trim()) {
       flushParagraph();
       flushList();
