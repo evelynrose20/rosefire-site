@@ -27,9 +27,24 @@ export function parseDocument(source: string): MarkdownDocument {
   return { meta, body: normalized.slice(end + 5).trim() };
 }
 
+function imageSource(source: string): string {
+  if (/^(https?:)?\/\//i.test(source) || source.startsWith("data:") || source.startsWith("/")) return source;
+  const cleaned = source.replace(/^\.\//, "");
+  const contentPath = cleaned.startsWith("images/") ? cleaned : `images/${cleaned}`;
+  return encodeURI(`${import.meta.env.BASE_URL}content/${contentPath}`);
+}
+
 function inline(text: string, renderLink?: (href: string, children: ReactNode) => ReactNode): ReactNode[] {
-  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
+  const parts = text.split(/(!\[\[[^\]]+\]\]|!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
   return parts.filter(Boolean).map((part, index) => {
+    const obsidianImage = part.match(/^!\[\[([^|\]]+)(?:\|([^\]]+))?\]\]$/);
+    if (obsidianImage && /\.(?:png|jpe?g|gif|webp|svg|avif)$/i.test(obsidianImage[1])) {
+      return <img className="markdown-image" key={index} src={imageSource(obsidianImage[1])} alt={obsidianImage[2] || obsidianImage[1]} loading="lazy" />;
+    }
+    const markdownImage = part.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (markdownImage) {
+      return <img className="markdown-image" key={index} src={imageSource(markdownImage[2])} alt={markdownImage[1]} loading="lazy" />;
+    }
     const strongLink = part.match(/^\*\*\[([^\]]+)\]\(([^)]+)\)\*\*$/);
     if (strongLink) {
       const linked = renderLink ? renderLink(strongLink[2], strongLink[1]) : <a href={strongLink[2]}>{strongLink[1]}</a>;
