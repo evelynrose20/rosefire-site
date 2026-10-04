@@ -1,4 +1,7 @@
 ---
+nav: true
+navOrder: 3
+navTitle: Rules
 eyebrow: COMMUNITY STANDARD
 updated: 2026-09-28
 ---
