@@ -1,4 +1,7 @@
 ---
+nav: true
+navOrder: 1
+navTitle: Home
 title: ROSEFIRE RP
 kicker: A PERSISTENT FIVEM ROLEPLAY CITY
 motto: MAKE A LIFE. BUILD A LEGACY.
