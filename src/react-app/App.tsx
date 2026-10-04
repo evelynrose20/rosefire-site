@@ -12,6 +12,7 @@ type ContentEntry = {
 };
 
 const BASE_PATH = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
+const CONTENT_REQUEST_VERSION = Date.now().toString();
 
 function toSiteUrl(path: string) {
   if (!path.startsWith("/")) return path;
@@ -167,7 +168,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}content-index.json`)
+    fetch(`${import.meta.env.BASE_URL}content-index.json?v=${CONTENT_REQUEST_VERSION}`, { cache: "no-store" })
       .then(response => {
         if (!response.ok) throw new Error("Unable to load content index");
         return response.json() as Promise<ContentEntry[]>;
@@ -195,7 +196,7 @@ function App() {
 
     if (!file) return;
 
-    fetch(`${import.meta.env.BASE_URL}content/${encodeURI(file)}`)
+    fetch(`${import.meta.env.BASE_URL}content/${encodeURI(file)}?v=${CONTENT_REQUEST_VERSION}`, { cache: "no-store" })
       .then(response => {
         if (!response.ok) throw new Error("Unable to load page");
         return response.text();
