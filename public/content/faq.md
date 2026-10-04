@@ -1,4 +1,7 @@
 ---
+nav: true
+navOrder: 7
+navTitle: FAQ
 eyebrow: HELP
 updated: 2026-09-28
 ---
