@@ -1,4 +1,7 @@
 ---
+nav: true
+navOrder: 2
+navTitle: Start Here
 eyebrow: START HERE
 updated: 2026-09-28
 ---
