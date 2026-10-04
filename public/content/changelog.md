@@ -1,4 +1,7 @@
 ---
+nav: true
+navOrder: 6
+navTitle: Changelog
 eyebrow: DEVELOPMENT
 updated: 2026-09-28
 ---
