@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+const IMAGE_REQUEST_VERSION = Date.now().toString();
+
 export type MarkdownDocument = {
   meta: Record<string, string>;
   body: string;
@@ -31,7 +33,7 @@ function imageSource(source: string): string {
   if (/^(https?:)?\/\//i.test(source) || source.startsWith("data:") || source.startsWith("/")) return source;
   const cleaned = source.replace(/^\.\//, "");
   const contentPath = cleaned.startsWith("images/") ? cleaned : `images/${cleaned}`;
-  return encodeURI(`${import.meta.env.BASE_URL}content/${contentPath}`);
+  return `${encodeURI(`${import.meta.env.BASE_URL}content/${contentPath}`)}?v=${IMAGE_REQUEST_VERSION}`;
 }
 
 function inline(text: string, renderLink?: (href: string, children: ReactNode) => ReactNode): ReactNode[] {
