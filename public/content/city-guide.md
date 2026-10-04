@@ -5,68 +5,67 @@ navTitle: City Guide
 eyebrow: CITY GUIDE
 updated: 2026-10-03
 ---
+---
+nav: true
+navOrder: 4
+navTitle: City Guide
+eyebrow: CITY GUIDE
+---
 
-# Living in Rosefire
+# City Guide
 
-This guide documents the services and systems a resident can actually use. It will grow alongside the city.
+Rosefire has a lot going on. Pick a section below to learn how the city works.
 
-## Banking
+## Work & Careers
 
-Rosefire uses a full banking system for accounts, cards, ATMs, payments, and financial services. Residents open their own accounts rather than receiving a fully configured bank account automatically.
+Jobs, professions, progression, and ways to make money.
 
-## Identity & Licensing
+- [[city-guide/jobs/index|Jobs & Careers]]
 
-City services handle identification and licensing. Driver licensing and commercial licensing are treated as real parts of a character's life rather than invisible menu permissions.
+## Money & Banking
 
-## Housing
+Banking, accounts, loans, credit score, direct deposit, and financial systems.
 
-Residents can own and use homes. Housing information will expand here as property systems and purchasing become available to founding testers.
+- [[city-guide/money/index|Money & Banking]]
 
-## Vehicles
+## Housing & Property
 
-Dealerships, fuel, vehicle keys, repair garages, and ownership systems are part of normal city life. Basic vehicle services are intended to remain accessible even during quiet hours.
+Homes, apartments, leases, ownership, foreclosures, and upgrades.
 
-## Personal Services
+- [[city-guide/housing/index|Housing & Property]]
 
-Clothing stores, barber shops, tattoo studios, shops, and other everyday services remain part of the world regardless of population.
+## Vehicles & Transport
 
-## Work & Professions
+Dealerships, fuel, licenses, keys, repairs, and vehicle ownership.
 
-Rosefire is moving beyond simple clock-in jobs toward persistent professions and connected production. Mining, farming, fishing, beekeeping, crafting, food production, manufacturing, and other work should eventually feed one another instead of ending at a single sell marker.
+- [[city-guide/vehicles/index|Vehicles & Transport]]
 
-### Los Santos Sanitation
+## Businesses
 
-Keep the streets of Los Santos clean with a full sanitation career: bring your registered refuse truck to the depot, clock in, follow assigned collection routes, manage your hopper and compactor, build experience, improve your skills, and receive your shift pay through Fleeca.
+Player-owned businesses, management systems, staff, hiring, and ownership.
 
-**[Read the full Garbage Collection job guide →](garbage-job.md)**
+- [[city-guide/businesses/index|Businesses]]
 
-### Jonny Shapiro Gas Specialist
+## Government & Law
 
-Keep homes and businesses supplied with propane using your own registered service truck. Load bulk propane, choose a service area, follow Dispatch to customer tanks, make physical hose deliveries, and build a persistent propane career with levels, skills, achievements, and Fleeca pay.
+City Hall, licenses, legal services, applications, and government systems.
 
-**[Read the full Propane Delivery job guide →](propane-job.md)**
+- [[city-guide/government/index|Government & Law]]
 
-> **Players improve the world; they do not unlock it.**
+## Everyday Services
 
-# Fun Around the City
+Clothing, barber shops, tattoos, IDs, phones, shops, and other daily-use systems.
 
-Rosefire is more than work, bills, and building a career. There are places to visit, activities to try, collections to chase, and ways to spend time around Los Santos whether you're alone or out with friends.
+- [[city-guide/services/index|Everyday Services]]
 
-Use this guide to find things to do around the city.
+## Fun Around the City
 
-## Places to Visit
+Activities, entertainment, clubs, arcades, golf, collectibles, and seasonal events.
 
-- [[Los Santos Golf Club]]
-- [[Arcades]]
-- [[Nightclubs]]
+- [[city-guide/fun/index|Fun Around the City]]
 
-## Activities
+## Game Systems
 
-- [[Fishing]]
-- [[Collectibles]]
+Achievements, progression systems, collectibles, phone features, and other city-wide mechanics.
 
-## Seasonal Fun
-
-- [[Seasonal Events]]
-
-> New activities and locations will be added here as Rosefire grows.
+- [[city-guide/systems/index|City Systems]]
