@@ -1,4 +1,7 @@
 ---
+nav: true
+navOrder: 5
+navTitle: Lore
 eyebrow: LORE
 updated: 2026-09-28
 ---
