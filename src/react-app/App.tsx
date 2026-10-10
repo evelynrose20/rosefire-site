@@ -486,8 +486,68 @@ function GolfPage({ document, entries, file }: { document: MarkdownDocument; ent
   </div>;
 }
 
+function UnderworldTerminal({ onExit }: { onExit: () => void }) {
+  const bootLines = [
+    "> connection lost: public network",
+    "> switching relay ...",
+    "> negotiating encrypted tunnel ...",
+    "> identity withheld",
+    "> accessing /rosefire/underground",
+    "> handshake accepted"
+  ];
+  const [stage,setStage]=useState<"shutdown"|"boot"|"welcome">("shutdown");
+  const [typed,setTyped]=useState("");
+  const [showLeads,setShowLeads]=useState(false);
+  const fullText=bootLines.join("\n");
+  useEffect(()=>{
+    const oldOverflow=document.body.style.overflow;
+    document.body.style.overflow="hidden";
+    const shutdown=setTimeout(()=>setStage("boot"),850);
+    return ()=>{clearTimeout(shutdown);document.body.style.overflow=oldOverflow;};
+  },[]);
+  useEffect(()=>{
+    if(stage!=="boot")return;
+    let index=0;
+    const timer=window.setInterval(()=>{
+      index=Math.min(index+2,fullText.length);
+      setTyped(fullText.slice(0,index));
+      if(index===fullText.length){window.clearInterval(timer);finish=setTimeout(()=>setStage("welcome"),750);}
+    },33);
+    let finish:ReturnType<typeof setTimeout>|undefined;
+    return ()=>{window.clearInterval(timer);if(finish)clearTimeout(finish);};
+  },[stage,fullText]);
+  useEffect(()=>{
+    const onKey=(e:KeyboardEvent)=>{if(e.key==="Escape")onExit();};
+    window.addEventListener("keydown",onKey);
+    return ()=>window.removeEventListener("keydown",onKey);
+  },[onExit]);
+  return <div className={`underworld-overlay underworld-${stage}`} role="dialog" aria-modal="true" aria-label="Underground network">
+    <button className="underworld-exit" type="button" onClick={onExit}>EXIT / ESC</button>
+    {stage==="shutdown" ? <div className="underworld-blackout"><span>CONNECTION INTERRUPTED</span></div> :
+      stage==="boot" ? <div className="underworld-boot"><p>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre>{typed}<span className="underworld-cursor">█</span></pre><button type="button" onClick={()=>setStage("welcome")}>Skip connection sequence →</button></div> :
+      <div className="underworld-interface">
+        <header><span>◈ UNDERGROUND RELAY</span><span>PRIVATE CONNECTION / IDENTITY MASKED</span></header>
+        <div className="underworld-window">
+          <p className="underworld-overline">INCOMING MESSAGE · UNKNOWN CONTACT</p>
+          <h1>Well, look what found its way down here.</h1>
+          <p>Call me <strong>Vesper</strong>. No need for names on your end, sweetheart. You've slipped past the polished brochures and the friendly faces. Welcome to Rosefire's underworld.</p>
+          <p>Down here, people trade in favors, rumors, and opportunities that don't make the morning paper. Maybe you're curious. Maybe you're looking for something you shouldn't be. Either way, you're at the door now.</p>
+          <p>So, what's it going to be? Have a look around ... or run right back to the safety of the streets above.</p>
+          {!showLeads ? <div className="underworld-choices"><button type="button" onClick={()=>setShowLeads(true)}>Show me what's out there →</button><button type="button" onClick={onExit}>Take me back to safety</button></div> :
+            <div className="underworld-leads"><p className="underworld-overline">THE UNDERGROUND / RUMORS & CONNECTIONS</p>
+              <div><article><h2>Whispers</h2><p>Every city has secrets. Finding the right person is half the work.</p></article><article><h2>Favors</h2><p>Some doors only open when someone owes you something.</p></article><article><h2>After Dark</h2><p>The city changes after sundown. Pay attention to who stays awake.</p></article></div>
+              <p className="underworld-muted">More connections will surface in time. Until then, keep your eyes open.</p>
+              <button type="button" onClick={onExit}>Disappear back into Rosefire →</button>
+            </div>}
+        </div>
+        <footer>ROSEFIRE / NO RECORD OF THIS SESSION</footer>
+      </div>}
+  </div>;
+}
+
 function CityGuidePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const {meta,body}=document;
+  const [underworldOpen,setUnderworldOpen]=useState(false);
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const sections=body.split(/^## (.+)\s*$/m);
   const intro=sections[0].replace(/^# .+\n/,"").trim();
@@ -514,7 +574,9 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
           <div className="markdown-content resident-guide-card-copy"><Markdown source={card.content} renderLink={renderLink}/></div>
         </article>)}
       </div>
+      <div className="underworld-discovery"><button type="button" aria-label="Unmarked connection" title="An unmarked connection" onClick={()=>setUnderworldOpen(true)}><span aria-hidden="true">_</span></button></div>
     </section>
+    {underworldOpen && <UnderworldTerminal onExit={()=>setUnderworldOpen(false)}/>}
     <section className="resident-guide-end">
       <div><p className="section-kicker">A PLACE TO CALL HOME</p><h2>New to San Andreas?</h2><p>Get acquainted with the state, explore its communities, and find the information you need to settle in.</p></div>
       <div className="resident-guide-end-links"><SiteLink href="/getting-started">New resident information →</SiteLink><SiteLink href="/explore">Explore San Andreas →</SiteLink></div>
