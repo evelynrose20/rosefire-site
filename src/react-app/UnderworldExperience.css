@@ -79,3 +79,22 @@
 @media(max-width:1000px){.rf-uw-chamber-layout{grid-template-columns:1fr}.rf-uw-panels{border-left:0;border-top:1px solid #76334a;padding:35px 0 0}.rf-uw-orbit{left:25%}}
 @media(max-width:650px){.rf-uw-wordmark small{font-size:8px}.rf-uw-chamber-header{padding-top:76px}.rf-uw-live{width:100%}.rf-uw-console pre{min-height:340px}.rf-uw-breach-warning strong{font-size:clamp(1.8rem,10vw,3.6rem)}.rf-uw-actions button{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.rf-uw-site-disturbance #root,.rf-uw-breach-shroud,.rf-uw-breach-slice,.rf-uw-breach-warning strong,.rf-uw-wall-core,.rf-uw-wall-grid,.rf-uw-wall-cross,.rf-uw-horizon,.rf-uw-orbit--inner,.rf-uw-sigil i,.rf-uw-caret{animation:none!important}.rf-uw-channel{transition:none}}
+
+/* Controlled return from the Veil: the network seals before returning to the guide. */
+.rf-uw-return{position:fixed;inset:0;z-index:100;width:100%;min-height:100%;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at center,#500c22,#0a030b 68%);animation:rf-uw-return-appear .28s ease-out both}
+.rf-uw-return:before,.rf-uw-return:after{content:"";pointer-events:none;position:absolute;inset:-20%;background:repeating-linear-gradient(0deg,transparent 0 25px,#f02a4a3f 26px 28px,transparent 29px 62px);animation:rf-uw-return-shutter 1.25s ease-in both}
+.rf-uw-return:after{background:repeating-linear-gradient(90deg,transparent 0 70px,#ff335046 71px 72px);animation-duration:1.15s;animation-direction:reverse}
+.rf-uw-return-slices{position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,#e719422e,transparent 38%,#fd477e22);animation:rf-uw-return-sweep 1.2s linear both}
+.rf-uw-return-core{position:relative;z-index:3;width:min(90vw,650px);padding:clamp(26px,4vw,55px);border:1px solid #ad3753;background:#140813db;text-align:center;box-shadow:0 0 75px #ed17412f}
+.rf-uw-return-core>span{display:block;color:#fa91a5;font-size:11px;letter-spacing:.2em}
+.rf-uw-return-core>strong{display:block;margin:22px 0;color:#fff0f2;font:800 clamp(1.4rem,4vw,3.3rem)/1.15 Georgia,serif}
+.rf-uw-return-core>p{color:#e2acb8;font-size:12px;letter-spacing:.07em}
+.rf-uw-return-progress{height:8px;margin-top:26px;border:1px solid #b74c65;background:#2d0919;overflow:hidden}
+.rf-uw-return-progress>span{display:block;height:100%;width:100%;background:repeating-linear-gradient(90deg,#ff4167 0 15px,#7e1735 16px 19px);transform-origin:left;animation:rf-uw-return-fill 1.25s ease-out both}
+.rf-uw--chamber:has(.rf-uw-return) .rf-uw-chamber{animation:rf-uw-chamber-dismiss 1.2s ease-in both}
+@keyframes rf-uw-return-appear{from{opacity:0}to{opacity:1}}
+@keyframes rf-uw-return-shutter{from{transform:translateY(-13%);opacity:.1}to{transform:translateY(15%);opacity:.7}}
+@keyframes rf-uw-return-sweep{from{transform:translateX(-65%)}to{transform:translateX(70%)}}
+@keyframes rf-uw-return-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rf-uw-chamber-dismiss{from{filter:none;opacity:1}to{filter:blur(12px) saturate(.2);opacity:.15}}
+@media(prefers-reduced-motion:reduce){.rf-uw-return,.rf-uw-return:before,.rf-uw-return:after,.rf-uw-return-slices,.rf-uw-return-progress>span,.rf-uw--chamber:has(.rf-uw-return) .rf-uw-chamber{animation:none!important}}
