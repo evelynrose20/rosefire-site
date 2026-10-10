@@ -2,24 +2,22 @@
 nav: true
 navOrder: 1
 navTitle: Home
-title: ROSEFIRE RP
-kicker: A PERSISTENT FIVEM ROLEPLAY CITY
+title: A Place to Call Home.
+kicker: WELCOME TO ROSEFIRE
 motto: MAKE A LIFE. BUILD A LEGACY.
-description: A player-first roleplay city with a persistent game underneath it. Build a life, pursue long-term goals, and always have something meaningful to do whether the city is quiet or packed.
-status: FOUNDING TESTERS
-statusText: Rosefire is in active development and preparing for its first outside testers.
+description: Opportunity is around every corner. Discover a city where you can find your calling, put down roots, and build a future worth remembering.
 ---
 
-## A city that works when you are the only one awake
+## A city that moves with you
 
-Rosefire is designed around a simple promise: **players make the city better; they do not make the city function.** Essential services remain available when the population is low, while player-run businesses, organizations, professions, and stories become the richer experience as the city grows.
+Morning commutes, late-night deliveries, and neighborhoods with their own stories — life in Rosefire keeps moving. Discover the places, services, and experiences that make the city your own.
 
-## Live here, don't just wait for scenes
+## Your next opportunity awaits
 
-Own vehicles and property. Build professions. Gather, produce, trade, explore, run businesses, chase long-term goals, and create a character with a life that continues between major roleplay scenes.
+There is work to be found, skills to build, and new ventures waiting to take shape. From a first day's shift to the business you've always dreamed of opening, every journey starts somewhere.
 
-## RP on top. Persistent world underneath.
+## Put down roots
 
-Rosefire takes inspiration from MMO progression without turning roleplay into a grind. Professions, production chains, collections, ownership, projects, and a connected economy give every character reasons to return.
+Find your footing, get to know the roads, and make connections that last. Whether your plans are modest or ambitious, Rosefire has room for a fresh start.
 
-> **Make a Life. Build a Legacy.** Population changes the experience—not whether Rosefire works.
+> Make a Life. Build a Legacy.

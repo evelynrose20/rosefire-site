@@ -1,12 +1,15 @@
 export const siteConfig = {
   name: "ROSEFIRE RP",
   shortMark: "RF",
-  subtitle: "MAKE A LIFE. BUILD A LEGACY.",
+  subtitle: "COMMUNITY PORTAL",
   navigation: [
-    { label: "Explore Rosefire", href: "/city-guide" },
-    { label: "Move Here", href: "/getting-started" },
-    { label: "Our Story", href: "/lore" },
-    { label: "City Updates", href: "/changelog" },
+    { label: "Home", href: "/" },
+    { label: "Start Here", href: "/getting-started" },
+    { label: "Rules", href: "/rules" },
+    { label: "City Guide", href: "/city-guide" },
+    { label: "Lore", href: "/lore" },
+    { label: "Changelog", href: "/changelog" },
+    { label: "FAQ", href: "/faq" },
   ],
   pages: {
     "/": "home.md",

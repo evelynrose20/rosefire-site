@@ -88,33 +88,27 @@ function SiteLink({ href, children, className }: { href: string; children: React
   );
 }
 
-function Header() {
+function Header({ entries }: { entries: ContentEntry[] }) {
+  const markdownNav = entries
+    .filter(entry => entry.nav)
+    .sort((a, b) => a.navOrder - b.navOrder || a.title.localeCompare(b.title))
+    .map(entry => ({ label: entry.title, href: entry.route }));
+
+  const navigation = markdownNav.length ? markdownNav : siteConfig.navigation;
+
   return (
-    <>
-      <div className="utility-bar">
-        <div className="utility-inner">
-          <span>THE OFFICIAL ROSEFIRE COMMUNITY PORTAL</span>
-          <div className="utility-links">
-            <SiteLink href="/getting-started">New Player Guide</SiteLink>
-            <SiteLink href="/rules">Community Rules</SiteLink>
-            <SiteLink href="/faq">Help & FAQ</SiteLink>
-          </div>
-        </div>
-      </div>
-      <header className="site-header">
-        <SiteLink className="brand" href="/">
-          <span className="brand-mark">{siteConfig.shortMark}</span>
-          <span>
-            <strong>ROSEFIRE</strong>
-            <small>MAKE A LIFE. BUILD A LEGACY.</small>
-          </span>
-        </SiteLink>
-        <nav className="nav" aria-label="Primary navigation">
-          {siteConfig.navigation.map(item => <SiteLink href={item.href} key={item.href}>{item.label}</SiteLink>)}
-        </nav>
-        <SiteLink className="resident-link" href="/getting-started">Plan Your Move <span aria-hidden="true">↗</span></SiteLink>
-      </header>
-    </>
+    <header className="site-header">
+      <SiteLink className="brand" href="/">
+        <span className="brand-mark">{siteConfig.shortMark}</span>
+        <span>
+          <strong>{siteConfig.name}</strong>
+          <small>{siteConfig.subtitle}</small>
+        </span>
+      </SiteLink>
+      <nav className="nav" aria-label="Primary navigation">
+        {navigation.map(item => <SiteLink href={item.href} key={item.href}>{item.label}</SiteLink>)}
+      </nav>
+    </header>
   );
 }
 
@@ -124,40 +118,26 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
 
   return (
     <>
-      <section className="hero tourism-hero">
+      <section className="hero">
         <div className="hero-copy">
-          <p className="kicker">{meta.kicker || "WELCOME TO ROSEFIRE"}</p>
-          <h1>{meta.title || "A Place to Call Home."}</h1>
+          <p className="kicker">{meta.kicker || "ROSEFIRE ROLEPLAY"}</p>
+          <h1>{meta.title || "ROSEFIRE RP"}</h1>
           <p className="hero-motto">{meta.motto || "MAKE A LIFE. BUILD A LEGACY."}</p>
           <p className="lede">{meta.description}</p>
           <div className="hero-actions">
-            <SiteLink className="button primary" href="/getting-started">Plan Your Move <span aria-hidden="true">→</span></SiteLink>
-            <SiteLink className="button secondary" href="/city-guide">Discover Rosefire</SiteLink>
+            <SiteLink className="button primary" href="/getting-started">Enter Rosefire</SiteLink>
+            <SiteLink className="button secondary" href="/rules">Read the rules</SiteLink>
           </div>
         </div>
-        <div className="hero-seal" aria-hidden="true"><span>ROSEFIRE</span><strong>RF</strong><small>YOUR FUTURE BEGINS HERE</small></div>
+        <aside className="state-card">
+          <p className="status-label">CURRENT STATUS</p>
+          <p className="status-value"><span /> {meta.status || "FOUNDING TESTERS"}</p>
+          <p>{meta.statusText || "Rosefire is in active development and preparing for its first outside testers."}</p>
+        </aside>
       </section>
-      <section className="welcome-strip" aria-label="About Rosefire">
-        <div><span className="section-kicker">A NEW CHAPTER AWAITS</span><h2>Find your place. Build your future.</h2></div>
-        <p>Whether you're looking for a fresh start, a new career, or somewhere to put down roots, there's a place for you in Rosefire.</p>
-      </section>
-      <section className="discover-section" aria-labelledby="discover-heading">
-        <p className="section-kicker">LIFE IN ROSEFIRE</p>
-        <h2 id="discover-heading">Everything you need to make it yours.</h2>
-        <div className="discover-grid">
-          <SiteLink className="feature-card feature-discover" href="/city-guide"><span className="feature-number">01 / EXPLORE</span><h3>Discover the City</h3><p>From bustling streets to places worth getting lost in, see what Rosefire has to offer.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
-          <SiteLink className="feature-card feature-work" href="/city-guide"><span className="feature-number">02 / OPPORTUNITY</span><h3>Find Your Calling</h3><p>Explore local work, professional careers, and opportunities to make a name for yourself.</p><span className="feature-arrow">Explore opportunities →</span></SiteLink>
-          <SiteLink className="feature-card feature-home" href="/getting-started"><span className="feature-number">03 / NEW BEGINNINGS</span><h3>Make Yourself at Home</h3><p>Get acquainted with the city, establish your footing, and begin your next chapter.</p><span className="feature-arrow">Plan your move →</span></SiteLink>
-        </div>
-      </section>
-      <section className="editorial-section">
-        <div className="editorial-intro"><p className="section-kicker">WELCOME TO YOUR NEXT CHAPTER</p><h2>There's more than one way to build a legacy.</h2></div>
-        <article className="markdown-content home-content">
-          <Markdown source={body} renderLink={renderLink} />
-        </article>
-      </section>
-      <section className="move-cta"><p className="section-kicker">READY FOR A FRESH START?</p><h2>Your future is waiting in Rosefire.</h2><p>Start with the essentials, get to know your new home, and see where the road takes you.</p><SiteLink className="button primary" href="/getting-started">Start Your Journey →</SiteLink></section>
-      <section className="community-note"><div><p className="section-kicker">OUT OF CHARACTER / COMMUNITY</p><h2>Here for the roleplay community?</h2><p>Find the rules, connection instructions, and player guides in our dedicated community information area.</p></div><div className="community-actions"><SiteLink href="/rules">Community Rules →</SiteLink><SiteLink href="/getting-started">Player Getting Started →</SiteLink><SiteLink href="/faq">Help & FAQ →</SiteLink></div></section>
+      <article className="markdown-content home-content">
+        <Markdown source={body} renderLink={renderLink} />
+      </article>
     </>
   );
 }
@@ -235,7 +215,7 @@ function App() {
 
   return (
     <main>
-      <Header />
+      <Header entries={indexedEntries} />
       {missing ? (
         <section className="page-shell">
           <p className="section-kicker">404</p>
@@ -251,9 +231,11 @@ function App() {
         <DocumentPage document={document} entries={indexedEntries} file={activeFile} />
       )}
       <footer>
-        <div><strong>ROSEFIRE</strong><p>Make a Life. Build a Legacy.</p></div>
-        <div className="footer-links"><SiteLink href="/city-guide">Explore</SiteLink><SiteLink href="/getting-started">New Residents</SiteLink><SiteLink href="/lore">Our Story</SiteLink></div>
-        <div className="footer-community"><span>COMMUNITY / OOC</span><SiteLink href="/rules">Rules</SiteLink><SiteLink href="/faq">FAQ</SiteLink><SiteLink href="/changelog">Updates</SiteLink></div>
+        <div>
+          <strong>ROSEFIRE RP</strong>
+          <p>Make a Life. Build a Legacy.</p>
+        </div>
+        <SiteLink href="/rules">Rules</SiteLink>
       </footer>
     </main>
   );
