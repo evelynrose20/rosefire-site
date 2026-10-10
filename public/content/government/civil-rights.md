@@ -12,7 +12,7 @@ heroImage:
 
 ## Rosefire Civil Rights & Justice Code
 
-**Published releases: Version 1.0 (Sections 1–4) · Version 1.3 (Section 8)**
+**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8)**
 
 Status: Enacted — In Force
 
@@ -20,7 +20,7 @@ An Act establishing the fundamental rights and liberties of all individuals with
 
 ## Official Code Publications
 
-The Rosefire Civil Rights & Justice Code, Version 1.0, Sections 1–4, has been enacted and is in force throughout the State of San Andreas. The Department of Justice maintains the following publications as the public text of the Code.
+The Rosefire Civil Rights & Justice Code, Sections 1–8, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
 
 ### Section 1 — Fundamental Civil Rights
 
@@ -46,6 +46,30 @@ Search authority, warrants, residences, businesses, vehicles, electronic devices
 
 [[government/civil-rights/section-4|Read Section 4 →]]
 
+### Section 5 — Police Powers & Lawful Orders
+
+**Version 1.1 — Enacted — In Force**
+
+Peace officer authority, identification, lawful orders, traffic enforcement, pursuits, jurisdiction, and accountability.
+
+[[government/civil-rights/section-5|Read Section 5 →]]
+
+### Section 6 — Police Use of Force
+
+**Version 1.1 — Enacted — In Force**
+
+De-escalation, physical restraint, less-lethal and lethal force, medical assistance, reporting, and judicial remedies.
+
+[[government/civil-rights/section-6|Read Section 6 →]]
+
+### Section 7 — Police Processing & Criminal Charges
+
+**Version 1.2 — Enacted — In Force**
+
+Booking and criminal processing, formal charges, legal representation, pleas, citations, prosecutorial review, and judicial referrals.
+
+[[government/civil-rights/section-7|Read Section 7 →]]
+
 ### Section 8 — Sentencing, Bail, Remand & Parole
 
 **Version 1.3 — Enacted — In Force**
@@ -54,7 +78,7 @@ Sentencing, bail and pretrial remand; correctional custody; parole; life impriso
 
 [[government/civil-rights/section-8|Read Section 8 →]]
 
-**Sections 5–7 are not yet available in this public register.**
+**Earlier Section 8 publication:** [[government/civil-rights/archive/section-8-v1.2|Version 1.2 — Historical Archive]] (superseded by Version 1.3).
 
 ### Legislative Implementation and Interpretation
 
@@ -64,6 +88,6 @@ Subjects reserved for subsequent legislation, and the Code's intended supremacy,
 
 ## Official Publication
 
-This register contains the enacted text of Version 1.0, Sections 1–4, and Version 1.3, Section 8, together with the published implementation and interpretation provisions. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
+This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
 
 [[government|← Government & Public Records]]
