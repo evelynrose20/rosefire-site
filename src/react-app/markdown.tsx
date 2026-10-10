@@ -37,7 +37,7 @@ function imageSource(source: string): string {
 }
 
 function inline(text: string, renderLink?: (href: string, children: ReactNode) => ReactNode): ReactNode[] {
-  const parts = text.split(/(!\[\[[^\]]+\]\]|\[\[[^\]]+\]\]|!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
+  const parts = text.split(/(!\[\[[^\]]+\]\]|\[\[[^\]]+\]\]|!\[[^\]]*\]\([^)]+\)|\*\*[^*]+\*\*|__[^_]+__|(?<!\w)_[^_\n]+_(?!\w)|(?<!\w)\*[^*\n]+\*(?!\w)|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
   return parts.filter(Boolean).map((part, index) => {
     const obsidianImage = part.match(/^!\[\[([^|\]]+)(?:\|([^\]]+))?\]\]$/);
     if (obsidianImage && /\.(?:png|jpe?g|gif|webp|svg|avif)$/i.test(obsidianImage[1])) {
@@ -63,6 +63,12 @@ function inline(text: string, renderLink?: (href: string, children: ReactNode) =
 
     const strong = part.match(/^\*\*(.+)\*\*$/);
     if (strong) return <strong key={index}>{strong[1]}</strong>;
+
+    const underscoreStrong = part.match(/^__(.+)__$/);
+    if (underscoreStrong) return <strong key={index}>{underscoreStrong[1]}</strong>;
+
+    const emphasis = part.match(/^(?:_([^_]+)_|\\*([^*]+)\\*)$/);
+    if (emphasis) return <em key={index}>{emphasis[1] ?? emphasis[2]}</em>;
 
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) return renderLink ? <span key={index}>{renderLink(link[2], link[1])}</span> : <a key={index} href={link[2]}>{link[1]}</a>;
