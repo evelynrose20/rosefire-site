@@ -796,6 +796,8 @@ function App() {
         <HousingPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/city-guide/public-services/") ? (
         <PublicServicePage document={document} entries={indexedEntries} file={activeFile}/>
+      ) : path.startsWith("/government/civil-rights/") ? (
+        <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
       ) : path === "/government/civil-rights" ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
       ) : path === "/government" ? (

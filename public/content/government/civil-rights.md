@@ -1,25 +1,59 @@
 ---
 nav: false
 title: Civil Rights Register
-description: The official publication of civil rights, protected freedoms, and related legal instruments of San Andreas.
+description: State of San Andreas Department of Justice — Rosefire Civil Rights & Justice Code, Version 1.0.
+documentStatus: Approved Legislative Draft — Pending Formal Enactment
 heroImage:
-documentStatus: In preparation
 ---
 
 # Civil Rights Register
 
-The Civil Rights Register is the public record for the rights and legal protections formally adopted in San Andreas. Official documents will be published here as their text is finalized and issued.
+**STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-## Publication Notice
+## Rosefire Civil Rights & Justice Code
 
-**The civil rights documents are currently being prepared.** No draft text should be treated as enacted law until an official version is published with its effective date.
+**Version 1.0 — Sections 1–4**
 
-## Register of Rights
+**Status: Approved Legislative Draft — Pending Formal Enactment**
 
-The approved documents will appear here under their official names. Each publication should identify its issuing authority, adoption or enactment date, effective date, and any later amendments.
+*An Act establishing the fundamental rights and liberties of all individuals within the State of San Andreas; defining the lawful powers and limitations of law enforcement and correctional authorities; regulating detention, arrest, search, and seizure; and providing for the administration and judicial oversight of lawful custody.*
 
-## Access to Public Records
+## Official Draft Publications
 
-Residents may consult the published texts here for the current wording of official rights and protections. Questions about interpretation or a particular legal matter should be directed to the relevant government or legal office.
+The following text has been approved as a legislative draft. **It has not yet been formally enacted.** These documents are published for public reference and must not be represented as laws currently in force.
+
+### Section 1 — Fundamental Civil Rights
+
+Equal protection, personal security, silence, legal representation, due process, search protections, double jeopardy, petition and judicial review.
+
+[[government/civil-rights/section-1|Read Section 1 →]]
+
+### Section 2 — Definitions and Legal Standards
+
+Defined legal terms, reasonable suspicion, probable cause, consent, exigent circumstances, judicial authority, and time interpretation.
+
+[[government/civil-rights/section-2|Read Section 2 →]]
+
+### Section 3 — Detention, Identification, Arrest, and Correctional Custody
+
+Rules governing voluntary police encounters, detention, arrest, custody, correctional authority, sentencing limits, and judicial records.
+
+[[government/civil-rights/section-3|Read Section 3 →]]
+
+### Section 4 — Search and Seizure
+
+Search authority, warrants, residences, businesses, vehicles, electronic devices, seized property, and judicial remedies.
+
+[[government/civil-rights/section-4|Read Section 4 →]]
+
+### Legislative Implementation and Interpretation
+
+Subjects reserved for subsequent legislation, and the Code's intended supremacy, consistency, and amendment provisions.
+
+[[government/civil-rights/implementation|Read Implementation Provisions →]]
+
+## Publication and Enactment
+
+The legal text of this release is preserved in its original wording. An effective date has **not** been supplied. Once formal enactment occurs, the Department of Justice can publish the effective date and updated legal status here.
 
 [[government|← Government & Public Records]]
