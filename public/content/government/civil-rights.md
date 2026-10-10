@@ -12,7 +12,7 @@ heroImage:
 
 ## Rosefire Civil Rights & Justice Code
 
-**Version 1.0 — Sections 1–4**
+**Published releases: Version 1.0 (Sections 1–4) · Version 1.3 (Section 8)**
 
 Status: Enacted — In Force
 
@@ -46,6 +46,16 @@ Search authority, warrants, residences, businesses, vehicles, electronic devices
 
 [[government/civil-rights/section-4|Read Section 4 →]]
 
+### Section 8 — Sentencing, Bail, Remand & Parole
+
+**Version 1.3 — Enacted — In Force**
+
+Sentencing, bail and pretrial remand; correctional custody; parole; life imprisonment and capital punishment; rehabilitation, clemency, appeals and release procedures.
+
+[[government/civil-rights/section-8|Read Section 8 →]]
+
+**Sections 5–7 are not yet available in this public register.**
+
 ### Legislative Implementation and Interpretation
 
 Subjects reserved for subsequent legislation, and the Code's intended supremacy, consistency, and amendment provisions.
@@ -54,6 +64,6 @@ Subjects reserved for subsequent legislation, and the Code's intended supremacy,
 
 ## Official Publication
 
-This register contains the enacted text of Version 1.0, Sections 1–4, together with its implementation and interpretation provisions. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
+This register contains the enacted text of Version 1.0, Sections 1–4, and Version 1.3, Section 8, together with the published implementation and interpretation provisions. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
 
 [[government|← Government & Public Records]]
