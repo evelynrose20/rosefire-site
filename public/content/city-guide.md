@@ -1,66 +1,48 @@
 ---
 nav: false
 navOrder: 4
-navTitle: City Guide
-eyebrow: CITY GUIDE
-updated: 2026-10-03
+navTitle: Resident Guide
+title: Living in San Andreas
+kicker: SAN ANDREAS / RESIDENT INFORMATION
+description: Finding work, settling into a home, getting around, or planning your next day out? Start here.
+introTitle: Your guide to everyday life.
+heroImage:
 ---
 
+# Resident Information
 
-# City Guide
-
-Rosefire has a lot going on. Pick a section below to learn how the city works.
+Whether you've lived here for years or arrived last week, there's always something new to learn about San Andreas. Find information about work, local services, getting around, and spending your time across the state.
 
 ## Work & Careers
 
-Jobs, professions, progression, and ways to make money.
+From collection routes and deliveries to local businesses, work can take you all over San Andreas. Find out about occupations and places to look for employment.
 
-- [[city-guide/jobs/index|Jobs & Careers]]
+[[city-guide/Jobs/index|Browse jobs and careers →]]
 
-## Money & Banking
+## Homes & Neighborhoods
 
-Banking, accounts, loans, credit score, direct deposit, and financial systems.
+Some people prefer busy streets and an apartment close to work. Others head for the coast or quieter neighborhoods outside Los Santos. Learn about the state's different regions before deciding where to settle.
 
-- [[city-guide/money/index|Money & Banking]]
+[[explore|Explore San Andreas communities →]]
 
-## Housing & Property
+## Money & Everyday Business
 
-Homes, apartments, leases, ownership, foreclosures, and upgrades.
+Banking, payments, and keeping track of household expenses are part of settling in. For questions about accounts, loans, and other financial arrangements, speak with your bank or the relevant business directly.
 
-- [[city-guide/housing/index|Housing & Property]]
+## Roads & Travel
 
-## Vehicles & Transport
+San Andreas stretches well beyond Los Santos. Plan for longer drives into Blaine County and the north, keep your vehicle maintained, and pay attention to seasonal road conditions.
 
-Dealerships, fuel, licenses, keys, repairs, and vehicle ownership.
+[[city-guide/winter|Winter driving and road advice →]]
 
-- [[city-guide/vehicles/index|Vehicles & Transport]]
+## Public Services
 
-## Businesses
+Residents may need to contact local government, public safety departments, or medical services from time to time. Check the appropriate office for current information on its services and requirements.
 
-Player-owned businesses, management systems, staff, hiring, and ownership.
+## Leisure & Local Events
 
-- [[city-guide/businesses/index|Businesses]]
+Visit the Diamond Casino, spend an afternoon at the Los Santos Golf Club, explore the outdoors, or find out what's on the seasonal calendar.
 
-## Government & Law
+[[city-guide/Fun/Index|Things to do in San Andreas →]]
 
-City Hall, licenses, legal services, applications, and government systems.
-
-- [[city-guide/government/index|Government & Law]]
-
-## Everyday Services
-
-Clothing, barber shops, tattoos, IDs, phones, shops, and other daily-use systems.
-
-- [[city-guide/services/index|Everyday Services]]
-
-## Fun Around the City
-
-Activities, entertainment, clubs, arcades, golf, collectibles, and seasonal events.
-
-- [[city-guide/fun/index|Fun Around the City]]
-
-## Game Systems
-
-Achievements, progression systems, collectibles, phone features, and other city-wide mechanics.
-
-- [[city-guide/systems/index|City Systems]]
+[[city-guide/celebrations|Annual celebrations calendar →]]

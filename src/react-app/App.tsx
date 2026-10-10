@@ -486,6 +486,42 @@ function GolfPage({ document, entries, file }: { document: MarkdownDocument; ent
   </div>;
 }
 
+function CityGuidePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const {meta,body}=document;
+  const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+  const sections=body.split(/^## (.+)\s*$/m);
+  const intro=sections[0].replace(/^# .+\n/,"").trim();
+  const cards:{title:string;content:string}[]=[];
+  for(let i=1;i<sections.length;i+=2)cards.push({title:sections[i].trim(),content:sections[i+1]?.trim()||""});
+  return <div className="resident-guide">
+    <section className="resident-guide-hero" style={imageBackground(meta.heroImage)}>
+      <div className="resident-guide-hero-inner">
+        <p className="section-kicker">{meta.kicker || "SAN ANDREAS / RESIDENT INFORMATION"}</p>
+        <h1>{meta.title || "Living in San Andreas"}</h1>
+        <p>{meta.description || "A practical guide to daily life, work, and services throughout the state."}</p>
+      </div>
+    </section>
+    <section className="resident-guide-overview">
+      <div><p className="section-kicker">A GUIDE FOR RESIDENTS</p><h2>{meta.introTitle || "Find what you need."}</h2></div>
+      <div className="markdown-content"><Markdown source={intro} renderLink={renderLink}/></div>
+    </section>
+    <section className="resident-guide-directory">
+      <div className="resident-guide-directory-title"><p className="section-kicker">RESIDENT DIRECTORY</p><h2>Life around the state.</h2></div>
+      <div className="resident-guide-grid">
+        {cards.map((card,i)=><article className="resident-guide-card" key={card.title}>
+          <span className="resident-guide-number">{String(i+1).padStart(2,"0")}</span>
+          <h3>{card.title}</h3>
+          <div className="markdown-content resident-guide-card-copy"><Markdown source={card.content} renderLink={renderLink}/></div>
+        </article>)}
+      </div>
+    </section>
+    <section className="resident-guide-end">
+      <div><p className="section-kicker">A PLACE TO CALL HOME</p><h2>New to San Andreas?</h2><p>Get acquainted with the state, explore its communities, and find the information you need to settle in.</p></div>
+      <div className="resident-guide-end-links"><SiteLink href="/getting-started">New resident information →</SiteLink><SiteLink href="/explore">Explore San Andreas →</SiteLink></div>
+    </section>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -573,6 +609,8 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/city-guide" ? (
+        <CityGuidePage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun/los-santos-golf-club" ? (
         <GolfPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun/diamond-casino" ? (
