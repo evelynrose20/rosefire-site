@@ -1,93 +1,70 @@
+---
+heroImage: images/Pasted image 20261004124247.png
+description: Weekend gaming, racing, and the bright lights of Los Santos.
+penthouseStatus: Coming Soon
+penthouseTitle: A Place Above It All.
+penthouseDescription: Penthouse residences are coming to the Diamond. Details on availability and arrangements will be announced by the resort.
+penthouseImage:
+---
+
 # Diamond Casino & Resort
 
-![[Pasted image 20261004124247.png]]
+The Diamond is back after repairs following the storms that swept across the island. On weekends, its doors open to guests looking for an evening at the gaming tables, a race at Inside Track, or a drink with friends.
 
-The **Diamond Casino & Resort** has reopened following the storms that caused extensive damage across the island. With its casino floor, racing events, lounges, and high-limit tables, the Diamond is one of Los Santos' best-known weekend attractions.
-
-Whether you're visiting for a few spins or settling in for an evening at the tables, it's worth knowing what to expect before you arrive.
-
-## Visiting Hours
-
-The Diamond welcomes guests on weekends.
-
-**Doors open:** Friday at 8:00 PM  
-**Doors close:** Sunday at midnight
-
-Gaming and casino services are available during these hours.
+The casino opens **Friday at 8:00 PM** and closes **Sunday at midnight**. Gaming services are offered during those hours.
 
 ## The Casino Floor
 
 ### Lucky Wheel
 
-Guests may take one complimentary spin every **24 hours** while the casino is open. Prizes include casino chips and the weekly podium vehicle.
-
-The vehicle on display changes each week. If you're awarded a prize but leave the wheel before collecting it, the Diamond will hold it for you to claim when you return.
+Stop by the Lucky Wheel for a complimentary spin every **24 hours** while the casino is open. Prizes include chips and the weekly podium vehicle. The featured vehicle changes each week, and unclaimed prizes are held for collection when you return.
 
 ### Slot Machines
 
-Slot machines are available across the gaming floor. Choose your wager, play using casino chips, and collect any winnings. Each machine has its own game and payout.
+Slot machines are available throughout the floor. Choose your wager and play with casino chips.
 
 ## Inside Track & Rosefire Racing
 
-Inside Track hosts races and wagering across four series:
+Follow a race, place a wager, or enter a racer of your own. The Diamond hosts four racing series:
 
 - **Rosefire Derby** — Horse racing
 - **Vinewood Grand Prix** — Street racing
 - **Diamond TT** — Motorcycle racing
 - **Blaine Enduro** — Off-road racing
 
-Visitors can follow individual races and weekly Main Events, place wagers, and acquire racers of their own. Owners may train and improve their entries over time, but further upgrades must be earned through results on the track. A successful racing record matters as much as money.
+Alongside individual races are weekly Main Events. Owners can develop their racers over time; higher upgrades are earned through successful competition.
 
-## Roulette
+## Table Games
 
-The Diamond has four American Roulette tables: two standard tables and two high-roller tables.
+### Roulette
 
-| Table | Maximum wager per round |
-|---|---|
-| Standard Roulette | 5,000 chips |
-| High Roller Roulette | 25,000 chips |
+The Diamond offers **four American Roulette tables**, with two standard tables and two high-roller tables. Wagers include individual numbers, red or black, odd or even, ranges, dozens, columns, **0**, and **00**.
 
-Wagers are accepted on individual numbers, red or black, odd or even, high or low (1–18 or 19–36), dozens, columns, **0**, and **00**.
+### Blackjack
 
-The tables have dedicated dealers, and other casino guests may join a game.
-
-## Blackjack
-
-Four blackjack tables are available: two standard tables and two high-roller tables.
+There are **four Blackjack tables**, also divided between standard and high-roller seating. The dealer stands on 17; natural blackjack pays **3:2**. Guests can hit, stand, or double down.
 
 | Table | Maximum wager |
 |---|---|
-| Standard Blackjack | 5,000 chips |
-| High Roller Blackjack | 25,000 chips |
+| Standard Roulette and Blackjack | 5,000 chips |
+| High-roller Roulette and Blackjack | 25,000 chips |
 
-Guests may hit, stand, or double down. A natural blackjack pays **3:2**, and the dealer stands on 17. Pushes, busts, and dealer blackjacks follow the house rules.
+### Poker
 
-Dealers are stationed at the tables, and guests can join an existing game or take an available seat.
+For a slower evening, take a seat at the poker table.
 
-## Poker
+## Membership & Chips
 
-For those who prefer a slower game, the Diamond also offers poker. It's a chance to settle in at the table and spend an evening away from the noise of the slots.
+Casino chips are used throughout the gaming floor. Ask at the Diamond about chip purchases and VIP membership.
 
-## Chips and VIP Membership
+VIP members have increased chip purchasing limits and access to selected premium services. High-roller Roulette and Blackjack accept wagers up to **25,000 chips**, compared with **5,000 chips** at standard tables.
 
-Casino chips are used for gaming throughout the Diamond. Your chip balance, purchasing allowance, and membership status are available through the casino's services.
+## Dining & Nightlife
 
-VIP members receive increased chip purchasing limits and access to selected premium offerings. Ask about membership if you plan to visit regularly.
+The Diamond also serves drinks during its weekend hours. Meet friends, mark a racing win, or stop by for a change of scenery. You don't need to spend the whole evening at the tables to enjoy the resort.
 
-### High-Roller Gaming
+## Penthouse Residences
 
-The high-roller area features roulette and blackjack tables accepting wagers up to **25,000 chips** per round. Standard tables accept wagers up to **5,000 chips**.
+The Diamond's penthouse residences are being prepared for prospective residents. Further information about availability and arrangements will be shared by the resort.
 
-## An Evening at the Diamond
-
-You don't have to spend the whole evening gambling. The resort also serves alcohol during opening hours, making it a place to meet friends, celebrate a racing result, or enjoy a night out.
-
-## Accommodation
-
-The Diamond has announced plans for VIP penthouse residences. These accommodations are **not currently available**; further information will be provided when the resort begins accepting arrangements.
-
-## Before You Visit
-
-The casino opens on **Friday at 8:00 PM** and closes on **Sunday at midnight**. The Lucky Wheel allows one complimentary spin every 24 hours, and its podium vehicle changes weekly. Chips are required for most games, and high-limit tables have separate wagering limits.
-
-[[city-guide/Fun/Index|← Back to Things to Do]]
+VIP membership is expected to be part of the penthouse offering. Ask the Diamond for the latest details rather than relying on older advertisements.

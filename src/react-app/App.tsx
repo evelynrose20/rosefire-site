@@ -396,6 +396,47 @@ function WinterPage({ document, entries, file }: { document: MarkdownDocument; e
   </div>;
 }
 
+function DiamondPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const { meta, body } = document;
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  const sectionNames = ["The Casino Floor","Inside Track & Rosefire Racing","Table Games","Membership & Chips","Dining & Nightlife","Penthouse Residences"];
+  const parts = body.split(/^## (The Casino Floor|Inside Track & Rosefire Racing|Table Games|Membership & Chips|Dining & Nightlife|Penthouse Residences)\s*$/m);
+  const intro = parts[0].replace(/^# Diamond Casino & Resort\s*/,"").trim();
+  const sections = new Map<string,string>();
+  for(let i=1;i<parts.length;i+=2) sections.set(parts[i],parts[i+1].trim());
+  const penthouseStatus = meta.penthouseStatus || "Coming Soon";
+  const penthouseReady = penthouseStatus.toLowerCase()==="available";
+  return <div className="diamond-page">
+    <section className="diamond-hero" style={imageBackground(meta.heroImage)}>
+      <div className="diamond-hero-inner"><p className="section-kicker">LOS SANTOS / CASINO & RESORT</p>
+        <h1>Diamond Casino <span>& Resort</span></h1>
+        <p>{meta.description || "An evening out, a seat at the tables, and something worth dressing up for."}</p>
+        <SiteLink className="diamond-hero-anchor" href="/city-guide/fun">← More things to do</SiteLink>
+      </div>
+    </section>
+    <section className="diamond-hours"><div><span>WEEKEND VISITING HOURS</span><strong>Friday, 8:00 PM – Sunday, midnight</strong></div><div><span>ON THE CASINO FLOOR</span><strong>Games · Racing · High-limit tables</strong></div></section>
+    <section className="diamond-intro"><div className="markdown-content"><Markdown source={intro} renderLink={renderLink}/></div></section>
+    <section className="diamond-main">
+      <p className="section-kicker">INSIDE THE DIAMOND</p><h2>Something for every evening.</h2>
+      <div className="diamond-offerings">
+        {sectionNames.slice(0,5).map((section,index)=><article className="diamond-offering" key={section}>
+          <div className="diamond-offering-heading"><span>0{index+1}</span><h3>{section}</h3></div>
+          <div className="markdown-content diamond-copy"><Markdown source={sections.get(section)||""} renderLink={renderLink}/></div>
+        </article>)}
+      </div>
+    </section>
+    <section className="diamond-penthouse" style={imageBackground(meta.penthouseImage)}>
+      <div className="diamond-penthouse-content">
+        <div className="diamond-penthouse-top"><p className="section-kicker">RESIDENCES AT THE DIAMOND</p><span className={`diamond-status${penthouseReady?" is-available":""}`}>{penthouseStatus}</span></div>
+        <h2>{meta.penthouseTitle || "A Place Above It All."}</h2>
+        <p className="diamond-penthouse-lede">{meta.penthouseDescription || "An exclusive residential address is taking shape at the Diamond Casino & Resort."}</p>
+        <div className="markdown-content diamond-penthouse-copy"><Markdown source={sections.get("Penthouse Residences")||""} renderLink={renderLink}/></div>
+      </div>
+    </section>
+    <div className="diamond-footer"><SiteLink href="/city-guide/fun">← Back to Things to Do</SiteLink></div>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -483,6 +524,8 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/city-guide/fun/diamond-casino" ? (
+        <DiamondPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun" ? (
         <LeisurePage document={document}/>
       ) : path === "/city-guide/winter" ? (

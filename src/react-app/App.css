@@ -201,3 +201,43 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .winter-return{max-width:1200px;margin:auto;padding:0 28px 80px}
 @media(max-width:990px){.winter-notice-grid{grid-template-columns:1fr}.winter-notice{max-width:none}}
 @media(max-width:650px){.winter-extras{grid-template-columns:1fr}.winter-hero-inner{padding:65px 18px}.winter-advisories,.winter-intro{padding-left:18px;padding-right:18px}.winter-dates{gap:8px}}
+
+/* Diamond Casino resort page */
+.diamond-hero{min-height:525px;display:flex;align-items:center;background:linear-gradient(110deg,#24101d,#702d48);background-position:center;background-size:cover}
+.diamond-hero-inner{width:min(1160px,100%);margin:auto;padding:80px 28px}
+.diamond-hero h1{font-family:Georgia,serif;font-size:clamp(3.4rem,7vw,7rem);line-height:1.02;letter-spacing:-.045em;margin:14px 0 18px;max-width:860px}
+.diamond-hero h1 span{display:block;color:#f5cfd9}
+.diamond-hero-inner>p:not(.section-kicker){max-width:620px;color:#f8dfe7;font-size:1.12rem}
+.diamond-hero-anchor{display:inline-block;margin-top:22px;color:#ffe9ef}
+.diamond-hours{padding:24px max(28px,calc((100vw - 1104px)/2));background:#e5dfe2;color:#30212a;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.diamond-hours>div{display:grid;gap:4px}
+.diamond-hours span{font-size:.7rem;letter-spacing:.11em;color:#76475c;font-weight:750}
+.diamond-hours strong{font-size:1.04rem;color:#321c27}
+.diamond-intro{padding:55px 28px;background:#f0e9ec;color:#2f202b}
+.diamond-intro>.markdown-content{max-width:1100px;margin:auto}
+.diamond-intro p,.diamond-intro strong{color:#34252e}
+.diamond-main{max-width:1180px;margin:auto;padding:75px 28px 90px}
+.diamond-main>h2{font-family:Georgia,serif;font-size:clamp(2.3rem,4vw,3.8rem);margin:5px 0 35px}
+.diamond-offerings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.diamond-offering{border:1px solid #704258;background:#1f151e;border-radius:7px;padding:27px}
+.diamond-offering-heading{display:flex;align-items:baseline;gap:13px;padding-bottom:14px;border-bottom:1px solid #694354}
+.diamond-offering-heading span{color:#e4a1b9;font-size:.82rem}
+.diamond-offering h3{font-family:Georgia,serif;font-size:1.85rem;margin:0}
+.diamond-copy{font-size:.92rem;line-height:1.75}
+.diamond-copy h3{font-size:1.27rem;margin:24px 0 7px}
+.diamond-copy p,.diamond-copy li{color:#e9d6df}
+.diamond-copy strong{color:#fff0f5}
+.diamond-copy table{width:100%}
+.diamond-penthouse{background:linear-gradient(120deg,#352030,#73506a);background-size:cover;background-position:center;padding:95px 28px}
+.diamond-penthouse-content{max-width:1120px;margin:auto}
+.diamond-penthouse-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.diamond-status{padding:8px 17px;border:1px solid #efb6d0;background:#2c1826;border-radius:40px;font-size:.78rem;font-weight:700;color:#f9e4ec}
+.diamond-status.is-available{border-color:#c2ddba;background:#26382a;color:#d8f0d2}
+.diamond-penthouse h2{font-family:Georgia,serif;font-size:clamp(2.5rem,5vw,5rem);margin:18px 0}
+.diamond-penthouse-lede{max-width:690px;color:#f5e1e9;font-size:1.16rem}
+.diamond-penthouse-copy{max-width:770px}
+.diamond-penthouse-copy p,.diamond-penthouse-copy strong{color:#fff0f4}
+.diamond-footer{max-width:1180px;margin:auto;padding:35px 28px 75px}
+.diamond-footer a{color:#edb3c9}
+@media(max-width:800px){.diamond-offerings{grid-template-columns:1fr}.diamond-hours{grid-template-columns:1fr}}
+@media(max-width:550px){.diamond-hero-inner,.diamond-main{padding-left:18px;padding-right:18px}.diamond-hours{padding:25px 18px}.diamond-penthouse{padding:70px 18px}}
