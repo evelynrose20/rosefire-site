@@ -168,7 +168,7 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
         <p className="section-kicker">LIFE IN ROSEFIRE</p>
         <h2 id="discover-heading">Everything you need to make it yours.</h2>
         <div className="discover-grid">
-          <SiteLink className="feature-card feature-discover" style={imageBackground(meta.exploreImage)} href="/explore"><span className="feature-number">01 / EXPLORE</span><h3>Discover the City</h3><p>From bustling streets to places worth getting lost in, see what Rosefire has to offer.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
+          <SiteLink className="feature-card feature-discover" style={imageBackground(meta.exploreImage)} href="/explore"><span className="feature-number">01 / EXPLORE</span><h3>Explore San Andreas</h3><p>From the heart of Los Santos to desert towns and northern mountain trails, discover the state.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
           <SiteLink className="feature-card feature-work" style={imageBackground(meta.workImage)} href="/city-guide"><span className="feature-number">02 / OPPORTUNITY</span><h3>Find Your Calling</h3><p>Explore local work, professional careers, and opportunities to make a name for yourself.</p><span className="feature-arrow">Explore opportunities →</span></SiteLink>
           <SiteLink className="feature-card feature-home" style={imageBackground(meta.homeImage)} href="/getting-started"><span className="feature-number">03 / NEW BEGINNINGS</span><h3>Make Yourself at Home</h3><p>Get acquainted with the city, establish your footing, and begin your next chapter.</p><span className="feature-arrow">Plan your move →</span></SiteLink>
         </div>
@@ -195,24 +195,47 @@ function ExplorePage({ document, entries, file }: { document: MarkdownDocument; 
           <p className="section-kicker">{meta.kicker || "DISCOVER ROSEFIRE"}</p>
           <h1>{meta.title || "Explore Rosefire"}</h1>
           <p>{meta.description}</p>
-          <SiteLink className="button primary" href="/city-guide">Browse the City Guide →</SiteLink>
+          <SiteLink className="button primary" href="/regions/los-santos">Explore the Regions →</SiteLink>
         </div>
       </section>
       <section className="explore-intro">
-        <p className="section-kicker">THE CITY IS YOURS TO DISCOVER</p>
+        <p className="section-kicker">AN ENTIRE STATE TO EXPLORE</p>
         <h2>{meta.introTitle || "Find your kind of adventure."}</h2>
         <p>{meta.introText}</p>
       </section>
-      <section className="explore-destinations" aria-label="Discover Rosefire">
-        <SiteLink className="explore-tile" href="/city-guide/fun"><span>01 / CULTURE & ENTERTAINMENT</span><h3>Things to Do</h3><p>Find places to unwind, spend an afternoon, or make a night of it.</p><strong>Discover activities →</strong></SiteLink>
-        <SiteLink className="explore-tile" href="/city-guide/jobs"><span>02 / PEOPLE & OPPORTUNITY</span><h3>Work & Careers</h3><p>Find a new direction, meet local businesses, and learn what moves the city.</p><strong>Discover careers →</strong></SiteLink>
-        <SiteLink className="explore-tile" href="/city-guide"><span>03 / EVERYDAY LIFE</span><h3>Life in Rosefire</h3><p>Explore services, communities, transportation, and the places residents call home.</p><strong>Explore the city guide →</strong></SiteLink>
+      <section className="explore-regions" aria-label="Regions of San Andreas">
+        <SiteLink className="region-card" href="/regions/los-santos"><span className="region-eyebrow">LOS SANTOS</span><h3>Los Santos</h3><p>Where the state moves fastest — from the downtown towers to the hillside neighborhoods.</p><strong>Explore this region →</strong></SiteLink>
+        <SiteLink className="region-card" href="/regions/desert"><span className="region-eyebrow">BLAINE COUNTY</span><h3>Sandy Shores & the Desert</h3><p>Sunbaked roads, stubborn communities, and the wide-open Alamo Sea.</p><strong>Explore this region →</strong></SiteLink>
+        <SiteLink className="region-card" href="/regions/paleto-bay"><span className="region-eyebrow">NORTHERN COAST</span><h3>Paleto Bay & the North</h3><p>Forested foothills, coastal roads, and the quieter edge of state life.</p><strong>Explore this region →</strong></SiteLink>
+        <SiteLink className="region-card" href="/regions/coast"><span className="region-eyebrow">PACIFIC SHORE</span><h3>Beaches & Coastline</h3><p>The oceanfront, boardwalks, marinas, and the communities built around the water.</p><strong>Explore this region →</strong></SiteLink>
+        <SiteLink className="region-card" href="/regions/wilderness"><span className="region-eyebrow">HIGH COUNTRY</span><h3>Mount Chiliad & Wilderness</h3><p>High trails, forest roads, and a landscape that keeps its own counsel.</p><strong>Explore this region →</strong></SiteLink>
       </section>
       <section className="explore-story">
-        <p className="section-kicker">GET TO KNOW THE CITY</p>
+        <p className="section-kicker">THE LAND AND ITS STORIES</p>
         <article className="markdown-content explore-copy"><Markdown source={body} renderLink={renderLink}/></article>
       </section>
       <section className="explore-next"><p className="section-kicker">YOUR NEXT CHAPTER</p><h2>See something you love? Make it home.</h2><SiteLink className="button primary" href="/getting-started">Plan Your Move →</SiteLink></section>
+    </>
+  );
+}
+
+function RegionPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const { meta, body } = document;
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  return (
+    <>
+      <section className="region-hero" style={imageBackground(meta.heroImage)}>
+        <div className="region-hero-inner">
+          <SiteLink className="region-back" href="/explore">← Explore San Andreas</SiteLink>
+          <p className="section-kicker">{meta.kicker || "A SAN ANDREAS DESTINATION"}</p>
+          <h1>{meta.title || "A Place to Discover"}</h1>
+          {meta.description && <p>{meta.description}</p>}
+        </div>
+      </section>
+      <article className="region-article markdown-content">
+        <Markdown source={body} renderLink={renderLink}/>
+        <div className="region-ending"><SiteLink href="/explore">← Explore more of San Andreas</SiteLink><SiteLink href="/getting-started">Plan Your Move →</SiteLink></div>
+      </article>
     </>
   );
 }
@@ -302,6 +325,8 @@ function App() {
         <section className="page-shell"><p className="page-intro">Loading Rosefire…</p></section>
       ) : path === "/" ? (
         <Home document={document} entries={indexedEntries} file={activeFile} />
+      ) : path.startsWith("/regions/") ? (
+        <RegionPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/explore" ? (
         <ExplorePage document={document} entries={indexedEntries} file={activeFile} />
       ) : (

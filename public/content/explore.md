@@ -1,27 +1,23 @@
 ---
 nav: true
 navOrder: 2
-navTitle: Explore Rosefire
-title: Discover Rosefire.
-kicker: EXPLORE ROSEFIRE
-description: From lively city streets to peaceful corners beyond the crowds, discover the places, possibilities, and everyday experiences that make Rosefire worth exploring.
-introTitle: A city with something for everyone.
-introText: Spend an afternoon discovering somewhere new, find your next favorite place to unwind, or follow the roads beyond familiar neighborhoods.
+navTitle: Explore San Andreas
+title: One State. Endless Possibilities.
+kicker: EXPLORE SAN ANDREAS
+description: From the bright streets of Los Santos to the roads around the Alamo Sea, the northern forests, the high mountains, and the Pacific coast, San Andreas is a place of many different lives.
+introTitle: Every road has a story.
+introText: Choose a region below to explore its communities, landmarks, character, and local traditions. The state is larger than any one city — and its people are as varied as its landscapes.
 heroImage: images/aurelos.jpg
 ---
 
-## A city full of character
+## More than a skyline
 
-Life in Rosefire takes many forms. Follow the energy of Los Santos, find new favorite gathering places, or head away from the busy streets for a quieter afternoon. There is more to see than any one visit can hold.
+San Andreas is a place of contrasts. The same road can carry you from the crowded city toward dry desert plains, wooded mountains, and fishing towns beside the Pacific. Each region has its own rhythms, gathering places, and reasons people choose to stay.
 
-## Find something to do
+## A place shaped by its people
 
-Looking for an evening out or a change of pace? Discover local entertainment, recreation, and attractions in the [[city-guide/Fun/Index|Things to Do guide]]. Explore the offerings, make plans, and get to know the places residents return to.
+There is no single San Andreas way of life. Some residents find their future in downtown offices and late-night streets; others prefer a quieter home near the water or a stretch of countryside where the neighbors know one another. Local stories are passed along over counters, through family businesses, and on roads driven for generations.
 
-## Discover a new direction
+## A little further along the road
 
-Many who come to Rosefire arrive looking for more than a change of scenery. Discover the industries and occupations that shape local life in the [[city-guide/Jobs/index|Jobs & Careers guide]], from public services to independent work.
-
-## Learn your way around
-
-For everyday information about getting established, finding services, and navigating the city, visit the [[city-guide|City Guide]]. There's plenty to discover when you're ready to call Rosefire home.
+Explore the regions above to discover the character of each place, or consult the [[city-guide|resident guide]] for practical services and the [[city-guide/Fun/Index|entertainment guide]] for places to visit. If you are considering a new beginning, the [[getting-started|new resident guide]] is a good place to start.

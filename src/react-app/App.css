@@ -44,3 +44,30 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .explore-next h2{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.5rem);margin:13px auto 27px;max-width:760px}
 @media(max-width:800px){.explore-intro{grid-template-columns:1fr}.explore-destinations{grid-template-columns:1fr}.explore-tile{min-height:210px}.explore-copy{grid-template-columns:1fr}}
 @media(max-width:540px){.explore-hero-inner,.explore-intro,.explore-destinations{padding-left:18px;padding-right:18px}.explore-hero{min-height:460px}.explore-story{padding:50px 18px}}
+
+/* San Andreas destination cards and region essays. */
+.explore-regions{max-width:1208px;margin:0 auto;padding:8px 28px 85px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.region-card{min-height:290px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;border:1px solid #86415a;border-radius:6px;color:#fff0f4;background:linear-gradient(145deg,#774154,#26101b);transition:transform .16s,border-color .16s}
+.region-card:nth-child(2){background:linear-gradient(150deg,#795148,#341725)}
+.region-card:nth-child(3){background:linear-gradient(150deg,#566368,#251525)}
+.region-card:nth-child(4){background:linear-gradient(150deg,#7a5262,#311329)}
+.region-card:nth-child(5){background:linear-gradient(150deg,#4f515f,#24121e)}
+.region-card:hover{transform:translateY(-3px);border-color:#efb1c4}
+.region-card .region-eyebrow{color:#ffd4dc;letter-spacing:.16em;font-size:.65rem;font-weight:800}
+.region-card h3{font-family:Georgia,serif;font-size:clamp(1.6rem,2.5vw,2.25rem);line-height:1.08;margin:14px 0 8px}
+.region-card p{font-size:.89rem;color:#f1d4dd;line-height:1.55}
+.region-card strong{font-size:.77rem;margin-top:9px;color:#fff0f4}
+.region-hero{min-height:470px;display:flex;align-items:center;background:linear-gradient(120deg,#1a0912,#773c51);background-size:cover;background-position:center}
+.region-hero-inner{max-width:1150px;width:100%;margin:0 auto;padding:80px 28px}
+.region-back{color:#f2b6c6;text-decoration:none;font-size:.86rem}
+.region-hero .section-kicker{margin:38px 0 8px}
+.region-hero h1{font-family:Georgia,serif;font-size:clamp(3.2rem,6.7vw,6.5rem);letter-spacing:-.045em;line-height:1.08;max-width:900px;margin:0}
+.region-hero-inner>p:last-child{color:#f4d9e2;max-width:700px;font-size:1.08rem}
+.region-article{max-width:1020px;margin:auto;padding:70px 28px 95px}
+.region-article h1{font-family:Georgia,serif;font-size:clamp(2.1rem,4.5vw,3.6rem)}
+.region-article h2{font-family:Georgia,serif;font-size:1.75rem}
+.region-article p{line-height:1.85}
+.region-ending{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #673146;padding-top:25px;margin-top:65px}
+.region-ending a{color:#f0a9bd;text-decoration:none}
+@media(max-width:920px){.explore-regions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.explore-regions{grid-template-columns:1fr;padding-left:18px;padding-right:18px}.region-card{min-height:250px}.region-hero-inner,.region-article{padding-left:18px;padding-right:18px}}
