@@ -180,6 +180,7 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .winter-intro{background:#e0e5e8;color:#251d25;padding:58px 28px}
 .winter-article{max-width:990px;margin:auto;font-size:1.07rem;line-height:1.8}
 .winter-article p{color:#352b33}
+.winter-article strong,.winter-article b{color:#251d25}
 .winter-advisories{background:#15171f;padding:80px 28px}
 .winter-advisories-inner{max-width:1200px;margin:auto}
 .winter-advisories h2,.winter-extras h2{font-family:Georgia,serif;font-size:clamp(1.9rem,3.6vw,3.1rem);margin:8px 0 13px}
