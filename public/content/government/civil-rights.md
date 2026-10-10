@@ -12,7 +12,7 @@ heroImage:
 
 ## Rosefire Civil Rights & Justice Code
 
-**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8) · Version 1.4 (Sections 9–10)**
+**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8) · Version 1.4 (Sections 9–10) · Version 1.5 (Sections 11–12)**
 
 Status: Enacted — In Force
 
@@ -20,7 +20,7 @@ An Act establishing the fundamental rights and liberties of all individuals with
 
 ## Official Code Publications
 
-The Rosefire Civil Rights & Justice Code, Sections 1–10, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
+The Rosefire Civil Rights & Justice Code, Sections 1–12, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
 
 ### Section 1 — Fundamental Civil Rights
 
@@ -96,6 +96,22 @@ Driver, commercial, firearm, hunting, fishing, aviation, business, cannabis-rela
 
 [[government/civil-rights/section-10|Read Section 10 →]]
 
+### Section 11 — Vehicles, Towing, Impound & Seizure
+
+**Version 1.5 — Enacted — In Force**
+
+Vehicle ownership, registration, commercial transportation, DOT authority, towing, impoundment, repossession, vehicle financing, forfeiture, and judicial review.
+
+[[government/civil-rights/section-11|Read Section 11 →]]
+
+### Section 12 — Weapons & Firearms
+
+**Version 1.5 — Enacted — In Force**
+
+Firearm classification and licensing, lawful carry and self-defense, restrictions, commercial transactions, seizure, forfeiture, and judicial review.
+
+[[government/civil-rights/section-12|Read Section 12 →]]
+
 ### Legislative Implementation and Interpretation
 
 Subjects reserved for subsequent legislation, and the Code's intended supremacy, consistency, and amendment provisions.
@@ -104,6 +120,6 @@ Subjects reserved for subsequent legislation, and the Code's intended supremacy,
 
 ## Official Publication
 
-This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8; and Version 1.4, Sections 9–10, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
+This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8; and Version 1.4, Sections 9–10; and Version 1.5, Sections 11–12, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
 
 [[government|← Government & Public Records]]
