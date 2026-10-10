@@ -523,3 +523,6 @@ html,body{max-width:100%;overflow-x:clip}
 @media(max-width:800px){.jobs-intro,.jobs-pathways,.jobs-more{grid-template-columns:1fr}}
 @media(max-width:650px){.jobs-opportunity-grid{grid-template-columns:1fr}.jobs-opportunity-card{min-height:300px}.jobs-hero-inner,.jobs-intro,.jobs-opportunities,.jobs-pathways,.jobs-more{padding-left:18px;padding-right:18px}}
 @media(prefers-reduced-motion:reduce){.jobs-opportunity-card{transition:none}}
+
+/* Five confirmed work opportunities, with responsive destination cards. */
+@media(min-width:1100px){.jobs-opportunity-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.jobs-opportunity-card{min-height:355px}}

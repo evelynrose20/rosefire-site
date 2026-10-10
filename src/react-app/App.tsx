@@ -576,7 +576,10 @@ function JobsPage({ document, entries, file }: { document: MarkdownDocument; ent
   for(let i=1;i<parts.length;i+=2) sections.set(parts[i].trim(),parts[i+1]?.trim()||"");
   const opportunities=[
     {label:"LOS SANTOS SANITATION",title:"Sanitation & Collection",description:"Keep the neighborhoods clean and complete scheduled refuse routes.",href:"/city-guide/jobs/garbage-job",image:meta.sanitationImage},
-    {label:"JONNY SHAPIRO GAS SPECIALIST",title:"Propane Delivery",description:"Service customer propane tanks throughout Los Santos and Blaine County.",href:"/city-guide/jobs/propane-job",image:meta.propaneImage}
+    {label:"JONNY SHAPIRO GAS SPECIALIST",title:"Propane Delivery",description:"Service customer propane tanks throughout Los Santos and Blaine County.",href:"/city-guide/jobs/propane-job",image:meta.propaneImage},
+    {label:"UTILITIES",title:"Power Services",description:"Work connected to the state's electrical supply and infrastructure.",href:"/city-guide/jobs/power",image:meta.powerImage},
+    {label:"UTILITIES",title:"Water Services",description:"Find out about work supporting the state's water services.",href:"/city-guide/jobs/water",image:meta.waterImage},
+    {label:"TRANSPORTATION",title:"Taxi Services",description:"Learn about driving fares and passenger transportation.",href:"/city-guide/jobs/taxi",image:meta.taxiImage}
   ];
   return <div className="jobs-page">
     <section className="jobs-hero" style={imageBackground(meta.heroImage)}>

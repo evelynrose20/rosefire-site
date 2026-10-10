@@ -5,6 +5,9 @@ introTitle: Put your skills to work.
 heroImage:
 sanitationImage: images/Pasted image 20261005065304.png
 propaneImage: images/Pasted image 20261005065100.png
+powerImage:
+waterImage:
+taxiImage:
 ---
 
 # Employment Across the State
