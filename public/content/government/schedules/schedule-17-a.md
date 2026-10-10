@@ -17,8 +17,8 @@ documentStatus: Adopted — In Force
 
 The State adopts the boundaries of Blaine County, Los Santos County, and the City of Los Santos shown in Schedule 17-A pursuant to §17.10 of the Rosefire Civil Rights & Justice Code.
 
-[View Official Territorial Jurisdiction Map](/jurisdiction-map.html)
+[[/jurisdiction-map.html|View Official Territorial Jurisdiction Map →]]
 
-[Download Boundary Coordinates](/content/government/schedules/schedule-17-a.json)
+[[/content/government/schedules/schedule-17-a.json|Download Official Boundary Coordinates →]]
 
 [[government/civil-rights/section-17|← Return to Section 17]]
