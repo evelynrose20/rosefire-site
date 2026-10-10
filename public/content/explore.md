@@ -2,11 +2,11 @@
 nav: true
 navOrder: 2
 navTitle: Explore San Andreas
-title: One State. Endless Possibilities.
+title: Explore San Andreas.
 kicker: EXPLORE SAN ANDREAS
-description: From the bright streets of Los Santos to the roads around the Alamo Sea, the northern forests, the high mountains, and the Pacific coast, San Andreas is a place of many different lives.
-introTitle: Every road has a story.
-introText: Choose a region below to explore its communities, landmarks, character, and local traditions. The state is larger than any one city — and its people are as varied as its landscapes.
+description: From Los Santos and its beaches to the Alamo Sea, Paleto Bay, and Mount Chiliad, there's plenty to see beyond the city.
+introTitle: Where would you like to go?
+introText: Browse the five regions below for places to visit, scenic drives, and a little local history.
 heroImage: images/aurelos.jpg
 losSantosImage:
 desertImage: images/Sandy Shores.jpg
@@ -15,14 +15,18 @@ coastImage: images/coast.png
 wildernessImage:
 ---
 
-## More than a skyline
+## Start with the places
 
-San Andreas is a place of contrasts. The same road can carry you from the crowded city toward dry desert plains, wooded mountains, and fishing towns beside the Pacific. Each region has its own rhythms, gathering places, and reasons people choose to stay.
+Los Santos has busy streets, beach neighborhoods, and plenty to do after dark. Head north and you'll find farm roads around Grapeseed, the Alamo Sea, and the small towns of Blaine County. Keep driving and the landscape changes again: forested hills, the northern coast, and Mount Chiliad.
 
-## A place shaped by its people
+You don't have to see it all in one trip. Pick a region above and start there.
 
-There is no single San Andreas way of life. Some residents find their future in downtown offices and late-night streets; others prefer a quieter home near the water or a stretch of countryside where the neighbors know one another. Local stories are passed along over counters, through family businesses, and on roads driven for generations.
+## City streets or open country?
 
-## A little further along the road
+Spend a morning around Vinewood, visit the Del Perro Pier in the afternoon, or take the highway out toward Sandy Shores. If you'd rather leave traffic behind, Paleto Bay and the trails around Mount Chiliad make a good change of pace.
 
-Explore the regions above to discover the character of each place, or consult the [[city-guide|resident guide]] for practical services and the [[city-guide/Fun/Index|entertainment guide]] for places to visit. If you are considering a new beginning, the [[getting-started|new resident guide]] is a good place to start.
+Some places are well known for their views. Others are worth visiting because of the people who live and work there.
+
+## Before you go
+
+Read the [[city-guide/Fun/Index|things-to-do guide]] for places to visit, or the [[city-guide|resident guide]] for everyday services around the state. Thinking about staying? Start with the [[getting-started|new resident guide]].
