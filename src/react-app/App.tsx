@@ -845,7 +845,7 @@ function App() {
         <GlobeHome entries={indexedEntries} />
       ) : path.startsWith("/daily-globe/articles/") ? (
         <GlobeArticle document={document} entries={indexedEntries} file={activeFile}/>
-      ) : path.startsWith("/government/civil-rights/") ? (
+      ) : path.startsWith("/government/schedules/") ? (\n        <GovernmentPage document={document} entries={indexedEntries} file={activeFile} />\n      ) : path.startsWith("/government/civil-rights/") ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
       ) : path === "/government/civil-rights" ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
