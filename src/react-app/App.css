@@ -422,3 +422,21 @@ html,body{max-width:100%;overflow-x:clip}
 @media(max-width:1020px){.resident-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.resident-guide-overview{grid-template-columns:1fr}.resident-guide-end{align-items:start;flex-direction:column}}
 @media(max-width:600px){.resident-guide-grid{grid-template-columns:1fr}.resident-guide-hero-inner,.resident-guide-overview,.resident-guide-directory,.resident-guide-end{padding-left:18px;padding-right:18px}}
+
+/* Public services directory pages */
+.service-hero{min-height:420px;display:flex;align-items:center;background:linear-gradient(120deg,#211521,#623849);background-size:cover;background-position:center}
+.service-hero-inner{padding:70px var(--site-gutter);width:100%}
+.service-back{color:#f4c8d6;text-decoration:none}
+.service-hero h1{font-family:Georgia,serif;font-size:clamp(3rem,6vw,6rem);line-height:1.08;max-width:980px;margin:12px 0}
+.service-hero-inner>p:last-child{max-width:760px;color:#efdae3;font-size:1.07rem}
+.service-content{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.8fr);gap:clamp(26px,4vw,80px);padding:65px var(--site-gutter) 90px}
+.service-content>article{max-width:92ch;min-width:0}
+.service-content>article h1{font-family:Georgia,serif}
+.service-recruitment{align-self:start;padding:30px;border:1px solid #86475e;border-radius:7px;background:#261822}
+.service-recruitment h2{font-family:Georgia,serif;font-size:clamp(1.6rem,2.3vw,2.4rem);line-height:1.16}
+.service-recruitment p:not(.section-kicker){color:#e8cbd6;line-height:1.75}
+.service-recruitment .button{margin-top:13px}
+.service-more{border-top:1px solid #623447;padding:25px var(--site-gutter) 65px;display:flex;flex-wrap:wrap;gap:22px}
+.service-more a{color:#e9aabd}
+@media(max-width:850px){.service-content{grid-template-columns:1fr}}
+@media(max-width:550px){.service-hero-inner,.service-content,.service-more{padding-left:18px;padding-right:18px}}

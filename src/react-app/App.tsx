@@ -522,6 +522,28 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
   </div>;
 }
 
+function PublicServicePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const {meta,body}=document;
+  const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+  return <div className="service-page">
+    <section className="service-hero" style={imageBackground(meta.heroImage)}>
+      <div className="service-hero-inner"><SiteLink href="/city-guide" className="service-back">← Resident Guide</SiteLink>
+        <p className="section-kicker">SAN ANDREAS / PUBLIC SERVICES</p>
+        <h1>{meta.title}</h1><p>{meta.description}</p>
+      </div>
+    </section>
+    <div className="service-content">
+      <article className="markdown-content"><Markdown source={body} renderLink={renderLink}/></article>
+      {meta.applicationLink && <aside className="service-recruitment">
+        <p className="section-kicker">CAREERS IN PUBLIC SERVICE</p><h2>{meta.applicationTitle || "Interested in serving?"}</h2>
+        <p>{meta.applicationText || "Learn about upcoming opportunities and application information."}</p>
+        <SiteLink className="button primary" href={meta.applicationLink}>{meta.applicationLabel || "Applications & Recruitment →"}</SiteLink>
+      </aside>}
+    </div>
+    <div className="service-more"><SiteLink href="/city-guide/public-services/police">Police</SiteLink><SiteLink href="/city-guide/public-services/ems-fire">EMS & Fire</SiteLink><SiteLink href="/city-guide/public-services/dot">DOT</SiteLink></div>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -609,6 +631,8 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path.startsWith("/city-guide/public-services/") ? (
+        <PublicServicePage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide" ? (
         <CityGuidePage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun/los-santos-golf-club" ? (

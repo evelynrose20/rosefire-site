@@ -37,7 +37,13 @@ San Andreas stretches well beyond Los Santos. Plan for longer drives into Blaine
 
 ## Public Services
 
-Residents may need to contact local government, public safety departments, or medical services from time to time. Check the appropriate office for current information on its services and requirements.
+Find information about emergency services, public safety, and roadside assistance across San Andreas.
+
+[[city-guide/public-services/police|Police Department →]]
+
+[[city-guide/public-services/ems-fire|Emergency Medical Services & Fire →]]
+
+[[city-guide/public-services/dot|Department of Transportation →]]
 
 ## Leisure & Local Events
 
