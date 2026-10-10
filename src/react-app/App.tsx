@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
-import { createPortal } from "react-dom";
+import UnderworldExperience from "./UnderworldExperience";
 import "./App.css";
 import { Markdown, parseDocument, type MarkdownDocument } from "./markdown";
 import { siteConfig } from "./siteConfig";
@@ -487,89 +487,6 @@ function GolfPage({ document, entries, file }: { document: MarkdownDocument; ent
   </div>;
 }
 
-function UnderworldTerminal({ onExit }: { onExit: () => void }) {
-  const bootLines = [
-    "> connection lost: public network",
-    "> switching relay ...",
-    "> negotiating encrypted tunnel ...",
-    "> identity withheld",
-    "> accessing /rosefire/underground",
-    "> handshake accepted"
-  ];
-  const [stage,setStage]=useState<"infection"|"breach"|"shutdown"|"boot"|"uplink"|"welcome">("infection");
-  const [typed,setTyped]=useState("");
-  const [uplinkSeconds,setUplinkSeconds]=useState(12);
-  const [showLeads,setShowLeads]=useState(false);
-  const fullText=bootLines.join("\n");
-  useEffect(()=>{
-    const oldOverflow=document.body.style.overflow;
-    document.body.style.overflow="hidden";
-    document.body.classList.add("underworld-page-compromised");
-    const timers=[setTimeout(()=>setStage("breach"),1100),setTimeout(()=>setStage("shutdown"),3000),setTimeout(()=>setStage("boot"),5100)];
-    return ()=>{timers.forEach(clearTimeout);document.body.classList.remove("underworld-page-compromised");document.body.style.overflow=oldOverflow;};
-  },[]);
-  useEffect(()=>{
-    if(stage!=="boot")return;
-    let index=0;
-    const timer=window.setInterval(()=>{
-      index=Math.min(index+2,fullText.length);
-      setTyped(fullText.slice(0,index));
-      if(index===fullText.length){window.clearInterval(timer);finish=setTimeout(()=>setStage("uplink"),900);}
-    },33);
-    let finish:ReturnType<typeof setTimeout>|undefined;
-    return ()=>{window.clearInterval(timer);if(finish)clearTimeout(finish);};
-  },[stage,fullText]);
-  useEffect(()=>{
-    if(stage!=="uplink")return;
-    setUplinkSeconds(12);
-    let remaining=12;
-    const countdown=window.setInterval(()=>{
-      remaining-=1;
-      setUplinkSeconds(remaining);
-      if(remaining<=0){window.clearInterval(countdown);setStage("welcome");}
-    },1000);
-    return ()=>window.clearInterval(countdown);
-  },[stage]);
-  useEffect(()=>{
-    const onKey=(e:KeyboardEvent)=>{if(e.key==="Escape")onExit();};
-    window.addEventListener("keydown",onKey);
-    return ()=>window.removeEventListener("keydown",onKey);
-  },[onExit]);
-  return createPortal(<div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",top:0,left:0,right:"auto",bottom:"auto",width:"100vw",height:"100dvh",minWidth:"100vw",maxWidth:"none",margin:0,padding:0,zIndex:2147483647,background:stage==="infection"||stage==="breach"?"transparent":"#030807",color:"#c9ebd1",overflowY:"auto",overflowX:"hidden",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65,isolation:"isolate"}} role="dialog" aria-modal="true" aria-label="Underground network">
-    <button className="underworld-exit" type="button" onClick={onExit} style={{position:"fixed",top:18,right:20,zIndex:10002,padding:"10px 16px",background:"#13271b",border:"1px solid #578968",color:"#d1f4d5",fontFamily:"monospace",cursor:"pointer"}}>EXIT / ESC</button>
-    {(stage==="infection" || stage==="breach") ? <div className={`underworld-invasion underworld-invasion-${stage}`}>
-      <div className="invasion-scanlines" aria-hidden="true"/>
-      <div className="invasion-fragment invasion-fragment-one">SAN ANDREAS // PUBLIC INDEX [DATA LOSS]</div>
-      <div className="invasion-fragment invasion-fragment-two">MEMORY CORRUPTED // 0xBAD</div>
-      <div className="invasion-fragment invasion-fragment-three">UNKNOWN SIGNAL // OVERRIDE</div>
-      <div className="invasion-breach-wall"><span>///////</span><span>RESTRICTED CHANNEL // DIGITAL WALL</span><span>101101 // 010011</span></div>
-      <div className="invasion-center"><small>ROSEFIRE MUNICIPAL NETWORK</small><strong data-text="CONNECTION LOST">CONNECTION LOST</strong><p>PUBLIC DIRECTORY IS NO LONGER AVAILABLE</p></div>
-    </div> : stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
-        <div className="underworld-glitch-frame"><p>ROSEFIRE / PUBLIC INFORMATION NETWORK</p><strong data-text="SIGNAL CORRUPTED">SIGNAL CORRUPTED</strong><span>CONNECTION INTERRUPTED // ERR 0x91</span><small>RECONNECTING TO UNKNOWN RELAY...</small></div>
-      </div> :
-      (stage==="boot" || stage==="uplink") ? <div className="underworld-boot" style={{minHeight:"100dvh",padding:"clamp(100px,15vh,180px) clamp(22px,6vw,110px) 60px"}}><p style={{fontSize:12,letterSpacing:".13em",color:"#89c49a",borderBottom:"1px solid #31513c",paddingBottom:16}}>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre style={{fontFamily:"Consolas, monospace",fontSize:"clamp(14px,1.6vw,19px)",lineHeight:1.9,whiteSpace:"pre-wrap",color:"#c9e8cd"}}>{typed}<span className="underworld-cursor">█</span></pre>
-      {stage==="uplink" && <div className="underworld-uplink"><p>ENCRYPTED UPLINK STARTING IN <strong>{String(uplinkSeconds).padStart(2,"0")}</strong> SECONDS</p><div className="underworld-uplink-track"><span style={{width:`${(12-uplinkSeconds)/12*100}%`}}/></div><p className="underworld-uplink-note">READBACK COMPLETE / PRIVATE TERMINAL INITIALIZING</p></div>}
-      </div> :
-      <div className="underworld-interface" style={{maxWidth:1280,margin:"65px auto 30px",padding:"0 clamp(18px,3vw,35px)"}}>
-        <header><span>◈ UNDERGROUND RELAY</span><span>PRIVATE CONNECTION / IDENTITY MASKED</span></header>
-        <div className="underworld-window" style={{padding:"clamp(25px,5vw,70px)",border:"1px solid #446b51",background:"#091710"}}>
-          <p className="underworld-overline">INCOMING MESSAGE · UNKNOWN CONTACT</p>
-          <h1>Well, look what found its way down here.</h1>
-          <p>Call me <strong>Vesper</strong>. No need for names on your end, sweetheart. You've slipped past the polished brochures and the friendly faces. Welcome to Rosefire's underworld.</p>
-          <p>Down here, people trade in favors, rumors, and opportunities that don't make the morning paper. Maybe you're curious. Maybe you're looking for something you shouldn't be. Either way, you're at the door now.</p>
-          <p>So, what's it going to be? Have a look around ... or run right back to the safety of the streets above.</p>
-          {!showLeads ? <div className="underworld-choices"><button type="button" onClick={()=>setShowLeads(true)}>Show me what's out there →</button><button type="button" onClick={onExit}>Take me back to safety</button></div> :
-            <div className="underworld-leads"><p className="underworld-overline">THE UNDERGROUND / RUMORS & CONNECTIONS</p>
-              <div><article><h2>Whispers</h2><p>Every city has secrets. Finding the right person is half the work.</p></article><article><h2>Favors</h2><p>Some doors only open when someone owes you something.</p></article><article><h2>After Dark</h2><p>The city changes after sundown. Pay attention to who stays awake.</p></article></div>
-              <p className="underworld-muted">More connections will surface in time. Until then, keep your eyes open.</p>
-              <button type="button" onClick={onExit}>Disappear back into Rosefire →</button>
-            </div>}
-        </div>
-        <footer>ROSEFIRE / NO RECORD OF THIS SESSION</footer>
-      </div>}
-  </div>, document.documentElement);
-}
-
 function CityGuidePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const {meta,body}=document;
   const [underworldOpen,setUnderworldOpen]=useState(false);
@@ -601,7 +518,7 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
       </div>
       <div className="underworld-discovery"><button className="underworld-signal" type="button" aria-label="Investigate unusual signal" title="Unidentified signal" onClick={()=>setUnderworldOpen(true)}><span className="underworld-shard" aria-hidden="true"><span className="underworld-shard-core"/><span className="underworld-shard-fracture"/><span className="underworld-shard-spark"/></span></button></div>
     </section>
-    {underworldOpen && <UnderworldTerminal onExit={()=>setUnderworldOpen(false)}/>}
+    {underworldOpen && <UnderworldExperience onExit={()=>setUnderworldOpen(false)}/>}
     <section className="resident-guide-end">
       <div><p className="section-kicker">A PLACE TO CALL HOME</p><h2>New to San Andreas?</h2><p>Get acquainted with the state, explore its communities, and find the information you need to settle in.</p></div>
       <div className="resident-guide-end-links"><SiteLink href="/getting-started">New resident information →</SiteLink><SiteLink href="/explore">Explore San Andreas →</SiteLink></div>
