@@ -1,28 +1,32 @@
 ---
 title: The Coast & Beaches
 kicker: PACIFIC SAN ANDREAS
-description: A changing ribbon of beaches, marinas, boardwalks, cliffs, and oceanfront communities.
+description: From Vespucci Beach and Del Perro Pier to the quieter northern shoreline.
 heroImage: images/coast.png
 ---
 
-# A state defined by the water
+# The San Andreas Coast
 
-San Andreas meets the Pacific in many different ways. Along the southern beaches, crowds fill promenades and the sound of traffic drifts toward the sand. Farther along the coast, roads bend around cliffs and the water stretches out beside smaller communities. It is one shoreline, but never one experience.
+The Pacific runs along the western edge of San Andreas, but the shoreline changes considerably from one end of the state to the other. In Los Santos, beaches and boardwalks are part of everyday city life. Farther north, the roads follow cliffs, open water, and quieter stretches of shore.
 
-## Where the city meets the sea
+## Vespucci Beach and Del Perro
 
-Vespucci and Del Perro draw people to the ocean for an afternoon or an entire way of life. Shops, food, recreation, and familiar stretches of boardwalk turn the beachfront into a public living room. On busy days it is easy to forget how many people come here simply to watch the water.
+Vespucci is one of the busiest beachfront areas in the south. You'll find people walking, exercising, meeting friends, or just sitting near the sand. Del Perro Pier is an easy stop nearby, especially toward evening when the lights come on.
 
-## The working coastline
+There are plenty of places to eat and spend an afternoon around the coast. The side streets away from the beach are worth exploring, too.
 
-The coast is not only a holiday postcard. Marinas, docks, roadside services, and local businesses reflect livelihoods tied to movement and the sea. Fishing and boating have their own rhythms, shaped by the weather and the time people can spare away from shore.
+## Marinas and waterfront work
 
-## North along the Pacific
+Not everyone comes to the water for a holiday. The marinas, docks, and waterfront businesses are part of a working coast. Boats need care, supplies have to be delivered, and early starts aren't unusual for people whose days depend on the water.
 
-Beyond the southern neighborhoods, the shore becomes more rugged. Scenic drives turn into trips through changing terrain, and the best stopping place is not always the most famous one. The coastal road invites its own tradition: leave time for one more lookout than you planned.
+For anyone thinking about making a home near the sea, the view is only one part of life here.
 
-## The promise of the horizon
+## Follow the highway north
 
-Coastal people talk about the ocean as though it never looks the same twice. Perhaps that is why so many residents, however busy their lives become, find their way back to it.
+Take the coastal road away from the city and the scenery gradually opens up. There's less development, more rugged shoreline, and plenty of turns where you'll want to slow down. Some of the best stops are simply places with a safe pull-off and an unobstructed view.
 
-For city life see [[regions/los-santos|Los Santos]], or follow the shore toward [[regions/paleto-bay|Paleto Bay]].
+Give yourself time. It's a better drive when you're not racing the clock.
+
+## Make a day of it
+
+Start at Vespucci, visit the pier, then head north for the scenery. You can return to [[regions/los-santos|Los Santos]] for dinner or carry on toward [[regions/paleto-bay|Paleto Bay]] if you're making a longer trip.
