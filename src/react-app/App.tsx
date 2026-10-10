@@ -495,14 +495,15 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     "> accessing /rosefire/underground",
     "> handshake accepted"
   ];
-  const [stage,setStage]=useState<"shutdown"|"boot"|"welcome">("shutdown");
+  const [stage,setStage]=useState<"shutdown"|"boot"|"uplink"|"welcome">("shutdown");
   const [typed,setTyped]=useState("");
+  const [uplinkSeconds,setUplinkSeconds]=useState(12);
   const [showLeads,setShowLeads]=useState(false);
   const fullText=bootLines.join("\n");
   useEffect(()=>{
     const oldOverflow=document.body.style.overflow;
     document.body.style.overflow="hidden";
-    const shutdown=setTimeout(()=>setStage("boot"),850);
+    const shutdown=setTimeout(()=>setStage("boot"),2100);
     return ()=>{clearTimeout(shutdown);document.body.style.overflow=oldOverflow;};
   },[]);
   useEffect(()=>{
@@ -511,11 +512,22 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     const timer=window.setInterval(()=>{
       index=Math.min(index+2,fullText.length);
       setTyped(fullText.slice(0,index));
-      if(index===fullText.length){window.clearInterval(timer);finish=setTimeout(()=>setStage("welcome"),750);}
+      if(index===fullText.length){window.clearInterval(timer);finish=setTimeout(()=>setStage("uplink"),900);}
     },33);
     let finish:ReturnType<typeof setTimeout>|undefined;
     return ()=>{window.clearInterval(timer);if(finish)clearTimeout(finish);};
   },[stage,fullText]);
+  useEffect(()=>{
+    if(stage!=="uplink")return;
+    setUplinkSeconds(12);
+    let remaining=12;
+    const countdown=window.setInterval(()=>{
+      remaining-=1;
+      setUplinkSeconds(remaining);
+      if(remaining<=0){window.clearInterval(countdown);setStage("welcome");}
+    },1000);
+    return ()=>window.clearInterval(countdown);
+  },[stage]);
   useEffect(()=>{
     const onKey=(e:KeyboardEvent)=>{if(e.key==="Escape")onExit();};
     window.addEventListener("keydown",onKey);
@@ -523,8 +535,12 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
   },[onExit]);
   return <div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",inset:0,zIndex:9999,background:"#030807",color:"#c9ebd1",overflowY:"auto",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65}} role="dialog" aria-modal="true" aria-label="Underground network">
     <button className="underworld-exit" type="button" onClick={onExit} style={{position:"fixed",top:18,right:20,zIndex:10002,padding:"10px 16px",background:"#13271b",border:"1px solid #578968",color:"#d1f4d5",fontFamily:"monospace",cursor:"pointer"}}>EXIT / ESC</button>
-    {stage==="shutdown" ? <div className="underworld-blackout" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#a04956"}}><span>CONNECTION INTERRUPTED</span></div> :
-      stage==="boot" ? <div className="underworld-boot" style={{minHeight:"100dvh",padding:"clamp(100px,15vh,180px) clamp(22px,6vw,110px) 60px"}}><p style={{fontSize:12,letterSpacing:".13em",color:"#89c49a",borderBottom:"1px solid #31513c",paddingBottom:16}}>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre style={{fontFamily:"Consolas, monospace",fontSize:"clamp(14px,1.6vw,19px)",lineHeight:1.9,whiteSpace:"pre-wrap",color:"#c9e8cd"}}>{typed}<span className="underworld-cursor">█</span></pre></div> :
+    {stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
+        <div className="underworld-glitch-frame"><p>ROSEFIRE / PUBLIC INFORMATION NETWORK</p><strong data-text="SIGNAL CORRUPTED">SIGNAL CORRUPTED</strong><span>CONNECTION INTERRUPTED // ERR 0x91</span><small>RECONNECTING TO UNKNOWN RELAY...</small></div>
+      </div> :
+      (stage==="boot" || stage==="uplink") ? <div className="underworld-boot" style={{minHeight:"100dvh",padding:"clamp(100px,15vh,180px) clamp(22px,6vw,110px) 60px"}}><p style={{fontSize:12,letterSpacing:".13em",color:"#89c49a",borderBottom:"1px solid #31513c",paddingBottom:16}}>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre style={{fontFamily:"Consolas, monospace",fontSize:"clamp(14px,1.6vw,19px)",lineHeight:1.9,whiteSpace:"pre-wrap",color:"#c9e8cd"}}>{typed}<span className="underworld-cursor">█</span></pre>
+      {stage==="uplink" && <div className="underworld-uplink"><p>ENCRYPTED UPLINK STARTING IN <strong>{String(uplinkSeconds).padStart(2,"0")}</strong> SECONDS</p><div className="underworld-uplink-track"><span style={{width:`${(12-uplinkSeconds)/12*100}%`}}/></div><p className="underworld-uplink-note">READBACK COMPLETE / PRIVATE TERMINAL INITIALIZING</p></div>}
+      </div> :
       <div className="underworld-interface" style={{maxWidth:1280,margin:"65px auto 30px",padding:"0 clamp(18px,3vw,35px)"}}>
         <header><span>◈ UNDERGROUND RELAY</span><span>PRIVATE CONNECTION / IDENTITY MASKED</span></header>
         <div className="underworld-window" style={{padding:"clamp(25px,5vw,70px)",border:"1px solid #446b51",background:"#091710"}}>
