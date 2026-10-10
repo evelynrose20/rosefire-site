@@ -18,9 +18,7 @@ It's still a fine place to get out of the city for an afternoon, whether you're 
 
 ## A Message from Cait, Club Owner
 
-> We're working toward bringing the club back properly next summer. My hope is to welcome our longtime members and new members alike, with the rest of the holes open and plenty of new things to enjoy. There's still work to do, but I'm looking forward to showing everyone what's coming.
->
-> — **Cait, Owner, Los Santos Golf Club**
+Club owner **Cait** hopes to welcome longtime members and new faces alike when the club fully reopens. Plans include opening the remaining holes and introducing more games and activities around the property.
 
 ## Looking Ahead
 
