@@ -349,3 +349,34 @@ html,body{max-width:100%;overflow-x:clip}
 @media(prefers-reduced-motion:reduce){
  .feature-card,.region-card,.leisure-feature{transition:none}
 }
+
+/* Los Santos Golf Club destination page */
+.golf-hero{min-height:530px;background:linear-gradient(120deg,#172e28,#536b52);background-size:cover;background-position:center;display:flex;align-items:center}
+.golf-hero-content{width:100%;padding:84px var(--site-gutter);margin:auto}
+.golf-hero h1{font-family:Georgia,serif;font-size:clamp(3.2rem,7vw,7rem);line-height:1.04;letter-spacing:-.045em;max-width:920px;margin:14px 0}
+.golf-hero-content>p:not(.section-kicker){max-width:660px;color:#e9f1df;font-size:1.13rem}
+.golf-back{display:inline-block;margin-top:25px;color:#f2ead6}
+.golf-status-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:27px var(--site-gutter);background:#e0e6dc;color:#253b30}
+.golf-status-bar>div{display:grid;gap:4px;min-width:0}
+.golf-status-bar span{font-size:.68rem;letter-spacing:.12em;color:#597064;font-weight:800}
+.golf-status-bar strong{font-size:1.1rem;color:#1d3a2b}
+.golf-welcome{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,90px);padding:85px var(--site-gutter);align-items:start}
+.golf-welcome h2,.golf-owner h2,.golf-future h2{font-family:Georgia,serif;font-size:clamp(2.3rem,4.6vw,4.5rem);line-height:1.13;margin:10px 0 22px}
+.golf-welcome-copy{max-width:78ch}
+.golf-welcome-copy p{line-height:1.8}
+.golf-welcome-copy strong{color:#fff0f4}
+.golf-owner{background:#21342c;padding:80px var(--site-gutter)}
+.golf-owner-inner{max-width:1050px}
+.golf-owner .section-kicker{color:#d4ceac}
+.golf-owner-copy p{font-size:1.13rem;line-height:1.9;color:#e7eee4}
+.golf-owner-copy strong{color:#fff}
+.golf-owner-signature{font-size:.7rem;letter-spacing:.17em;color:#e7d7ac;margin-top:32px;font-weight:800}
+.golf-future{background:linear-gradient(115deg,#26352c,#455b44);background-position:center;background-size:cover;padding:85px var(--site-gutter)}
+.golf-future-inner{max-width:1080px}
+.golf-future-status{display:inline-block;border:1px solid #c1d0ac;border-radius:28px;padding:8px 16px;font-size:.78rem;color:#e7eedf;margin-bottom:20px}
+.golf-future-copy{max-width:75ch}
+.golf-future-copy p,.golf-future-copy strong{color:#e8ede5}
+.golf-return{padding:36px var(--site-gutter) 80px}
+.golf-return a{color:#b8d8b8}
+@media(max-width:800px){.golf-welcome{grid-template-columns:1fr}.golf-status-bar{grid-template-columns:1fr;gap:16px}}
+@media(max-width:600px){.golf-hero{min-height:450px}.golf-hero-content,.golf-welcome,.golf-owner,.golf-future,.golf-return{padding-left:18px;padding-right:18px}}

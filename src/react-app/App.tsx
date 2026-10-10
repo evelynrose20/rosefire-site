@@ -437,6 +437,47 @@ function DiamondPage({ document, entries, file }: { document: MarkdownDocument; 
   </div>;
 }
 
+function GolfPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const { meta, body } = document;
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  const sections = body.split(/^## (Nine Holes Available|A Message from Cait, Club Owner|Looking Ahead)\s*$/m);
+  const parts = new Map<string,string>();
+  for (let i=1;i<sections.length;i+=2) parts.set(sections[i],sections[i+1].trim());
+  const intro = sections[0].replace(/^# Los Santos Golf Club\s*/,"").replace(/!\[\[Pasted image 20261004061402\.png\]\]/,"").trim();
+  return <div className="golf-page">
+    <section className="golf-hero" style={imageBackground(meta.heroImage || "images/Pasted image 20261004061402.png")}>
+      <div className="golf-hero-content"><p className="section-kicker">LOS SANTOS / GOLF & LEISURE</p>
+        <h1>Los Santos Golf Club</h1><p>Enjoy a round on the fairways while the club prepares for its next chapter.</p>
+        <SiteLink href="/city-guide/fun" className="golf-back">← Things to Do in San Andreas</SiteLink>
+      </div>
+    </section>
+    <section className="golf-status-bar">
+      <div><span>COURSE STATUS</span><strong>{meta.clubStatus || "Limited Play"}</strong></div>
+      <div><span>CURRENTLY AVAILABLE</span><strong>9 Holes</strong></div>
+      <div><span>FULL REOPENING GOAL</span><strong>{meta.reopening || "Next Summer — Tentative"}</strong></div>
+    </section>
+    <section className="golf-welcome">
+      <div className="golf-welcome-heading"><p className="section-kicker">THE COURSE TODAY</p><h2>A round is waiting.</h2></div>
+      <div className="markdown-content golf-welcome-copy"><Markdown source={intro+"\n\n"+(parts.get("Nine Holes Available")||"")} renderLink={renderLink}/></div>
+    </section>
+    <section className="golf-owner">
+      <div className="golf-owner-inner"><p className="section-kicker">FROM THE CLUB</p>
+        <h2>A note from Cait</h2>
+        <div className="markdown-content golf-owner-copy"><Markdown source={parts.get("A Message from Cait, Club Owner")||""} renderLink={renderLink}/></div>
+        <p className="golf-owner-signature">CAIT · CLUB OWNER</p>
+      </div>
+    </section>
+    <section className="golf-future" style={imageBackground(meta.reopeningImage)}>
+      <div className="golf-future-inner"><p className="section-kicker">LOOKING AHEAD</p>
+        <h2>More Golf. More to Enjoy.</h2>
+        <span className="golf-future-status">{meta.reopening || "Next Summer — Tentative"}</span>
+        <div className="markdown-content golf-future-copy"><Markdown source={parts.get("Looking Ahead")||""} renderLink={renderLink}/></div>
+      </div>
+    </section>
+    <div className="golf-return"><SiteLink href="/city-guide/fun">← Back to Things to Do</SiteLink></div>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -524,6 +565,8 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/city-guide/fun/los-santos-golf-club" ? (
+        <GolfPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun/diamond-casino" ? (
         <DiamondPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun" ? (

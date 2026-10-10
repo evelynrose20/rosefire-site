@@ -2,6 +2,8 @@
 eyebrow: LOS SANTOS / GOLF & LEISURE
 clubStatus: Limited Play
 reopening: Summer 2027 — Tentative
+heroImage: images/Pasted image 20261004061402.png
+reopeningImage:
 ---
 
 # Los Santos Golf Club
