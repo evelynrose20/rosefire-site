@@ -5,12 +5,7 @@ navTitle: City Guide
 eyebrow: CITY GUIDE
 updated: 2026-10-03
 ---
----
-nav: true
-navOrder: 4
-navTitle: City Guide
-eyebrow: CITY GUIDE
----
+
 
 # City Guide
 

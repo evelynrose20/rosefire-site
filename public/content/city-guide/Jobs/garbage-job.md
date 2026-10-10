@@ -2,7 +2,7 @@
 eyebrow: JOB GUIDE · LOS SANTOS SANITATION
 updated: 2026-10-01
 ---
-
+![[Pasted image 20261005065304.png]]
 # Garbage Collection
 
 Los Santos Sanitation keeps the streets moving every day. This guide covers a sanitation shift from the moment you arrive at the depot until your pay reaches Fleeca.

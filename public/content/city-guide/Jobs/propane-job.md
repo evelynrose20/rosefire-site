@@ -2,7 +2,7 @@
 eyebrow: JOB GUIDE · JONNY SHAPIRO GAS SPECIALIST
 updated: 2026-10-03
 ---
-
+![[Pasted image 20261005065100.png]]
 # Propane Delivery
 
 Jonny Shapiro Gas Specialist keeps propane tanks supplied across Los Santos and Blaine County. This guide covers the full job, from preparing your service truck to loading propane, completing deliveries, and building your propane career.
