@@ -591,7 +591,7 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
           <div className="markdown-content resident-guide-card-copy"><Markdown source={card.content} renderLink={renderLink}/></div>
         </article>)}
       </div>
-      <div className="underworld-discovery"><button className="underworld-signal" type="button" aria-label="Investigate unusual signal" title="Unidentified signal" onClick={()=>setUnderworldOpen(true)}><span className="underworld-signal-glyph" aria-hidden="true" data-text="◈//ERR">◈//ERR</span><span className="underworld-signal-bar" aria-hidden="true" /></button></div>
+      <div className="underworld-discovery"><button className="underworld-signal" type="button" aria-label="Investigate unusual signal" title="Unidentified signal" onClick={()=>setUnderworldOpen(true)}><span className="underworld-shard" aria-hidden="true"><span className="underworld-shard-core"/><span className="underworld-shard-fracture"/><span className="underworld-shard-spark"/></span></button></div>
     </section>
     {underworldOpen && <UnderworldTerminal onExit={()=>setUnderworldOpen(false)}/>}
     <section className="resident-guide-end">
