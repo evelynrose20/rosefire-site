@@ -748,3 +748,14 @@ html,body{max-width:100%;overflow-x:clip}
 .globe .globe-article .globe-copy h3{color:#1b2b31!important}
 .globe .globe-article .globe-copy blockquote{color:#34454b;background:#efece4;border-left:4px solid #a98d62;padding:12px 20px}
 .globe .globe-article .globe-copy blockquote *{color:#34454b!important}
+
+/* Full-width display of the adopted Schedule 17-A map. */
+.schedule-map-page{max-width:1440px;margin:0 auto;padding:30px clamp(16px,3vw,48px) 65px;background:#f0eee8;color:#20313e}
+.schedule-map-heading{border-top:5px solid #233b4d;border-bottom:1px solid #a4b0b3;padding:20px 0 23px}
+.schedule-map-heading span{font:800 11px system-ui,sans-serif;letter-spacing:.13em;color:#526776}
+.schedule-map-heading h1{font:normal clamp(28px,3.6vw,48px)/1.15 Georgia,serif;color:#20384b;margin:14px 0}
+.schedule-map-heading p{color:#536673;font-size:14px;margin:0}
+.schedule-map-page iframe{display:block;width:100%;height:clamp(730px,100vw,1500px);border:0;margin:20px 0;background:#ebe8e2}
+.schedule-map-links{display:flex;gap:25px;flex-wrap:wrap;border-top:1px solid #b2bfbe;padding-top:20px}
+.schedule-map-links a{color:#255a75;text-decoration:underline;font-weight:700}
+@media(max-width:920px){.schedule-map-page iframe{height:1550px}}
