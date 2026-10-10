@@ -12,7 +12,7 @@ heroImage:
 
 ## Rosefire Civil Rights & Justice Code
 
-**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8)**
+**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8) · Version 1.4 (Sections 9–10)**
 
 Status: Enacted — In Force
 
@@ -20,7 +20,7 @@ An Act establishing the fundamental rights and liberties of all individuals with
 
 ## Official Code Publications
 
-The Rosefire Civil Rights & Justice Code, Sections 1–8, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
+The Rosefire Civil Rights & Justice Code, Sections 1–10, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
 
 ### Section 1 — Fundamental Civil Rights
 
@@ -80,6 +80,22 @@ Sentencing, bail and pretrial remand; correctional custody; parole; life impriso
 
 **Earlier Section 8 publication:** [[government/civil-rights/archive/section-8-v1.2|Version 1.2 — Historical Archive]] (superseded by Version 1.3).
 
+### Section 9 — Department of Justice & Court Proceedings
+
+**Version 1.4 — Enacted — In Force**
+
+Department of Justice organization, judicial appointments, legal representation, trials, civil proceedings, appeals, official records, and court oversight.
+
+[[government/civil-rights/section-9|Read Section 9 →]]
+
+### Section 10 — License Suspension & Revocation
+
+**Version 1.4 — Enacted — In Force**
+
+Driver, commercial, firearm, hunting, fishing, aviation, business, cannabis-related, and professional license administration, suspension, revocation, and reinstatement.
+
+[[government/civil-rights/section-10|Read Section 10 →]]
+
 ### Legislative Implementation and Interpretation
 
 Subjects reserved for subsequent legislation, and the Code's intended supremacy, consistency, and amendment provisions.
@@ -88,6 +104,6 @@ Subjects reserved for subsequent legislation, and the Code's intended supremacy,
 
 ## Official Publication
 
-This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
+This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8; and Version 1.4, Sections 9–10, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
 
 [[government|← Government & Public Records]]
