@@ -300,6 +300,8 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
     {name:"Autumn",subtitle:"September – October",intro:"Anniversary celebrations in September and Halloween throughout October.",months:[8,9]}
   ];
   const active = seasonGroups.find(group=>group.months.includes(currentMonth))!;
+  const activeIndex = seasonGroups.findIndex(group=>group.name===active.name);
+  const orderedSeasons = [...seasonGroups.slice(activeIndex),...seasonGroups.slice(0,activeIndex)];
   const special = currentMonth===11 ? (day>=26?"New Year's celebrations":"Christmas season") :
     currentMonth===0 && day<=9 ? "New Year's celebrations" :
     ({1:"Valentine's Month",3:"Easter celebrations",8:"Rosefire Anniversary Month",9:"Halloween Month",10:"Thanksgiving Month"} as Record<number,string>)[currentMonth] || active.name+" in San Andreas";
@@ -322,7 +324,7 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
         </div>
       </section>
       <div className="calendar-sections">
-        {seasonGroups.map(group=><section key={group.name} className={`calendar-season-section season-${group.name.toLowerCase()}`}>
+        {orderedSeasons.map(group=><section key={group.name} className={`calendar-season-section season-${group.name.toLowerCase()}`}>
           <div className="calendar-section-heading">
             <div><p className="section-kicker">{group.subtitle}</p><h2>{group.name} in San Andreas</h2><p>{group.intro}</p></div>
             {group.name===active.name && <span className="calendar-active-label">Current season</span>}
