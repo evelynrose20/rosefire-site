@@ -241,3 +241,15 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .diamond-footer a{color:#edb3c9}
 @media(max-width:800px){.diamond-offerings{grid-template-columns:1fr}.diamond-hours{grid-template-columns:1fr}}
 @media(max-width:550px){.diamond-hero-inner,.diamond-main{padding-left:18px;padding-right:18px}.diamond-hours{padding:25px 18px}.diamond-penthouse{padding:70px 18px}}
+
+/* Wide-screen reading layout; keep comfortable gutters without narrow content columns. */
+.utility-inner,.site-header,footer,.tourism-hero,.welcome-strip,.discover-section,.editorial-section,.explore-intro,.explore-regions,.leisure-wrap,.calendar-page .leisure-wrap,.winter-advisories-inner,.winter-extras,.winter-return,.diamond-hero-inner,.diamond-main,.diamond-intro>.markdown-content,.diamond-penthouse-content,.diamond-footer,.page-shell{max-width:none;width:100%}
+.page-shell{padding-left:clamp(18px,4vw,78px);padding-right:clamp(18px,4vw,78px)}
+.diamond-hero-inner,.diamond-main,.diamond-penthouse-content,.diamond-footer{padding-left:clamp(18px,4vw,78px);padding-right:clamp(18px,4vw,78px)}
+.diamond-offerings{grid-template-columns:minmax(0,1fr)}
+.diamond-offering{min-width:0}
+.diamond-copy,.diamond-copy .markdown-table-wrap{min-width:0;max-width:100%}
+.diamond-copy .markdown-table-wrap{overflow-x:auto}
+.diamond-copy table{min-width:450px}
+.diamond-copy th,.diamond-copy td{overflow-wrap:break-word}
+@media(max-width:550px){.diamond-copy table{min-width:450px}}
