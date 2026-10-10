@@ -523,6 +523,6 @@ The schedules shall possess binding legal effect only upon formal adoption by th
 
 *The authority of the State shall be defined by law, bounded by jurisdiction, and exercised with accountability.*
 
-[View proposed jurisdiction map — Schedule 17-A](/jurisdiction-map.html)
+[View Official Territorial Jurisdiction Map — Schedule 17-A](/jurisdiction-map.html)
 
 [[government/civil-rights|← Return to the Civil Rights Register]]

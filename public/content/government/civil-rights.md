@@ -152,7 +152,7 @@ Blaine County, Los Santos County, and City of Los Santos jurisdictions; law enfo
 
 [[government/civil-rights/section-17|Read Section 17 →]]
 
-**Official map schedules:** Section 17 establishes Schedule 17-A through Schedule 17-F. Their geographic boundaries and restrictions become legally binding only upon formal adoption; no approved schedule maps have been published in this register.
+**Official Schedule 17-A:** [[government/schedules/schedule-17-a|Adopted Territorial Jurisdiction Map]]. Schedules 17-B through 17-F require separate adoption.
 
 ### Legislative Implementation and Interpretation
 
