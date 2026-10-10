@@ -544,7 +544,7 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
       <div className="invasion-fragment invasion-fragment-three">UNKNOWN SIGNAL // OVERRIDE</div>
       <div className="invasion-breach-wall"><span>///////</span><span>RESTRICTED CHANNEL // DIGITAL WALL</span><span>101101 // 010011</span></div>
       <div className="invasion-center"><small>ROSEFIRE MUNICIPAL NETWORK</small><strong data-text="CONNECTION LOST">CONNECTION LOST</strong><p>PUBLIC DIRECTORY IS NO LONGER AVAILABLE</p></div>
-    </div> : {stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
+    </div> : stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
         <div className="underworld-glitch-frame"><p>ROSEFIRE / PUBLIC INFORMATION NETWORK</p><strong data-text="SIGNAL CORRUPTED">SIGNAL CORRUPTED</strong><span>CONNECTION INTERRUPTED // ERR 0x91</span><small>RECONNECTING TO UNKNOWN RELAY...</small></div>
       </div> :
       (stage==="boot" || stage==="uplink") ? <div className="underworld-boot" style={{minHeight:"100dvh",padding:"clamp(100px,15vh,180px) clamp(22px,6vw,110px) 60px"}}><p style={{fontSize:12,letterSpacing:".13em",color:"#89c49a",borderBottom:"1px solid #31513c",paddingBottom:16}}>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre style={{fontFamily:"Consolas, monospace",fontSize:"clamp(14px,1.6vw,19px)",lineHeight:1.9,whiteSpace:"pre-wrap",color:"#c9e8cd"}}>{typed}<span className="underworld-cursor">█</span></pre>
