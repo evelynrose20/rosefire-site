@@ -1,5 +1,5 @@
 ---
-nav: true
+nav: false
 navOrder: 4
 navTitle: City Guide
 eyebrow: CITY GUIDE

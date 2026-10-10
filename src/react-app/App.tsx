@@ -155,7 +155,7 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
           <p className="lede">{meta.description}</p>
           <div className="hero-actions">
             <SiteLink className="button primary" href="/getting-started">Plan Your Move <span aria-hidden="true">→</span></SiteLink>
-            <SiteLink className="button secondary" href="/city-guide">Discover Rosefire</SiteLink>
+            <SiteLink className="button secondary" href="/explore">Discover Rosefire</SiteLink>
           </div>
         </div>
         <div className="hero-seal" aria-hidden="true"><span>ROSEFIRE</span><strong>RF</strong><small>YOUR FUTURE BEGINS HERE</small></div>
@@ -168,7 +168,7 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
         <p className="section-kicker">LIFE IN ROSEFIRE</p>
         <h2 id="discover-heading">Everything you need to make it yours.</h2>
         <div className="discover-grid">
-          <SiteLink className="feature-card feature-discover" style={imageBackground(meta.exploreImage)} href="/city-guide"><span className="feature-number">01 / EXPLORE</span><h3>Discover the City</h3><p>From bustling streets to places worth getting lost in, see what Rosefire has to offer.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
+          <SiteLink className="feature-card feature-discover" style={imageBackground(meta.exploreImage)} href="/explore"><span className="feature-number">01 / EXPLORE</span><h3>Discover the City</h3><p>From bustling streets to places worth getting lost in, see what Rosefire has to offer.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
           <SiteLink className="feature-card feature-work" style={imageBackground(meta.workImage)} href="/city-guide"><span className="feature-number">02 / OPPORTUNITY</span><h3>Find Your Calling</h3><p>Explore local work, professional careers, and opportunities to make a name for yourself.</p><span className="feature-arrow">Explore opportunities →</span></SiteLink>
           <SiteLink className="feature-card feature-home" style={imageBackground(meta.homeImage)} href="/getting-started"><span className="feature-number">03 / NEW BEGINNINGS</span><h3>Make Yourself at Home</h3><p>Get acquainted with the city, establish your footing, and begin your next chapter.</p><span className="feature-arrow">Plan your move →</span></SiteLink>
         </div>
@@ -181,6 +181,38 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
       </section>
       <section className="move-cta"><p className="section-kicker">READY FOR A FRESH START?</p><h2>Your future is waiting in Rosefire.</h2><p>Start with the essentials, get to know your new home, and see where the road takes you.</p><SiteLink className="button primary" href="/getting-started">Start Your Journey →</SiteLink></section>
       <section className="community-note"><div><p className="section-kicker">OUT OF CHARACTER / COMMUNITY</p><h2>Here for the roleplay community?</h2><p>Find the rules, connection instructions, and player guides in our dedicated community information area.</p></div><div className="community-actions"><SiteLink href="/rules">Community Rules →</SiteLink><SiteLink href="/getting-started">Player Getting Started →</SiteLink><SiteLink href="/faq">Help & FAQ →</SiteLink></div></section>
+    </>
+  );
+}
+
+function ExplorePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const { meta, body } = document;
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  return (
+    <>
+      <section className={`explore-hero${meta.heroImage ? " has-image" : ""}`} style={imageBackground(meta.heroImage)}>
+        <div className="explore-hero-inner">
+          <p className="section-kicker">{meta.kicker || "DISCOVER ROSEFIRE"}</p>
+          <h1>{meta.title || "Explore Rosefire"}</h1>
+          <p>{meta.description}</p>
+          <SiteLink className="button primary" href="/city-guide">Browse the City Guide →</SiteLink>
+        </div>
+      </section>
+      <section className="explore-intro">
+        <p className="section-kicker">THE CITY IS YOURS TO DISCOVER</p>
+        <h2>{meta.introTitle || "Find your kind of adventure."}</h2>
+        <p>{meta.introText}</p>
+      </section>
+      <section className="explore-destinations" aria-label="Discover Rosefire">
+        <SiteLink className="explore-tile" href="/city-guide/fun"><span>01 / CULTURE & ENTERTAINMENT</span><h3>Things to Do</h3><p>Find places to unwind, spend an afternoon, or make a night of it.</p><strong>Discover activities →</strong></SiteLink>
+        <SiteLink className="explore-tile" href="/city-guide/jobs"><span>02 / PEOPLE & OPPORTUNITY</span><h3>Work & Careers</h3><p>Find a new direction, meet local businesses, and learn what moves the city.</p><strong>Discover careers →</strong></SiteLink>
+        <SiteLink className="explore-tile" href="/city-guide"><span>03 / EVERYDAY LIFE</span><h3>Life in Rosefire</h3><p>Explore services, communities, transportation, and the places residents call home.</p><strong>Explore the city guide →</strong></SiteLink>
+      </section>
+      <section className="explore-story">
+        <p className="section-kicker">GET TO KNOW THE CITY</p>
+        <article className="markdown-content explore-copy"><Markdown source={body} renderLink={renderLink}/></article>
+      </section>
+      <section className="explore-next"><p className="section-kicker">YOUR NEXT CHAPTER</p><h2>See something you love? Make it home.</h2><SiteLink className="button primary" href="/getting-started">Plan Your Move →</SiteLink></section>
     </>
   );
 }
@@ -270,12 +302,14 @@ function App() {
         <section className="page-shell"><p className="page-intro">Loading Rosefire…</p></section>
       ) : path === "/" ? (
         <Home document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/explore" ? (
+        <ExplorePage document={document} entries={indexedEntries} file={activeFile} />
       ) : (
         <DocumentPage document={document} entries={indexedEntries} file={activeFile} />
       )}
       <footer>
         <div><strong>ROSEFIRE</strong><p>Make a Life. Build a Legacy.</p></div>
-        <div className="footer-links"><SiteLink href="/city-guide">Explore</SiteLink><SiteLink href="/getting-started">New Residents</SiteLink><SiteLink href="/lore">Our Story</SiteLink></div>
+        <div className="footer-links"><SiteLink href="/explore">Explore</SiteLink><SiteLink href="/getting-started">New Residents</SiteLink><SiteLink href="/lore">Our Story</SiteLink></div>
         <div className="footer-community"><span>COMMUNITY / OOC</span><SiteLink href="/rules">Rules</SiteLink><SiteLink href="/faq">FAQ</SiteLink><SiteLink href="/changelog">Updates</SiteLink></div>
       </footer>
     </main>
