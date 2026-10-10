@@ -290,8 +290,13 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
   const day = today.getDate();
   const sections = document.body.split(/^## (January|February|March|April|May|June|July|August|September|October|November|December)\s*$/m);
   const entries = new Map<string,string[]>();
+  const descriptions = new Map<string,string>();
+  const activities = new Map<string,string[]>();
   for (let i=1;i<sections.length;i+=2) {
-    entries.set(sections[i],sections[i+1].split("\n").map(line=>line.trim()).filter(line=>line.startsWith("- ")).map(line=>line.slice(2)));
+    const lines = sections[i+1].split("\n").map(line=>line.trim());
+    entries.set(sections[i],lines.filter(line=>line.startsWith("- ") && !line.startsWith("- Activity: ")).map(line=>line.slice(2)));
+    activities.set(sections[i],lines.filter(line=>line.startsWith("- Activity: ")).map(line=>line.slice(12)));
+    descriptions.set(sections[i],lines.find(line=>line.startsWith("> "))?.slice(2) || "");
   }
   const seasonGroups = [
     {name:"Winter",subtitle:"November – March",intro:"Five months of snow-covered streets, mountain roads, and winter holidays.",months:[10,11,0,1,2]},
@@ -308,6 +313,9 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
   const celebrationDates = currentMonth===11 ? (day>=26?"December 26 – January 9":"December 1 – 25") :
     currentMonth===0 && day<=9 ? "December 26 – January 9" :
     ({1:"February 1 – 28/29",3:"April 1 – 30",8:"September 1 – 30",9:"October 1 – 31",10:"November 1 – 30"} as Record<number,string>)[currentMonth] || active.subtitle;
+  const monthActivities = activities.get(MONTHS[currentMonth]) || [];
+  const activeActivities = currentMonth===11 && day>=26 ? monthActivities.filter(item=>/new year/i.test(item)) :
+    currentMonth===11 ? monthActivities.filter(item=>!/new year/i.test(item)) : monthActivities;
   return <div className="calendar-page">
     <section className="leisure-hero" style={imageBackground(document.meta.heroImage)}><div>
       <p className="section-kicker">A YEAR IN SAN ANDREAS</p><h1>Annual Celebrations</h1>
@@ -319,9 +327,14 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
         <div className="calendar-spotlight-copy">
           <p className="section-kicker">THIS MONTH IN SAN ANDREAS · {MONTHS[currentMonth].toUpperCase()}</p>
           <h2>{special}</h2>
-          <p>{celebrationDates}</p>
+          <p className="calendar-spotlight-description">{descriptions.get(MONTHS[currentMonth]) || active.intro}</p>
+          <p className="calendar-spotlight-dates">{celebrationDates}</p>
           <span className="spotlight-season">{active.name} season</span>
         </div>
+        {activeActivities.length>0 && <aside className="calendar-spotlight-events">
+          <p className="section-kicker">HAPPENING THIS MONTH</p>
+          <ul>{activeActivities.map(item=><li key={item}>{item}</li>)}</ul>
+        </aside>}
       </section>
       <div className="calendar-sections">
         {orderedSeasons.map(group=><section key={group.name} className={`calendar-season-section season-${group.name.toLowerCase()}`}>
@@ -334,7 +347,9 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
             {group.months.map(index=><article key={index} className={`calendar-month${index===currentMonth?" current-month":""}`}>
               <div className="calendar-month-heading"><span>{String(index+1).padStart(2,"0")}</span><h3>{MONTHS[index]}</h3></div>
               {index===currentMonth && <span className="calendar-month-now">This month</span>}
+              {descriptions.get(MONTHS[index]) && <p className="calendar-month-description">{descriptions.get(MONTHS[index])}</p>}
               <ul>{(entries.get(MONTHS[index])||[]).map((entry,i)=><li key={i}>{entry}</li>)}</ul>
+              {(activities.get(MONTHS[index])||[]).length>0 && <div className="calendar-month-activities"><span>Seasonal traditions</span><ul>{activities.get(MONTHS[index])!.map(item=><li key={item}>{item}</li>)}</ul></div>}
             </article>)}
           </div>
         </section>)}

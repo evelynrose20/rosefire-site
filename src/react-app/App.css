@@ -147,3 +147,24 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 @media(prefers-reduced-motion:reduce){.winter-flurries{animation:none}}
 @media(max-width:900px){.calendar-months{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.calendar-spotlight{padding:28px 22px;min-height:240px}.calendar-season-section{padding:23px 17px}.calendar-months{grid-template-columns:1fr}.calendar-section-heading{display:block}.calendar-active-label{display:inline-block;margin-top:12px}}
+
+/* Feature-style current celebration and richer annual calendar. */
+.calendar-spotlight{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,.85fr);gap:36px;align-items:center;min-height:330px}
+.calendar-spotlight-copy h2{line-height:1.08;max-width:720px}
+.calendar-spotlight-description{max-width:630px;color:#ffe9e9;line-height:1.75;font-size:1.01rem}
+.calendar-spotlight-dates{font-weight:700;color:#ffe5d7;letter-spacing:.02em}
+.calendar-spotlight-events{position:relative;z-index:2;padding:26px 28px;border:1px solid rgba(255,255,255,.32);border-radius:8px;background:rgba(15,9,16,.28);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.calendar-spotlight-events .section-kicker{color:#ffd5de;margin:0 0 17px}
+.calendar-spotlight-events ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.calendar-spotlight-events li{border-bottom:1px solid rgba(255,255,255,.2);padding:0 0 10px;font-weight:650}
+.calendar-spotlight-events li:last-child{border-bottom:0;padding-bottom:0}
+.calendar-season-section .calendar-month{min-height:245px}
+.calendar-month-description{font-size:.87rem;line-height:1.55;color:#e4c5d0;margin:14px 0 6px}
+.calendar-month-activities{margin-top:20px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18)}
+.calendar-month-activities>span{font-size:.66rem;color:#fac7d8;letter-spacing:.1em;text-transform:uppercase;font-weight:750}
+.calendar-month-activities ul{margin:8px 0 0;padding-left:18px}
+.calendar-month-activities li{font-size:.85rem}
+.calendar-page .season-winter .calendar-month{background:rgba(17,33,48,.72);border-color:rgba(189,219,240,.3)}
+.calendar-page .season-winter .calendar-month.current-month{border-color:#bdd9eb;outline-color:#bdd9eb}
+.calendar-page .season-winter .winter-flurries{opacity:.48}
+@media(max-width:780px){.calendar-spotlight{grid-template-columns:1fr;gap:20px}.calendar-spotlight-events{max-width:100%}}
