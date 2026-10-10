@@ -12,7 +12,7 @@ heroImage:
 
 ## Rosefire Civil Rights & Justice Code
 
-**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8) · Version 1.4 (Sections 9–10) · Version 1.5 (Sections 11–12) · Version 1.6 (Sections 13–14)**
+**Published releases: Version 1.0 (Sections 1–4) · Version 1.1 (Sections 5–6) · Version 1.2 (Section 7) · Version 1.3 (Section 8) · Version 1.4 (Sections 9–10) · Version 1.5 (Sections 11–12) · Version 1.6 (Sections 13–14) · Version 1.7 (Sections 15–16)**
 
 Status: Enacted — In Force
 
@@ -20,7 +20,7 @@ An Act establishing the fundamental rights and liberties of all individuals with
 
 ## Official Code Publications
 
-The Rosefire Civil Rights & Justice Code, Sections 1–14, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
+The Rosefire Civil Rights & Justice Code, Sections 1–16, is enacted and in force throughout the State of San Andreas. Section 8 is presented in its later Version 1.3 wording. The Department of Justice maintains the following publications as the public text of the Code.
 
 ### Section 1 — Fundamental Civil Rights
 
@@ -128,6 +128,22 @@ Hunting and fishing licenses, protected wildlife, conservation areas, commercial
 
 [[government/civil-rights/section-14|Read Section 14 →]]
 
+### Section 15 — Aviation & Maritime Law
+
+**Version 1.7 — Enacted — In Force**
+
+Aircraft and vessel ownership, pilot and maritime qualifications, flight and navigation safety, commercial transport, emergency response, seizures, and judicial review.
+
+[[government/civil-rights/section-15|Read Section 15 →]]
+
+### Section 16 — Property, Business & Commercial Rights
+
+**Version 1.7 — Enacted — In Force**
+
+Property ownership, D8 real estate, leasing, mortgages, foreclosure, banking and credit, business operations, employment, contracts, and commercial remedies.
+
+[[government/civil-rights/section-16|Read Section 16 →]]
+
 ### Legislative Implementation and Interpretation
 
 Subjects reserved for subsequent legislation, and the Code's intended supremacy, consistency, and amendment provisions.
@@ -136,6 +152,6 @@ Subjects reserved for subsequent legislation, and the Code's intended supremacy,
 
 ## Official Publication
 
-This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8; and Version 1.4, Sections 9–10; Version 1.5, Sections 11–12; and Version 1.6, Sections 13–14, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
+This register contains the enacted text of Version 1.0, Sections 1–4; Version 1.1, Sections 5–6; Version 1.2, Section 7; and Version 1.3, Section 8; and Version 1.4, Sections 9–10; Version 1.5, Sections 11–12; and Version 1.6, Sections 13–14; and Version 1.7, Sections 15–16, together with the published implementation and interpretation provisions. Previous Section 8 wording is retained in the historical archive. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
 
 [[government|← Government & Public Records]]
