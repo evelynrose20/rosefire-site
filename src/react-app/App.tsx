@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import "./App.css";
 import { Markdown, parseDocument, type MarkdownDocument } from "./markdown";
 import { siteConfig } from "./siteConfig";
@@ -533,7 +534,7 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     window.addEventListener("keydown",onKey);
     return ()=>window.removeEventListener("keydown",onKey);
   },[onExit]);
-  return <div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",inset:0,zIndex:9999,background:"#030807",color:"#c9ebd1",overflowY:"auto",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65}} role="dialog" aria-modal="true" aria-label="Underground network">
+  return createPortal(<div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",inset:0,zIndex:9999,background:"#030807",color:"#c9ebd1",overflowY:"auto",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65}} role="dialog" aria-modal="true" aria-label="Underground network">
     <button className="underworld-exit" type="button" onClick={onExit} style={{position:"fixed",top:18,right:20,zIndex:10002,padding:"10px 16px",background:"#13271b",border:"1px solid #578968",color:"#d1f4d5",fontFamily:"monospace",cursor:"pointer"}}>EXIT / ESC</button>
     {stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
         <div className="underworld-glitch-frame"><p>ROSEFIRE / PUBLIC INFORMATION NETWORK</p><strong data-text="SIGNAL CORRUPTED">SIGNAL CORRUPTED</strong><span>CONNECTION INTERRUPTED // ERR 0x91</span><small>RECONNECTING TO UNKNOWN RELAY...</small></div>
@@ -558,7 +559,7 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
         </div>
         <footer>ROSEFIRE / NO RECORD OF THIS SESSION</footer>
       </div>}
-  </div>;
+  </div>, document.body);
 }
 
 function CityGuidePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
@@ -590,7 +591,7 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
           <div className="markdown-content resident-guide-card-copy"><Markdown source={card.content} renderLink={renderLink}/></div>
         </article>)}
       </div>
-      <div className="underworld-discovery"><button type="button" style={{height:56,width:"min(100%,350px)",background:"#100b11",border:"1px solid #663247",color:"#b55b7b",cursor:"pointer",fontFamily:"monospace",fontSize:20}} aria-label="Unmarked connection" title="An unmarked connection" onClick={()=>setUnderworldOpen(true)}><span aria-hidden="true">_</span></button></div>
+      <div className="underworld-discovery"><button className="underworld-signal" type="button" aria-label="Investigate unusual signal" title="Unidentified signal" onClick={()=>setUnderworldOpen(true)}><span className="underworld-signal-glyph" aria-hidden="true" data-text="◈//ERR">◈//ERR</span><span className="underworld-signal-bar" aria-hidden="true" /></button></div>
     </section>
     {underworldOpen && <UnderworldTerminal onExit={()=>setUnderworldOpen(false)}/>}
     <section className="resident-guide-end">
