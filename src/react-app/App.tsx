@@ -496,7 +496,7 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     "> accessing /rosefire/underground",
     "> handshake accepted"
   ];
-  const [stage,setStage]=useState<"shutdown"|"boot"|"uplink"|"welcome">("shutdown");
+  const [stage,setStage]=useState<"infection"|"breach"|"shutdown"|"boot"|"uplink"|"welcome">("infection");
   const [typed,setTyped]=useState("");
   const [uplinkSeconds,setUplinkSeconds]=useState(12);
   const [showLeads,setShowLeads]=useState(false);
@@ -504,8 +504,9 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
   useEffect(()=>{
     const oldOverflow=document.body.style.overflow;
     document.body.style.overflow="hidden";
-    const shutdown=setTimeout(()=>setStage("boot"),2100);
-    return ()=>{clearTimeout(shutdown);document.body.style.overflow=oldOverflow;};
+    document.body.classList.add("underworld-page-compromised");
+    const timers=[setTimeout(()=>setStage("breach"),1100),setTimeout(()=>setStage("shutdown"),3000),setTimeout(()=>setStage("boot"),5100)];
+    return ()=>{timers.forEach(clearTimeout);document.body.classList.remove("underworld-page-compromised");document.body.style.overflow=oldOverflow;};
   },[]);
   useEffect(()=>{
     if(stage!=="boot")return;
@@ -534,9 +535,16 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     window.addEventListener("keydown",onKey);
     return ()=>window.removeEventListener("keydown",onKey);
   },[onExit]);
-  return createPortal(<div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",top:0,left:0,right:"auto",bottom:"auto",width:"100vw",height:"100dvh",minWidth:"100vw",maxWidth:"none",margin:0,padding:0,zIndex:2147483647,background:"#030807",color:"#c9ebd1",overflowY:"auto",overflowX:"hidden",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65,isolation:"isolate"}} role="dialog" aria-modal="true" aria-label="Underground network">
+  return createPortal(<div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",top:0,left:0,right:"auto",bottom:"auto",width:"100vw",height:"100dvh",minWidth:"100vw",maxWidth:"none",margin:0,padding:0,zIndex:2147483647,background:stage==="infection"||stage==="breach"?"transparent":"#030807",color:"#c9ebd1",overflowY:"auto",overflowX:"hidden",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65,isolation:"isolate"}} role="dialog" aria-modal="true" aria-label="Underground network">
     <button className="underworld-exit" type="button" onClick={onExit} style={{position:"fixed",top:18,right:20,zIndex:10002,padding:"10px 16px",background:"#13271b",border:"1px solid #578968",color:"#d1f4d5",fontFamily:"monospace",cursor:"pointer"}}>EXIT / ESC</button>
-    {stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
+    {(stage==="infection" || stage==="breach") ? <div className={`underworld-invasion underworld-invasion-${stage}`}>
+      <div className="invasion-scanlines" aria-hidden="true"/>
+      <div className="invasion-fragment invasion-fragment-one">SAN ANDREAS // PUBLIC INDEX [DATA LOSS]</div>
+      <div className="invasion-fragment invasion-fragment-two">MEMORY CORRUPTED // 0xBAD</div>
+      <div className="invasion-fragment invasion-fragment-three">UNKNOWN SIGNAL // OVERRIDE</div>
+      <div className="invasion-breach-wall"><span>///////</span><span>RESTRICTED CHANNEL // DIGITAL WALL</span><span>101101 // 010011</span></div>
+      <div className="invasion-center"><small>ROSEFIRE MUNICIPAL NETWORK</small><strong data-text="CONNECTION LOST">CONNECTION LOST</strong><p>PUBLIC DIRECTORY IS NO LONGER AVAILABLE</p></div>
+    </div> : {stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
         <div className="underworld-glitch-frame"><p>ROSEFIRE / PUBLIC INFORMATION NETWORK</p><strong data-text="SIGNAL CORRUPTED">SIGNAL CORRUPTED</strong><span>CONNECTION INTERRUPTED // ERR 0x91</span><small>RECONNECTING TO UNKNOWN RELAY...</small></div>
       </div> :
       (stage==="boot" || stage==="uplink") ? <div className="underworld-boot" style={{minHeight:"100dvh",padding:"clamp(100px,15vh,180px) clamp(22px,6vw,110px) 60px"}}><p style={{fontSize:12,letterSpacing:".13em",color:"#89c49a",borderBottom:"1px solid #31513c",paddingBottom:16}}>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre style={{fontFamily:"Consolas, monospace",fontSize:"clamp(14px,1.6vw,19px)",lineHeight:1.9,whiteSpace:"pre-wrap",color:"#c9e8cd"}}>{typed}<span className="underworld-cursor">█</span></pre>
