@@ -2,7 +2,7 @@
 nav: false
 title: Civil Rights Register
 description: State of San Andreas Department of Justice — Rosefire Civil Rights & Justice Code, Version 1.0.
-documentStatus: Approved Legislative Draft — Pending Formal Enactment
+documentStatus: Enacted — In Force
 heroImage:
 ---
 
@@ -14,13 +14,13 @@ heroImage:
 
 **Version 1.0 — Sections 1–4**
 
-**Status: Approved Legislative Draft — Pending Formal Enactment**
+Status: Enacted — In Force
 
-*An Act establishing the fundamental rights and liberties of all individuals within the State of San Andreas; defining the lawful powers and limitations of law enforcement and correctional authorities; regulating detention, arrest, search, and seizure; and providing for the administration and judicial oversight of lawful custody.*
+An Act establishing the fundamental rights and liberties of all individuals within the State of San Andreas; defining the lawful powers and limitations of law enforcement and correctional authorities; regulating detention, arrest, search, and seizure; and providing for the administration and judicial oversight of lawful custody.
 
-## Official Draft Publications
+## Official Code Publications
 
-The following text has been approved as a legislative draft. **It has not yet been formally enacted.** These documents are published for public reference and must not be represented as laws currently in force.
+The Rosefire Civil Rights & Justice Code, Version 1.0, Sections 1–4, has been enacted and is in force throughout the State of San Andreas. The Department of Justice maintains the following publications as the public text of the Code.
 
 ### Section 1 — Fundamental Civil Rights
 
@@ -52,8 +52,8 @@ Subjects reserved for subsequent legislation, and the Code's intended supremacy,
 
 [[government/civil-rights/implementation|Read Implementation Provisions →]]
 
-## Publication and Enactment
+## Official Publication
 
-The legal text of this release is preserved in its original wording. An effective date has **not** been supplied. Once formal enactment occurs, the Department of Justice can publish the effective date and updated legal status here.
+This register contains the enacted text of Version 1.0, Sections 1–4, together with its implementation and interpretation provisions. The enactment date and effective date have not yet been recorded on this page; they will be added to the publication record when available.
 
 [[government|← Government & Public Records]]

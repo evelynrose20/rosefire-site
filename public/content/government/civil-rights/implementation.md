@@ -1,8 +1,8 @@
 ---
 nav: false
 title: Civil Rights & Justice Code — Implementation
-description: Rosefire Civil Rights & Justice Code, Version 1.0 — Implementation. Approved Legislative Draft, Pending Formal Enactment.
-documentStatus: Approved Legislative Draft — Pending Formal Enactment
+description: Rosefire Civil Rights & Justice Code, Version 1.0 — Implementation. Enacted — In Force.
+documentStatus: Enacted — In Force
 ---
 
 # LEGISLATIVE IMPLEMENTATION AND INTERPRETATION
@@ -41,6 +41,6 @@ The following matters shall be governed by subsequent sections of the Rosefire C
 **ROSEFIRE CIVIL RIGHTS & JUSTICE CODE**  
 *State of San Andreas — Department of Justice*
 
-*Version 1.0 — Approved Legislative Draft, Pending Formal Enactment*
+*Version 1.0 — Enacted — In Force*
 
 [[government/civil-rights|← Return to the Civil Rights Register]]

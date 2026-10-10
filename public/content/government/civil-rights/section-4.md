@@ -1,8 +1,8 @@
 ---
 nav: false
 title: Civil Rights & Justice Code — Section 4
-description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 4. Approved Legislative Draft, Pending Formal Enactment.
-documentStatus: Approved Legislative Draft — Pending Formal Enactment
+description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 4. Enacted — In Force.
+documentStatus: Enacted — In Force
 ---
 
 # SECTION 4 — SEARCH AND SEIZURE

@@ -1,8 +1,8 @@
 ---
 nav: false
 title: Civil Rights & Justice Code — Section 3
-description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 3. Approved Legislative Draft, Pending Formal Enactment.
-documentStatus: Approved Legislative Draft — Pending Formal Enactment
+description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 3. Enacted — In Force.
+documentStatus: Enacted — In Force
 ---
 
 # SECTION 3 — DETENTION, IDENTIFICATION, ARREST, AND CORRECTIONAL CUSTODY

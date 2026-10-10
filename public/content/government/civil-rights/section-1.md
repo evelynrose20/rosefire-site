@@ -1,8 +1,8 @@
 ---
 nav: false
 title: Civil Rights & Justice Code — Section 1
-description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 1. Approved Legislative Draft, Pending Formal Enactment.
-documentStatus: Approved Legislative Draft — Pending Formal Enactment
+description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 1. Enacted — In Force.
+documentStatus: Enacted — In Force
 ---
 
 # SECTION 1 — FUNDAMENTAL CIVIL RIGHTS
