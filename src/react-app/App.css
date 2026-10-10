@@ -595,3 +595,17 @@ html,body{max-width:100%;overflow-x:clip}
 @keyframes signal-entry-flicker{0%,15%,40%,44%,70%,100%{opacity:.25}16%,39%,45%,69%{opacity:1}}
 @keyframes signal-entry-tear{0%,91%,100%{transform:translate(0)}92%{transform:translate(4px,1px)}95%{transform:translate(-3px,-1px)}}
 @media(prefers-reduced-motion:reduce){.underworld-discovery button.underworld-signal:before,.underworld-signal-glyph,.underworld-signal-bar{animation:none}}
+
+/* Signal shard: small, fractured and subtly unstable. Overrides the older ERR glyph trigger. */
+.underworld-discovery{margin:12px 0 0;min-height:66px}
+.underworld-discovery button.underworld-signal{width:100px;height:54px;display:grid;place-items:center;padding:0;overflow:visible;border:0;background:transparent;box-shadow:none}
+.underworld-discovery button.underworld-signal:before{display:none}
+.underworld-shard{position:relative;display:block;width:36px;height:43px;filter:drop-shadow(-2px 0 3px #e73b7770) drop-shadow(2px 0 3px #47c8c65b);transform:rotate(16deg);animation:shard-signal-drift 4.6s steps(1,end) infinite}
+.underworld-shard-core{position:absolute;inset:2px 6px 3px 6px;clip-path:polygon(48% 0,89% 16%,76% 51%,100% 74%,40% 100%,15% 74%,28% 41%,0 20%);background:linear-gradient(120deg,#db6087 0%,#863552 38%,#2fb5b9 48%,#160b18 55%,#e1739d 100%);box-shadow:inset 0 0 10px #fff6}
+.underworld-shard-fracture{position:absolute;left:10px;top:5px;width:17px;height:30px;background:#08090d;clip-path:polygon(55% 0,45% 38%,92% 55%,27% 77%,44% 100%,14% 100%,0 69%,70% 51%,27% 35%);opacity:.9}
+.underworld-shard-spark{position:absolute;left:1px;top:22px;width:34px;height:2px;background:linear-gradient(90deg,transparent,#fda4c5,#52eeee,transparent);transform:rotate(-24deg);animation:shard-signal-static 2.3s steps(1,end) infinite}
+.underworld-discovery button.underworld-signal:hover,.underworld-discovery button.underworld-signal:focus-visible{background:transparent;box-shadow:none;outline:1px dashed #b658817e;outline-offset:0}
+.underworld-discovery button.underworld-signal:hover .underworld-shard,.underworld-discovery button.underworld-signal:focus-visible .underworld-shard{filter:drop-shadow(-5px 0 8px #ec438a) drop-shadow(5px 0 8px #3be1d5);animation-duration:.35s}
+@keyframes shard-signal-drift{0%,87%,93%,100%{transform:rotate(16deg) translate(0)}88%{transform:rotate(21deg) translate(3px,-1px)}90%{transform:rotate(8deg) translate(-3px,2px)}}
+@keyframes shard-signal-static{0%,82%,100%{opacity:.1}83%,90%{opacity:1}91%{opacity:.3}}
+@media(prefers-reduced-motion:reduce){.underworld-shard,.underworld-shard-spark{animation:none}}
