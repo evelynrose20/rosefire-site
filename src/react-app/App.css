@@ -656,3 +656,31 @@ html,body{max-width:100%;overflow-x:clip}
 @keyframes rf-crack-twitch{0%,91%,97%,100%{transform:rotate(-7deg) translate(0)}92%{transform:rotate(-7deg) translate(4px,-2px)}95%{transform:rotate(-7deg) translate(-3px,1px)}}
 @keyframes rf-crack-breathe{50%{opacity:.17}}
 @media(prefers-reduced-motion:reduce){.underworld-crack,.underworld-discovery button.underworld-signal:before{animation:none}}
+
+/* Commerce and finance destination: full-width editorial layout */
+.commerce-hero{min-height:570px;display:flex;align-items:center;background:linear-gradient(110deg,#301621,#814558);background-size:cover;background-position:center}
+.commerce-hero-inner{padding:80px var(--site-gutter);width:100%}
+.commerce-back{color:#ffd2e0}.commerce-hero h1{font-family:Georgia,serif;line-height:1.05;letter-spacing:-.05em;font-size:clamp(3rem,7vw,7rem);max-width:1000px;margin:15px 0}.commerce-hero-inner>p:last-child{max-width:740px;color:#f5dbe5;font-size:1.13rem}
+.commerce-introduction{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,5vw,100px);padding:86px var(--site-gutter);background:#d6d3d6;color:#34252b}
+.commerce-introduction .section-kicker{color:#9d4867}.commerce-introduction h2,.commerce-section-heading h2,.commerce-development h2,.commerce-banking h2,.commerce-next h2{font-family:Georgia,serif;line-height:1.13;font-size:clamp(2.25rem,4vw,4.1rem);margin:12px 0 22px}
+.commerce-introduction .markdown-content{max-width:78ch}.commerce-introduction .markdown-content p,.commerce-introduction .markdown-content strong{color:#3b2833}
+.commerce-opportunities{padding:85px var(--site-gutter)}.commerce-section-heading{margin-bottom:34px}
+.commerce-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(19px,2.2vw,36px)}
+.commerce-card{min-width:0;border:1px solid #673a4c;border-radius:7px;overflow:hidden;background:#241720}
+.commerce-card-photo{min-height:clamp(160px,19vw,290px);display:flex;align-items:flex-end;padding:25px;background:linear-gradient(120deg,#452438,#654357);background-size:cover;background-position:center}
+.commerce-card-photo span{font-size:.7rem;font-weight:850;letter-spacing:.14em;color:#fff1f4;text-shadow:0 1px 9px #000}
+.commerce-card-copy{padding:clamp(24px,2.5vw,40px)}.commerce-card h3{font-family:Georgia,serif;font-size:clamp(1.8rem,2.7vw,2.9rem);line-height:1.14;margin:0 0 18px}
+.commerce-card .markdown-content p{color:#e4cbd3;line-height:1.75}
+.commerce-development{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:#d6cdd2}
+.commerce-development-photo{background:linear-gradient(135deg,#351c28,#8a5b65);background-position:center;background-size:cover;min-height:520px;padding:35px;display:flex;align-items:flex-end}
+.commerce-development-photo span{font-size:.7rem;font-weight:800;letter-spacing:.13em;color:#fff1f4;text-shadow:0 1px 9px #000}
+.commerce-development-copy{padding:clamp(45px,6vw,100px);align-self:center;min-width:0;color:#34222b}
+.commerce-development-copy .section-kicker{color:#8b3e5c}.commerce-development-copy .markdown-content p,.commerce-development-copy .markdown-content strong{color:#412b36}
+.commerce-banking{padding:90px var(--site-gutter)}.commerce-banking-title{max-width:1000px}
+.commerce-banking-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,32px);margin-top:30px}
+.commerce-banking-grid article{background:#2a1723;border:1px solid #75465b;border-top:3px solid #c06987;border-radius:5px;padding:clamp(24px,2.4vw,40px);min-width:0}
+.commerce-banking-grid article>span{color:#ee9ab6;font-size:.68rem;letter-spacing:.13em;font-weight:800}.commerce-banking-grid h3{font-family:Georgia,serif;font-size:clamp(1.7rem,2.4vw,2.5rem);line-height:1.16}
+.commerce-banking-grid .markdown-content p{line-height:1.77;color:#e7cbd5}
+.commerce-next{padding:72px var(--site-gutter);display:flex;justify-content:space-between;align-items:center;gap:40px;background:#613045}.commerce-next h2{font-size:clamp(2rem,3.4vw,3.4rem)}.commerce-next p:not(.section-kicker){max-width:700px;color:#f3dbe4}.commerce-next>div:last-child{display:grid;gap:15px;flex-shrink:0}.commerce-next a{color:#ffe1eb}
+@media(max-width:900px){.commerce-banking-grid{grid-template-columns:1fr 1fr}.commerce-development{grid-template-columns:1fr}.commerce-development-photo{min-height:310px}}
+@media(max-width:700px){.commerce-introduction,.commerce-grid{grid-template-columns:1fr}.commerce-banking-grid{grid-template-columns:1fr}.commerce-next{align-items:flex-start;flex-direction:column}.commerce-hero-inner,.commerce-introduction,.commerce-opportunities,.commerce-banking,.commerce-next{padding-left:18px;padding-right:18px}.commerce-development-copy{padding:40px 18px}}

@@ -27,7 +27,9 @@ Some people prefer busy streets and an apartment close to work. Others head for 
 
 ## Money & Everyday Business
 
-Banking, payments, and keeping track of household expenses are part of settling in. For questions about accounts, loans, and other financial arrangements, speak with your bank or the relevant business directly.
+From running a nightclub or restaurant to operating an industrial firm or redeveloping an old property, there are many ways to build a business. Learn about banking, financing, and putting down commercial roots in San Andreas.
+
+[[city-guide/money-and-business|Banking, business ownership & development →]]
 
 ## Roads & Travel
 

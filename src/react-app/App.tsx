@@ -558,6 +558,57 @@ function PublicServicePage({ document, entries, file }: { document: MarkdownDocu
   </div>;
 }
 
+function CommercePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const {meta,body}=document;
+  const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+  const sections=body.split(/^## (.+)\s*$/m);
+  const intro=sections[0].replace(/^# [^\n]+/,"").trim();
+  const groups=new Map<string,string>();
+  for(let i=1;i<sections.length;i+=2)groups.set(sections[i].trim(),sections[i+1]?.trim()||"");
+  const blocks=[
+    {heading:"Nightclubs & Entertainment",image:meta.nightclubImage,number:"01"},
+    {heading:"Restaurants & Hospitality",image:meta.restaurantImage,number:"02"},
+    {heading:"Industry & Manufacturing",image:meta.industryImage,number:"03"},
+    {heading:"Shops & Local Trade",image:meta.retailImage,number:"04"}
+  ];
+  return <div className="commerce-page">
+    <section className="commerce-hero" style={imageBackground(meta.heroImage)}><div className="commerce-hero-inner">
+      <SiteLink href="/city-guide" className="commerce-back">← Resident Guide</SiteLink>
+      <p className="section-kicker">SAN ANDREAS / COMMERCE & FINANCE</p>
+      <h1>{meta.title||"Make Your Mark on San Andreas."}</h1>
+      <p>{meta.description}</p>
+    </div></section>
+    <section className="commerce-introduction">
+      <div><p className="section-kicker">A STATE OPEN FOR BUSINESS</p><h2>{meta.introTitle||"Your next venture starts here."}</h2></div>
+      <div className="markdown-content"><Markdown source={intro} renderLink={renderLink}/></div>
+    </section>
+    <section className="commerce-opportunities">
+      <div className="commerce-section-heading"><p className="section-kicker">PRIVATE ENTERPRISE</p><h2>Find your kind of business.</h2></div>
+      <div className="commerce-grid">{blocks.map(item=><article className="commerce-card" key={item.heading}>
+        <div className="commerce-card-photo" style={imageBackground(item.image)}><span>{item.number} / SAN ANDREAS BUSINESS</span></div>
+        <div className="commerce-card-copy"><h3>{item.heading}</h3><div className="markdown-content"><Markdown source={groups.get(item.heading)||""} renderLink={renderLink}/></div></div>
+      </article>)}</div>
+    </section>
+    <section className="commerce-development">
+      <div className="commerce-development-photo" style={imageBackground(meta.developmentImage)}><span>CITY DEVELOPMENT / PRIVATE PROPOSALS</span></div>
+      <div className="commerce-development-copy"><p className="section-kicker">HAVE A PLACE IN MIND?</p><h2>Bring new life to an old address.</h2>
+        <div className="markdown-content"><Markdown source={groups.get("Rebuilding & Development")||""} renderLink={renderLink}/></div>
+      </div>
+    </section>
+    <section className="commerce-banking">
+      <div className="commerce-banking-title"><p className="section-kicker">PERSONAL & BUSINESS FINANCE</p><h2>Your money. Your plans.</h2></div>
+      <div className="commerce-banking-grid">
+        <article><span>01 / ACCOUNTS</span><h3>Banking & Payments</h3><div className="markdown-content"><Markdown source={groups.get("Banking & Payments")||""} renderLink={renderLink}/></div></article>
+        <article><span>02 / BORROWING</span><h3>Loans & Financing</h3><div className="markdown-content"><Markdown source={groups.get("Loans & Financing")||""} renderLink={renderLink}/></div></article>
+        <article><span>03 / OPERATIONS</span><h3>Managing Your Business</h3><div className="markdown-content"><Markdown source={groups.get("Managing Your Business")||""} renderLink={renderLink}/></div></article>
+      </div>
+    </section>
+    <section className="commerce-next"><div><p className="section-kicker">TAKE THE NEXT STEP</p><h2>Have an idea worth opening for?</h2><p>Speak with the property agent, your bank, or the appropriate city office about what it will take to make it happen.</p></div>
+      <div><SiteLink href="/city-guide/housing">Property & leasing information →</SiteLink><SiteLink href="/city-guide/jobs">Jobs & careers →</SiteLink></div>
+    </section>
+  </div>;
+}
+
 function HousingPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const {meta,body}=document;
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
@@ -706,6 +757,8 @@ function App() {
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/city-guide/jobs" ? (
         <JobsPage document={document} entries={indexedEntries} file={activeFile}/>
+      ) : path === "/city-guide/money-and-business" ? (
+        <CommercePage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/housing" ? (
         <HousingPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/city-guide/public-services/") ? (
