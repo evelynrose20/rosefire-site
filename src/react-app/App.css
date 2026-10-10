@@ -609,3 +609,34 @@ html,body{max-width:100%;overflow-x:clip}
 @keyframes shard-signal-drift{0%,87%,93%,100%{transform:rotate(16deg) translate(0)}88%{transform:rotate(21deg) translate(3px,-1px)}90%{transform:rotate(8deg) translate(-3px,2px)}}
 @keyframes shard-signal-static{0%,82%,100%{opacity:.1}83%,90%{opacity:1}91%{opacity:.3}}
 @media(prefers-reduced-motion:reduce){.underworld-shard,.underworld-shard-spark{animation:none}}
+
+/* Rosefire underground: red shard and cinematic staged site corruption. */
+.underworld-shard{filter:drop-shadow(-2px 0 5px #ff163c99) drop-shadow(2px 0 4px #d70028aa)}
+.underworld-shard-core{background:linear-gradient(125deg,#ff6474 0%,#e0002a 27%,#650014 45%,#12050b 53%,#ff173c 76%,#7d001e 100%)}
+.underworld-shard-fracture{background:#090308}
+.underworld-shard-spark{background:linear-gradient(90deg,transparent,#ff9aab,#e00020,transparent)}
+.underworld-discovery button.underworld-signal:hover .underworld-shard,.underworld-discovery button.underworld-signal:focus-visible .underworld-shard{filter:drop-shadow(-5px 0 9px #ff174e) drop-shadow(5px 0 9px #a90025)}
+.underworld-invasion{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:rgba(15,0,8,.2);isolation:isolate;pointer-events:none;color:#fff1f3}
+.underworld-invasion:before{content:"";position:absolute;inset:-12%;background:repeating-linear-gradient(0deg,transparent 0 13px,#ff245023 14px 16px,transparent 17px 27px),linear-gradient(90deg,#ff15401c,transparent 38%,#d8143d50 56%,transparent 85%);animation:rf-site-wave .28s steps(4) infinite}
+.underworld-invasion:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#000a 4px 5px);opacity:.5;animation:rf-site-scan 1.4s linear infinite}
+.underworld-page-compromised #root{animation:rf-page-jolt .45s steps(2) infinite}
+.underworld-invasion-breach{background:rgba(5,0,8,.79);animation:rf-darken 1.4s ease-in both}
+.invasion-fragment{position:absolute;z-index:3;font:800 clamp(11px,1vw,16px)/1.2 Consolas,monospace;letter-spacing:.18em;color:#ff9caa;background:#1d000ca9;padding:10px 19px;box-shadow:-6px 0 #ff0b4a,5px 0 #970b34;animation:rf-fragment 1.1s steps(2,end) infinite}
+.invasion-fragment-one{top:16%;left:8%}.invasion-fragment-two{right:9%;top:56%;animation-delay:.2s}.invasion-fragment-three{left:18%;bottom:16%;animation-delay:.43s}
+.invasion-center{position:absolute;z-index:4;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;text-shadow:0 2px 18px #000}
+.invasion-center small{font:800 12px Consolas,monospace;letter-spacing:.26em;color:#ffb8c4}
+.invasion-center strong{position:relative;font:900 clamp(2.3rem,9vw,9rem)/1 Arial Black,Impact,sans-serif;letter-spacing:-.055em;color:#fff4f6;text-shadow:-7px 0 #e3003c,7px 0 #700018;animation:rf-fragment .25s steps(2,end) infinite}
+.invasion-center strong:after{content:attr(data-text);position:absolute;inset:0;transform:translate(9px,-3px);color:#f40b41;clip-path:inset(38% 0 39%);opacity:.7}
+.invasion-center p{color:#ff9eae;font:800 clamp(12px,1.4vw,18px) Consolas,monospace;letter-spacing:.12em}
+.invasion-breach-wall{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;flex-direction:column;text-align:center;z-index:2;opacity:0;transform:scaleX(.6);background:repeating-linear-gradient(90deg,transparent 0 38px,#fc16472a 39px 40px),repeating-linear-gradient(0deg,#0d000b9d 0 29px,#dd064348 30px 31px);border:3px solid #ff123c55}
+.invasion-breach-wall span{font:900 clamp(18px,3vw,40px) Consolas,monospace;letter-spacing:.16em;color:#ff3765;text-shadow:0 0 25px #fe114b}
+.underworld-invasion-breach .invasion-breach-wall{opacity:1;transform:scaleX(1);animation:rf-wall-roll 1.7s steps(5,end) both}
+.underworld-invasion-breach .invasion-center{animation:rf-center-fade 1.5s ease-in both}
+@keyframes rf-page-jolt{0%,70%,100%{filter:none;transform:none}72%{filter:hue-rotate(35deg) contrast(1.9);transform:translate(-6px,2px)}87%{filter:invert(.23) contrast(2);transform:translate(5px,-1px)}}
+@keyframes rf-site-wave{0%{transform:translate(0)}50%{transform:translate(3%,-2%)}100%{transform:translate(-2%,2%)}}
+@keyframes rf-site-scan{from{transform:translateY(-12%)}to{transform:translateY(12%)}}
+@keyframes rf-fragment{0%,70%,100%{transform:translate(0)}72%{transform:translate(-8px,2px)}81%{transform:translate(5px,-4px)}}
+@keyframes rf-darken{from{background:rgba(5,0,8,.3)}to{background:rgba(5,0,8,.9)}}
+@keyframes rf-wall-roll{0%{opacity:0;transform:scaleX(.1)}20%{opacity:1;transform:scaleX(.65)}45%{transform:scaleX(1.2)}100%{opacity:1;transform:scaleX(1)}}
+@keyframes rf-center-fade{0%,35%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.underworld-page-compromised #root,.underworld-invasion:before,.underworld-invasion:after,.invasion-fragment,.invasion-center strong,.underworld-invasion-breach .invasion-breach-wall,.underworld-invasion-breach .invasion-center{animation:none!important}.invasion-breach-wall{opacity:1;transform:none}.invasion-center{opacity:1}}
