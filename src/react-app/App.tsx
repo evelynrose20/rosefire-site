@@ -137,6 +137,7 @@ function Header({ entries }: { entries: ContentEntry[] }) {
         </SiteLink>
         <nav className="nav" aria-label="Primary navigation">
           {navigation.map(item => <SiteLink href={item.href} key={item.href}>{item.label}</SiteLink>)}
+          <SiteLink href="/daily-globe">The Daily Globe</SiteLink>
         </nav>
         <SiteLink className="resident-link" href="/getting-started">Plan Your Move <span aria-hidden="true">↗</span></SiteLink>
       </header>
@@ -703,6 +704,48 @@ function GovernmentPage({ document, entries, file, rights = false }: { document:
   </div>;
 }
 
+
+type GlobeStory = {entry: ContentEntry; document: MarkdownDocument};
+function GlobeHome({entries}:{entries:ContentEntry[]}) {
+  const [stories,setStories]=useState<GlobeStory[]>([]);
+  const [loading,setLoading]=useState(true);
+  useEffect(()=>{
+    let active=true;
+    const matches=entries.filter(e=>e.route.startsWith("/daily-globe/articles/"));
+    Promise.all(matches.map(async entry=>{
+      try {const response=await fetch(`${import.meta.env.BASE_URL}content/${encodeURI(entry.file)}?v=${CONTENT_REQUEST_VERSION}`);
+        if(!response.ok)return null;
+        return {entry,document:parseDocument(await response.text())};
+      }catch{return null}
+    })).then(result=>{if(active){setStories(result.filter((v):v is GlobeStory=>v!==null).filter(v=>v.document.meta.published!=="false").sort((a,b)=>(b.document.meta.date||"").localeCompare(a.document.meta.date||"")));setLoading(false)}});
+    return ()=>{active=false};
+  },[entries]);
+  const [category,setCategory]=useState("All");
+  const categories=["All",...new Set(stories.map(s=>s.document.meta.category||"Local News"))];
+  const visible=stories.filter(s=>category==="All"||(s.document.meta.category||"Local News")===category);
+  const excerpt=(s:GlobeStory)=>s.document.meta.summary||s.document.body.split(/\n\s*\n/).map(x=>x.trim()).find(x=>x&&!x.startsWith("#")&&!x.startsWith("!["))?.replace(/\*\*/g,"").slice(0,220)||"";
+  return <div className="globe"><div className="globe-edition">SAN ANDREAS · INDEPENDENT REPORTING</div>
+    <header className="globe-masthead"><h1>The Daily Globe</h1><p>The latest from across San Andreas</p></header>
+    <nav className="globe-categories">{categories.map(c=><button key={c} type="button" className={category===c?"active":""} onClick={()=>setCategory(c)}>{c}</button>)}</nav>
+    {loading?<p className="globe-empty">Preparing the latest edition…</p>:visible.length===0?<div className="globe-empty"><h2>From the newsroom</h2><p>The first reports will appear here upon publication.</p></div>:
+    <div className="globe-grid">{visible.map((s,i)=><SiteLink key={s.entry.route} href={s.entry.route} className={i===0?"globe-card globe-lead":"globe-card"}>
+      {s.document.meta.image&&<div className="globe-photo" style={{backgroundImage:`url("${contentImageUrl(s.document.meta.image)}")`}}/>}
+      <div className="globe-card-content"><span className="globe-kicker">{s.document.meta.category||"Local News"}{i===0?" · TOP STORY":""}</span><h2>{s.document.meta.title||s.entry.title}</h2><p>{excerpt(s)}</p><small>{s.document.meta.date||""}{s.document.meta.author?" · "+s.document.meta.author:""}</small></div></SiteLink>)}</div>}
+    <div className="globe-signoff">THE DAILY GLOBE · SAN ANDREAS</div>
+  </div>;
+}
+function GlobeArticle({document,entries,file}:{document:MarkdownDocument;entries:ContentEntry[];file:string}){
+ const {meta,body}=document;
+ const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+ return <div className="globe"><div className="globe-edition">SAN ANDREAS · INDEPENDENT REPORTING</div>
+ <header className="globe-masthead"><SiteLink href="/daily-globe"><h1>The Daily Globe</h1></SiteLink><p>The latest from across San Andreas</p></header>
+ <div className="globe-back"><SiteLink href="/daily-globe">← Return to the front page</SiteLink></div>
+ <article className="globe-article"><span className="globe-kicker">{meta.category||"Local News"}</span><h1>{meta.title||"Untitled report"}</h1>
+ {meta.summary&&<p className="globe-deck">{meta.summary}</p>}
+ <div className="globe-byline">By {meta.author||"The Daily Globe Newsroom"}{meta.date?" · "+meta.date:""}</div>
+ {meta.image&&<figure><img src={contentImageUrl(meta.image)} alt={meta.imageAlt||meta.title||"News photograph"}/>{meta.caption&&<figcaption>{meta.caption}</figcaption>}</figure>}
+ <div className="globe-copy markdown-content"><Markdown source={body} renderLink={renderLink}/></div><div className="globe-signoff"><SiteLink href="/daily-globe">← More from The Daily Globe</SiteLink></div></article></div>;
+}
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -798,6 +841,10 @@ function App() {
         <HousingPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/city-guide/public-services/") ? (
         <PublicServicePage document={document} entries={indexedEntries} file={activeFile}/>
+      ) : path === "/daily-globe" ? (
+        <GlobeHome entries={indexedEntries} />
+      ) : path.startsWith("/daily-globe/articles/") ? (
+        <GlobeArticle document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/government/civil-rights/") ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
       ) : path === "/government/civil-rights" ? (
