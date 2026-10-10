@@ -516,7 +516,7 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
           <div className="markdown-content resident-guide-card-copy"><Markdown source={card.content} renderLink={renderLink}/></div>
         </article>)}
       </div>
-      <div className="underworld-discovery"><button className="underworld-signal" type="button" aria-label="Investigate unusual signal" title="Unidentified signal" onClick={()=>setUnderworldOpen(true)}><span className="underworld-shard" aria-hidden="true"><span className="underworld-shard-core"/><span className="underworld-shard-fracture"/><span className="underworld-shard-spark"/></span></button></div>
+      <div className="underworld-discovery"><button className="underworld-signal" type="button" aria-label="Investigate unusual signal" title="Unidentified signal" onClick={()=>setUnderworldOpen(true)}><svg className="underworld-crack" viewBox="0 0 260 100" aria-hidden="true" focusable="false"><path className="underworld-crack-shadow" d="M24 62 L72 55 L90 69 L120 42 L145 48 L174 22 L194 39 L242 27"/><path className="underworld-crack-hot" d="M24 62 L72 55 L90 69 L120 42 L145 48 L174 22 L194 39 L242 27"/><path className="underworld-crack-branches" d="M72 55 L52 32 L37 37 M90 69 L83 89 M120 42 L111 18 L96 10 M145 48 L151 75 L166 82 M174 22 L164 6 M194 39 L218 63 L239 65 M120 42 L133 27"/></svg></button></div>
     </section>
     {underworldOpen && <UnderworldExperience onExit={()=>setUnderworldOpen(false)}/>}
     <section className="resident-guide-end">
