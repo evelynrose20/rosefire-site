@@ -521,13 +521,13 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     window.addEventListener("keydown",onKey);
     return ()=>window.removeEventListener("keydown",onKey);
   },[onExit]);
-  return <div className={`underworld-overlay underworld-${stage}`} role="dialog" aria-modal="true" aria-label="Underground network">
-    <button className="underworld-exit" type="button" onClick={onExit}>EXIT / ESC</button>
-    {stage==="shutdown" ? <div className="underworld-blackout"><span>CONNECTION INTERRUPTED</span></div> :
-      stage==="boot" ? <div className="underworld-boot"><p>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre>{typed}<span className="underworld-cursor">█</span></pre><button type="button" onClick={()=>setStage("welcome")}>Skip connection sequence →</button></div> :
-      <div className="underworld-interface">
+  return <div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",inset:0,zIndex:9999,background:"#030807",color:"#c9ebd1",overflowY:"auto",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65}} role="dialog" aria-modal="true" aria-label="Underground network">
+    <button className="underworld-exit" type="button" onClick={onExit} style={{position:"fixed",top:18,right:20,zIndex:10002,padding:"10px 16px",background:"#13271b",border:"1px solid #578968",color:"#d1f4d5",fontFamily:"monospace",cursor:"pointer"}}>EXIT / ESC</button>
+    {stage==="shutdown" ? <div className="underworld-blackout" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#a04956"}}><span>CONNECTION INTERRUPTED</span></div> :
+      stage==="boot" ? <div className="underworld-boot" style={{minHeight:"100dvh",padding:"clamp(100px,15vh,180px) clamp(22px,6vw,110px) 60px"}}><p style={{fontSize:12,letterSpacing:".13em",color:"#89c49a",borderBottom:"1px solid #31513c",paddingBottom:16}}>RECOVERY CONSOLE // UNREGISTERED NODE</p><pre style={{fontFamily:"Consolas, monospace",fontSize:"clamp(14px,1.6vw,19px)",lineHeight:1.9,whiteSpace:"pre-wrap",color:"#c9e8cd"}}>{typed}<span className="underworld-cursor">█</span></pre></div> :
+      <div className="underworld-interface" style={{maxWidth:1280,margin:"65px auto 30px",padding:"0 clamp(18px,3vw,35px)"}}>
         <header><span>◈ UNDERGROUND RELAY</span><span>PRIVATE CONNECTION / IDENTITY MASKED</span></header>
-        <div className="underworld-window">
+        <div className="underworld-window" style={{padding:"clamp(25px,5vw,70px)",border:"1px solid #446b51",background:"#091710"}}>
           <p className="underworld-overline">INCOMING MESSAGE · UNKNOWN CONTACT</p>
           <h1>Well, look what found its way down here.</h1>
           <p>Call me <strong>Vesper</strong>. No need for names on your end, sweetheart. You've slipped past the polished brochures and the friendly faces. Welcome to Rosefire's underworld.</p>
@@ -574,7 +574,7 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
           <div className="markdown-content resident-guide-card-copy"><Markdown source={card.content} renderLink={renderLink}/></div>
         </article>)}
       </div>
-      <div className="underworld-discovery"><button type="button" aria-label="Unmarked connection" title="An unmarked connection" onClick={()=>setUnderworldOpen(true)}><span aria-hidden="true">_</span></button></div>
+      <div className="underworld-discovery"><button type="button" style={{height:56,width:"min(100%,350px)",background:"#100b11",border:"1px solid #663247",color:"#b55b7b",cursor:"pointer",fontFamily:"monospace",fontSize:20}} aria-label="Unmarked connection" title="An unmarked connection" onClick={()=>setUnderworldOpen(true)}><span aria-hidden="true">_</span></button></div>
     </section>
     {underworldOpen && <UnderworldTerminal onExit={()=>setUnderworldOpen(false)}/>}
     <section className="resident-guide-end">
