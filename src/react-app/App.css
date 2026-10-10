@@ -380,3 +380,16 @@ html,body{max-width:100%;overflow-x:clip}
 .golf-return a{color:#b8d8b8}
 @media(max-width:800px){.golf-welcome{grid-template-columns:1fr}.golf-status-bar{grid-template-columns:1fr;gap:16px}}
 @media(max-width:600px){.golf-hero{min-height:450px}.golf-hero-content,.golf-welcome,.golf-owner,.golf-future,.golf-return{padding-left:18px;padding-right:18px}}
+
+/* Explore story blocks: each heading stays with its own paragraphs. */
+.explore-story .explore-copy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,46px);align-items:stretch}
+.explore-story-block{display:grid;grid-template-columns:42px minmax(0,1fr);gap:clamp(14px,1.5vw,25px);padding:26px clamp(18px,2.5vw,36px);border:1px solid #a0a1a9;background:#d8d9df;border-radius:6px;min-width:0}
+.explore-story-number{font-size:.74rem;font-weight:850;letter-spacing:.13em;color:#8c3558;padding-top:6px}
+.explore-story-body{min-width:0}
+.explore-story-body h2{margin:0 0 17px;padding:0;border:0;font-family:Georgia,serif;font-size:clamp(1.55rem,2vw,2.15rem);line-height:1.2;color:#2e1520}
+.explore-story-body p{margin:0 0 14px;color:#49343e;line-height:1.75;max-width:75ch}
+.explore-story-body p:last-child{margin-bottom:0}
+.explore-story-body strong{color:#2e1520}
+.explore-story-body a{color:#822b4a}
+@media(max-width:820px){.explore-story .explore-copy{grid-template-columns:1fr}}
+@media(max-width:520px){.explore-story-block{grid-template-columns:1fr;gap:5px;padding:22px}}
