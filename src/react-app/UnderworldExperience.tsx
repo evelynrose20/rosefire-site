@@ -60,7 +60,7 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
   useEffect(() => {
     if (phase !== "terminal") return;
     let offset = 0;
-    let doneTimer: ReturnType<typeof setTimeout> | undefined;
+    let doneTimer: number | undefined;
     const interval = window.setInterval(() => {
       offset = Math.min(transcript.length, offset + 2);
       setPrinted(transcript.slice(0, offset));
