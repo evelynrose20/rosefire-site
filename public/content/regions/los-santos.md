@@ -2,7 +2,7 @@
 title: Los Santos
 kicker: METROPOLITAN SAN ANDREAS
 description: The great southern city is a place of ambition, spectacle, neighborhood pride, and a thousand competing versions of success.
-heroImage:
+heroImage: images/aurelos.jpg
 ---
 
 # The city that never quite settles

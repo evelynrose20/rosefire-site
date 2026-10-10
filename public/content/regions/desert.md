@@ -2,7 +2,7 @@
 title: Sandy Shores & the Desert
 kicker: BLAINE COUNTY
 description: The Alamo Sea, long desert highways, and communities where the distance between neighbors leaves room for stories.
-heroImage:
+heroImage: images/Sandy Shores.jpg
 ---
 
 # Beneath a wide desert sky

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "home.md",
+                "file": "regions/coast.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "home"
+              "title": "coast"
             }
           }
         ],
@@ -203,9 +203,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "a98d676fb800563d",
+  "active": "8488c6bf2cd4e53a",
   "lastOpenFiles": [
+    "images/coast.png",
     "images/aurelos.jpg",
+    "regions/coast.md",
+    "regions/desert.md",
+    "images/Sandy Shores.jpg",
+    "regions/los-santos.md",
+    "regions/paleto-bay.md",
+    "regions/wilderness.md",
+    "images/Pasted image 20261004061402.png",
+    "explore.md",
+    "faq.md",
+    "regions",
+    "home.md",
     "city-guide/Jobs/Player Businesses/Index.md",
     "city-guide/Jobs/Player Businesses/Banks.md",
     "Pasted image 20261005110102.png",
@@ -227,9 +239,7 @@
     "city-guide/Jobs/propane-job.md",
     "images/Pasted image 20261005065100.png",
     "images/Pasted image 20261004124247.png",
-    "images/Pasted image 20261004061402.png",
     "city-guide/Fun",
-    "faq.md",
     "city-guide/Jobs",
     "city-guide",
     "images"

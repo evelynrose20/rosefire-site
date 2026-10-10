@@ -2,7 +2,7 @@
 title: The Coast & Beaches
 kicker: PACIFIC SAN ANDREAS
 description: A changing ribbon of beaches, marinas, boardwalks, cliffs, and oceanfront communities.
-heroImage:
+heroImage: images/coast.png
 ---
 
 # A state defined by the water
