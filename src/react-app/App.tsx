@@ -289,7 +289,7 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
   const sections = document.body.split(/^## (January|February|March|April|May|June|July|August|September|October|November|December)\s*$/m);
   const events = new Map<string,string[]>();
   for(let i=1;i<sections.length;i+=2) events.set(sections[i],sections[i+1].split("\n").map(x=>x.trim()).filter(x=>x.startsWith("- ")).map(x=>x.slice(2)));
-  const seasons = ["Winter","Winter","Winter","Spring","Spring","Spring","Summer","Summer","Summer","Autumn","Autumn","Winter"];
+  const seasons = ["Winter","Winter","Winter","Spring","Spring","Summer","Summer","Summer","Autumn","Autumn","Winter","Winter"];
   const currentSeason = seasons[currentMonth];
   return <div className="calendar-page">
     <section className="leisure-hero" style={imageBackground(document.meta.heroImage)}><div>
