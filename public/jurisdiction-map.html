@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rosefire | Proposed Jurisdiction Map</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#243645;background:#ebe8e2}
+*{box-sizing:border-box}body{margin:0}.top{background:#122c3b;color:#f8f5ee;padding:22px max(22px,calc((100vw - 1320px)/2));border-bottom:5px solid #a68c59}.top a{color:#d8c695;text-decoration:none;font-weight:700}.top h1{font:700 clamp(1.5rem,3vw,2.55rem) Georgia,serif;margin:12px 0 7px}.top p{margin:0;color:#c6d3d9;line-height:1.5}.shell{max-width:1320px;margin:22px auto;padding:0 18px;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:19px;align-items:start}.paper{background:#fff;border:1px solid #c8c3b8;padding:14px;box-shadow:0 9px 30px #26333c12}.document-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 6px 14px;border-bottom:1px solid #d8d2c5;margin-bottom:12px}.document-head strong{letter-spacing:.08em;font-size:.75rem}.document-head small{color:#67757b}.map-frame{width:100%;position:relative;background:#abc4c5;overflow:hidden;touch-action:none;border:1px solid #b5b6ad}.map-frame svg{display:block;width:100%;height:auto;aspect-ratio:1/1;touch-action:none}.tiles image{image-rendering:auto}.region{stroke-width:4;stroke-linejoin:round;vector-effect:non-scaling-stroke;cursor:pointer}.county{fill:#d8ad9a;fill-opacity:.35;stroke:#7e6254}.blaine{fill:#89b88e;fill-opacity:.30;stroke:#3c6c52}.city{fill:#8b9de0;fill-opacity:.40;stroke:#344e90}.boundary{fill:none;stroke:#fff;stroke-width:7;opacity:.8;pointer-events:none;vector-effect:non-scaling-stroke}.name{font:bold 21px Georgia,serif;fill:#162936;paint-order:stroke;stroke:#fffdf0;stroke-width:4;stroke-linejoin:round;pointer-events:none}.handle{fill:#fff;stroke:#1b4254;stroke-width:2.5;cursor:grab;vector-effect:non-scaling-stroke}.handle:active{cursor:grabbing}.panel{background:#fff;border:1px solid #cbc4b8;padding:18px}.panel h2{font:700 1.3rem Georgia,serif;margin:0 0 10px}.panel p{font-size:.86rem;line-height:1.6}.panel label{display:block;font-weight:700;font-size:.81rem;margin-top:13px}.panel select,.panel input[type=range]{width:100%;margin-top:7px}.panel select{padding:9px;border:1px solid #aeb9bb;background:white}.legend{display:flex;align-items:center;gap:8px;margin:12px 0;font-size:.89rem}.swatch{width:16px;height:16px;border:2px solid #63746e}.btn{display:block;width:100%;padding:10px;margin-top:10px;border:1px solid #315267;color:#fff;background:#23485e;cursor:pointer;font-weight:700}.btn.secondary{background:#fff;color:#23485e}.fine{font-size:.76rem!important;color:#637279}.status{font-size:.8rem;min-height:2em;color:#3c5b43}.footer{max-width:1320px;margin:0 auto 30px;padding:0 18px;color:#617179;font-size:.8rem;line-height:1.6}@media(max-width:900px){.shell{grid-template-columns:1fr}.panel{order:-1}.document-head{flex-wrap:wrap}} 
+</style></head>
+<body><header class="top"><a href="/government/civil-rights/section-17">← STATE OF SAN ANDREAS · DEPARTMENT OF JUSTICE</a><h1>Proposed Territorial Jurisdiction Map</h1><p>Schedule 17-A · Cartographic working draft · Boundaries are illustrative until adopted by the State.</p></header>
+<div class="shell"><main class="paper"><div class="document-head"><strong>ROSEFIRE · TERRITORIAL DIVISIONS</strong><small>PROPOSED REVISION 0.1 · NOT ADOPTED</small></div>
+<div class="map-frame"><svg id="map" viewBox="0 0 1000 1000" role="img" aria-label="GTA V map with editable proposed three jurisdiction boundaries">
+<g id="tiles" class="tiles"></g><g id="areas"></g><g id="handles"></g></svg></div>
+<p class="fine">Map artwork source: VIRUXE/gtav-map-tiles (GTA V atlas). GTA V artwork © Rockstar Games. Cartographic boundaries are preliminary, not official state designations.</p></main>
+<aside class="panel"><h2>Boundary editor</h2><p>Drag the white circular points on the map to refine each boundary. Changes are kept in this browser until reset; use Export Coordinates to save them.</p>
+<div class="legend"><span class="swatch" style="background:#89b88e"></span>Blaine County</div><div class="legend"><span class="swatch" style="background:#d8ad9a"></span>Los Santos County</div><div class="legend"><span class="swatch" style="background:#8b9de0"></span>City of Los Santos</div>
+<label for="selected">Boundary to edit</label><select id="selected"><option value="north">Blaine / Los Santos County</option><option value="city">Los Santos City perimeter</option><option value="none">Preview without points</option></select>
+<label for="opacity">Jurisdiction shading</label><input id="opacity" type="range" min="0" max="75" value="36">
+<label for="detail">Map resolution</label><select id="detail"><option value="2">Overview · 1024px</option><option value="3" selected>Standard · 2048px</option><option value="4">Detailed · 4096px</option></select>
+<button class="btn" id="export">Export Coordinates (JSON)</button><button class="btn secondary" id="reset">Reset proposed boundaries</button><div class="status" id="status"></div>
+<p class="fine">The trace approximates your reference image. It has not been surveyed against legally adopted geographic coordinates. This editor requires an internet connection for the hosted atlas tiles.</p></aside></div>
+<div class="footer">State of San Andreas · Department of Justice · Section 17 §17.9–§17.10. A draft illustration does not amend jurisdiction under §17.23.</div>
+<script>
+const NS='http://www.w3.org/2000/svg', svg=document.getElementById('map'),tiles=document.getElementById('tiles'),areas=document.getElementById('areas'),handles=document.getElementById('handles');
+const initial={north:[[0,432],[70,438],[130,452],[192,449],[253,464],[310,457],[355,435],[402,422],[453,431],[494,452],[535,445],[585,430],[638,440],[696,423],[739,434],[751,480],[772,496],[814,506],[862,508],[1000,514]],city:[[0,1000],[0,940],[52,893],[94,850],[144,797],[186,742],[222,701],[239,651],[276,610],[305,586],[324,573],[338,576],[353,560],[380,574],[409,563],[449,580],[476,570],[494,583],[527,576],[548,604],[566,628],[582,677],[606,704],[622,735],[647,743],[668,761],[680,794],[676,834],[662,879],[660,921],[650,1000]]};
+function clone(x){return JSON.parse(JSON.stringify(x))};let data=clone(initial);
+try{const saved=JSON.parse(localStorage.getItem('rosefire-map-draft')||'null');if(saved&&Array.isArray(saved.north)&&Array.isArray(saved.city))data=saved}catch(e){}
+const selected=document.getElementById('selected'),opacity=document.getElementById('opacity'),status=document.getElementById('status');
+function el(tag,attrs,root){const x=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))x.setAttribute(k,String(v));root.appendChild(x);return x}
+function path(points){return points.map((p,i)=>(i?'L':'M')+p.join(',')).join(' ')+' Z'}
+function render(){
+areas.replaceChildren();handles.replaceChildren();
+const north=data.north,city=data.city;
+const lower=[...north.slice().reverse(),[1000,1000],[0,1000]];
+const upper=[[0,0],[1000,0],...north.slice().reverse()];
+el('path',{d:path(lower),class:'region county',style:'fill-opacity:'+opacity.value/100},areas);
+el('path',{d:path(upper),class:'region blaine',style:'fill-opacity:'+opacity.value/100},areas);
+el('path',{d:path(city),class:'region city',style:'fill-opacity:'+Math.min(.68,opacity.value/100+.06)},areas);
+el('polyline',{points:north.map(x=>x.join(',')).join(' '),class:'boundary'},areas);
+el('polyline',{points:city.map(x=>x.join(',')).join(' '),class:'boundary'},areas);
+for(const [name,x,y] of [['BLAINE COUNTY',700,190],['LOS SANTOS COUNTY',180,542],['LOS SANTOS CITY',475,835]]){const label=el('text',{x,y,'text-anchor':'middle',class:'name'},areas);label.textContent=name}
+if(selected.value!=='none')data[selected.value].forEach((point,index)=>{const c=el('circle',{cx:point[0],cy:point[1],r:7,class:'handle','data-index':index,'data-layer':selected.value},handles);});
+}
+function setTiles(){const z=Number(document.getElementById('detail').value),n=2**z;tiles.replaceChildren();for(let y=0;y<n;y++)for(let x=0;x<n;x++){el('image',{x:x*1000/n,y:y*1000/n,width:1000/n+.1,height:1000/n+.1,href:'https://viruxe.github.io/gtav-map-tiles/atlas/'+z+'/'+x+'-'+y+'.webp'},tiles)}}
+let dragging=null;
+svg.addEventListener('pointerdown',e=>{const t=e.target;if(!t.classList?.contains('handle'))return;dragging={key:t.dataset.layer,index:Number(t.dataset.index)};svg.setPointerCapture(e.pointerId);e.preventDefault()});
+svg.addEventListener('pointermove',e=>{if(!dragging)return;const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(svg.getScreenCTM().inverse());data[dragging.key][dragging.index]=[Math.round(Math.max(0,Math.min(1000,q.x))),Math.round(Math.max(0,Math.min(1000,q.y)))];render()});
+function end(){if(dragging){localStorage.setItem('rosefire-map-draft',JSON.stringify(data));status.textContent='Proposed boundary position saved in this browser.';dragging=null}}
+svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+selected.addEventListener('change',render);opacity.addEventListener('input',render);document.getElementById('detail').addEventListener('change',setTiles);
+document.getElementById('reset').addEventListener('click',()=>{if(!confirm('Restore the initial proposed boundaries?'))return;data=clone(initial);localStorage.removeItem('rosefire-map-draft');render();status.textContent='Initial draft restored.'});
+document.getElementById('export').addEventListener('click',()=>{const payload={designation:'Proposed Schedule 17-A',status:'Draft — not adopted',coordinateSystem:'Map SVG normalized 0..1000, top-left origin',source:'https://github.com/VIRUXE/gtav-map-tiles',boundaries:data};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='rosefire-schedule-17a-proposed.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Coordinates exported.'});
+setTiles();render();
+</script></body></html>
