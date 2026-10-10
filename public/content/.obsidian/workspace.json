@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "regions/coast.md",
+                "file": "explore.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "coast"
+              "title": "explore"
             }
           }
         ],
@@ -205,9 +205,9 @@
   },
   "active": "8488c6bf2cd4e53a",
   "lastOpenFiles": [
+    "regions/coast.md",
     "images/coast.png",
     "images/aurelos.jpg",
-    "regions/coast.md",
     "regions/desert.md",
     "images/Sandy Shores.jpg",
     "regions/los-santos.md",
