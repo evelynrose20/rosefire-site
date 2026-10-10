@@ -5,12 +5,6 @@ description: Rosefire Civil Rights & Justice Code, Version 1.0 — Implementatio
 documentStatus: Approved Legislative Draft — Pending Formal Enactment
 ---
 
-> **LEGISLATIVE STATUS — APPROVED DRAFT, PENDING FORMAL ENACTMENT**
->
-> State of San Andreas · Department of Justice · Version 1.0 · Implementation
->
-> These provisions are not yet enacted law. No effective date has been provided.
-
 # LEGISLATIVE IMPLEMENTATION AND INTERPRETATION
 
 The following matters shall be governed by subsequent sections of the Rosefire Civil Rights & Justice Code or separate duly enacted legislation:

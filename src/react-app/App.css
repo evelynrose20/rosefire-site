@@ -712,3 +712,12 @@ html,body{max-width:100%;overflow-x:clip}
 .government-footer{padding:23px var(--site-gutter);background:#203a4e;color:#e5e9eb;font-size:.7rem;letter-spacing:.12em}
 @media(max-width:830px){.government-layout{grid-template-columns:1fr}.government-masthead-note{display:none}}
 @media(max-width:600px){.government-masthead,.government-hero-inner,.government-nav,.government-layout,.government-footer{padding-left:18px;padding-right:18px}}
+
+/* Government records use paper styling; blockquote defaults elsewhere are dark. */
+.government-page .government-document blockquote{margin:18px 0;padding:16px 20px;border-left:4px solid #bd9b62;background:#f7f4ed;color:#344450;box-shadow:none}
+.government-page .government-document blockquote p,.government-page .government-document blockquote strong,.government-page .government-document blockquote span{color:#344450}
+.government-page .government-document h1,.government-page .government-document h2,.government-page .government-document h3,.government-page .government-document h4{color:#1e3344}
+.government-page .government-document p,.government-page .government-document li,.government-page .government-document em,.government-page .government-document b,.government-page .government-document strong{color:#35424a}
+.government-page .government-document ol,.government-page .government-document ul{padding-left:clamp(24px,3vw,42px);margin:14px 0 22px}
+.government-page .government-document li{margin-bottom:9px}
+.government-page .government-document hr{border:0;border-top:1px solid #bac4c7;margin:35px 0}

@@ -5,12 +5,6 @@ description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 1. Ap
 documentStatus: Approved Legislative Draft — Pending Formal Enactment
 ---
 
-> **LEGISLATIVE STATUS — APPROVED DRAFT, PENDING FORMAL ENACTMENT**
->
-> State of San Andreas · Department of Justice · Version 1.0 · Section 1
->
-> These provisions are not yet enacted law. No effective date has been provided.
-
 # SECTION 1 — FUNDAMENTAL CIVIL RIGHTS
 
 ## §1.1 — Equal Protection Under the Law

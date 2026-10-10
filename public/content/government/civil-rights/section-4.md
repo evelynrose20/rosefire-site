@@ -5,12 +5,6 @@ description: Rosefire Civil Rights & Justice Code, Version 1.0 — Section 4. Ap
 documentStatus: Approved Legislative Draft — Pending Formal Enactment
 ---
 
-> **LEGISLATIVE STATUS — APPROVED DRAFT, PENDING FORMAL ENACTMENT**
->
-> State of San Andreas · Department of Justice · Version 1.0 · Section 4
->
-> These provisions are not yet enacted law. No effective date has been provided.
-
 # SECTION 4 — SEARCH AND SEIZURE
 
 ## §4.1 — General Search Authority
