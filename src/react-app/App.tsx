@@ -70,12 +70,13 @@ function resolveContentHref(href: string, entries: ContentEntry[], currentFile?:
   return match?.route ?? href;
 }
 
-function SiteLink({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
+function SiteLink({ href, children, className, style }: { href: string; children: ReactNode; className?: string; style?: CSSProperties }) {
   const external = /^(https?:)?\/\//.test(href) || href.startsWith("mailto:");
   return (
     <a
       href={external ? href : toSiteUrl(href)}
       className={className}
+      style={style}
       onClick={(event) => {
         if (!external && !href.startsWith("#") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
           event.preventDefault();
