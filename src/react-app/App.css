@@ -640,3 +640,19 @@ html,body{max-width:100%;overflow-x:clip}
 @keyframes rf-wall-roll{0%{opacity:0;transform:scaleX(.1)}20%{opacity:1;transform:scaleX(.65)}45%{transform:scaleX(1.2)}100%{opacity:1;transform:scaleX(1)}}
 @keyframes rf-center-fade{0%,35%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.underworld-page-compromised #root,.underworld-invasion:before,.underworld-invasion:after,.invasion-fragment,.invasion-center strong,.underworld-invasion-breach .invasion-breach-wall,.underworld-invasion-breach .invasion-center{animation:none!important}.invasion-breach-wall{opacity:1;transform:none}.invasion-center{opacity:1}}
+
+/* Fractured public surface: the secret entrance is a scar in the page, not an icon. */
+.underworld-discovery{min-height:112px;margin:12px 0 5px}
+.underworld-discovery button.underworld-signal{width:min(320px,80vw);height:104px;position:relative;display:grid;place-items:center;overflow:visible;background:transparent;border:0;box-shadow:none;cursor:crosshair}
+.underworld-discovery button.underworld-signal:before{content:"";display:block;inset:0;position:absolute;opacity:.38;background:radial-gradient(ellipse at 54% 55%,#ca123b39,transparent 62%);animation:rf-crack-breathe 4.4s ease-in-out infinite}
+.underworld-crack{width:min(265px,75vw);height:100px;overflow:visible;filter:drop-shadow(0 0 5px #a50d32) drop-shadow(0 0 15px #b20c362e);transform:rotate(-7deg);animation:rf-crack-twitch 6s steps(1,end) infinite}
+.underworld-crack path{fill:none;stroke-linejoin:bevel;stroke-linecap:round}
+.underworld-crack-shadow{stroke:#18040b;stroke-width:11;filter:drop-shadow(0 0 6px #000)}
+.underworld-crack-hot{stroke:#e8224b;stroke-width:2.2;filter:drop-shadow(0 0 4px #f03058)}
+.underworld-crack-branches{stroke:#aa2240;stroke-width:1.5;stroke-dasharray:85 12}
+.underworld-discovery button.underworld-signal:hover,.underworld-discovery button.underworld-signal:focus-visible{background:transparent;box-shadow:none;outline:1px dashed #b8435b;outline-offset:0}
+.underworld-discovery button.underworld-signal:hover .underworld-crack,.underworld-discovery button.underworld-signal:focus-visible .underworld-crack{filter:drop-shadow(0 0 9px #f0244d) drop-shadow(0 0 22px #a7113b)}
+.underworld-discovery button.underworld-signal:hover .underworld-crack-hot{stroke:#ff768a}
+@keyframes rf-crack-twitch{0%,91%,97%,100%{transform:rotate(-7deg) translate(0)}92%{transform:rotate(-7deg) translate(4px,-2px)}95%{transform:rotate(-7deg) translate(-3px,1px)}}
+@keyframes rf-crack-breathe{50%{opacity:.17}}
+@media(prefers-reduced-motion:reduce){.underworld-crack,.underworld-discovery button.underworld-signal:before{animation:none}}
