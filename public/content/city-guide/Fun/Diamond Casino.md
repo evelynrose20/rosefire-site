@@ -67,4 +67,4 @@ The Diamond also serves drinks during its weekend hours. Meet friends, mark a ra
 
 The Diamond's penthouse residences are being prepared for prospective residents. Further information about availability and arrangements will be shared by the resort.
 
-VIP membership is expected to be part of the penthouse offering. Ask the Diamond for the latest details rather than relying on older advertisements.
+**VIP membership is required to obtain a penthouse residence at the Diamond.** Penthouse arrangements are still being prepared; contact the resort for information once residences become available.
