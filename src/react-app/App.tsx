@@ -567,6 +567,49 @@ function HousingPage({ document, entries, file }: { document: MarkdownDocument; 
   </div>;
 }
 
+function JobsPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const {meta,body}=document;
+  const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+  const parts=body.split(/^## (.+)\s*$/m);
+  const intro=parts[0].replace(/^# [^\n]+/,"").trim();
+  const sections=new Map<string,string>();
+  for(let i=1;i<parts.length;i+=2) sections.set(parts[i].trim(),parts[i+1]?.trim()||"");
+  const opportunities=[
+    {label:"LOS SANTOS SANITATION",title:"Sanitation & Collection",description:"Keep the neighborhoods clean and complete scheduled refuse routes.",href:"/city-guide/jobs/garbage-job",image:meta.sanitationImage},
+    {label:"JONNY SHAPIRO GAS SPECIALIST",title:"Propane Delivery",description:"Service customer propane tanks throughout Los Santos and Blaine County.",href:"/city-guide/jobs/propane-job",image:meta.propaneImage}
+  ];
+  return <div className="jobs-page">
+    <section className="jobs-hero" style={imageBackground(meta.heroImage)}>
+      <div className="jobs-hero-inner"><SiteLink href="/city-guide" className="jobs-back">← Resident Guide</SiteLink>
+        <p className="section-kicker">SAN ANDREAS / EMPLOYMENT & CAREERS</p>
+        <h1>{meta.title||"Find Your Next Opportunity."}</h1>
+        <p>{meta.description||"Discover work, careers, and business opportunities throughout San Andreas."}</p>
+      </div>
+    </section>
+    <section className="jobs-intro"><div><p className="section-kicker">WORKING IN SAN ANDREAS</p><h2>{meta.introTitle||"A living starts somewhere."}</h2></div>
+      <div className="markdown-content"><Markdown source={intro} renderLink={renderLink}/></div>
+    </section>
+    <section className="jobs-opportunities"><p className="section-kicker">WORK OPPORTUNITIES</p><h2>On the job across San Andreas.</h2>
+      <div className="jobs-opportunity-grid">{opportunities.map(item=><SiteLink className="jobs-opportunity-card" key={item.href} href={item.href} style={imageBackground(item.image)}>
+        <span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p><strong>Employment information →</strong>
+      </SiteLink>)}</div>
+    </section>
+    <section className="jobs-pathways">
+      <article><p className="section-kicker">PUBLIC SERVICE</p><h2>Serve your community.</h2>
+        <div className="markdown-content"><Markdown source={sections.get("Public Service Careers")||""} renderLink={renderLink}/></div>
+        <div className="jobs-path-links"><SiteLink href="/city-guide/public-services/police">Police Department →</SiteLink><SiteLink href="/city-guide/public-services/ems-fire">EMS & Fire →</SiteLink><SiteLink href="/city-guide/public-services/dot">DOT Services →</SiteLink></div>
+      </article>
+      <article><p className="section-kicker">PRIVATE EMPLOYMENT</p><h2>Find a place on the team.</h2>
+        <div className="markdown-content"><Markdown source={sections.get("Local Businesses & Employment")||""} renderLink={renderLink}/></div>
+      </article>
+    </section>
+    <section className="jobs-more"><div><p className="section-kicker">YOUR NEXT STEP</p><h2>Looking for work?</h2>
+      <div className="markdown-content"><Markdown source={sections.get("Finding Work")||""} renderLink={renderLink}/></div></div>
+      <div className="jobs-more-note"><span>EMPLOYMENT INFORMATION</span><p>Use a public library computer, laptop, or desktop in San Andreas to view available positions and department websites.</p></div>
+    </section>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -654,6 +697,8 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/city-guide/jobs" ? (
+        <JobsPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/housing" ? (
         <HousingPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/city-guide/public-services/") ? (

@@ -487,3 +487,39 @@ html,body{max-width:100%;overflow-x:clip}
 @media(max-width:950px){.service-section-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-recruitment-banner{grid-template-columns:1fr}}
 @media(max-width:760px){.service-intro,.housing-intro{grid-template-columns:1fr}.service-section-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.service-intro,.service-directory,.service-recruitment-banner,.housing-hero-inner,.housing-intro,.housing-contact{padding-left:18px;padding-right:18px}}
+
+/* Statewide employment landing page. */
+.jobs-hero{min-height:540px;display:flex;align-items:center;background:linear-gradient(110deg,#241721,#704053);background-position:center;background-size:cover}
+.jobs-hero-inner{padding:85px var(--site-gutter);width:100%}
+.jobs-back{color:#f5d0dc;text-decoration:none}
+.jobs-hero h1{font-family:Georgia,serif;line-height:1.05;letter-spacing:-.045em;font-size:clamp(3.1rem,6.6vw,6.8rem);max-width:950px;margin:15px 0}
+.jobs-hero-inner>p:last-child{max-width:750px;color:#f6dce6;font-size:1.12rem}
+.jobs-intro{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(25px,5vw,95px);background:#ced0d4;color:#301b27;padding:76px var(--site-gutter)}
+.jobs-intro .section-kicker{color:#8c3e5a}
+.jobs-intro h2,.jobs-opportunities h2,.jobs-pathways h2,.jobs-more h2{font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3.6rem);line-height:1.13;margin:10px 0 26px}
+.jobs-intro .markdown-content{max-width:79ch}
+.jobs-intro .markdown-content p,.jobs-intro .markdown-content strong{color:#382530}
+.jobs-opportunities{padding:82px var(--site-gutter) 95px}
+.jobs-opportunity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2vw,36px)}
+.jobs-opportunity-card{min-height:400px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(25px,3vw,46px);border:1px solid #85546a;border-radius:7px;background:linear-gradient(120deg,#653347,#22121f);background-position:center;background-size:cover;text-decoration:none;color:#fff2f5;transition:transform .15s}
+.jobs-opportunity-card:hover{transform:translateY(-3px)}
+.jobs-opportunity-card span{font-size:.69rem;font-weight:850;letter-spacing:.14em;color:#ffccd9}
+.jobs-opportunity-card h3{font-family:Georgia,serif;font-size:clamp(2rem,3.4vw,3.4rem);line-height:1.07;margin:13px 0}
+.jobs-opportunity-card p{max-width:65ch;color:#f2dbe3}
+.jobs-opportunity-card strong{margin-top:14px;font-size:.85rem}
+.jobs-pathways{padding:80px var(--site-gutter);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,54px);background:#221720}
+.jobs-pathways>article{padding:clamp(24px,2.6vw,44px);border:1px solid #704b5b;background:#2b1a26;border-radius:7px;min-width:0}
+.jobs-pathways h2{font-size:clamp(2rem,3vw,3rem)}
+.jobs-pathways .markdown-content{max-width:75ch;line-height:1.75}
+.jobs-path-links{display:flex;flex-wrap:wrap;gap:13px 25px;margin-top:25px}
+.jobs-path-links a{color:#f5b7cb}
+.jobs-more{padding:75px var(--site-gutter);display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.65fr);gap:clamp(25px,5vw,95px);background:#e0d9dc;color:#35242f}
+.jobs-more .section-kicker{color:#944b66}
+.jobs-more .markdown-content{max-width:85ch}
+.jobs-more .markdown-content p,.jobs-more .markdown-content strong{color:#392933}
+.jobs-more-note{border-left:3px solid #9e536d;background:#d1c5cb;padding:28px;align-self:center}
+.jobs-more-note span{color:#77354e;font-size:.72rem;letter-spacing:.11em;font-weight:850}
+.jobs-more-note p{max-width:45ch;color:#392933}
+@media(max-width:800px){.jobs-intro,.jobs-pathways,.jobs-more{grid-template-columns:1fr}}
+@media(max-width:650px){.jobs-opportunity-grid{grid-template-columns:1fr}.jobs-opportunity-card{min-height:300px}.jobs-hero-inner,.jobs-intro,.jobs-opportunities,.jobs-pathways,.jobs-more{padding-left:18px;padding-right:18px}}
+@media(prefers-reduced-motion:reduce){.jobs-opportunity-card{transition:none}}
