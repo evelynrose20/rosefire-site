@@ -29,7 +29,7 @@ function path(points){return points.map((p,i)=>(i?'L':'M')+p.join(',')).join(' '
 function render(){
 areas.replaceChildren();handles.replaceChildren();
 const north=data.north,city=data.city;
-const lower=[...north.slice().reverse(),[1000,1000],[0,1000]];
+const lower=[[0,1000],[1000,1000],...north.slice().reverse()];
 const upper=[[0,0],[1000,0],...north.slice().reverse()];
 el('path',{d:path(lower),class:'region county',style:'fill-opacity:'+opacity.value/100},areas);
 el('path',{d:path(upper),class:'region blaine',style:'fill-opacity:'+opacity.value/100},areas);
