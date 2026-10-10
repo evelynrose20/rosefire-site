@@ -27,6 +27,7 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
   const [printed, setPrinted] = useState("");
   const [seconds, setSeconds] = useState(12);
   const [selection, setSelection] = useState<Channel | null>(null);
+  const [exiting, setExiting] = useState(false);
   const closeRef = useRef(onExit);
   closeRef.current = onExit;
 
@@ -36,7 +37,7 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
     const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
-    document.body.classList.add("rf-uw-site-disturbance");
+
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const schedule = reduced
@@ -44,7 +45,7 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
       : ([["fracture", 1100], ["wall", 2700], ["blackout", 4900], ["terminal", 5900]] as const);
     const timers = schedule.map(([step, delay]) => window.setTimeout(() => setPhase(step), delay));
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeRef.current();
+      if (event.key === "Escape") setExiting(true);
     };
     window.addEventListener("keydown", onKey);
     return () => {
@@ -90,11 +91,24 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
     return () => window.clearInterval(clock);
   }, [phase]);
 
+  useEffect(() => {
+    document.body.classList.toggle("rf-uw-site-disturbance", !exiting && (phase === "infection" || phase === "fracture"));
+    return () => document.body.classList.remove("rf-uw-site-disturbance");
+  }, [phase, exiting]);
+
+  useEffect(() => {
+    if (!exiting) return;
+    const timer = window.setTimeout(() => closeRef.current(), 1350);
+    return () => window.clearTimeout(timer);
+  }, [exiting]);
+
+  const requestExit = () => setExiting(true);
+
   const isBreaking = phase === "infection" || phase === "fracture" || phase === "wall";
   const activeChannel = channels.find(item => item.id === selection);
   return createPortal(
     <div className={"rf-uw rf-uw--" + phase} role="dialog" aria-modal="true" aria-label="Rosefire underground relay">
-      <button className="rf-uw-escape" type="button" onClick={onExit} aria-label="Leave the underground network">EXIT / ESC</button>
+      <button className="rf-uw-escape" type="button" onClick={requestExit} aria-label="Leave the underground network">EXIT / ESC</button>
 
       {isBreaking && <div className="rf-uw-breach" aria-hidden="true">
         <div className="rf-uw-breach-shroud" />
@@ -158,6 +172,15 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
           </aside>
         </div>
         <footer className="rf-uw-chamber-footer"><span>NODE: VESPER / ONLINE</span><span>NO PUBLIC RECORD OF THIS SESSION</span><span>ROSEFIRE · UNLISTED</span></footer>
+      </div>}
+      {exiting && <div className="rf-uw-return" aria-live="polite">
+        <div className="rf-uw-return-slices" aria-hidden="true"/>
+        <div className="rf-uw-return-core">
+          <span>VEIL RELAY // SESSION TERMINATED</span>
+          <strong>RETURNING TO THE SURFACE</strong>
+          <p>Re-establishing public network · Restoring directory</p>
+          <div className="rf-uw-return-progress"><span/></div>
+        </div>
       </div>}
     </div>,
     document.documentElement
