@@ -584,3 +584,14 @@ html,body{max-width:100%;overflow-x:clip}
 @keyframes signal-tear{0%{transform:translateY(-4%)}50%{transform:translate(2%,4%)}100%{transform:translate(-2%,-4%)}}
 @keyframes signal-sweep{0%{transform:translateY(-130%)}100%{transform:translateY(130%)}}
 @media(prefers-reduced-motion:reduce){.underworld-glitch:before,.underworld-glitch:after,.underworld-glitch-frame strong,.underworld-glitch-frame strong:after{animation:none}}
+
+/* Hidden signal entry — a small corrupted broadcast, not an empty card. */
+.underworld-discovery{min-height:70px;margin:19px 0 0;display:flex;align-items:center;justify-content:center}
+.underworld-discovery button.underworld-signal{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:124px;height:39px;min-width:0;max-width:none;overflow:hidden;padding:4px 10px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#b8567b;cursor:crosshair;font:800 13px/1.1 Consolas,monospace;letter-spacing:.18em}
+.underworld-discovery button.underworld-signal:before{content:"";position:absolute;inset:1px 0;background:repeating-linear-gradient(90deg,transparent 0 6px,#ae446747 6px 8px,transparent 8px 21px);opacity:.35;animation:signal-entry-flicker 2.1s steps(5,end) infinite}
+.underworld-signal-glyph{position:relative;z-index:1;text-shadow:-1px 0 #f04e83,2px 0 #49a7a8;animation:signal-entry-tear 1.4s steps(2,end) infinite}
+.underworld-signal-bar{z-index:1;display:block;width:80px;height:2px;background:linear-gradient(90deg,transparent,#b94b76 22%,#5aa9a6 60%,transparent);animation:signal-entry-flicker 1.1s steps(2,end) infinite}
+.underworld-discovery button.underworld-signal:hover,.underworld-discovery button.underworld-signal:focus-visible{outline:1px solid #ad577e;outline-offset:5px;border:0;background:#23101b;color:#ffc1d5;box-shadow:0 0 16px #df487433}
+@keyframes signal-entry-flicker{0%,15%,40%,44%,70%,100%{opacity:.25}16%,39%,45%,69%{opacity:1}}
+@keyframes signal-entry-tear{0%,91%,100%{transform:translate(0)}92%{transform:translate(4px,1px)}95%{transform:translate(-3px,-1px)}}
+@media(prefers-reduced-motion:reduce){.underworld-discovery button.underworld-signal:before,.underworld-signal-glyph,.underworld-signal-bar{animation:none}}
