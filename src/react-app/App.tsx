@@ -845,6 +845,16 @@ function App() {
         <GlobeHome entries={indexedEntries} />
       ) : path.startsWith("/daily-globe/articles/") ? (
         <GlobeArticle document={document} entries={indexedEntries} file={activeFile}/>
+      ) : path === "/government/schedules/schedule-17-a" ? (
+        <section className="schedule-map-page" aria-label="Official Territorial Jurisdiction Map">
+          <div className="schedule-map-heading">
+            <span>STATE OF SAN ANDREAS · DEPARTMENT OF JUSTICE</span>
+            <h1>Schedule 17-A — Official Territorial Jurisdiction Map</h1>
+            <p>Adopted — In Force · Revision 1.0 · 10 October 2026</p>
+          </div>
+          <iframe title="Official map of Blaine County, Los Santos County, and Los Santos City" src={toSiteUrl("/jurisdiction-map.html?embed=1")} loading="eager" />
+          <div className="schedule-map-links"><SiteLink href="/content/government/schedules/schedule-17-a.json">Download Official Boundary Coordinates →</SiteLink><SiteLink href="/government/civil-rights/section-17">Section 17 — Territorial Jurisdiction →</SiteLink></div>
+        </section>
       ) : path.startsWith("/government/schedules/") ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/government/civil-rights/") ? (
