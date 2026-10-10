@@ -1,25 +1,24 @@
 ---
-title: Police Services
-description: Public safety, law enforcement, and information for residents across San Andreas.
+title: San Andreas Police Department
+description: Public safety, crime reporting, traffic enforcement, and community policing.
+departmentMark: SAPD
 heroImage:
-applicationLink: /apply
-applicationTitle: Interested in a career in law enforcement?
-applicationText: Information about police recruitment and applications is available through the public service application office.
-applicationLabel: Police Recruitment →
+recruitmentTitle: Join the Police Department
+recruitmentText: Interested in serving your community? Visit a public library or use your laptop or desktop computer to open the department's website and submit an application when recruitment is open.
 ---
 
-# Police Department
+# Public Safety & Community Service
 
-Police services work to maintain public safety, respond to emergencies, and investigate reports from the communities they serve.
+The Police Department serves communities across San Andreas through patrol work, public safety response, and investigations. Officers work with residents and local services to keep the state's streets and neighborhoods safe.
 
-## When to Contact Police
+## Report a Crime
 
-Contact local law enforcement to report a crime, request assistance during a public safety incident, or provide information related to an investigation. In an emergency, use the emergency contact services available to you.
+If you witness a crime or need police assistance, contact the department through the emergency or non-emergency channels available in the state. Give a clear location and describe what happened.
 
-## Road Safety
+## Roads & Traffic
 
-Officers may respond to collisions, hazardous driving, road closures, and other incidents affecting public roads. Keep clear of emergency scenes and follow instructions from officers directing traffic.
+Officers respond to dangerous driving, collisions, and roadway incidents. Please follow directions at traffic stops, diversions, and emergency scenes, and leave room for responding units.
 
-## Community Service
+## Working With Our Communities
 
-Residents interested in a law enforcement career can consult the recruitment information below. Applications and positions are subject to the department's current needs and hiring procedures.
+The department encourages residents to report safety concerns and provide information that may assist an investigation. Keep clear of active scenes and allow officers to do their work.

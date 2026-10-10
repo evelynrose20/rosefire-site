@@ -525,22 +525,45 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
 function PublicServicePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const {meta,body}=document;
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
-  return <div className="service-page">
+  const type=file.includes("/police.md")?"police":file.includes("/ems-fire.md")?"medical":"transport";
+  const labels=type==="police"?["PUBLIC SAFETY","COMMUNITY PROTECTION"]:type==="medical"?["MEDICAL & FIRE","EMERGENCY RESPONSE"]:["ROAD SERVICES","STATE TRANSPORTATION"];
+  const parts=body.split(/^## (.+)\s*$/m);
+  const intro=parts[0].replace(/^# [^\n]+/,"").trim();
+  const sections:{heading:string;content:string}[]=[];
+  for(let i=1;i<parts.length;i+=2)sections.push({heading:parts[i].trim(),content:parts[i+1]?.trim()||""});
+  return <div className={`service-page service-${type}`}>
     <section className="service-hero" style={imageBackground(meta.heroImage)}>
       <div className="service-hero-inner"><SiteLink href="/city-guide" className="service-back">← Resident Guide</SiteLink>
-        <p className="section-kicker">SAN ANDREAS / PUBLIC SERVICES</p>
+        <p className="section-kicker">SAN ANDREAS · {labels[0]}</p>
+        <span className="service-dept-mark">{meta.departmentMark||"SA"} <small>{labels[1]}</small></span>
         <h1>{meta.title}</h1><p>{meta.description}</p>
       </div>
     </section>
-    <div className="service-content">
-      <article className="markdown-content"><Markdown source={body} renderLink={renderLink}/></article>
-      {meta.applicationLink && <aside className="service-recruitment">
-        <p className="section-kicker">CAREERS IN PUBLIC SERVICE</p><h2>{meta.applicationTitle || "Interested in serving?"}</h2>
-        <p>{meta.applicationText || "Learn about upcoming opportunities and application information."}</p>
-        <SiteLink className="button primary" href={meta.applicationLink}>{meta.applicationLabel || "Applications & Recruitment →"}</SiteLink>
-      </aside>}
-    </div>
+    <section className="service-intro"><div className="service-intro-label"><p className="section-kicker">ABOUT THE DEPARTMENT</p><h2>Serving San Andreas.</h2></div><div className="markdown-content"><Markdown source={intro} renderLink={renderLink}/></div></section>
+    <section className="service-directory"><p className="section-kicker">INFORMATION & SERVICES</p>
+      <div className="service-section-grid">{sections.map((part,i)=><article className="service-section" key={part.heading}>
+        <span className="service-section-number">{String(i+1).padStart(2,"0")}</span><h2>{part.heading}</h2>
+        <div className="markdown-content"><Markdown source={part.content} renderLink={renderLink}/></div>
+      </article>)}</div>
+    </section>
+    {meta.recruitmentTitle && <section className="service-recruitment-banner">
+      <div><p className="section-kicker">DEPARTMENT RECRUITMENT</p><h2>{meta.recruitmentTitle}</h2><p>{meta.recruitmentText||"Visit a public library or use your own laptop or desktop computer in San Andreas to view the department's website and recruitment information."}</p></div>
+      <div className="service-recruitment-instructions"><span>WHERE TO APPLY</span><strong>At an in-city computer</strong><p>Visit the department's website on a library computer, laptop, or desktop. Applications are handled there, not on this visitor guide.</p></div>
+    </section>}
     <div className="service-more"><SiteLink href="/city-guide/public-services/police">Police</SiteLink><SiteLink href="/city-guide/public-services/ems-fire">EMS & Fire</SiteLink><SiteLink href="/city-guide/public-services/dot">DOT</SiteLink></div>
+  </div>;
+}
+
+function HousingPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const {meta,body}=document;
+  const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+  return <div className="housing-page">
+    <section className="housing-hero" style={imageBackground(meta.heroImage)}><div className="housing-hero-inner">
+      <SiteLink href="/city-guide">← Resident Guide</SiteLink><p className="section-kicker">SAN ANDREAS · HOMES & PROPERTY</p>
+      <h1>{meta.title||"Find a Place to Call Home."}</h1><p>{meta.description}</p>
+    </div></section>
+    <section className="housing-intro"><div><p className="section-kicker">HOMES ACROSS THE STATE</p><h2>Settling in starts here.</h2></div><article className="markdown-content"><Markdown source={body} renderLink={renderLink}/></article></section>
+    <section className="housing-contact"><p className="section-kicker">PROPERTY ENQUIRIES</p><h2>Looking for a home?</h2><p>Ask D8 about homes available for sale or lease and the arrangements for viewing a property. For current listings and property records, use the real estate services available within San Andreas.</p></section>
   </div>;
 }
 
@@ -631,6 +654,8 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/city-guide/housing" ? (
+        <HousingPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/city-guide/public-services/") ? (
         <PublicServicePage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide" ? (

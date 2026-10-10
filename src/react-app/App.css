@@ -440,3 +440,50 @@ html,body{max-width:100%;overflow-x:clip}
 .service-more a{color:#e9aabd}
 @media(max-width:850px){.service-content{grid-template-columns:1fr}}
 @media(max-width:550px){.service-hero-inner,.service-content,.service-more{padding-left:18px;padding-right:18px}}
+
+/* Department-specific public service portals */
+.service-page{--dept-accent:#c8a56e;--dept-dark:#182330}
+.service-page.service-medical{--dept-accent:#e9a2ac;--dept-dark:#361922}
+.service-page.service-transport{--dept-accent:#f0bc65;--dept-dark:#2c281a}
+.service-page .service-hero{min-height:570px;background-image:linear-gradient(110deg,var(--dept-dark),#14202d);position:relative}
+.service-page.service-medical .service-hero{background-image:linear-gradient(110deg,#351723,#663044)}
+.service-page.service-transport .service-hero{background-image:linear-gradient(110deg,#2c271b,#66502c)}
+.service-page .service-hero[style]{background-position:center;background-size:cover}
+.service-page .service-hero-inner{padding-top:86px;padding-bottom:88px}
+.service-dept-mark{display:inline-flex;align-items:center;gap:16px;font-family:Georgia,serif;font-size:2.5rem;font-weight:800;color:var(--dept-accent);border-top:3px solid var(--dept-accent);margin-top:34px;padding-top:14px}
+.service-dept-mark small{font-family:Inter,system-ui,sans-serif;font-size:.7rem;letter-spacing:.19em;font-weight:800;color:#f5dae1}
+.service-page .service-hero h1{font-size:clamp(3rem,6.5vw,6.5rem);margin:19px 0;max-width:1000px}
+.service-intro{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,100px);padding:75px var(--site-gutter);background:#d7d8dc;color:#30212b}
+.service-intro .section-kicker{color:#8a4d57}
+.service-intro h2,.service-directory h2,.service-recruitment-banner h2{font-family:Georgia,serif}
+.service-intro h2{font-size:clamp(2rem,3.6vw,3.6rem);line-height:1.14}
+.service-intro .markdown-content{max-width:82ch}
+.service-intro p,.service-intro strong{color:#35262d}
+.service-directory{padding:80px var(--site-gutter) 90px}
+.service-section-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:20px}
+.service-section{min-width:0;background:#1e1922;border:1px solid #68505b;border-top:4px solid var(--dept-accent);padding:clamp(22px,2.4vw,40px);border-radius:4px}
+.service-section-number{color:var(--dept-accent);font-size:.75rem;font-weight:800;letter-spacing:.1em}
+.service-section h2{font-size:clamp(1.6rem,2.3vw,2.4rem);line-height:1.2;margin:13px 0}
+.service-section .markdown-content p{line-height:1.8}
+.service-section .markdown-content a{color:#f4bacc}
+.service-recruitment-banner{padding:70px var(--site-gutter);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:50px;background:var(--dept-dark);border-top:3px solid var(--dept-accent)}
+.service-recruitment-banner h2{font-size:clamp(2rem,3.2vw,3.3rem);margin:9px 0}
+.service-recruitment-banner>div:first-child>p:last-child{max-width:70ch;color:#eddbe1}
+.service-recruitment-instructions{border:1px solid #a18c95;padding:26px;background:#ffffff0c}
+.service-recruitment-instructions span{display:block;color:var(--dept-accent);letter-spacing:.1em;font-size:.7rem;font-weight:800}
+.service-recruitment-instructions strong{display:block;font-family:Georgia,serif;font-size:1.65rem;margin:12px 0}
+.service-recruitment-instructions p{color:#ead6de}
+.housing-hero{min-height:510px;display:flex;align-items:center;background:linear-gradient(105deg,#3b1d29,#76535a);background-position:center;background-size:cover}
+.housing-hero-inner{padding:75px var(--site-gutter)}
+.housing-hero-inner>a{color:#f4cbda}
+.housing-hero h1{font-family:Georgia,serif;font-size:clamp(3rem,6vw,6rem);line-height:1.08;max-width:1000px;margin:17px 0}
+.housing-hero-inner>p:last-child{font-size:1.1rem;max-width:750px;color:#f5e0e5}
+.housing-intro{padding:80px var(--site-gutter);display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);gap:clamp(30px,5vw,90px)}
+.housing-intro h2,.housing-contact h2{font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3.4rem);margin:10px 0}
+.housing-intro article{max-width:100ch;min-width:0}
+.housing-contact{padding:65px var(--site-gutter);background:#ded6da;color:#34252e}
+.housing-contact .section-kicker{color:#883f58}
+.housing-contact>p:last-child{max-width:80ch}
+@media(max-width:950px){.service-section-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-recruitment-banner{grid-template-columns:1fr}}
+@media(max-width:760px){.service-intro,.housing-intro{grid-template-columns:1fr}.service-section-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.service-intro,.service-directory,.service-recruitment-banner,.housing-hero-inner,.housing-intro,.housing-contact{padding-left:18px;padding-right:18px}}

@@ -1,23 +1,26 @@
 ---
-title: Department of Transportation
-description: Roadside assistance, vehicle recovery, and the roads that connect San Andreas.
+title: San Andreas Department of Transportation
+description: Roadside support, towing, vehicle recovery, and safer travel across the state.
+departmentMark: DOT
 heroImage:
 ---
 
-# Department of Transportation
+# Keeping San Andreas Moving
 
-The Department of Transportation helps keep San Andreas moving. From busy city streets to rural highways, its roadside and transport work supports drivers traveling throughout the state.
+From the busy streets of Los Santos to the rural highways of Blaine County, the Department of Transportation assists motorists and helps keep travel routes clear.
 
-## Roadside Assistance & Recovery
+## Roadside Assistance
 
-If you experience a breakdown or your vehicle becomes disabled, move out of traffic when it is safe and arrange assistance. DOT services may assist with roadside incidents, towing, and vehicle recovery according to the circumstances.
+A breakdown can happen anywhere. If your vehicle stops working, move to a safe place when possible and request roadside assistance. DOT services may include help with stranded vehicles and other roadside problems.
 
-## Road Hazards
+## Towing & Recovery
 
-Obstructions, stranded vehicles, and collisions can affect everyone using the road. Give working crews enough room and avoid blocking access to a recovery scene.
+DOT assists with vehicle recovery and towing where needed. When crews are working, please leave space around their vehicles and follow directions at the scene.
 
-## Winter Roads
+## Road Hazards & Obstructions
 
-Snow remains across San Andreas from November through March. Plan additional travel time and take care on mountain routes, bridges, and rural roads.
+Report blocked roads, disabled vehicles, and dangerous conditions when possible. Never enter a hazardous area to move an obstruction yourself.
 
-Read the [[city-guide/winter|winter travel and DOT advisories]] before longer trips.
+## Winter Travel
+
+San Andreas remains snow-covered from November through March. Leave extra room on slippery roads and plan ahead for long journeys. Consult the [[city-guide/winter|winter travel advisories]] before setting off.

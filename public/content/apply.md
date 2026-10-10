@@ -1,21 +1,17 @@
 ---
 nav: false
-title: Public Service Applications
-eyebrow: SAN ANDREAS / CAREERS
+title: Public Service Careers
+eyebrow: SAN ANDREAS / DEPARTMENT RECRUITMENT
 ---
 
-# Public Service Applications
+# Public Service Careers
 
-Interested in serving your community? Recruitment information and application arrangements for public safety departments will be published here.
+Police and EMS & Fire recruitment is handled through the department websites available **inside San Andreas**. Visit a public library or use your laptop or desktop computer to open the relevant department's site and follow its application instructions.
 
-## Police Department
+There are no public-service application forms on this visitor website.
 
-Application information will be available when the department opens recruitment.
+[[city-guide/public-services/police|Police Department →]]
 
-## Emergency Medical Services & Fire
-
-Application information will be available when the department opens recruitment.
-
-For career information in the meantime, visit the [[city-guide/Jobs/index|jobs and careers guide]].
+[[city-guide/public-services/ems-fire|EMS & Fire →]]
 
 [[city-guide|← Back to the Resident Guide]]

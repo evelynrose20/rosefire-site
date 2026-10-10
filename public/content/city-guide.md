@@ -23,7 +23,7 @@ From collection routes and deliveries to local businesses, work can take you all
 
 Some people prefer busy streets and an apartment close to work. Others head for the coast or quieter neighborhoods outside Los Santos. Learn about the state's different regions before deciding where to settle.
 
-[[explore|Explore San Andreas communities →]]
+[[city-guide/housing|Homes, leasing & property enquiries →]]
 
 ## Money & Everyday Business
 
