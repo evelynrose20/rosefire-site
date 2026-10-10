@@ -47,6 +47,8 @@ Find information about emergency services, public safety, and roadside assistanc
 
 [[city-guide/public-services/dot|Department of Transportation →]]
 
+[[government|State Government & Public Records →]]
+
 ## Leisure & Local Events
 
 Visit the Diamond Casino, spend an afternoon at the Los Santos Golf Club, explore the outdoors, or find out what's on the seasonal calendar.

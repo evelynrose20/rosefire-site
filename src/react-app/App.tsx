@@ -668,6 +668,39 @@ function JobsPage({ document, entries, file }: { document: MarkdownDocument; ent
   </div>;
 }
 
+function GovernmentPage({ document, entries, file, rights = false }: { document: MarkdownDocument; entries: ContentEntry[]; file: string; rights?: boolean }) {
+  const {meta,body}=document;
+  const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
+  return <div className={"government-page"+(rights?" government-rights":"")}>
+    <div className="government-masthead">
+      <div className="government-seal" aria-hidden="true">SA</div>
+      <div><span>STATE OF SAN ANDREAS</span><strong>Office of Public Records</strong></div>
+      <span className="government-masthead-note">PUBLIC INFORMATION / OFFICIAL PUBLICATION</span>
+    </div>
+    <section className="government-hero" style={imageBackground(meta.heroImage)}>
+      <div className="government-hero-inner">
+        <p className="section-kicker">{rights?"CIVIL RIGHTS / PUBLIC RECORDS":"STATE GOVERNMENT / PUBLIC INFORMATION"}</p>
+        <h1>{meta.title||"Public Records"}</h1>
+        <p>{meta.description}</p>
+      </div>
+    </section>
+    <div className="government-nav"><SiteLink href="/government">Government Home</SiteLink><SiteLink href="/government/civil-rights">Civil Rights</SiteLink><SiteLink href="/city-guide/public-services/police">Police</SiteLink><SiteLink href="/city-guide/public-services/ems-fire">EMS & Fire</SiteLink><SiteLink href="/city-guide/public-services/dot">Transportation</SiteLink></div>
+    <div className="government-layout">
+      <article className="government-document markdown-content">
+        <div className="government-document-label"><span>STATE PUBLIC RECORDS</span><span>{rights?"CIVIL RIGHTS REGISTER":"INFORMATION DIRECTORY"}</span></div>
+        <Markdown source={body} renderLink={renderLink}/>
+      </article>
+      <aside className="government-sidebar">
+        <p className="section-kicker">PUBLIC RECORDS OFFICE</p>
+        <h2>{rights?"Official civil rights publications":"Government information"}</h2>
+        <p>{rights?"Approved rights and enacted protections will be published here with their official titles and effective dates.":"Find public information issued by the government and its departments."}</p>
+        <div className="government-sidebar-links"><SiteLink href="/government/civil-rights">Civil Rights Register →</SiteLink><SiteLink href="/city-guide">Resident Guide →</SiteLink></div>
+      </aside>
+    </div>
+    <div className="government-footer">STATE OF SAN ANDREAS · OFFICE OF PUBLIC RECORDS</div>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -763,6 +796,10 @@ function App() {
         <HousingPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path.startsWith("/city-guide/public-services/") ? (
         <PublicServicePage document={document} entries={indexedEntries} file={activeFile}/>
+      ) : path === "/government/civil-rights" ? (
+        <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
+      ) : path === "/government" ? (
+        <GovernmentPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/city-guide" ? (
         <CityGuidePage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/fun/los-santos-golf-club" ? (

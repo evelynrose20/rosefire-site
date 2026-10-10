@@ -684,3 +684,31 @@ html,body{max-width:100%;overflow-x:clip}
 .commerce-next{padding:72px var(--site-gutter);display:flex;justify-content:space-between;align-items:center;gap:40px;background:#613045}.commerce-next h2{font-size:clamp(2rem,3.4vw,3.4rem)}.commerce-next p:not(.section-kicker){max-width:700px;color:#f3dbe4}.commerce-next>div:last-child{display:grid;gap:15px;flex-shrink:0}.commerce-next a{color:#ffe1eb}
 @media(max-width:900px){.commerce-banking-grid{grid-template-columns:1fr 1fr}.commerce-development{grid-template-columns:1fr}.commerce-development-photo{min-height:310px}}
 @media(max-width:700px){.commerce-introduction,.commerce-grid{grid-template-columns:1fr}.commerce-banking-grid{grid-template-columns:1fr}.commerce-next{align-items:flex-start;flex-direction:column}.commerce-hero-inner,.commerce-introduction,.commerce-opportunities,.commerce-banking,.commerce-next{padding-left:18px;padding-right:18px}.commerce-development-copy{padding:40px 18px}}
+
+/* Formal government and public-records design, independent of tourism sections. */
+.government-page{background:#edeae5;color:#2f333a}
+.government-masthead{display:flex;gap:18px;align-items:center;padding:20px var(--site-gutter);background:#f6f3ed;border-bottom:5px solid #2b465c;color:#243a4b}
+.government-seal{width:66px;height:66px;flex-shrink:0;display:grid;place-items:center;border:3px double #415a70;border-radius:50%;font:800 24px Georgia,serif}
+.government-masthead>div:nth-child(2){display:grid;gap:2px}.government-masthead>div:nth-child(2)>span{font-size:.68rem;font-weight:800;letter-spacing:.14em}.government-masthead strong{font-family:Georgia,serif;font-size:1.45rem}
+.government-masthead-note{margin-left:auto;font-size:.67rem;letter-spacing:.12em;font-weight:800}
+.government-hero{min-height:340px;display:flex;align-items:center;background:linear-gradient(110deg,#183247,#3e5c6c);background-size:cover;background-position:center}
+.government-hero-inner{width:100%;padding:60px var(--site-gutter)}
+.government-hero .section-kicker{color:#e0c99f}
+.government-hero h1{font:normal clamp(3rem,6vw,6rem)/1.04 Georgia,serif;max-width:900px;margin:13px 0;color:#fff}
+.government-hero-inner>p:last-child{max-width:80ch;color:#ebeff0;font-size:1.12rem}
+.government-nav{display:flex;gap:clamp(14px,2.4vw,35px);flex-wrap:wrap;padding:19px var(--site-gutter);background:#263e52;border-bottom:4px solid #c3a675}
+.government-nav a{color:#f3f2ee;text-decoration:none;font-weight:700;font-size:.88rem}.government-nav a:hover{text-decoration:underline}
+.government-layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(275px,.65fr);gap:clamp(25px,4vw,85px);padding:70px var(--site-gutter) 85px}
+.government-document{max-width:100ch;min-width:0}
+.government-document-label{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-bottom:17px;margin-bottom:35px;border-bottom:2px solid #9caab0;color:#4f6270;font-size:.69rem;letter-spacing:.14em;font-weight:800}
+.government-document h1,.government-document h2{color:#1e3344;font-family:Georgia,serif}
+.government-document h1{font-size:clamp(2rem,3.5vw,3.4rem)}
+.government-document h2{font-size:clamp(1.45rem,2.4vw,2.2rem);margin:34px 0 13px}
+.government-document p,.government-document strong,.government-document li{color:#35424a;line-height:1.8}
+.government-document a{color:#255e7a;text-decoration:underline}
+.government-sidebar{background:#f7f6f3;border-top:5px solid #c3a675;align-self:start;padding:30px;box-shadow:0 9px 23px #15263513}
+.government-sidebar .section-kicker{color:#7b6043}.government-sidebar h2{font:normal 2rem/1.17 Georgia,serif;color:#23394c}.government-sidebar p{color:#495a63;line-height:1.75}
+.government-sidebar-links{display:grid;gap:15px;margin-top:28px}.government-sidebar-links a{color:#285b78;font-weight:700}
+.government-footer{padding:23px var(--site-gutter);background:#203a4e;color:#e5e9eb;font-size:.7rem;letter-spacing:.12em}
+@media(max-width:830px){.government-layout{grid-template-columns:1fr}.government-masthead-note{display:none}}
+@media(max-width:600px){.government-masthead,.government-hero-inner,.government-nav,.government-layout,.government-footer{padding-left:18px;padding-right:18px}}
