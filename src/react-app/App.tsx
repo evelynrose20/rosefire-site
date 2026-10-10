@@ -360,6 +360,42 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
   </div>;
 }
 
+function WinterPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const { meta, body } = document;
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  const parts = body.split(/^## (Police Advisory|Department of Transportation|Emergency Medical Services|Winter Destinations|Winter Holidays)\s*$/m);
+  const intro = parts[0].replace(/^# Winter in San Andreas\s*/,"").trim();
+  const sections = new Map<string,string>();
+  for (let i=1;i<parts.length;i+=2) sections.set(parts[i],parts[i+1].trim());
+  const notices = [
+    {heading:"Police Advisory",office:"LOCAL LAW ENFORCEMENT",symbol:"POLICE"},
+    {heading:"Department of Transportation",office:"SAN ANDREAS DEPARTMENT OF TRANSPORTATION",symbol:"DOT"},
+    {heading:"Emergency Medical Services",office:"EMERGENCY MEDICAL SERVICES",symbol:"EMS"}
+  ];
+  return <div className="winter-page">
+    <section className="winter-hero" style={imageBackground(meta.heroImage)}>
+      <span className="winter-flurries" aria-hidden="true"/>
+      <div className="winter-hero-inner"><p className="section-kicker">SAN ANDREAS / SEASONAL TRAVEL</p>
+        <h1>Winter in San Andreas</h1><p>Five months of snow-covered roads, neighborhoods, and mountains.</p>
+        <div className="winter-dates"><span>SEASON BEGINS <strong>NOVEMBER 1</strong></span><span>SEASON ENDS <strong>MARCH 31</strong></span></div>
+      </div>
+    </section>
+    <section className="winter-intro"><div className="winter-article markdown-content"><Markdown source={intro} renderLink={renderLink}/></div></section>
+    <section className="winter-advisories"><div className="winter-advisories-inner">
+      <p className="section-kicker">PUBLIC INFORMATION</p><h2>Winter notices from local services</h2>
+      <p className="winter-advisories-lede">A little preparation makes winter travel safer. Read the seasonal guidance from agencies serving communities across the state.</p>
+      <div className="winter-notice-grid">{notices.map(notice=><article className="winter-notice" key={notice.symbol}>
+        <div className="winter-notice-heading"><span className="winter-agency-seal">{notice.symbol}</span><div><p>{notice.office}</p><h3>{notice.heading}</h3></div></div>
+        <div className="markdown-content winter-notice-copy"><Markdown source={sections.get(notice.heading)||""} renderLink={renderLink}/></div>
+      </article>)}</div></div></section>
+    <section className="winter-extras">
+      <div className="winter-extra-card"><p className="section-kicker">OUT & ABOUT</p><h2>See the state in winter</h2><div className="markdown-content"><Markdown source={sections.get("Winter Destinations")||""} renderLink={renderLink}/></div><SiteLink href="/explore">Explore San Andreas →</SiteLink></div>
+      <div className="winter-extra-card"><p className="section-kicker">ON THE CALENDAR</p><h2>Winter holidays</h2><div className="markdown-content"><Markdown source={sections.get("Winter Holidays")||""} renderLink={renderLink}/></div><SiteLink href="/city-guide/celebrations">Annual celebrations →</SiteLink></div>
+    </section>
+    <div className="winter-return"><SiteLink href="/city-guide/fun">← Back to Things to Do</SiteLink></div>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -449,6 +485,8 @@ function App() {
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/city-guide/fun" ? (
         <LeisurePage document={document}/>
+      ) : path === "/city-guide/winter" ? (
+        <WinterPage document={document} entries={indexedEntries} file={activeFile}/>
       ) : path === "/city-guide/celebrations" ? (
         <CalendarPage document={document}/>
       ) : path === "/explore" ? (

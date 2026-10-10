@@ -168,3 +168,35 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .calendar-page .season-winter .calendar-month.current-month{border-color:#bdd9eb;outline-color:#bdd9eb}
 .calendar-page .season-winter .winter-flurries{opacity:.48}
 @media(max-width:780px){.calendar-spotlight{grid-template-columns:1fr;gap:20px}.calendar-spotlight-events{max-width:100%}}
+
+/* Dedicated San Andreas winter safety and tourism page. */
+.winter-hero{min-height:510px;position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;background:linear-gradient(120deg,#243b50,#172331);background-size:cover;background-position:center}
+.winter-hero-inner{position:relative;z-index:2;max-width:1160px;width:100%;margin:0 auto;padding:90px 28px}
+.winter-hero h1{font-family:Georgia,serif;font-size:clamp(3rem,6vw,6rem);line-height:1.05;margin:10px 0 16px}
+.winter-hero-inner>p:not(.section-kicker){color:#e7f0f7;font-size:1.12rem;max-width:620px}
+.winter-dates{display:flex;gap:20px;flex-wrap:wrap;margin-top:35px}
+.winter-dates span{padding:14px 20px;background:rgba(8,22,33,.55);border:1px solid #84a1b6;border-radius:5px;font-size:.68rem;letter-spacing:.11em;color:#dce9f2}
+.winter-dates strong{display:block;letter-spacing:0;font-size:1.06rem;color:#fff}
+.winter-intro{background:#e0e5e8;color:#251d25;padding:58px 28px}
+.winter-article{max-width:990px;margin:auto;font-size:1.07rem;line-height:1.8}
+.winter-article p{color:#352b33}
+.winter-advisories{background:#15171f;padding:80px 28px}
+.winter-advisories-inner{max-width:1200px;margin:auto}
+.winter-advisories h2,.winter-extras h2{font-family:Georgia,serif;font-size:clamp(1.9rem,3.6vw,3.1rem);margin:8px 0 13px}
+.winter-advisories-lede{max-width:790px;color:#d0bfca;margin-bottom:30px}
+.winter-notice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.winter-notice{background:#20222c;border:1px solid #586578;border-radius:7px;padding:25px;min-width:0}
+.winter-notice-heading{display:flex;align-items:center;gap:13px;padding-bottom:16px;border-bottom:1px solid #576373}
+.winter-agency-seal{display:grid;place-items:center;min-width:62px;height:62px;border:2px solid #aabccb;border-radius:50%;color:#e3edf5;font-size:.75rem;font-weight:900;letter-spacing:.06em}
+.winter-notice-heading p{font-size:.65rem;line-height:1.4;letter-spacing:.1em;color:#c4d5e2;margin:0}
+.winter-notice-heading h3{font-family:Georgia,serif;font-size:1.3rem;line-height:1.17;margin:6px 0 0}
+.winter-notice-copy{font-size:.9rem;line-height:1.75}
+.winter-notice-copy p{color:#e0d6de}
+.winter-notice-copy strong{color:#fff}
+.winter-extras{max-width:1200px;margin:auto;padding:72px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.winter-extra-card{padding:32px;border:1px solid #596575;background:#20222a;border-radius:7px}
+.winter-extra-card .markdown-content{line-height:1.8;color:#e6d9e0}
+.winter-extra-card a,.winter-return a{color:#b9d8ee}
+.winter-return{max-width:1200px;margin:auto;padding:0 28px 80px}
+@media(max-width:990px){.winter-notice-grid{grid-template-columns:1fr}.winter-notice{max-width:none}}
+@media(max-width:650px){.winter-extras{grid-template-columns:1fr}.winter-hero-inner{padding:65px 18px}.winter-advisories,.winter-intro{padding-left:18px;padding-right:18px}.winter-dates{gap:8px}}
