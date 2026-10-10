@@ -285,28 +285,60 @@ function LeisurePage({ document }: { document: MarkdownDocument }) {
 }
 
 function CalendarPage({ document }: { document: MarkdownDocument }) {
-  const currentMonth = new Date().getMonth();
+  const today = new Date();
+  const currentMonth = today.getMonth();
+  const day = today.getDate();
   const sections = document.body.split(/^## (January|February|March|April|May|June|July|August|September|October|November|December)\s*$/m);
-  const events = new Map<string,string[]>();
-  for(let i=1;i<sections.length;i+=2) events.set(sections[i],sections[i+1].split("\n").map(x=>x.trim()).filter(x=>x.startsWith("- ")).map(x=>x.slice(2)));
-  const seasons = ["Winter","Winter","Winter","Spring","Spring","Summer","Summer","Summer","Autumn","Autumn","Winter","Winter"];
-  const currentSeason = seasons[currentMonth];
+  const entries = new Map<string,string[]>();
+  for (let i=1;i<sections.length;i+=2) {
+    entries.set(sections[i],sections[i+1].split("\n").map(line=>line.trim()).filter(line=>line.startsWith("- ")).map(line=>line.slice(2)));
+  }
+  const seasonGroups = [
+    {name:"Winter",subtitle:"November – March",intro:"Five months of snow-covered streets, mountain roads, and winter holidays.",months:[10,11,0,1,2]},
+    {name:"Spring",subtitle:"April – May",intro:"Longer days and an excuse to spend more time outdoors.",months:[3,4]},
+    {name:"Summer",subtitle:"June – August",intro:"Beach trips, warmer weather, and long days around the state.",months:[5,6,7]},
+    {name:"Autumn",subtitle:"September – October",intro:"Anniversary celebrations in September and Halloween throughout October.",months:[8,9]}
+  ];
+  const active = seasonGroups.find(group=>group.months.includes(currentMonth))!;
+  const special = currentMonth===11 ? (day>=26?"New Year's celebrations":"Christmas season") :
+    currentMonth===0 && day<=9 ? "New Year's celebrations" :
+    ({1:"Valentine's Month",3:"Easter celebrations",8:"Rosefire Anniversary Month",9:"Halloween Month",10:"Thanksgiving Month"} as Record<number,string>)[currentMonth] || active.name+" in San Andreas";
+  const celebrationDates = currentMonth===11 ? (day>=26?"December 26 – January 9":"December 1 – 25") :
+    currentMonth===0 && day<=9 ? "December 26 – January 9" :
+    ({1:"February 1 – 28/29",3:"April 1 – 30",8:"September 1 – 30",9:"October 1 – 31",10:"November 1 – 30"} as Record<number,string>)[currentMonth] || active.subtitle;
   return <div className="calendar-page">
     <section className="leisure-hero" style={imageBackground(document.meta.heroImage)}><div>
-      <p className="section-kicker">THE SAN ANDREAS YEAR</p><h1>Annual Celebrations</h1>
-      <p>Mark the dates that bring people together. Every month is listed, with the current season highlighted.</p>
+      <p className="section-kicker">A YEAR IN SAN ANDREAS</p><h1>Annual Celebrations</h1>
+      <p>Seasonal traditions, community holidays, and a few good reasons to get together throughout the year.</p>
     </div></section>
     <div className="leisure-wrap">
-      <p className="calendar-current">Current season: <strong>{currentSeason}</strong></p>
-      <div className="calendar-grid">
-        {MONTHS.map((month,index)=><section key={month} className={`calendar-month${seasons[index]===currentSeason?" current-season":""}${index===currentMonth?" current-month":""}`}>
-          <div className="calendar-month-heading"><span>{String(index+1).padStart(2,"0")}</span><h2>{month}</h2></div>
-          <p className="calendar-season">{seasons[index]}</p>
-          <ul>{(events.get(month)||[]).map((event,i)=><li key={i}>{event}</li>)}</ul>
+      <section className={`calendar-spotlight season-${active.name.toLowerCase()}`}>
+        {active.name==="Winter" && <span className="winter-flurries" aria-hidden="true"/>}
+        <div className="calendar-spotlight-copy">
+          <p className="section-kicker">THIS MONTH IN SAN ANDREAS · {MONTHS[currentMonth].toUpperCase()}</p>
+          <h2>{special}</h2>
+          <p>{celebrationDates}</p>
+          <span className="spotlight-season">{active.name} season</span>
+        </div>
+      </section>
+      <div className="calendar-sections">
+        {seasonGroups.map(group=><section key={group.name} className={`calendar-season-section season-${group.name.toLowerCase()}`}>
+          <div className="calendar-section-heading">
+            <div><p className="section-kicker">{group.subtitle}</p><h2>{group.name} in San Andreas</h2><p>{group.intro}</p></div>
+            {group.name===active.name && <span className="calendar-active-label">Current season</span>}
+          </div>
+          {group.name==="Winter" && <span className="winter-flurries" aria-hidden="true"/>}
+          <div className="calendar-months">
+            {group.months.map(index=><article key={index} className={`calendar-month${index===currentMonth?" current-month":""}`}>
+              <div className="calendar-month-heading"><span>{String(index+1).padStart(2,"0")}</span><h3>{MONTHS[index]}</h3></div>
+              {index===currentMonth && <span className="calendar-month-now">This month</span>}
+              <ul>{(entries.get(MONTHS[index])||[]).map((entry,i)=><li key={i}>{entry}</li>)}</ul>
+            </article>)}
+          </div>
         </section>)}
       </div>
-      <p className="calendar-note">Holiday dates are listed for reference. Local celebrations and event schedules may be announced separately.</p>
-      <SiteLink href="/city-guide/winter">About the November–March winter season →</SiteLink>
+      <p className="calendar-note">Holiday periods are part of the annual calendar. Individual activities and gatherings are announced when arranged.</p>
+      <SiteLink href="/city-guide/winter">Visit the winter travel guide →</SiteLink>
     </div>
   </div>;
 }

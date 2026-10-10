@@ -115,3 +115,35 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .calendar-note{color:#d0adba;font-size:.87rem}
 @media(max-width:850px){.calendar-grid,.leisure-small-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.leisure-feature-grid,.leisure-small-grid,.calendar-grid{grid-template-columns:1fr}.leisure-hero>div,.leisure-wrap{padding:55px 18px}.leisure-feature{min-height:280px}.leisure-season{padding:60px 18px}}
+
+/* Editorial seasonal calendar */
+.calendar-page .leisure-wrap{max-width:1240px}
+.calendar-spotlight{position:relative;overflow:hidden;min-height:280px;padding:40px 46px;border-radius:8px;border:1px solid #9d5069;background:linear-gradient(110deg,#4c2339,#2a121e);display:flex;align-items:center}
+.calendar-spotlight-copy{position:relative;z-index:2}
+.calendar-spotlight h2{margin:12px 0;font-family:Georgia,serif;font-size:clamp(2.15rem,4vw,4rem)}
+.calendar-spotlight .spotlight-season{display:inline-block;margin-top:8px;border:1px solid #d49eaf;border-radius:30px;padding:5px 13px;font-size:.8rem}
+.calendar-spotlight.season-winter{background:linear-gradient(110deg,#284354,#192b3c);border-color:#90aebf}
+.calendar-spotlight.season-spring{background:linear-gradient(110deg,#38514c,#202f34);border-color:#92b3a4}
+.calendar-spotlight.season-summer{background:linear-gradient(110deg,#644a34,#33202a);border-color:#c9a478}
+.calendar-spotlight.season-autumn{background:linear-gradient(110deg,#75402f,#351d2a);border-color:#d09a7e}
+.calendar-sections{display:grid;gap:55px;margin-top:75px}
+.calendar-season-section{position:relative;isolation:isolate;overflow:hidden;padding:32px;border-radius:10px;border:1px solid #683444;background:#1e121b}
+.calendar-season-section.season-winter{background:linear-gradient(160deg,#243947,#17232d);border-color:#5b8297}
+.calendar-season-section.season-spring{background:linear-gradient(160deg,#24372f,#1b2523);border-color:#658f7d}
+.calendar-season-section.season-summer{background:linear-gradient(160deg,#453425,#241a1e);border-color:#98744f}
+.calendar-season-section.season-autumn{background:linear-gradient(160deg,#47252d,#28171d);border-color:#966050}
+.calendar-section-heading{display:flex;justify-content:space-between;align-items:start;gap:18px;position:relative;z-index:2;margin-bottom:24px}
+.calendar-section-heading h2{margin:4px 0 8px;font-family:Georgia,serif;font-size:clamp(1.9rem,3vw,2.6rem)}
+.calendar-section-heading p:not(.section-kicker){max-width:670px;color:#e3cdd4;margin:0}
+.calendar-active-label{white-space:nowrap;border:1px solid #ebb8c7;color:#fbe7ec;padding:5px 12px;border-radius:25px;font-size:.75rem}
+.calendar-months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative;z-index:2}
+.calendar-season-section .calendar-month{min-height:168px;background:rgba(12,9,16,.55);border:1px solid rgba(255,255,255,.19);padding:23px}
+.calendar-season-section .calendar-month.current-month{outline:2px solid #f1b4c4;outline-offset:2px;background:rgba(125,63,85,.24)}
+.calendar-month-heading h3{font-family:Georgia,serif;font-size:1.55rem;margin:0}
+.calendar-month-now{display:inline-block;font-size:.68rem;color:#ffdce5;text-transform:uppercase;letter-spacing:.1em;margin-top:5px}
+.calendar-month ul{padding-left:18px;margin-top:14px}
+.winter-flurries{position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(2px 2px at 12% 18%,#fff 98%,transparent),radial-gradient(3px 3px at 49% 65%,#fff 98%,transparent),radial-gradient(2px 2px at 78% 32%,#fff 98%,transparent),radial-gradient(3px 3px at 91% 80%,#fff 98%,transparent);background-size:180px 180px;animation:calendar-snow 16s linear infinite}
+@keyframes calendar-snow{from{background-position:0 -180px}to{background-position:0 180px}}
+@media(prefers-reduced-motion:reduce){.winter-flurries{animation:none}}
+@media(max-width:900px){.calendar-months{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.calendar-spotlight{padding:28px 22px;min-height:240px}.calendar-season-section{padding:23px 17px}.calendar-months{grid-template-columns:1fr}.calendar-section-heading{display:block}.calendar-active-label{display:inline-block;margin-top:12px}}

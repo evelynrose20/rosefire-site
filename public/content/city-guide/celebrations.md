@@ -5,41 +5,45 @@ heroImage:
 
 # Annual Celebrations in San Andreas
 
-The dates below are part of the annual calendar. Specific gatherings and special events are announced separately when arranged.
+Seasonal traditions return each year. Community festivities and specific activities are announced separately.
 
 ## January
-- January 1 — New Year's Day
+- New Year's celebrations — through January 9
+- Winter season continues
 
 ## February
-- February 14 — Valentine's Day
+- Valentine's Month — February 1–28/29
+- Winter season continues
 
 ## March
-- March 17 — St. Patrick's Day
+- The final month of winter — through March 31
 
 ## April
-- Easter — Date varies by year
+- Easter and spring celebrations — April 1–30
 
 ## May
-- Memorial Day — Last Monday of May
+- Spring outings and recreation
 
 ## June
-- Summer begins
+- Summer in San Andreas
 
 ## July
-- July 4 — Independence Day
+- Summer outings and coastal travel
 
 ## August
-- Summer holidays and outings
+- Summer activities around the state
 
 ## September
-- Labor Day — First Monday of September
+- Rosefire Anniversary Month — September 1–30
 
 ## October
-- October 31 — Halloween
+- Halloween Month — October 1–31
 
 ## November
-- Thanksgiving — Fourth Thursday of November
+- Thanksgiving Month — November 1–30
+- Winter snow season begins November 1
 
 ## December
-- December 25 — Christmas Day
-- December 31 — New Year's Eve
+- Christmas season — December 1–25
+- New Year's celebrations begin December 26
+- Winter season continues
