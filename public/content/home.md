@@ -6,7 +6,7 @@ title: A Place to Call Home.
 kicker: WELCOME TO ROSEFIRE
 motto: MAKE A LIFE. BUILD A LEGACY.
 description: Opportunity is around every corner. Discover a city where you can find your calling, put down roots, and build a future worth remembering.
-heroImage: obsidian://open?vault=content&file=images%2Faurelos.jpg
+heroImage: images/aurelos.jpg
 exploreImage:
 workImage:
 homeImage:
