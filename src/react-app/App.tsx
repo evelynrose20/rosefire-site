@@ -534,7 +534,7 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
     window.addEventListener("keydown",onKey);
     return ()=>window.removeEventListener("keydown",onKey);
   },[onExit]);
-  return createPortal(<div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",inset:0,zIndex:9999,background:"#030807",color:"#c9ebd1",overflowY:"auto",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65}} role="dialog" aria-modal="true" aria-label="Underground network">
+  return createPortal(<div className={`underworld-overlay underworld-${stage}`} style={{position:"fixed",top:0,left:0,right:"auto",bottom:"auto",width:"100vw",height:"100dvh",minWidth:"100vw",maxWidth:"none",margin:0,padding:0,zIndex:2147483647,background:"#030807",color:"#c9ebd1",overflowY:"auto",overflowX:"hidden",fontFamily:"Consolas, monospace",fontSize:16,lineHeight:1.65,isolation:"isolate"}} role="dialog" aria-modal="true" aria-label="Underground network">
     <button className="underworld-exit" type="button" onClick={onExit} style={{position:"fixed",top:18,right:20,zIndex:10002,padding:"10px 16px",background:"#13271b",border:"1px solid #578968",color:"#d1f4d5",fontFamily:"monospace",cursor:"pointer"}}>EXIT / ESC</button>
     {stage==="shutdown" ? <div className="underworld-blackout underworld-glitch" style={{minHeight:"100dvh",display:"grid",placeItems:"center",letterSpacing:".24em",color:"#f1b4ca"}}>
         <div className="underworld-glitch-frame"><p>ROSEFIRE / PUBLIC INFORMATION NETWORK</p><strong data-text="SIGNAL CORRUPTED">SIGNAL CORRUPTED</strong><span>CONNECTION INTERRUPTED // ERR 0x91</span><small>RECONNECTING TO UNKNOWN RELAY...</small></div>
@@ -559,7 +559,7 @@ function UnderworldTerminal({ onExit }: { onExit: () => void }) {
         </div>
         <footer>ROSEFIRE / NO RECORD OF THIS SESSION</footer>
       </div>}
-  </div>, document.body);
+  </div>, document.documentElement);
 }
 
 function CityGuidePage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
