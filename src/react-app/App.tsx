@@ -73,13 +73,15 @@ function resolveContentHref(href: string, entries: ContentEntry[], currentFile?:
 
 function SiteLink({ href, children, className, style }: { href: string; children: ReactNode; className?: string; style?: CSSProperties }) {
   const external = /^(https?:)?\/\//.test(href) || href.startsWith("mailto:");
+  // Standalone public files must be loaded by the browser, not the React content router.
+  const standaloneFile = /\.(?:html|json|pdf|txt|xml|csv|zip)(?:[?#]|$)/i.test(href);
   return (
     <a
       href={external ? href : toSiteUrl(href)}
       className={className}
       style={style}
       onClick={(event) => {
-        if (!external && !href.startsWith("#") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+        if (!external && !standaloneFile && !href.startsWith("#") && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
           event.preventDefault();
           navigate(href);
         }
