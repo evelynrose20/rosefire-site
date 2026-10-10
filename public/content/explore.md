@@ -8,6 +8,11 @@ description: From the bright streets of Los Santos to the roads around the Alamo
 introTitle: Every road has a story.
 introText: Choose a region below to explore its communities, landmarks, character, and local traditions. The state is larger than any one city — and its people are as varied as its landscapes.
 heroImage: images/aurelos.jpg
+losSantosImage:
+desertImage:
+paletoImage:
+coastImage:
+wildernessImage:
 ---
 
 ## More than a skyline

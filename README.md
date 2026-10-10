@@ -73,3 +73,18 @@ Use the existing Obsidian embed syntax anywhere in the **body** of `home.md`:
 Or Markdown syntax: `![Downtown Rosefire](images/my-city-photo.webp)`.
 
 Place the file in `public/content/images/`. Embedded photographs get a full-width row on the homepage and display at a maximum height of 460px with `object-fit: contain`, so different image sizes won't distort the editorial grid. On other Markdown pages images keep the existing responsive renderer.
+
+### Explore San Andreas region card photos
+
+Edit `public/content/explore.md` in Obsidian. Each field below controls one of the five **clickable regional cards** on the Explore page:
+
+```yaml
+heroImage: images/aurelos.jpg
+losSantosImage: images/los-santos.webp
+desertImage: images/desert.webp
+paletoImage: images/paleto.webp
+coastImage: images/coast.webp
+wildernessImage: images/chiliad.webp
+```
+
+Save the pictures inside the existing `public/content/images/` folder and push them with the Obsidian Markdown. These fields expect plain text paths, **not** `obsidian://open` links. Blank fields retain the current colored gradients. Each card remains clickable and crops its background photo to fit the existing fixed-height design with a dark overlay for text contrast. Regional detail pages also have their own independent `heroImage:` property in `public/content/regions/*.md`.

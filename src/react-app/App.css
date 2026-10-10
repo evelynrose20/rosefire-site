@@ -71,3 +71,6 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 .region-ending a{color:#f0a9bd;text-decoration:none}
 @media(max-width:920px){.explore-regions{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.explore-regions{grid-template-columns:1fr;padding-left:18px;padding-right:18px}.region-card{min-height:250px}.region-hero-inner,.region-article{padding-left:18px;padding-right:18px}}
+
+/* Region images are supplied from explore.md properties, preserving card size and legibility. */
+.region-card[style]{background-position:center;background-size:cover;background-repeat:no-repeat}
