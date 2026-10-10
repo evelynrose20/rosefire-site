@@ -212,7 +212,15 @@ function ExplorePage({ document, entries, file }: { document: MarkdownDocument; 
       </section>
       <section className="explore-story">
         <p className="section-kicker">THE LAND AND ITS STORIES</p>
-        <article className="markdown-content explore-copy"><Markdown source={body} renderLink={renderLink}/></article>
+        <div className="explore-copy">
+          {body.split(/^## (.+)\s*$/m).slice(1).reduce<{title:string;content:string}[]>((parts,part,index,all)=>{
+            if(index%2===0) parts.push({title:part.trim(),content:all[index+1]?.trim()||""});
+            return parts;
+          },[]).map((part,index)=><article className="explore-story-block" key={index}>
+            <span className="explore-story-number">{String(index+1).padStart(2,"0")}</span>
+            <div className="explore-story-body markdown-content"><h2>{part.title}</h2><Markdown source={part.content} renderLink={renderLink}/></div>
+          </article>)}
+        </div>
       </section>
       <section className="explore-next"><p className="section-kicker">YOUR NEXT CHAPTER</p><h2>See something you love? Make it home.</h2><SiteLink className="button primary" href="/getting-started">Plan Your Move →</SiteLink></section>
     </>
