@@ -74,3 +74,44 @@ body{background:#0f090c}.utility-bar{background:#10070c;border-bottom:1px solid 
 
 /* Region images are supplied from explore.md properties, preserving card size and legibility. */
 .region-card[style]{background-position:center;background-size:cover;background-repeat:no-repeat}
+
+/* Tourism leisure pages */
+.leisure-hero{min-height:450px;display:flex;align-items:center;background:linear-gradient(120deg,#2a0e1c,#844355);background-size:cover;background-position:center}
+.leisure-hero>div{width:min(1160px,100%);margin:auto;padding:80px 28px}
+.leisure-hero h1{font-family:Georgia,serif;font-size:clamp(3.2rem,6vw,6rem);line-height:1.05;letter-spacing:-.05em;max-width:860px;margin:10px 0}
+.leisure-hero p:not(.section-kicker){font-size:1.07rem;color:#f2d7e0;max-width:650px}
+.leisure-wrap{width:min(1160px,100%);margin:auto;padding:70px 28px}
+.leisure-wrap h2,.leisure-season h2{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.13;margin:8px 0 25px}
+.leisure-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.leisure-feature{min-height:350px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;color:#fff3f6;border:1px solid #92566a;border-radius:6px;background:linear-gradient(140deg,#6c3044,#1d0c15);background-position:center;background-size:cover;text-decoration:none;transition:transform .15s}
+.leisure-feature:hover{transform:translateY(-3px)}
+.leisure-feature span{font-size:.68rem;letter-spacing:.16em;color:#f7c8d5}
+.leisure-feature h3{font-family:Georgia,serif;font-size:2.15rem;line-height:1.1;margin:2px 0}
+.leisure-feature p{max-width:330px;margin:0;color:#f1d9df}
+.leisure-feature strong{font-size:.78rem;margin-top:8px}
+.leisure-subhead{margin-top:80px}
+.leisure-small-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.leisure-activity{padding:22px 4px;border-top:2px solid #86445b}
+.leisure-activity h3{font-family:Georgia,serif;font-size:1.4rem;margin:8px 0}
+.leisure-activity p{color:#d1abb7;line-height:1.7}
+.leisure-links{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px}
+.leisure-links a,.calendar-page .leisure-wrap>a{color:#f0aabe}
+.leisure-season{background:linear-gradient(120deg,#29222f,#73546b);background-size:cover;background-position:center;padding:76px 28px}
+.leisure-season>div{max-width:1100px;margin:auto}
+.leisure-season p:not(.section-kicker){max-width:570px;color:#f2dce3}
+.leisure-calendar-teaser>p:not(.section-kicker){color:#cda9b6;max-width:650px}
+.calendar-current{color:#dbb0be;margin:0 0 26px}
+.calendar-current strong{color:#fff0f4}
+.calendar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.calendar-month{background:#211018;border:1px solid #623044;border-radius:6px;padding:23px;min-height:225px}
+.calendar-month.current-season{border-color:#b45b78;background:#321623}
+.calendar-month.current-month{outline:2px solid #ed9ab3;outline-offset:2px}
+.calendar-month-heading{display:flex;align-items:baseline;gap:12px}
+.calendar-month-heading span{color:#e08ba4;font-size:.85rem}
+.calendar-month h2{font-family:Georgia,serif;font-size:1.55rem;margin:0}
+.calendar-season{color:#d49aab;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.calendar-month ul{margin:12px 0;padding-left:20px;color:#f1d4de;font-size:.92rem;line-height:1.7}
+.calendar-month li{overflow-wrap:anywhere}
+.calendar-note{color:#d0adba;font-size:.87rem}
+@media(max-width:850px){.calendar-grid,.leisure-small-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.leisure-feature-grid,.leisure-small-grid,.calendar-grid{grid-template-columns:1fr}.leisure-hero>div,.leisure-wrap{padding:55px 18px}.leisure-feature{min-height:280px}.leisure-season{padding:60px 18px}}

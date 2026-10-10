@@ -240,6 +240,77 @@ function RegionPage({ document, entries, file }: { document: MarkdownDocument; e
   );
 }
 
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function LeisurePage({ document }: { document: MarkdownDocument }) {
+  const { meta } = document;
+  const cards = [
+    {label:"WEEKEND DESTINATION", title:"Diamond Casino & Resort", desc:"Gaming, racing, and an evening out in Los Santos.", href:"/city-guide/fun/diamond-casino", image:meta.casinoImage},
+    {label:"SPORT & LEISURE", title:"Los Santos Golf Club", desc:"Spend an afternoon on the fairways.", href:"/city-guide/fun/los-santos-golf-club", image:meta.golfImage},
+  ];
+  return <div className="leisure-page">
+    <section className="leisure-hero" style={imageBackground(meta.heroImage)}><div>
+      <p className="section-kicker">VISIT SAN ANDREAS / LEISURE</p>
+      <h1>Things to Do in San Andreas</h1>
+      <p>From a weekend at the Diamond to a day in the mountains, find something to do around the state.</p>
+    </div></section>
+    <section className="leisure-wrap">
+      <p className="section-kicker">ENTERTAINMENT & ATTRACTIONS</p><h2>Plan a day out.</h2>
+      <div className="leisure-feature-grid">
+        {cards.map(card=><SiteLink key={card.href} href={card.href} className="leisure-feature" style={imageBackground(card.image)}>
+          <span>{card.label}</span><h3>{card.title}</h3><p>{card.desc}</p><strong>Visit the guide →</strong>
+        </SiteLink>)}
+      </div>
+      <p className="section-kicker leisure-subhead">FRESH AIR & OPEN COUNTRY</p><h2>Head outdoors.</h2>
+      <div className="leisure-small-grid">
+        <div className="leisure-activity"><h3>Fishing</h3><p>Pack your tackle and spend a quiet morning near the water.</p></div>
+        <div className="leisure-activity"><h3>Hunting</h3><p>Explore the rural country and follow local regulations.</p></div>
+        <div className="leisure-activity"><h3>Discoveries & Collections</h3><p>Keep an eye out for unusual finds while you explore the state.</p></div>
+      </div>
+      <div className="leisure-links">
+        <SiteLink href="/explore">Explore the regions →</SiteLink>
+        <SiteLink href="/city-guide/celebrations">Annual celebrations calendar →</SiteLink>
+      </div>
+    </section>
+    <section className="leisure-season" style={imageBackground(meta.winterImage)}>
+      <div><p className="section-kicker">NOVEMBER 1 – MARCH 31</p><h2>Winter in San Andreas</h2>
+      <p>Snow remains on the ground throughout the five-month winter season. See where to go and what to expect before setting off.</p>
+      <SiteLink className="button primary" href="/city-guide/winter">Winter travel guide →</SiteLink></div>
+    </section>
+    <section className="leisure-wrap leisure-calendar-teaser"><p className="section-kicker">THROUGHOUT THE YEAR</p><h2>Something on the calendar.</h2>
+      <p>Browse the annual calendar, from New Year's Day to the December holidays. Listings describe the dates, not guaranteed organized events.</p>
+      <SiteLink className="button secondary" href="/city-guide/celebrations">View the full annual calendar →</SiteLink>
+    </section>
+  </div>;
+}
+
+function CalendarPage({ document }: { document: MarkdownDocument }) {
+  const currentMonth = new Date().getMonth();
+  const sections = document.body.split(/^## (January|February|March|April|May|June|July|August|September|October|November|December)\s*$/m);
+  const events = new Map<string,string[]>();
+  for(let i=1;i<sections.length;i+=2) events.set(sections[i],sections[i+1].split("\n").map(x=>x.trim()).filter(x=>x.startsWith("- ")).map(x=>x.slice(2)));
+  const seasons = ["Winter","Winter","Winter","Spring","Spring","Spring","Summer","Summer","Summer","Autumn","Autumn","Winter"];
+  const currentSeason = seasons[currentMonth];
+  return <div className="calendar-page">
+    <section className="leisure-hero" style={imageBackground(document.meta.heroImage)}><div>
+      <p className="section-kicker">THE SAN ANDREAS YEAR</p><h1>Annual Celebrations</h1>
+      <p>Mark the dates that bring people together. Every month is listed, with the current season highlighted.</p>
+    </div></section>
+    <div className="leisure-wrap">
+      <p className="calendar-current">Current season: <strong>{currentSeason}</strong></p>
+      <div className="calendar-grid">
+        {MONTHS.map((month,index)=><section key={month} className={`calendar-month${seasons[index]===currentSeason?" current-season":""}${index===currentMonth?" current-month":""}`}>
+          <div className="calendar-month-heading"><span>{String(index+1).padStart(2,"0")}</span><h2>{month}</h2></div>
+          <p className="calendar-season">{seasons[index]}</p>
+          <ul>{(events.get(month)||[]).map((event,i)=><li key={i}>{event}</li>)}</ul>
+        </section>)}
+      </div>
+      <p className="calendar-note">Holiday dates are listed for reference. Local celebrations and event schedules may be announced separately.</p>
+      <SiteLink href="/city-guide/winter">About the November–March winter season →</SiteLink>
+    </div>
+  </div>;
+}
+
 function DocumentPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
 
@@ -327,6 +398,10 @@ function App() {
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
         <RegionPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : path === "/city-guide/fun" ? (
+        <LeisurePage document={document}/>
+      ) : path === "/city-guide/celebrations" ? (
+        <CalendarPage document={document}/>
       ) : path === "/explore" ? (
         <ExplorePage document={document} entries={indexedEntries} file={activeFile} />
       ) : (
