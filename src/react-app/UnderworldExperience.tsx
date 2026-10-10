@@ -156,7 +156,7 @@ export default function UnderworldExperience({ onExit }: { onExit: () => void })
             <p>Call me <strong>Vesper</strong>. There is a whole other Rosefire underneath the one they put on postcards. Deals nobody advertises. Names that never make the papers. Doors that only open for the right sort of stranger.</p>
             <p>Maybe you took a wrong turn. Or maybe you were looking for this all along.</p>
             <p className="rf-uw-invitation">You can see what is out there, darling. Or you can go running right back to safety. Your choice.</p>
-            <div className="rf-uw-actions"><button type="button" onClick={() => setSelection("rumors")}>ENTER THE UNDERWORLD <span>↗</span></button><button className="rf-uw-safety" type="button" onClick={onExit}>GO BACK TO SAFETY ↗</button></div>
+            <div className="rf-uw-actions"><button type="button" onClick={() => setSelection("rumors")}>ENTER THE UNDERWORLD <span>↗</span></button><button className="rf-uw-safety" type="button" onClick={requestExit}>GO BACK TO SAFETY ↗</button></div>
           </main>
           <aside className="rf-uw-panels" aria-label="Underground network channels">
             <div className="rf-uw-panels-heading"><span>NETWORK CHANNELS</span><span>03 FOUND</span></div>
