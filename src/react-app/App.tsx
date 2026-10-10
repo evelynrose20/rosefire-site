@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import "./App.css";
 import { Markdown, parseDocument, type MarkdownDocument } from "./markdown";
 import { siteConfig } from "./siteConfig";
@@ -88,7 +88,29 @@ function SiteLink({ href, children, className }: { href: string; children: React
   );
 }
 
-function Header() {
+function contentImageUrl(value?: string) {
+  if (!value?.trim()) return "";
+  const image = value.trim();
+  if (/^https?:\/\//i.test(image)) return image;
+  if (image.startsWith("/")) return toSiteUrl(image);
+  const file = image.replace(/^\.\//, "").replace(/^content\//, "");
+  const relative = file.startsWith("images/") ? file : `images/${file}`;
+  return `${import.meta.env.BASE_URL}content/${encodeURI(relative)}`;
+}
+
+function imageBackground(value?: string): CSSProperties | undefined {
+  const url = contentImageUrl(value);
+  if (!url) return undefined;
+  return { backgroundImage: `linear-gradient(90deg, rgba(15,7,12,.88), rgba(15,7,12,.40)), url("${url.replace(/"/g, "%22")}")` };
+}
+
+function Header({ entries }: { entries: ContentEntry[] }) {
+  const mainNav = entries.filter(entry => entry.nav && !["/", "/rules", "/faq", "/getting-started"].includes(entry.route))
+    .sort((a, b) => a.navOrder - b.navOrder || a.title.localeCompare(b.title));
+  const navigation = mainNav.length
+    ? mainNav.map(entry => ({ label: entry.title, href: entry.route }))
+    : siteConfig.navigation;
+
   return (
     <>
       <div className="utility-bar">
@@ -110,7 +132,7 @@ function Header() {
           </span>
         </SiteLink>
         <nav className="nav" aria-label="Primary navigation">
-          {siteConfig.navigation.map(item => <SiteLink href={item.href} key={item.href}>{item.label}</SiteLink>)}
+          {navigation.map(item => <SiteLink href={item.href} key={item.href}>{item.label}</SiteLink>)}
         </nav>
         <SiteLink className="resident-link" href="/getting-started">Plan Your Move <span aria-hidden="true">↗</span></SiteLink>
       </header>
@@ -124,7 +146,7 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
 
   return (
     <>
-      <section className="hero tourism-hero">
+      <section className={`hero tourism-hero${meta.heroImage ? " has-custom-hero" : ""}`} style={imageBackground(meta.heroImage)}>
         <div className="hero-copy">
           <p className="kicker">{meta.kicker || "WELCOME TO ROSEFIRE"}</p>
           <h1>{meta.title || "A Place to Call Home."}</h1>
@@ -145,9 +167,9 @@ function Home({ document, entries, file }: { document: MarkdownDocument; entries
         <p className="section-kicker">LIFE IN ROSEFIRE</p>
         <h2 id="discover-heading">Everything you need to make it yours.</h2>
         <div className="discover-grid">
-          <SiteLink className="feature-card feature-discover" href="/city-guide"><span className="feature-number">01 / EXPLORE</span><h3>Discover the City</h3><p>From bustling streets to places worth getting lost in, see what Rosefire has to offer.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
-          <SiteLink className="feature-card feature-work" href="/city-guide"><span className="feature-number">02 / OPPORTUNITY</span><h3>Find Your Calling</h3><p>Explore local work, professional careers, and opportunities to make a name for yourself.</p><span className="feature-arrow">Explore opportunities →</span></SiteLink>
-          <SiteLink className="feature-card feature-home" href="/getting-started"><span className="feature-number">03 / NEW BEGINNINGS</span><h3>Make Yourself at Home</h3><p>Get acquainted with the city, establish your footing, and begin your next chapter.</p><span className="feature-arrow">Plan your move →</span></SiteLink>
+          <SiteLink className="feature-card feature-discover" style={imageBackground(meta.exploreImage)} href="/city-guide"><span className="feature-number">01 / EXPLORE</span><h3>Discover the City</h3><p>From bustling streets to places worth getting lost in, see what Rosefire has to offer.</p><span className="feature-arrow">Explore the guide →</span></SiteLink>
+          <SiteLink className="feature-card feature-work" style={imageBackground(meta.workImage)} href="/city-guide"><span className="feature-number">02 / OPPORTUNITY</span><h3>Find Your Calling</h3><p>Explore local work, professional careers, and opportunities to make a name for yourself.</p><span className="feature-arrow">Explore opportunities →</span></SiteLink>
+          <SiteLink className="feature-card feature-home" style={imageBackground(meta.homeImage)} href="/getting-started"><span className="feature-number">03 / NEW BEGINNINGS</span><h3>Make Yourself at Home</h3><p>Get acquainted with the city, establish your footing, and begin your next chapter.</p><span className="feature-arrow">Plan your move →</span></SiteLink>
         </div>
       </section>
       <section className="editorial-section">
@@ -235,7 +257,7 @@ function App() {
 
   return (
     <main>
-      <Header />
+      <Header entries={indexedEntries} />
       {missing ? (
         <section className="page-shell">
           <p className="section-kicker">404</p>
