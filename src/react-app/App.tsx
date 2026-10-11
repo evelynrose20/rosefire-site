@@ -771,11 +771,11 @@ function DocumentPage({ document, entries, file }: { document: MarkdownDocument;
 
 function RulesPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
   const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
-  const chunks = document.body.split(/(?=^## (?:\\d+\\. |Final Principle))/m);
+  const chunks = document.body.split(/(?=^## (?:\d+\. |Final Principle))/m);
   const introduction = chunks.shift() ?? "";
   const sections = chunks.map((source, index) => {
     const title = source.match(/^## (.+)$/m)?.[1] ?? `Section ${index + 1}`;
-    const number = title.match(/^(\\d+)\\./)?.[1];
+    const number = title.match(/^(\d+)\./)?.[1];
     return { id: number ? `rule-${number}` : "final-principle", title, number, source };
   });
   return (
