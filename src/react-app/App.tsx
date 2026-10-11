@@ -873,6 +873,68 @@ function FaqPage({ document, entries, file }: { document: MarkdownDocument; entr
   );
 }
 
+function GettingStartedPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  const parts = document.body.split(/(?=^## )/m);
+  const opening = parts.shift() ?? "";
+  const stages = parts.map((source, index) => ({
+    id: "start-step-" + (index + 1),
+    label: source.match(/^## (.+)$/m)?.[1] ?? ("Step " + (index + 1)),
+    source
+  }));
+  return (
+    <div className="start-page">
+      <header className="start-hero">
+        <div className="start-hero-inner">
+          <p className="start-kicker">ROSEFIRE · NEW RESIDENT GUIDE</p>
+          <h1>Your story <em>starts here.</em></h1>
+          <p className="start-hero-description">Everything you need to find your feet in Rosefire, from preparing your character to settling into life in the city.</p>
+          <div className="start-hero-actions">
+            <a className="start-primary" href="#start-guide">Follow the guide <span aria-hidden="true">↓</span></a>
+            <SiteLink className="start-secondary" href="/rules">Read community rules ↗</SiteLink>
+          </div>
+          <p className="start-hero-update">NEW RESIDENT INFORMATION · UPDATED {document.meta.updated || "AS PUBLISHED"}</p>
+        </div>
+        <div className="start-hero-decoration" aria-hidden="true"><span>R</span><small>MAKE A LIFE.<br />BUILD A LEGACY.</small></div>
+      </header>
+      <div className="start-layout" id="start-guide">
+        <aside className="start-aside">
+          <div className="start-aside-card">
+            <p className="start-kicker">YOUR ARRIVAL PLAN</p>
+            <h2>Three steps to begin</h2>
+            <nav aria-label="Getting started chapters">
+              {stages.map((step, index) => (
+                <a key={step.id} href={"#" + step.id}><span>{String(index + 1).padStart(2, "0")}</span>{step.label}<b aria-hidden="true">↗</b></a>
+              ))}
+            </nav>
+          </div>
+          <p className="start-aside-note">Rosefire is under active development. This guide reflects the published newcomer information and will grow as the city develops.</p>
+        </aside>
+        <div className="start-main">
+          <section className="start-welcome markdown-content">
+            <p className="start-kicker">WELCOME TO ROSEFIRE</p>
+            <Markdown source={opening} renderLink={renderLink}/>
+          </section>
+          <div className="start-stage-heading"><span>THE NEW RESIDENT GUIDE</span><span>{stages.length} STEPS</span></div>
+          {stages.map((step, index) => (
+            <section className="start-stage" id={step.id} key={step.id}>
+              <div className="start-stage-header"><span className="start-stage-number">{String(index + 1).padStart(2, "0")}</span><span>STEP {index + 1} OF {stages.length}</span></div>
+              <div className="start-stage-body markdown-content"><Markdown source={step.source} renderLink={renderLink}/></div>
+              {index === 0 && <SiteLink className="start-inline-link" href="/rules">Open the community rules ↗</SiteLink>}
+            </section>
+          ))}
+          <section className="start-next">
+            <p className="start-kicker">MORE INFORMATION</p>
+            <h2>Make a life. Build a legacy.</h2>
+            <p>Explore the community standards and answers to common questions as you get ready for Rosefire.</p>
+            <div><SiteLink href="/rules">Community rules ↗</SiteLink><SiteLink href="/faq">Frequently asked questions ↗</SiteLink></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [path, setPath] = useState(currentSitePath());
   const [entries, setEntries] = useState<ContentEntry[] | null>(null);
@@ -948,6 +1010,8 @@ function App() {
         </section>
       ) : !document ? (
         <section className="page-shell"><p className="page-intro">Loading Rosefire…</p></section>
+      ) : path === "/getting-started" ? (
+        <GettingStartedPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/faq" ? (
         <FaqPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/rules" ? (
