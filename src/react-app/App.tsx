@@ -307,7 +307,8 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
   const descriptions = new Map<string,string>();
   const activities = new Map<string,string[]>();
   for (let i=1;i<sections.length;i+=2) {
-    const lines = sections[i+1].split("\n").map(line=>line.trim());
+    const lines = sections[i+1].split("
+").map(line=>line.trim());
     entries.set(sections[i],lines.filter(line=>line.startsWith("- ") && !line.startsWith("- Activity: ")).map(line=>line.slice(2)));
     activities.set(sections[i],lines.filter(line=>line.startsWith("- Activity: ")).map(line=>line.slice(12)));
     descriptions.set(sections[i],lines.find(line=>line.startsWith("> "))?.slice(2) || "");
@@ -472,7 +473,9 @@ function GolfPage({ document, entries, file }: { document: MarkdownDocument; ent
     </section>
     <section className="golf-welcome">
       <div className="golf-welcome-heading"><p className="section-kicker">THE COURSE TODAY</p><h2>A round is waiting.</h2></div>
-      <div className="markdown-content golf-welcome-copy"><Markdown source={intro+"\n\n"+(parts.get("Nine Holes Available")||"")} renderLink={renderLink}/></div>
+      <div className="markdown-content golf-welcome-copy"><Markdown source={intro+"
+
+"+(parts.get("Nine Holes Available")||"")} renderLink={renderLink}/></div>
     </section>
     <section className="golf-owner">
       <div className="golf-owner-inner"><p className="section-kicker">FROM THE CLUB</p>
@@ -497,7 +500,8 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
   const [underworldOpen,setUnderworldOpen]=useState(false);
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const sections=body.split(/^## (.+)\s*$/m);
-  const intro=sections[0].replace(/^# .+\n/,"").trim();
+  const intro=sections[0].replace(/^# .+
+/,"").trim();
   const cards:{title:string;content:string}[]=[];
   for(let i=1;i<sections.length;i+=2)cards.push({title:sections[i].trim(),content:sections[i+1]?.trim()||""});
   return <div className="resident-guide">
@@ -537,7 +541,8 @@ function PublicServicePage({ document, entries, file }: { document: MarkdownDocu
   const type=file.includes("/police.md")?"police":file.includes("/ems-fire.md")?"medical":"transport";
   const labels=type==="police"?["PUBLIC SAFETY","COMMUNITY PROTECTION"]:type==="medical"?["MEDICAL & FIRE","EMERGENCY RESPONSE"]:["ROAD SERVICES","STATE TRANSPORTATION"];
   const parts=body.split(/^## (.+)\s*$/m);
-  const intro=parts[0].replace(/^# [^\n]+/,"").trim();
+  const intro=parts[0].replace(/^# [^
+]+/,"").trim();
   const sections:{heading:string;content:string}[]=[];
   for(let i=1;i<parts.length;i+=2)sections.push({heading:parts[i].trim(),content:parts[i+1]?.trim()||""});
   return <div className={`service-page service-${type}`}>
@@ -567,7 +572,8 @@ function CommercePage({ document, entries, file }: { document: MarkdownDocument;
   const {meta,body}=document;
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const sections=body.split(/^## (.+)\s*$/m);
-  const intro=sections[0].replace(/^# [^\n]+/,"").trim();
+  const intro=sections[0].replace(/^# [^
+]+/,"").trim();
   const groups=new Map<string,string>();
   for(let i=1;i<sections.length;i+=2)groups.set(sections[i].trim(),sections[i+1]?.trim()||"");
   const blocks=[
@@ -631,7 +637,8 @@ function JobsPage({ document, entries, file }: { document: MarkdownDocument; ent
   const {meta,body}=document;
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const parts=body.split(/^## (.+)\s*$/m);
-  const intro=parts[0].replace(/^# [^\n]+/,"").trim();
+  const intro=parts[0].replace(/^# [^
+]+/,"").trim();
   const sections=new Map<string,string>();
   for(let i=1;i<parts.length;i+=2) sections.set(parts[i].trim(),parts[i+1]?.trim()||"");
   const opportunities=[
@@ -725,7 +732,9 @@ function GlobeHome({entries}:{entries:ContentEntry[]}) {
   const [category,setCategory]=useState("All");
   const categories=["All",...new Set(stories.map(s=>s.document.meta.category||"Local News"))];
   const visible=stories.filter(s=>category==="All"||(s.document.meta.category||"Local News")===category);
-  const excerpt=(s:GlobeStory)=>s.document.meta.summary||s.document.body.split(/\n\s*\n/).map(x=>x.trim()).find(x=>x&&!x.startsWith("#")&&!x.startsWith("!["))?.replace(/\*\*/g,"").slice(0,220)||"";
+  const excerpt=(s:GlobeStory)=>s.document.meta.summary||s.document.body.split(/
+\s*
+/).map(x=>x.trim()).find(x=>x&&!x.startsWith("#")&&!x.startsWith("!["))?.replace(/\*\*/g,"").slice(0,220)||"";
   return <div className="globe"><div className="globe-edition">SAN ANDREAS · INDEPENDENT REPORTING</div>
     <header className="globe-masthead"><h1>The Daily Globe</h1><p>The latest from across San Andreas</p></header>
     <nav className="globe-categories">{categories.map(c=><button key={c} type="button" className={category===c?"active":""} onClick={()=>setCategory(c)}>{c}</button>)}</nav>
@@ -823,6 +832,58 @@ function RulesPage({ document, entries, file }: { document: MarkdownDocument; en
   );
 }
 
+function FaqPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  const sections = document.body.split(/(?=^## )/m);
+  const intro = sections.shift() ?? "";
+  const questions = sections.map((source, index) => ({
+    id: `faq-${index + 1}`,
+    title: source.match(/^## (.+)$/m)?.[1] ?? `Question ${index + 1}`,
+    answer: source.replace(/^## [^
+]+
+*/, "").trim()
+  }));
+  return (
+    <div className="faq-page">
+      <header className="faq-hero">
+        <div className="faq-hero-inner">
+          <p className="faq-kicker">ROSEFIRE · COMMUNITY HELP DESK</p>
+          <h1>Questions? <em>We have answers.</em></h1>
+          <p className="faq-subtitle">A straightforward guide to life in Rosefire, how our city works, and where to begin.</p>
+          <div className="faq-hero-actions">
+            <a className="faq-main-cta" href="#faq-answers">Browse answers ↓</a>
+            <span>COMMUNITY INFORMATION · UPDATED {document.meta.updated || "AS PUBLISHED"}</span>
+          </div>
+        </div>
+        <div className="faq-hero-symbol" aria-hidden="true">?</div>
+      </header>
+      <div className="faq-content" id="faq-answers">
+        <div className="faq-intro-row">
+          <div>
+            <p className="faq-kicker">THE ESSENTIALS</p>
+            <h2>Frequently asked questions</h2>
+            <p>Find the answers that matter before you step into the city.</p>
+          </div>
+          <div className="faq-count"><strong>{String(questions.length).padStart(2, "0")}</strong><span>QUESTIONS ANSWERED</span></div>
+        </div>
+        {intro.trim() && <div className="faq-source-intro markdown-content"><Markdown source={intro} renderLink={renderLink}/></div>}
+        <div className="faq-list">
+          {questions.map((item, index) => (
+            <details className="faq-item" key={item.id} id={item.id} open={index === 0}>
+              <summary><span className="faq-number">{String(index + 1).padStart(2, "0")}</span><span className="faq-question">{item.title}</span><span className="faq-toggle" aria-hidden="true">+</span></summary>
+              <div className="faq-answer markdown-content"><Markdown source={item.answer} renderLink={renderLink}/></div>
+            </details>
+          ))}
+        </div>
+        <div className="faq-next">
+          <div><p className="faq-kicker">CONTINUE EXPLORING</p><h2>Ready to get started?</h2><p>Learn how to join Rosefire and review the community standards before stepping into character.</p></div>
+          <div className="faq-next-links"><SiteLink href="/getting-started">Getting started ↗</SiteLink><SiteLink href="/rules">Community rules ↗</SiteLink></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [path, setPath] = useState(currentSitePath());
   const [entries, setEntries] = useState<ContentEntry[] | null>(null);
@@ -898,6 +959,8 @@ function App() {
         </section>
       ) : !document ? (
         <section className="page-shell"><p className="page-intro">Loading Rosefire…</p></section>
+      ) : path === "/faq" ? (
+        <FaqPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/rules" ? (
         <RulesPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/" ? (
