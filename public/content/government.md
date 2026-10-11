@@ -17,6 +17,12 @@ The official civil rights register is being prepared for publication. Adopted ri
 
 [[government/civil-rights|Open the Civil Rights Register →]]
 
+## Penal Code & Criminal Law
+
+The Rosefire Penal Code establishes recognized criminal offenses, legal classifications, applicable fines, and authorized penalties throughout San Andreas.
+
+[[government/penal-code|Open the Penal Code Register →]]
+
 ## Government Departments
 
 Find public information from the departments serving residents across the state.

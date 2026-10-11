@@ -857,6 +857,8 @@ function App() {
         </section>
       ) : path.startsWith("/government/schedules/") ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} />
+      ) : (path === "/government/penal-code" || path.startsWith("/government/penal-code/")) ? (
+        <GovernmentPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/government/civil-rights/") ? (
         <GovernmentPage document={document} entries={indexedEntries} file={activeFile} rights />
       ) : path === "/government/civil-rights" ? (
