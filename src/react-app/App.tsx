@@ -307,7 +307,8 @@ function CalendarPage({ document }: { document: MarkdownDocument }) {
   const descriptions = new Map<string,string>();
   const activities = new Map<string,string[]>();
   for (let i=1;i<sections.length;i+=2) {
-    const lines = sections[i+1].split("\n").map(line=>line.trim());
+    const lines = sections[i+1].split("
+").map(line=>line.trim());
     entries.set(sections[i],lines.filter(line=>line.startsWith("- ") && !line.startsWith("- Activity: ")).map(line=>line.slice(2)));
     activities.set(sections[i],lines.filter(line=>line.startsWith("- Activity: ")).map(line=>line.slice(12)));
     descriptions.set(sections[i],lines.find(line=>line.startsWith("> "))?.slice(2) || "");
@@ -472,7 +473,9 @@ function GolfPage({ document, entries, file }: { document: MarkdownDocument; ent
     </section>
     <section className="golf-welcome">
       <div className="golf-welcome-heading"><p className="section-kicker">THE COURSE TODAY</p><h2>A round is waiting.</h2></div>
-      <div className="markdown-content golf-welcome-copy"><Markdown source={intro+"\n\n"+(parts.get("Nine Holes Available")||"")} renderLink={renderLink}/></div>
+      <div className="markdown-content golf-welcome-copy"><Markdown source={intro+"
+
+"+(parts.get("Nine Holes Available")||"")} renderLink={renderLink}/></div>
     </section>
     <section className="golf-owner">
       <div className="golf-owner-inner"><p className="section-kicker">FROM THE CLUB</p>
@@ -497,7 +500,8 @@ function CityGuidePage({ document, entries, file }: { document: MarkdownDocument
   const [underworldOpen,setUnderworldOpen]=useState(false);
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const sections=body.split(/^## (.+)\s*$/m);
-  const intro=sections[0].replace(/^# .+\n/,"").trim();
+  const intro=sections[0].replace(/^# .+
+/,"").trim();
   const cards:{title:string;content:string}[]=[];
   for(let i=1;i<sections.length;i+=2)cards.push({title:sections[i].trim(),content:sections[i+1]?.trim()||""});
   return <div className="resident-guide">
@@ -537,7 +541,8 @@ function PublicServicePage({ document, entries, file }: { document: MarkdownDocu
   const type=file.includes("/police.md")?"police":file.includes("/ems-fire.md")?"medical":"transport";
   const labels=type==="police"?["PUBLIC SAFETY","COMMUNITY PROTECTION"]:type==="medical"?["MEDICAL & FIRE","EMERGENCY RESPONSE"]:["ROAD SERVICES","STATE TRANSPORTATION"];
   const parts=body.split(/^## (.+)\s*$/m);
-  const intro=parts[0].replace(/^# [^\n]+/,"").trim();
+  const intro=parts[0].replace(/^# [^
+]+/,"").trim();
   const sections:{heading:string;content:string}[]=[];
   for(let i=1;i<parts.length;i+=2)sections.push({heading:parts[i].trim(),content:parts[i+1]?.trim()||""});
   return <div className={`service-page service-${type}`}>
@@ -567,7 +572,8 @@ function CommercePage({ document, entries, file }: { document: MarkdownDocument;
   const {meta,body}=document;
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const sections=body.split(/^## (.+)\s*$/m);
-  const intro=sections[0].replace(/^# [^\n]+/,"").trim();
+  const intro=sections[0].replace(/^# [^
+]+/,"").trim();
   const groups=new Map<string,string>();
   for(let i=1;i<sections.length;i+=2)groups.set(sections[i].trim(),sections[i+1]?.trim()||"");
   const blocks=[
@@ -631,7 +637,8 @@ function JobsPage({ document, entries, file }: { document: MarkdownDocument; ent
   const {meta,body}=document;
   const renderLink=(href:string,children:ReactNode)=><SiteLink href={resolveContentHref(href,entries,file)}>{children}</SiteLink>;
   const parts=body.split(/^## (.+)\s*$/m);
-  const intro=parts[0].replace(/^# [^\n]+/,"").trim();
+  const intro=parts[0].replace(/^# [^
+]+/,"").trim();
   const sections=new Map<string,string>();
   for(let i=1;i<parts.length;i+=2) sections.set(parts[i].trim(),parts[i+1]?.trim()||"");
   const opportunities=[
@@ -725,7 +732,9 @@ function GlobeHome({entries}:{entries:ContentEntry[]}) {
   const [category,setCategory]=useState("All");
   const categories=["All",...new Set(stories.map(s=>s.document.meta.category||"Local News"))];
   const visible=stories.filter(s=>category==="All"||(s.document.meta.category||"Local News")===category);
-  const excerpt=(s:GlobeStory)=>s.document.meta.summary||s.document.body.split(/\n\s*\n/).map(x=>x.trim()).find(x=>x&&!x.startsWith("#")&&!x.startsWith("!["))?.replace(/\*\*/g,"").slice(0,220)||"";
+  const excerpt=(s:GlobeStory)=>s.document.meta.summary||s.document.body.split(/
+\s*
+/).map(x=>x.trim()).find(x=>x&&!x.startsWith("#")&&!x.startsWith("!["))?.replace(/\*\*/g,"").slice(0,220)||"";
   return <div className="globe"><div className="globe-edition">SAN ANDREAS · INDEPENDENT REPORTING</div>
     <header className="globe-masthead"><h1>The Daily Globe</h1><p>The latest from across San Andreas</p></header>
     <nav className="globe-categories">{categories.map(c=><button key={c} type="button" className={category===c?"active":""} onClick={()=>setCategory(c)}>{c}</button>)}</nav>
@@ -757,6 +766,69 @@ function DocumentPage({ document, entries, file }: { document: MarkdownDocument;
       <Markdown source={document.body} renderLink={renderLink} />
       {document.meta.updated && <p className="updated">Last updated: {document.meta.updated}</p>}
     </article>
+  );
+}
+
+function RulesPage({ document, entries, file }: { document: MarkdownDocument; entries: ContentEntry[]; file: string }) {
+  const renderLink = (href: string, children: ReactNode) => <SiteLink href={resolveContentHref(href, entries, file)}>{children}</SiteLink>;
+  const chunks = document.body.split(/(?=^## (?:\\d+\\. |Final Principle))/m);
+  const introduction = chunks.shift() ?? "";
+  const sections = chunks.map((source, index) => {
+    const title = source.match(/^## (.+)$/m)?.[1] ?? `Section ${index + 1}`;
+    const number = title.match(/^(\\d+)\\./)?.[1];
+    return { id: number ? `rule-${number}` : "final-principle", title, number, source };
+  });
+  return (
+    <div className="rules-page">
+      <header className="rules-hero">
+        <div className="rules-hero-inner">
+          <p className="rules-eyebrow">ROSEFIRE · COMMUNITY HANDBOOK</p>
+          <h1>Good stories start<br /><em>with respect.</em></h1>
+          <p className="rules-hero-lead">The standards that keep Rosefire welcoming, fair, and focused on meaningful roleplay.</p>
+          <div className="rules-hero-actions">
+            <a href="#rules-directory" className="rules-action-primary">Explore the rules <span aria-hidden="true">↓</span></a>
+            <span className="rules-revision">Community standards · Last updated {document.meta.updated || "as published"}</span>
+          </div>
+        </div>
+        <div className="rules-hero-art" aria-hidden="true"><span className="rules-watermark">R</span><span className="rules-watermark-caption">MAKE A LIFE.<br />BUILD A LEGACY.</span></div>
+      </header>
+      <div className="rules-layout" id="rules-directory">
+        <aside className="rules-sidebar" aria-label="Rules section navigation">
+          <div className="rules-sidebar-card">
+            <p className="rules-sidebar-label">THE HANDBOOK</p>
+            <h2>Browse by topic</h2>
+            <nav>
+              {sections.map(section => (
+                <a key={section.id} href={`#${section.id}`}>
+                  <span className="rules-toc-number">{section.number ? section.number.padStart(2, "0") : "✦"}</span>
+                  <span>{section.number ? section.title.replace(/^\\d+\\.\\s*/, "") : section.title}</span>
+                  <span className="rules-toc-arrow" aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </nav>
+          </div>
+          <p className="rules-sidebar-note">For reports or appeals, use the official Rosefire support process. Staff handle enforcement, not players.</p>
+        </aside>
+        <div className="rules-main">
+          <section className="rules-intro markdown-content" aria-label="Community rules introduction">
+            <p className="rules-chapter-label">THE ROSEFIRE STANDARD</p>
+            <Markdown source={introduction} renderLink={renderLink}/>
+          </section>
+          <div className="rules-section-heading"><span>COMMUNITY HANDBOOK</span><span>{sections.length} CHAPTERS</span></div>
+          {sections.map(section => (
+            <section className="rules-chapter" id={section.id} key={section.id}>
+              <div className="rules-chapter-top">
+                <span className="rules-chapter-num">{section.number ? section.number.padStart(2, "0") : "✦"}</span>
+                <span className="rules-chapter-rule">ROSEFIRE COMMUNITY STANDARDS</span>
+              </div>
+              <div className="rules-chapter-copy markdown-content"><Markdown source={section.source} renderLink={renderLink}/></div>
+              <a href="#rules-directory" className="rules-back-top">↑ Back to section guide</a>
+            </section>
+          ))}
+          <div className="rules-ending"><span>ROSEFIRE RP</span><strong>Make a life. Build a legacy.</strong><p>Last updated {document.meta.updated || "as published"}</p></div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -835,6 +907,8 @@ function App() {
         </section>
       ) : !document ? (
         <section className="page-shell"><p className="page-intro">Loading Rosefire…</p></section>
+      ) : path === "/rules" ? (
+        <RulesPage document={document} entries={indexedEntries} file={activeFile} />
       ) : path === "/" ? (
         <Home document={document} entries={indexedEntries} file={activeFile} />
       ) : path.startsWith("/regions/") ? (
