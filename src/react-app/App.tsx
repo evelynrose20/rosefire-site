@@ -68,6 +68,8 @@ function resolveContentHref(href: string, entries: ContentEntry[], currentFile?:
       title === raw;
   });
 
+  // Indexed content can lag a new legal publication. Resolve known government wiki links to absolute routes.
+  if (!match && /^government\/(?:civil-rights|penal-code|schedules)(?:\/|$)/.test(raw)) return `/${raw}`;
   return match?.route ?? href;
 }
 
