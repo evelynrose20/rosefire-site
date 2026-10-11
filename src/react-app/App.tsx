@@ -793,7 +793,11 @@ function App() {
   useEffect(() => {
     if (entries === null) return;
 
-    const file = pageMap.get(path);
+    // Government documents have stable filesystem routes. A cached content index must not turn a newly published law into a 404.
+    const governmentFile = /^\/government\/(?:civil-rights|penal-code|schedules)(?:\/[a-z0-9-]+)*$/.test(path)
+      ? `${path.slice(1)}.md`
+      : undefined;
+    const file = pageMap.get(path) ?? governmentFile;
     setDocument(null);
     setActiveFile(file ?? "");
     setMissing(!file);
