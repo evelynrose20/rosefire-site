@@ -759,3 +759,58 @@ html,body{max-width:100%;overflow-x:clip}
 .schedule-map-links{display:flex;gap:25px;flex-wrap:wrap;border-top:1px solid #b2bfbe;padding-top:20px}
 .schedule-map-links a{color:#255a75;text-decoration:underline;font-weight:700}
 @media(max-width:920px){.schedule-map-page iframe{height:1550px}}
+
+
+/* ROSEFIRE COMMUNITY RULES — dedicated editorial handbook */
+.rules-page{background:#100b10;color:#f7edf0}
+.rules-hero{position:relative;overflow:hidden;min-height:490px;background:radial-gradient(ellipse at 78% 22%,rgba(191,50,87,.31),transparent 47%),linear-gradient(115deg,#170b14 8%,#341320 63%,#210e19);border-top:1px solid #633244;border-bottom:1px solid #793247}
+.rules-hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 94%,rgba(255,255,255,.055) 95%);background-size:68px 68px;opacity:.14}
+.rules-hero-inner{position:relative;z-index:2;max-width:1260px;margin:auto;padding:82px 36px 90px}
+.rules-eyebrow,.rules-sidebar-label,.rules-chapter-label{font-size:.68rem;font-weight:900;letter-spacing:.2em;color:#f4b68c}
+.rules-hero h1{font-family:Georgia,serif;letter-spacing:-.055em;font-weight:500;line-height:1.06;font-size:clamp(3.3rem,6.8vw,6.7rem);max-width:880px;margin:20px 0 24px;color:#fff7f6}
+.rules-hero h1 em{font-weight:400;color:#ef8fa7}
+.rules-hero-lead{max-width:620px;color:#edcbd4;font-size:1.12rem;line-height:1.75}
+.rules-hero-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:34px}
+.rules-action-primary{background:#f5c4ad;color:#2b0b18!important;min-height:52px;padding:13px 24px;display:inline-flex;gap:26px;align-items:center;font-weight:850;text-decoration:none!important;border-radius:3px}
+.rules-action-primary:hover{background:white}
+.rules-revision{color:#d6afb9;font-size:.75rem;letter-spacing:.03em}
+.rules-hero-art{position:absolute;right:max(2%,calc((100vw - 1240px)/2));top:14%;height:76%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(237,154,174,.25);border-radius:50%;transform:rotate(-12deg);opacity:.26;pointer-events:none}
+.rules-watermark{font-family:Georgia,serif;font-size:clamp(11rem,27vw,27rem);line-height:.77;color:#ef90a8}
+.rules-watermark-caption{text-align:center;letter-spacing:.22em;font-weight:800;font-size:.6rem;color:#f5c4ad;margin-top:18px}
+.rules-layout{max-width:1260px;margin:0 auto;padding:56px 30px 110px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:48px;align-items:start}
+.rules-sidebar{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#855063 #1d141b}
+.rules-sidebar-card{background:#21151e;border:1px solid #543244;border-top:3px solid #e18da2;padding:24px 18px}
+.rules-sidebar-label{margin:0 0 9px}
+.rules-sidebar h2{font:500 1.35rem Georgia,serif;margin:0 0 18px;color:#fff}
+.rules-sidebar nav{display:flex;flex-direction:column;gap:2px}
+.rules-sidebar nav a{display:flex;align-items:center;gap:10px;padding:9px 7px;text-decoration:none;color:#e1c9d2;font-size:.78rem;line-height:1.35;border-bottom:1px solid rgba(247,213,226,.08)}
+.rules-sidebar nav a:hover,.rules-sidebar nav a:focus-visible{background:#3b2230;color:white}
+.rules-toc-number{font-size:.68rem;letter-spacing:.05em;font-weight:900;color:#f0a0b5;min-width:24px}
+.rules-toc-arrow{margin-left:auto;color:#bc8297}
+.rules-sidebar-note{color:#ba9da9;font-size:.75rem;line-height:1.7;margin:19px 4px}
+.rules-main{min-width:0}
+.rules-intro{background:linear-gradient(145deg,#281925,#1b121a);border:1px solid #634051;padding:32px 37px 25px;margin-bottom:46px}
+.rules-intro .rules-chapter-label{margin:0 0 14px}
+.rules-intro.markdown-content h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(2rem,3.5vw,3.1rem);line-height:1.18;letter-spacing:-.035em;margin:.1em 0 .7em}
+.rules-intro.markdown-content p{color:#e4d2d8;font-size:.97rem;line-height:1.85}
+.rules-intro.markdown-content blockquote{background:#472437;border-left:4px solid #ed9eac;padding:19px 22px;margin:26px 0}
+.rules-intro.markdown-content blockquote strong{color:#fff}
+.rules-section-heading{display:flex;align-items:center;justify-content:space-between;color:#d69ab1;font-weight:900;letter-spacing:.17em;font-size:.64rem;margin-bottom:16px;gap:15px}
+.rules-chapter{background:#1c141c;border:1px solid #4e3341;border-radius:4px;padding:29px clamp(20px,3.6vw,42px) 21px;margin-bottom:20px;scroll-margin-top:24px;box-shadow:0 16px 38px rgba(0,0,0,.12)}
+.rules-chapter-top{display:flex;gap:17px;align-items:center;margin-bottom:12px}
+.rules-chapter-num{font-family:Georgia,serif;color:#f1a7b8;font-size:2.6rem;line-height:1}
+.rules-chapter-rule{font-size:.62rem;font-weight:800;letter-spacing:.14em;color:#ba8b9d}
+.rules-chapter .markdown-content h2{font:500 clamp(1.85rem,3vw,2.65rem)/1.2 Georgia,serif;color:#fff7f7;letter-spacing:-.025em;margin:6px 0 25px;border:0;padding:0}
+.rules-chapter .markdown-content h3{font-size:1.05rem;color:#f1aab8;margin:29px 0 8px;line-height:1.35}
+.rules-chapter .markdown-content p,.rules-chapter .markdown-content li{color:#e1cbd5;font-size:.95rem;line-height:1.85}
+.rules-chapter .markdown-content strong{color:#fff3f2}
+.rules-chapter .markdown-content blockquote{background:#36202e}
+.rules-chapter .markdown-content hr{margin:27px 0}
+.rules-back-top{display:inline-block;color:#eb9fb5;text-decoration:none;font-size:.72rem;font-weight:800;letter-spacing:.03em;margin:24px 0 0}
+.rules-back-top:hover{text-decoration:underline}
+.rules-ending{padding:35px 15px 15px;text-align:center;color:#cba9b7}
+.rules-ending span{display:block;letter-spacing:.23em;font-size:.65rem;color:#e89bb2;font-weight:900}
+.rules-ending strong{display:block;color:#fff;font:500 2.1rem Georgia,serif;margin:8px 0}
+.rules-ending p{font-size:.76rem;color:#bb99a8}
+@media(max-width:960px){.rules-layout{grid-template-columns:1fr;gap:30px}.rules-sidebar{position:static;max-height:none;overflow:visible}.rules-sidebar-card nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px}.rules-sidebar-note{margin-bottom:0}.rules-hero-art{opacity:.11}}
+@media(max-width:570px){.rules-hero-inner{padding:65px 20px 65px}.rules-layout{padding:28px 15px 70px}.rules-sidebar-card{padding:19px 14px}.rules-sidebar-card nav{grid-template-columns:1fr}.rules-intro{padding:24px 21px}.rules-chapter{padding:24px 20px}.rules-hero h1{font-size:3.3rem}.rules-hero-actions{align-items:flex-start;flex-direction:column;gap:14px}.rules-watermark{display:none}}
