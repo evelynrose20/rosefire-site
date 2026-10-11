@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Version 1.1 — Sections 1–2**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -31,7 +31,23 @@ Assault, battery, threats, restraint, kidnapping, homicide, murder, coercion, ha
 
 [[government/penal-code/section-2|Read Section 2 →]]
 
-### Legislative Continuity and Authority
+### Section 3 — Crimes Against Property
+
+Criminal trespass, vandalism, destruction, arson, infrastructure sabotage, illegal dumping, and property restitution.
+
+[[government/penal-code/section-3|Read Section 3 →]]
+
+### Section 4 — Robbery, Burglary & Theft
+
+Theft, burglary, robbery, vehicle and cargo theft, financial offenses, and protected property crimes.
+
+[[government/penal-code/section-4|Read Section 4 →]]
+
+### Legislative Continuity and Authority — Version 1.2
+
+[[government/penal-code/continuity-v1.2|Read Version 1.2 Continuity →]]
+
+### Legislative Continuity and Authority — Version 1.1
 
 Rules governing the Penal Code's relationship to the Civil Rights & Justice Code, criminal punishment, judicial authority, community restrictions, and future amendments.
 
