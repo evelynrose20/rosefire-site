@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10) · Version 1.6 (Sections 11–12)**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10) · Version 1.6 (Sections 11–12) · Version 1.7 (Sections 13–14)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -90,6 +90,22 @@ Financial fraud, banking and credit offenses, mortgage and real estate fraud, un
 Criminal enterprise offenses, racketeering, extortion, organized theft, money laundering, corruption, and protections for lawful organizations.
 
 [[government/penal-code/section-12|Read Section 12 →]]
+
+### Section 13 — Fraud, Forgery & Identity Offenses
+
+Counterfeit identification and currency, forged licenses, fraudulent professional credentials, false property and business records, and identity-related criminal offenses.
+
+[[government/penal-code/section-13|Read Section 13 →]]
+
+### Section 14 — Criminal Procedure, Warrants & Sentencing Enhancements
+
+Criminal charges, arrest and search warrants, evidence, rights of the accused, judicial proceedings, sentencing, appeals, and court accountability.
+
+[[government/penal-code/section-14|Read Section 14 →]]
+
+### Legislative Continuity and Authority — Version 1.7
+
+[[government/penal-code/continuity-v1.7|Read Version 1.7 Continuity →]]
 
 ### Legislative Continuity and Authority — Version 1.6
 
