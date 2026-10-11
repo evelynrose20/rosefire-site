@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10) · Version 1.6 (Sections 11–12) · Version 1.7 (Sections 13–14)**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10) · Version 1.6 (Sections 11–12) · Version 1.7 (Sections 13–14) · Version 1.8 (Sections 15–16)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -102,6 +102,22 @@ Counterfeit identification and currency, forged licenses, fraudulent professiona
 Criminal charges, arrest and search warrants, evidence, rights of the accused, judicial proceedings, sentencing, appeals, and court accountability.
 
 [[government/penal-code/section-14|Read Section 14 →]]
+
+### Section 15 — Public Safety, Emergency Services & Environmental Offenses
+
+Emergency response, public safety, hazardous materials, environmental contamination, and utility protection.
+
+[[government/penal-code/section-15|Read Section 15 →]]
+
+### Section 16 — Correctional Institutions, Prisoner Conduct & Custodial Offenses
+
+Correctional custody, institutional offenses, sentencing records, prisoner rights, and correctional accountability.
+
+[[government/penal-code/section-16|Read Section 16 →]]
+
+### Legislative Continuity and Authority — Version 1.8
+
+[[government/penal-code/continuity-v1.8|Read Version 1.8 Continuity →]]
 
 ### Legislative Continuity and Authority — Version 1.7
 
