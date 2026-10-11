@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6)**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -54,6 +54,22 @@ Speeding, traffic controls, reckless driving, DUI, evading police, commercial dr
 Public disturbances, resisting arrest, official misconduct, corruption, obstruction of justice, correctional escapes, government records, and judicial system offenses.
 
 [[government/penal-code/section-6|Read Section 6 →]]
+
+### Section 7 — Weapons & Firearm Offenses
+
+Firearm classes and licensing, unlawful carrying or discharge, restricted weapons, illicit transfers, trafficking, explosives, and firearm evidence.
+
+[[government/penal-code/section-7|Read Section 7 →]]
+
+### Section 8 — Controlled Substance Offenses
+
+Controlled-substance possession, cannabis regulations, unlawful distribution, cultivation, manufacturing, trafficking, drug money laundering, and lawful medical protections.
+
+[[government/penal-code/section-8|Read Section 8 →]]
+
+### Legislative Continuity and Authority — Version 1.4
+
+[[government/penal-code/continuity-v1.4|Read Version 1.4 Continuity →]]
 
 ### Legislative Continuity and Authority — Version 1.3
 
