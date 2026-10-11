@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4)**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -42,6 +42,22 @@ Criminal trespass, vandalism, destruction, arson, infrastructure sabotage, illeg
 Theft, burglary, robbery, vehicle and cargo theft, financial offenses, and protected property crimes.
 
 [[government/penal-code/section-4|Read Section 4 →]]
+
+### Section 5 — Vehicle & Traffic Offenses
+
+Speeding, traffic controls, reckless driving, DUI, evading police, commercial driving requirements, towing, and vehicle recovery offenses.
+
+[[government/penal-code/section-5|Read Section 5 →]]
+
+### Section 6 — Public Order & Government Offenses
+
+Public disturbances, resisting arrest, official misconduct, corruption, obstruction of justice, correctional escapes, government records, and judicial system offenses.
+
+[[government/penal-code/section-6|Read Section 6 →]]
+
+### Legislative Continuity and Authority — Version 1.3
+
+[[government/penal-code/continuity-v1.3|Read Version 1.3 Continuity →]]
 
 ### Legislative Continuity and Authority — Version 1.2
 
