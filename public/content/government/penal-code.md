@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10)**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10) · Version 1.6 (Sections 11–12)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -78,6 +78,22 @@ Hunting and fishing licenses, protected species, conservation restrictions, poac
 Aircraft and vessel licenses, registration, operation, navigation, restricted airspace and waters, cargo crimes, hijacking, sabotage, maritime rescue, and evidence protections.
 
 [[government/penal-code/section-10|Read Section 10 →]]
+
+### Section 11 — Financial Crimes, Banking Fraud & Cybercrime
+
+Financial fraud, banking and credit offenses, mortgage and real estate fraud, unauthorized computer access, electronic payment manipulation, and financial system attacks.
+
+[[government/penal-code/section-11|Read Section 11 →]]
+
+### Section 12 — Organized Crime, Racketeering & Criminal Enterprises
+
+Criminal enterprise offenses, racketeering, extortion, organized theft, money laundering, corruption, and protections for lawful organizations.
+
+[[government/penal-code/section-12|Read Section 12 →]]
+
+### Legislative Continuity and Authority — Version 1.6
+
+[[government/penal-code/continuity-v1.6|Read Version 1.6 Continuity →]]
 
 ### Legislative Continuity and Authority — Version 1.5
 
