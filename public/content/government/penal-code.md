@@ -9,7 +9,7 @@ documentStatus: Enacted — In Force
 
 **STATE OF SAN ANDREAS — DEPARTMENT OF JUSTICE**
 
-**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8)**
+**Published releases: Version 1.1 (Sections 1–2) · Version 1.2 (Sections 3–4) · Version 1.3 (Sections 5–6) · Version 1.4 (Sections 7–8) · Version 1.5 (Sections 9–10)**
 
 **Status: ENACTED — IN FORCE**
 
@@ -66,6 +66,22 @@ Firearm classes and licensing, unlawful carrying or discharge, restricted weapon
 Controlled-substance possession, cannabis regulations, unlawful distribution, cultivation, manufacturing, trafficking, drug money laundering, and lawful medical protections.
 
 [[government/penal-code/section-8|Read Section 8 →]]
+
+### Section 9 — Hunting, Fishing & Wildlife Offenses
+
+Hunting and fishing licenses, protected species, conservation restrictions, poaching, unlawful wildlife trade, animal cruelty, and licensing protections.
+
+[[government/penal-code/section-9|Read Section 9 →]]
+
+### Section 10 — Aviation & Maritime Offenses
+
+Aircraft and vessel licenses, registration, operation, navigation, restricted airspace and waters, cargo crimes, hijacking, sabotage, maritime rescue, and evidence protections.
+
+[[government/penal-code/section-10|Read Section 10 →]]
+
+### Legislative Continuity and Authority — Version 1.5
+
+[[government/penal-code/continuity-v1.5|Read Version 1.5 Continuity →]]
 
 ### Legislative Continuity and Authority — Version 1.4
 
