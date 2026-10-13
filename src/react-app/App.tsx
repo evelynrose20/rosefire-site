@@ -1069,10 +1069,11 @@ function App() {
       ) : (
         <DocumentPage document={document} entries={indexedEntries} file={activeFile} />
       )}
-      <footer>
+      <footer style={{ flexWrap: "wrap" }}>
         <div><strong>ROSEFIRE</strong><p>Make a Life. Build a Legacy.</p></div>
         <div className="footer-links"><SiteLink href="/explore">Explore</SiteLink><SiteLink href="/getting-started">New Residents</SiteLink><SiteLink href="/lore">Our Story</SiteLink></div>
         <div className="footer-community"><span>COMMUNITY / OOC</span><SiteLink href="/rules">Rules</SiteLink><SiteLink href="/faq">FAQ</SiteLink><SiteLink href="/changelog">Updates</SiteLink></div>
+        <p className="rockstar-disclaimer" style={{ flexBasis: "100%", margin: "16px 0 0", textAlign: "center", fontSize: "0.72rem", lineHeight: 1.6, letterSpacing: "0.05em", color: "var(--muted)" }}>ROSEFIRE RP IS NOT APPROVED, SPONSORED, OR ENDORSED BY ROCKSTAR GAMES.</p>
       </footer>
     </main>
   );
