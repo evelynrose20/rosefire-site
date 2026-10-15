@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily-globe/articles/THE STATE FOR SALE.md",
+                "file": "government/penal-code/continuity-v1.8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "THE STATE FOR SALE"
+              "title": "continuity-v1.8"
+            }
+          },
+          {
+            "id": "fe9f0410ad37fcd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily-globe/articles/THE PRICE OF PROGRESS - CYBERWARE ARRIVES IN ROSE CITY.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "THE PRICE OF PROGRESS - CYBERWARE ARRIVES IN ROSE CITY"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -203,41 +217,42 @@
       "bases:Create new base": false
     }
   },
-  "active": "8488c6bf2cd4e53a",
+  "active": "fe9f0410ad37fcd6",
   "lastOpenFiles": [
-    "government/civil-rights.md",
     "daily-globe/articles/THE STATE FOR SALE.md",
-    "government/schedules/schedule-17-a.md",
+    "daily-globe/articles/THE PRICE OF PROGRESS - CYBERWARE ARRIVES IN ROSE CITY.md",
+    "government/civil-rights.md",
+    "government/penal-code/section-9.md",
+    "government/penal-code/section-8.md",
+    "government/penal-code/section-7.md",
+    "government/penal-code/section-6.md",
+    "government/penal-code/section-5.md",
+    "government/penal-code/section-4.md",
+    "government/penal-code/section-3.md",
+    "government/penal-code/section-2.md",
+    "government/penal-code/section-16.md",
+    "government/penal-code/section-15.md",
+    "government/penal-code/section-14.md",
+    "government/penal-code/section-13.md",
+    "government/penal-code/section-12.md",
+    "government/penal-code/section-11.md",
+    "government/penal-code/section-10.md",
+    "government/penal-code/section-1.md",
+    "government/penal-code/continuity.md",
+    "government/penal-code/continuity-v1.8.md",
+    "government/penal-code/continuity-v1.7.md",
+    "government/penal-code/continuity-v1.6.md",
+    "government/penal-code/continuity-v1.5.md",
+    "government/penal-code/continuity-v1.4.md",
+    "government/penal-code/continuity-v1.2.md",
+    "government/penal-code",
     "government/schedules/schedule-17-a.json",
     "government/schedules",
-    "government/civil-rights/section-9.md",
-    "government/civil-rights/section-8.md",
-    "government/civil-rights/section-7.md",
-    "government/civil-rights/section-6.md",
-    "government/civil-rights/section-5.md",
-    "government/civil-rights/section-17.md",
-    "government/civil-rights/section-16.md",
-    "government/civil-rights/section-15.md",
-    "government/civil-rights/section-14.md",
-    "government/civil-rights/section-13.md",
-    "government/civil-rights/section-12.md",
-    "government/civil-rights/section-11.md",
-    "government/civil-rights/section-10.md",
-    "government/civil-rights/archive/section-8-v1.2.md",
     "government/civil-rights/archive",
     "daily-globe/articles",
     "daily-globe",
-    "daily-globe.md",
-    "government/civil-rights/implementation.md",
-    "explore.md",
-    "government/civil-rights/section-4.md",
-    "government/civil-rights/section-1.md",
-    "government/civil-rights/section-2.md",
-    "government/civil-rights/section-3.md",
     "government/civil-rights",
     "government",
-    "government.md",
-    "city-guide/public-services/ems-fire.md",
     "city-guide/public-services",
     "images/coast.png",
     "images/aurelos.jpg",
@@ -245,7 +260,6 @@
     "images/Pasted image 20261004061402.png",
     "regions",
     "Pasted image 20261005110102.png",
-    "Player Businesses",
     "images/Pasted image 20261005065304.png",
     "images/Pasted image 20261005065100.png",
     "images/Pasted image 20261004124247.png"
